@@ -1,0 +1,669 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Kapitel 11 Weitere Funktionen für ökonomische Modellierung | Vor- und Brückenkurs: Wirtschaftsmathematik</title>
+  <meta name="description" content="Das ist der Skript für den Kurs Vor- und Brückenkurs: Wirtschaftsmathematik." />
+  <meta name="generator" content="bookdown 0.34 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Kapitel 11 Weitere Funktionen für ökonomische Modellierung | Vor- und Brückenkurs: Wirtschaftsmathematik" />
+  <meta property="og:type" content="book" />
+  
+  <meta property="og:description" content="Das ist der Skript für den Kurs Vor- und Brückenkurs: Wirtschaftsmathematik." />
+  <meta name="github-repo" content="rstudio/bookdown-demo" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Kapitel 11 Weitere Funktionen für ökonomische Modellierung | Vor- und Brückenkurs: Wirtschaftsmathematik" />
+  
+  <meta name="twitter:description" content="Das ist der Skript für den Kurs Vor- und Brückenkurs: Wirtschaftsmathematik." />
+  
+
+<meta name="author" content="Maria Osipenko" />
+
+
+<meta name="date" content="2024-02-12" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="funktionen-und-optimierung.html"/>
+
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+<script src="libs/htmlwidgets-1.6.2/htmlwidgets.js"></script>
+<script src="libs/plotly-binding-4.10.2/plotly.js"></script>
+<script src="libs/typedarray-0.1/typedarray.min.js"></script>
+<link href="libs/crosstalk-1.2.0/css/crosstalk.min.css" rel="stylesheet" />
+<script src="libs/crosstalk-1.2.0/js/crosstalk.min.js"></script>
+<link href="libs/plotly-htmlwidgets-css-2.11.1/plotly-htmlwidgets.css" rel="stylesheet" />
+<script src="libs/plotly-main-2.11.1/plotly-latest.min.js"></script>
+
+
+<style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { color: #008000; } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { color: #008000; font-weight: bold; } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+<style type="text/css">
+  
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">A Minimal Book Example</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Grundlagen</a>
+<ul>
+<li class="chapter" data-level="1.1" data-path="index.html"><a href="index.html#rechenregeln"><i class="fa fa-check"></i><b>1.1</b> Rechenregeln</a>
+<ul>
+<li class="chapter" data-level="1.1.1" data-path="index.html"><a href="index.html#umwandlung-von-brüchen"><i class="fa fa-check"></i><b>1.1.1</b> Umwandlung von Brüchen</a></li>
+<li class="chapter" data-level="1.1.2" data-path="index.html"><a href="index.html#rehenfolge-der-rechenoperationen"><i class="fa fa-check"></i><b>1.1.2</b> Rehenfolge der Rechenoperationen</a></li>
+<li class="chapter" data-level="1.1.3" data-path="index.html"><a href="index.html#punkt--von-strich-rechnung"><i class="fa fa-check"></i><b>1.1.3</b> “Punkt- von Strich-”Rechnung</a></li>
+<li class="chapter" data-level="1.1.4" data-path="index.html"><a href="index.html#aufmachen-von-klammern-ausmultiplizieren"><i class="fa fa-check"></i><b>1.1.4</b> Aufmachen von Klammern, Ausmultiplizieren</a></li>
+</ul></li>
+<li class="chapter" data-level="1.2" data-path="index.html"><a href="index.html#notation"><i class="fa fa-check"></i><b>1.2</b> Notation</a>
+<ul>
+<li class="chapter" data-level="1.2.1" data-path="index.html"><a href="index.html#auslassen-von-punkt-bei-multiplikation-mit-variablen"><i class="fa fa-check"></i><b>1.2.1</b> Auslassen von Punkt bei Multiplikation mit Variablen</a></li>
+<li class="chapter" data-level="1.2.2" data-path="index.html"><a href="index.html#summen--und-produktzeichen"><i class="fa fa-check"></i><b>1.2.2</b> Summen- und Produktzeichen</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="mengen-und-zahlen.html"><a href="mengen-und-zahlen.html"><i class="fa fa-check"></i><b>2</b> Mengen und Zahlen</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="mengen-und-zahlen.html"><a href="mengen-und-zahlen.html#mengen"><i class="fa fa-check"></i><b>2.1</b> Mengen</a>
+<ul>
+<li class="chapter" data-level="2.1.1" data-path="mengen-und-zahlen.html"><a href="mengen-und-zahlen.html#mengenoperationen"><i class="fa fa-check"></i><b>2.1.1</b> Mengenoperationen</a></li>
+<li class="chapter" data-level="2.1.2" data-path="mengen-und-zahlen.html"><a href="mengen-und-zahlen.html#spezielle-mengen"><i class="fa fa-check"></i><b>2.1.2</b> Spezielle Mengen</a></li>
+<li class="chapter" data-level="2.1.3" data-path="mengen-und-zahlen.html"><a href="mengen-und-zahlen.html#mengen-zur-wahrscheinlichkeitsrechnung"><i class="fa fa-check"></i><b>2.1.3</b> Mengen zur Wahrscheinlichkeitsrechnung</a></li>
+</ul></li>
+<li class="chapter" data-level="2.2" data-path="mengen-und-zahlen.html"><a href="mengen-und-zahlen.html#zahlenmengen"><i class="fa fa-check"></i><b>2.2</b> Zahlenmengen</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="bruchrechnung.html"><a href="bruchrechnung.html"><i class="fa fa-check"></i><b>3</b> Bruchrechnung</a></li>
+<li class="chapter" data-level="4" data-path="potenzen-und-wurzel.html"><a href="potenzen-und-wurzel.html"><i class="fa fa-check"></i><b>4</b> Potenzen und Wurzel</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="potenzen-und-wurzel.html"><a href="potenzen-und-wurzel.html#potenzen"><i class="fa fa-check"></i><b>4.1</b> Potenzen</a></li>
+<li class="chapter" data-level="4.2" data-path="potenzen-und-wurzel.html"><a href="potenzen-und-wurzel.html#wurzel"><i class="fa fa-check"></i><b>4.2</b> Wurzel</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="prozent--und-zinsrechnung.html"><a href="prozent--und-zinsrechnung.html"><i class="fa fa-check"></i><b>5</b> Prozent- und Zinsrechnung</a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="prozent--und-zinsrechnung.html"><a href="prozent--und-zinsrechnung.html#prozentrechnung"><i class="fa fa-check"></i><b>5.1</b> Prozentrechnung</a></li>
+<li class="chapter" data-level="5.2" data-path="prozent--und-zinsrechnung.html"><a href="prozent--und-zinsrechnung.html#zinsrechnung"><i class="fa fa-check"></i><b>5.2</b> Zinsrechnung</a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="variablen-und-terme.html"><a href="variablen-und-terme.html"><i class="fa fa-check"></i><b>6</b> Variablen und Terme</a>
+<ul>
+<li class="chapter" data-level="6.1" data-path="variablen-und-terme.html"><a href="variablen-und-terme.html#umformung-von-termen"><i class="fa fa-check"></i><b>6.1</b> Umformung von Termen</a></li>
+<li class="chapter" data-level="6.2" data-path="variablen-und-terme.html"><a href="variablen-und-terme.html#binomische-formeln-1-3"><i class="fa fa-check"></i><b>6.2</b> Binomische Formeln 1-3</a></li>
+<li class="chapter" data-level="6.3" data-path="variablen-und-terme.html"><a href="variablen-und-terme.html#variablen-in-brüchen"><i class="fa fa-check"></i><b>6.3</b> Variablen in Brüchen</a></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="gleichungen.html"><a href="gleichungen.html"><i class="fa fa-check"></i><b>7</b> Gleichungen</a>
+<ul>
+<li class="chapter" data-level="7.1" data-path="gleichungen.html"><a href="gleichungen.html#definition-einer-gleichung"><i class="fa fa-check"></i><b>7.1</b> Definition einer Gleichung</a></li>
+<li class="chapter" data-level="7.2" data-path="gleichungen.html"><a href="gleichungen.html#lösen-von-gleichungen"><i class="fa fa-check"></i><b>7.2</b> Lösen von Gleichungen</a></li>
+<li class="chapter" data-level="7.3" data-path="gleichungen.html"><a href="gleichungen.html#spezielle-gleichungen"><i class="fa fa-check"></i><b>7.3</b> Spezielle Gleichungen</a>
+<ul>
+<li class="chapter" data-level="7.3.1" data-path="gleichungen.html"><a href="gleichungen.html#faktorisierte-gleichungen"><i class="fa fa-check"></i><b>7.3.1</b> Faktorisierte Gleichungen</a></li>
+<li class="chapter" data-level="7.3.2" data-path="gleichungen.html"><a href="gleichungen.html#betragsgleichungen"><i class="fa fa-check"></i><b>7.3.2</b> Betragsgleichungen</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="8" data-path="ungleichungen.html"><a href="ungleichungen.html"><i class="fa fa-check"></i><b>8</b> Ungleichungen</a>
+<ul>
+<li class="chapter" data-level="8.1" data-path="ungleichungen.html"><a href="ungleichungen.html#definition-von-ungleichungen"><i class="fa fa-check"></i><b>8.1</b> Definition von Ungleichungen</a></li>
+<li class="chapter" data-level="8.2" data-path="ungleichungen.html"><a href="ungleichungen.html#umformung-von-ungleichungen"><i class="fa fa-check"></i><b>8.2</b> Umformung von Ungleichungen</a></li>
+<li class="chapter" data-level="8.3" data-path="ungleichungen.html"><a href="ungleichungen.html#spezielle-ungleichungen"><i class="fa fa-check"></i><b>8.3</b> Spezielle Ungleichungen</a>
+<ul>
+<li class="chapter" data-level="8.3.1" data-path="ungleichungen.html"><a href="ungleichungen.html#faktorisierte-ungleichungen"><i class="fa fa-check"></i><b>8.3.1</b> Faktorisierte Ungleichungen</a></li>
+<li class="chapter" data-level="8.3.2" data-path="ungleichungen.html"><a href="ungleichungen.html#betragsungleichungen"><i class="fa fa-check"></i><b>8.3.2</b> Betragsungleichungen</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="9" data-path="lineare-gleichungssysteme.html"><a href="lineare-gleichungssysteme.html"><i class="fa fa-check"></i><b>9</b> Lineare Gleichungssysteme</a>
+<ul>
+<li class="chapter" data-level="9.1" data-path="lineare-gleichungssysteme.html"><a href="lineare-gleichungssysteme.html#lösung-von-lgs"><i class="fa fa-check"></i><b>9.1</b> Lösung von LGS</a></li>
+</ul></li>
+<li class="chapter" data-level="10" data-path="funktionen-und-optimierung.html"><a href="funktionen-und-optimierung.html"><i class="fa fa-check"></i><b>10</b> Funktionen und Optimierung</a>
+<ul>
+<li class="chapter" data-level="10.1" data-path="funktionen-und-optimierung.html"><a href="funktionen-und-optimierung.html#funktionen"><i class="fa fa-check"></i><b>10.1</b> Funktionen</a></li>
+<li class="chapter" data-level="10.2" data-path="funktionen-und-optimierung.html"><a href="funktionen-und-optimierung.html#lineare-und-quadratische-funktionen-polynome"><i class="fa fa-check"></i><b>10.2</b> Lineare und quadratische Funktionen, Polynome</a></li>
+<li class="chapter" data-level="10.3" data-path="funktionen-und-optimierung.html"><a href="funktionen-und-optimierung.html#ableitung"><i class="fa fa-check"></i><b>10.3</b> Ableitung</a>
+<ul>
+<li class="chapter" data-level="10.3.1" data-path="funktionen-und-optimierung.html"><a href="funktionen-und-optimierung.html#einige-ableitungsregeln"><i class="fa fa-check"></i><b>10.3.1</b> Einige Ableitungsregeln</a></li>
+</ul></li>
+<li class="chapter" data-level="10.4" data-path="funktionen-und-optimierung.html"><a href="funktionen-und-optimierung.html#einfache-optimierungsprobleme"><i class="fa fa-check"></i><b>10.4</b> Einfache Optimierungsprobleme</a></li>
+</ul></li>
+<li class="chapter" data-level="11" data-path="weitere-funktionen-für-ökonomische-modellierung.html"><a href="weitere-funktionen-für-ökonomische-modellierung.html"><i class="fa fa-check"></i><b>11</b> Weitere Funktionen für ökonomische Modellierung</a>
+<ul>
+<li class="chapter" data-level="11.1" data-path="weitere-funktionen-für-ökonomische-modellierung.html"><a href="weitere-funktionen-für-ökonomische-modellierung.html#exponentialfunktion"><i class="fa fa-check"></i><b>11.1</b> Exponentialfunktion</a></li>
+<li class="chapter" data-level="11.2" data-path="weitere-funktionen-für-ökonomische-modellierung.html"><a href="weitere-funktionen-für-ökonomische-modellierung.html#logarithmusfunktion"><i class="fa fa-check"></i><b>11.2</b> Logarithmusfunktion</a></li>
+</ul></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Vor- und Brückenkurs: Wirtschaftsmathematik</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="weitere-funktionen-für-ökonomische-modellierung" class="section level1 hasAnchor" number="11">
+<h1><span class="header-section-number">Kapitel 11</span> Weitere Funktionen für ökonomische Modellierung<a href="weitere-funktionen-für-ökonomische-modellierung.html#weitere-funktionen-für-ökonomische-modellierung" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<script>
+function checkAnswer_mmc(q) {
+      const selectedOptions = document.querySelectorAll('input[name="option'+q.id+'"]:checked');
+      if (selectedOptions.length === 2) {
+        const userAnswers = Array.from(selectedOptions).map(option => option.value);
+        const correctAnswers = q.answer;
+        const isCorrect = userAnswers.every(answer => correctAnswers.includes(answer));
+
+if (isCorrect) {
+          document.getElementById('result'+q.id).textContent = 'Glückwunsch! Deine Antwort ist richtig.';
+        } else {
+          document.getElementById('result'+q.id).textContent = `Leider falsch. Versuch es nochmal!`;
+        }
+      } else {
+        document.getElementById('result'+q.id).textContent = 'Bitte zwei Optionen auswählen.';
+      }
+    }
+// numeric
+function generateQuestion_num(id) {
+      // Generate two random numbers between 2 and 10
+      const num1 = Math.floor(Math.random() * 10) + 2;
+      const num2 = Math.floor(Math.random() * 10) + 2;
+      const x1 = Math.floor(Math.random() * 100) + 2;
+      const x2 = Math.floor(Math.random() * 100) + 2;
+      const x3 = Math.floor(Math.random() * 100) + 2;
+      const x4 = Math.floor(Math.random() * 100) + 2;
+      const x5 = Math.floor(Math.random() * 100) + 2;
+      const x6 = Math.floor(Math.random() * 100) + 2;
+
+       // Calculate the correct answer
+      let answer = num1*Math.sqrt(x1) + num2*Math.sqrt(x2);
+
+      // Return the question and answer as an object
+      return {
+       // question: num1 + "\\(\\sqrt{x}+\\)"+ num2 + "\\(\\sqrt{y}\\)" + " for \\(x=\\)" + x1 + " and \\(y=\\)" + x2,
+        question: [num1,num2,x1,x2,x3,x4,x5,x6],
+        answer: answer,
+        id: id
+      };
+    }
+
+function checkAnswer_num(q) {
+      const userAnswer = document.getElementById('answer'+q.id).value;
+      const isCorrect = Math.round(parseFloat(userAnswer)*100)/100 === Math.round(q.answer*100)/100;
+
+      if (isCorrect) {
+        document.getElementById('result'+q.id).textContent = 'Glückwunsch! Deine Antwort ist richtig.';
+      } else {
+        document.getElementById('result'+q.id).textContent = `Sorry, incorrect.`;
+      }
+  }
+
+// plain multiple choice
+  function checkAnswer_match(q) {
+      const selectedOption = document.querySelector('input[name="option'+q.id+'"]:checked');
+      if (selectedOption) {
+        const userAnswer = selectedOption.value;
+        const isCorrect = userAnswer === q.answer;
+
+        if (isCorrect) {
+          document.getElementById('result'+q.id).textContent = 'Glückwunsch! Deine Antwort ist richtig.';
+        } else {
+          document.getElementById('result'+q.id).textContent = `Leider falsch. Versuch es nochmal!`;
+        }
+      } else {
+        document.getElementById('result'+q.id).textContent = 'Bitte eine Option wählen.';
+      }
+    }
+</script>
+<div id="exponentialfunktion" class="section level2 hasAnchor" number="11.1">
+<h2><span class="header-section-number">11.1</span> Exponentialfunktion<a href="weitere-funktionen-für-ökonomische-modellierung.html#exponentialfunktion" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Exponentialfunktionen erfassen Wachstumseffekte (z.B. Populationen, Geld). Im Gegensatz zu Potenzfunktionen wird der Exponent nun zur Funktionsvariable.</p>
+<p>Beispiel für exponentielles Wachstum ist der Zinseszinseffekt einer mehrperiodigen Geldanlage (Anfangkapital 50 TEUR, Zinssatz 10%):
+<span class="math display">\[\begin{array}{c|cccccc}\hline
+\text{Jahr}&amp;0&amp;1&amp;2&amp;3&amp;4&amp;5\\
+\text{Kapital (TEUR)}&amp;50&amp;55&amp;60,5&amp;66,55&amp;73,21&amp;80,53\\\hline
+\end{array}\]</span>
+Wie bereits besprochen, berechnet sich das Kapital nach <span class="math inline">\(x\)</span> Jahren in dem Fall als:</p>
+<p><span class="math display">\[50\cdot1,1^x.\]</span></p>
+<p>Es könnte also als Funktion von <span class="math inline">\(x\)</span> angesehen werden mit zwei Parametern: die Anfangsinvestition von 50 TEUR und der Wachstumsfaktor von 1,1.</p>
+<div class="definition">
+<p><span id="def:defexp" class="definition"><strong>Definition 11.1  (Exponentialfunktion) </strong></span><strong>Definition (Exponentialfunktion)</strong></p>
+<p>Eine <strong>Exponentialfunktion</strong> beschreibt exponentialles Wachstum und hat die Form:
+<span class="math display">\[f(x) = ab^x, ~~x\in\mathbb R.\]</span>
+Parameter <span class="math inline">\(b\)</span> heisst <strong>Basis</strong> der Funktion. Definitionsbereich von <span class="math inline">\(f(x)\)</span> ist der gesamte <span class="math inline">\(\mathbb R\)</span>, Wertebereich beschränkt sich auf <span class="math inline">\(\mathbb R_+.\)</span></p>
+<div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb13-1"><a href="weitere-funktionen-für-ökonomische-modellierung.html#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="co">#renderPlot({</span></span>
+<span id="cb13-2"><a href="weitere-funktionen-für-ökonomische-modellierung.html#cb13-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">par</span>(<span class="at">xpd=</span>F,<span class="at">lwd=</span><span class="dv">2</span>)</span>
+<span id="cb13-3"><a href="weitere-funktionen-für-ökonomische-modellierung.html#cb13-3" aria-hidden="true" tabindex="-1"></a>  x<span class="ot">&lt;-</span><span class="fu">seq</span>(<span class="sc">-</span><span class="dv">2</span>,<span class="dv">3</span>,<span class="at">by=</span><span class="fl">0.01</span>)</span>
+<span id="cb13-4"><a href="weitere-funktionen-für-ökonomische-modellierung.html#cb13-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">plot</span>(x,<span class="dv">2</span><span class="sc">^</span>x, <span class="at">type=</span><span class="st">&quot;l&quot;</span>, <span class="at">lty=</span><span class="dv">1</span>, <span class="at">axes=</span>F,<span class="at">ylab=</span><span class="st">&quot;&quot;</span>,<span class="at">xlab=</span><span class="st">&quot;&quot;</span>)</span>
+<span id="cb13-5"><a href="weitere-funktionen-für-ökonomische-modellierung.html#cb13-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">lines</span> (x,<span class="fu">exp</span>(x),<span class="at">col=</span><span class="dv">2</span>)</span>
+<span id="cb13-6"><a href="weitere-funktionen-für-ökonomische-modellierung.html#cb13-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">lines</span>(x,<span class="dv">2</span><span class="sc">*</span><span class="dv">3</span><span class="sc">^</span>x,<span class="at">col=</span><span class="dv">3</span>)</span>
+<span id="cb13-7"><a href="weitere-funktionen-für-ökonomische-modellierung.html#cb13-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">legend</span>(<span class="st">&quot;topleft&quot;</span>,<span class="at">legend=</span><span class="fu">c</span>(<span class="st">&quot;a=1,b=2&quot;</span>,<span class="st">&quot;a=1,b=e&quot;</span>,<span class="st">&quot;a=2,b=3&quot;</span>),<span class="at">col=</span><span class="dv">1</span><span class="sc">:</span><span class="dv">3</span>,<span class="at">lty=</span><span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">1</span>,<span class="dv">1</span>),<span class="at">bty=</span><span class="st">&quot;n&quot;</span>)</span>
+<span id="cb13-8"><a href="weitere-funktionen-für-ökonomische-modellierung.html#cb13-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">par</span>(<span class="at">xpd=</span>T)</span>
+<span id="cb13-9"><a href="weitere-funktionen-für-ökonomische-modellierung.html#cb13-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">arrows</span>(<span class="dv">0</span>,<span class="sc">-</span><span class="dv">2</span>,<span class="dv">0</span>,<span class="dv">8</span>)</span>
+<span id="cb13-10"><a href="weitere-funktionen-für-ökonomische-modellierung.html#cb13-10" aria-hidden="true" tabindex="-1"></a><span class="fu">arrows</span>(<span class="sc">-</span><span class="dv">2</span>,<span class="dv">0</span>,<span class="dv">3</span>,<span class="dv">0</span>)</span>
+<span id="cb13-11"><a href="weitere-funktionen-für-ökonomische-modellierung.html#cb13-11" aria-hidden="true" tabindex="-1"></a><span class="fu">text</span>(<span class="dv">3</span>,<span class="sc">-</span><span class="fl">0.5</span>,<span class="st">&quot;x&quot;</span>)</span>
+<span id="cb13-12"><a href="weitere-funktionen-für-ökonomische-modellierung.html#cb13-12" aria-hidden="true" tabindex="-1"></a> <span class="fu">text</span>(<span class="sc">-</span><span class="fl">0.1</span>,<span class="fl">8.5</span>,<span class="fu">bquote</span>(<span class="fu">f</span>(x)<span class="sc">==</span>ab<span class="sc">^</span>x)) </span></code></pre></div>
+<p><img src="_main_files/figure-html/unnamed-chunk-218-1.png" width="672" /></p>
+<div class="sourceCode" id="cb14"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb14-1"><a href="weitere-funktionen-für-ökonomische-modellierung.html#cb14-1" aria-hidden="true" tabindex="-1"></a> <span class="fu">par</span>(<span class="at">xpd=</span>F)</span>
+<span id="cb14-2"><a href="weitere-funktionen-für-ökonomische-modellierung.html#cb14-2" aria-hidden="true" tabindex="-1"></a><span class="co">#}, height=400, width=600)</span></span></code></pre></div>
+</div>
+<ul>
+<li>Alle Exponentialfunktionen haben an der Stelle 0 den Wert <span class="math inline">\(a\)</span>, da <span class="math inline">\(b^0=1\)</span></li>
+<li>Je größer die Basis ist, desto steiler die Exponentialfunktion.</li>
+</ul>
+<div class="example">
+<p><span id="exm:kapital" class="example"><strong>Beispiel 11.1  (Kapitalanlage) </strong></span><strong>Beispiel (Kapitalanlage)</strong></p>
+<p>Die Funktion, die das Wachstum von Vermögen nach <span class="math inline">\(x\)</span> Perioden beschreibt, sieht folgendemaßen aus:</p>
+<p><span class="math display">\[k(x)=50\cdot1,1^x.\]</span></p>
+<p>Es handelt sich also um eine Exponentialfunktion mit <span class="math inline">\(a=50\)</span> und <span class="math inline">\(b=1,1.\)</span></p>
+</div>
+<div class="example">
+<p><span id="exm:corona" class="example"><strong>Beispiel 11.2  (Exponentielles Wachstum: Corona-Pandemie) </strong></span><strong>Beispiel (Corona-Pandemie)</strong></p>
+<p>Wenn man annimt, dass jede infizierte Person zwei weitere Personen im Laufe einer Woche ansteckt, dann sieht die Zumahne an Neuansteckungen wie folgt aus (klicke auf Start):</p>
+<iframe title="Corona" src="www/corona.html" width="600" height="450"></iframe>
+</div>
+</div>
+<div id="logarithmusfunktion" class="section level2 hasAnchor" number="11.2">
+<h2><span class="header-section-number">11.2</span> Logarithmusfunktion<a href="weitere-funktionen-für-ökonomische-modellierung.html#logarithmusfunktion" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>In dem Beispiel mit Kapitalanlage zu bestimmten Konditionen könnten wir uns zudem fragen, wie lange dauert es, bis die angelegte Geldsumme einen bestimmten Wert erreicht. Dies würde bedeuten, dass wir die Exponentialfunktion umkehren müssen.</p>
+<p>Mit einer Umkehrfunktion macht man die Funktionsvorschrift rückgängig. Der Logarithmus ist die Umkehrfunktion zur Exponentialfunktion. Bspw.: <span class="math inline">\(2^{4} =16 \rightarrow \log_2(16)=4\)</span>. Interpretation: „2 hoch wieviel ist 16?“.</p>
+<div class="definition">
+<p><span id="def:deflog" class="definition"><strong>Definition 11.2  (Logarithmusfunktion) </strong></span><strong>Logarithmus und Rechenregeln</strong></p>
+<p>Der <strong>Logarithmus</strong> von <span class="math inline">\(x\)</span> zur Basis <span class="math inline">\(b\)</span> wird geschrieben als:
+<span class="math display">\[f(x)=\log_b(x),~~ x&gt;0\]</span>
+und ist die Umkehrfunktion zu der Exponentialfunktionn <span class="math inline">\(b^{\log_b(x)}=x.\)</span></p>
+<ul>
+<li><p>Wenn <span class="math inline">\(b=e\)</span> spricht man von dem <strong>natürlichen</strong> Logarithmus und bezeichnen ihn als <span class="math inline">\(\ln(x)\)</span>. Nützlich für die Berechnung (mit dem Taschenrechner) ist die Regel:
+<span class="math display">\[\log_b(x) = \frac{\ln(x)}{\ln(b)}.\]</span></p></li>
+<li><p>Wichtige Rechenregeln:
+<span class="math display">\[\log(x\cdot y) = \log(x) + \log(y),\]</span>
+<span class="math display">\[\log\left(\frac xy\right) = \log(x) - \log(y),\]</span>
+<span class="math display">\[\log(x^r) = r\cdot \log(x).\]</span></p></li>
+</ul>
+</div>
+<div class="example">
+<p><span id="exm:elog" class="example"><strong>Beispiel 11.3  (Rechnen mit Logarithmen) </strong></span><strong>Beispiel (Rechnen mit Logarithmen)</strong></p>
+<ul>
+<li><span class="math inline">\(\log_2(24)=\log_2(8\cdot 3)=\log_2(8)+\log_2(3) = 3+\log_2(3) = 3+\frac{\ln(3)}{\ln(2)}\)</span>
+</li></li>
+<li><span class="math inline">\(\log_2(\frac 83)=\log_2(8)-\log_2(3) = 3-\log_2(3)=3-\frac{\ln(3)}{\ln(2)}\)</span>
+</li></li>
+<li><span class="math inline">\(\log_2(8^3)=3\cdot\log_2(8)= 3\cdot 3=9\)</span>
+</li></li>
+</ul>
+</div>
+<div class="example">
+<p><span id="exm:kapital2" class="example"><strong>Beispiel 11.4  (Kapitalanlage) </strong></span><strong>Beispiel (Kapitalanlage)</strong></p>
+<p>Die Funktion, die uns die Periodenanzahl wiedergibt, nach der das Vermögen einen bestimmten Wert erreicht hat, ist:</p>
+<p><span class="math display">\[x(k)=\log_{1,1}\left(\frac{k}{50}\right).\]</span></p>
+<p>Es handelt sich also um eine Logarithmusfunktion mit <span class="math inline">\(b=1,1.\)</span></p>
+<p>Man kann den Ausdruck noch etwas vereinfachen (siehe Rechenregeln):
+<span class="math display">\[x(k)=\log_{1,1}\left(\frac{k}{50}\right) = \frac{\ln\left(\frac{k}{50}\right)}{\ln(1,1)} =
+\frac{\ln(k) - \ln(50)}{\ln(1,1)}.\]</span></p>
+</div>
+<div id="appexp" class="app">
+<p><strong>Graphische Darstellung von Exponentialfunktion</strong></p>
+<p><span class="math display">\[f(x) = a\cdot b^x,\]</span></p>
+<p>mit <span class="math inline">\(a=50\)</span> und <span class="math inline">\(b=1,1.\)</span></p>
+<pre><code>## No trace type specified:
+##   Based on info supplied, a &#39;scatter&#39; trace seems appropriate.
+##   Read more about this trace type -&gt; https://plotly.com/r/reference/#scatter</code></pre>
+<div id="htmlwidget-a089e7a1a29e46f5c574" style="width:700px;height:500px;" class="plotly html-widget "></div>
+<script type="application/json" data-for="htmlwidget-a089e7a1a29e46f5c574">{"x":{"visdat":{"2e7a253b976":["function () ","plotlyVisDat"]},"cur_data":"2e7a253b976","attrs":{"2e7a253b976":{"x":0,"alpha_stroke":1,"sizes":[10,100],"spans":[1,20],"y":0,"mode":"markers","marker":{"color":"rgb(255, 255, 255)","size":7,"line":{"color":"rgb(0, 0, 0)","width":3}},"inherit":true},"2e7a253b976.1":{"x":{},"alpha_stroke":1,"sizes":[10,100],"spans":[1,20],"y":{},"name":"f(x)","type":"scatter","mode":"lines","inherit":true}},"layout":{"width":700,"height":500,"margin":{"b":40,"l":60,"t":25,"r":10},"xaxis":{"domain":[0,1],"automargin":true,"range":[0,200],"tickwidth":1,"tickcolor":"rgba(0,0,255,1)","zeroline":true,"showline":true,"mirror":"ticks","gridcolor":"rgba(224,224,224,1)","gridwidth":1,"zerolinecolor":"rgba(255,0,0,1)","zerolinewidth":1,"linecolor":"rgba(224,224,224,1)","linewidth":1,"title":"x"},"yaxis":{"domain":[0,1],"automargin":true,"tickwidth":1,"tickcolor":"rgba(0,0,255,1)","zeroline":true,"showline":true,"mirror":"ticks","gridcolor":"rgba(224,224,224,1)","gridwidth":1,"zerolinecolor":"rgba(255,0,0,1)","zerolinewidth":1,"linecolor":"rgba(224,224,224,1)","linewidth":1,"title":"y"},"hovermode":"closest","showlegend":true},"source":"A","config":{"modeBarButtonsToAdd":["hoverclosest","hovercompare"],"showSendToCloud":false},"data":[{"x":[0],"y":[0],"mode":"markers","marker":{"color":"rgb(255, 255, 255)","size":7,"line":{"color":"rgb(0, 0, 0)","width":3}},"type":"scatter","error_y":{"color":"rgba(31,119,180,1)"},"error_x":{"color":"rgba(31,119,180,1)"},"line":{"color":"rgba(31,119,180,1)"},"xaxis":"x","yaxis":"y","frame":null},{"x":[0,0.10000000000000001,0.20000000000000001,0.30000000000000004,0.40000000000000002,0.5,0.60000000000000009,0.70000000000000007,0.80000000000000004,0.90000000000000002,1,1.1000000000000001,1.2000000000000002,1.3,1.4000000000000001,1.5,1.6000000000000001,1.7000000000000002,1.8,1.9000000000000001,2,2.1000000000000001,2.2000000000000002,2.3000000000000003,2.4000000000000004,2.5,2.6000000000000001,2.7000000000000002,2.8000000000000003,2.9000000000000004,3,3.1000000000000001,3.2000000000000002,3.3000000000000003,3.4000000000000004,3.5,3.6000000000000001,3.7000000000000002,3.8000000000000003,3.9000000000000004,4,4.1000000000000005,4.2000000000000002,4.2999999999999998,4.4000000000000004,4.5,4.6000000000000005,4.7000000000000002,4.8000000000000007,4.9000000000000004,5,5.1000000000000005,5.2000000000000002,5.3000000000000007,5.4000000000000004,5.5,5.6000000000000005,5.7000000000000002,5.8000000000000007,5.9000000000000004,6,6.1000000000000005,6.2000000000000002,6.3000000000000007,6.4000000000000004,6.5,6.6000000000000005,6.7000000000000002,6.8000000000000007,6.9000000000000004,7,7.1000000000000005,7.2000000000000002,7.3000000000000007,7.4000000000000004,7.5,7.6000000000000005,7.7000000000000002,7.8000000000000007,7.9000000000000004,8,8.0999999999999996,8.2000000000000011,8.3000000000000007,8.4000000000000004,8.5,8.5999999999999996,8.7000000000000011,8.8000000000000007,8.9000000000000004,9,9.0999999999999996,9.2000000000000011,9.3000000000000007,9.4000000000000004,9.5,9.6000000000000014,9.7000000000000011,9.8000000000000007,9.9000000000000004,10,10.100000000000001,10.200000000000001,10.300000000000001,10.4,10.5,10.600000000000001,10.700000000000001,10.800000000000001,10.9,11,11.100000000000001,11.200000000000001,11.300000000000001,11.4,11.5,11.600000000000001,11.700000000000001,11.800000000000001,11.9,12,12.100000000000001,12.200000000000001,12.300000000000001,12.4,12.5,12.600000000000001,12.700000000000001,12.800000000000001,12.9,13,13.100000000000001,13.200000000000001,13.300000000000001,13.4,13.5,13.600000000000001,13.700000000000001,13.800000000000001,13.9,14,14.100000000000001,14.200000000000001,14.300000000000001,14.4,14.5,14.600000000000001,14.700000000000001,14.800000000000001,14.9,15,15.100000000000001,15.200000000000001,15.300000000000001,15.4,15.5,15.600000000000001,15.700000000000001,15.800000000000001,15.9,16,16.100000000000001,16.199999999999999,16.300000000000001,16.400000000000002,16.5,16.600000000000001,16.699999999999999,16.800000000000001,16.900000000000002,17,17.100000000000001,17.199999999999999,17.300000000000001,17.400000000000002,17.5,17.600000000000001,17.699999999999999,17.800000000000001,17.900000000000002,18,18.100000000000001,18.199999999999999,18.300000000000001,18.400000000000002,18.5,18.600000000000001,18.699999999999999,18.800000000000001,18.900000000000002,19,19.100000000000001,19.200000000000003,19.300000000000001,19.400000000000002,19.5,19.600000000000001,19.700000000000003,19.800000000000001,19.900000000000002,20,20.100000000000001,20.200000000000003,20.300000000000001,20.400000000000002,20.5,20.600000000000001,20.700000000000003,20.800000000000001,20.900000000000002,21,21.100000000000001,21.200000000000003,21.300000000000001,21.400000000000002,21.5,21.600000000000001,21.700000000000003,21.800000000000001,21.900000000000002,22,22.100000000000001,22.200000000000003,22.300000000000001,22.400000000000002,22.5,22.600000000000001,22.700000000000003,22.800000000000001,22.900000000000002,23,23.100000000000001,23.200000000000003,23.300000000000001,23.400000000000002,23.5,23.600000000000001,23.700000000000003,23.800000000000001,23.900000000000002,24,24.100000000000001,24.200000000000003,24.300000000000001,24.400000000000002,24.5,24.600000000000001,24.700000000000003,24.800000000000001,24.900000000000002,25,25.100000000000001,25.200000000000003,25.300000000000001,25.400000000000002,25.5,25.600000000000001,25.700000000000003,25.800000000000001,25.900000000000002,26,26.100000000000001,26.200000000000003,26.300000000000001,26.400000000000002,26.5,26.600000000000001,26.700000000000003,26.800000000000001,26.900000000000002,27,27.100000000000001,27.200000000000003,27.300000000000001,27.400000000000002,27.5,27.600000000000001,27.700000000000003,27.800000000000001,27.900000000000002,28,28.100000000000001,28.200000000000003,28.300000000000001,28.400000000000002,28.5,28.600000000000001,28.700000000000003,28.800000000000001,28.900000000000002,29,29.100000000000001,29.200000000000003,29.300000000000001,29.400000000000002,29.5,29.600000000000001,29.700000000000003,29.800000000000001,29.900000000000002,30,30.100000000000001,30.200000000000003,30.300000000000001,30.400000000000002,30.5,30.600000000000001,30.700000000000003,30.800000000000001,30.900000000000002,31,31.100000000000001,31.200000000000003,31.300000000000001,31.400000000000002,31.5,31.600000000000001,31.700000000000003,31.800000000000001,31.900000000000002,32,32.100000000000001,32.200000000000003,32.300000000000004,32.399999999999999,32.5,32.600000000000001,32.700000000000003,32.800000000000004,32.899999999999999,33,33.100000000000001,33.200000000000003,33.300000000000004,33.399999999999999,33.5,33.600000000000001,33.700000000000003,33.800000000000004,33.899999999999999,34,34.100000000000001,34.200000000000003,34.300000000000004,34.399999999999999,34.5,34.600000000000001,34.700000000000003,34.800000000000004,34.899999999999999,35,35.100000000000001,35.200000000000003,35.300000000000004,35.399999999999999,35.5,35.600000000000001,35.700000000000003,35.800000000000004,35.899999999999999,36,36.100000000000001,36.200000000000003,36.300000000000004,36.399999999999999,36.5,36.600000000000001,36.700000000000003,36.800000000000004,36.899999999999999,37,37.100000000000001,37.200000000000003,37.300000000000004,37.399999999999999,37.5,37.600000000000001,37.700000000000003,37.800000000000004,37.899999999999999,38,38.100000000000001,38.200000000000003,38.300000000000004,38.400000000000006,38.5,38.600000000000001,38.700000000000003,38.800000000000004,38.900000000000006,39,39.100000000000001,39.200000000000003,39.300000000000004,39.400000000000006,39.5,39.600000000000001,39.700000000000003,39.800000000000004,39.900000000000006,40,40.100000000000001,40.200000000000003,40.300000000000004,40.400000000000006,40.5,40.600000000000001,40.700000000000003,40.800000000000004,40.900000000000006,41,41.100000000000001,41.200000000000003,41.300000000000004,41.400000000000006,41.5,41.600000000000001,41.700000000000003,41.800000000000004,41.900000000000006,42,42.100000000000001,42.200000000000003,42.300000000000004,42.400000000000006,42.5,42.600000000000001,42.700000000000003,42.800000000000004,42.900000000000006,43,43.100000000000001,43.200000000000003,43.300000000000004,43.400000000000006,43.5,43.600000000000001,43.700000000000003,43.800000000000004,43.900000000000006,44,44.100000000000001,44.200000000000003,44.300000000000004,44.400000000000006,44.5,44.600000000000001,44.700000000000003,44.800000000000004,44.900000000000006,45,45.100000000000001,45.200000000000003,45.300000000000004,45.400000000000006,45.5,45.600000000000001,45.700000000000003,45.800000000000004,45.900000000000006,46,46.100000000000001,46.200000000000003,46.300000000000004,46.400000000000006,46.5,46.600000000000001,46.700000000000003,46.800000000000004,46.900000000000006,47,47.100000000000001,47.200000000000003,47.300000000000004,47.400000000000006,47.5,47.600000000000001,47.700000000000003,47.800000000000004,47.900000000000006,48,48.100000000000001,48.200000000000003,48.300000000000004,48.400000000000006,48.5,48.600000000000001,48.700000000000003,48.800000000000004,48.900000000000006,49,49.100000000000001,49.200000000000003,49.300000000000004,49.400000000000006,49.5,49.600000000000001,49.700000000000003,49.800000000000004,49.900000000000006,50,50.100000000000001,50.200000000000003,50.300000000000004,50.400000000000006,50.5,50.600000000000001,50.700000000000003,50.800000000000004,50.900000000000006,51,51.100000000000001,51.200000000000003,51.300000000000004,51.400000000000006,51.5,51.600000000000001,51.700000000000003,51.800000000000004,51.900000000000006,52,52.100000000000001,52.200000000000003,52.300000000000004,52.400000000000006,52.5,52.600000000000001,52.700000000000003,52.800000000000004,52.900000000000006,53,53.100000000000001,53.200000000000003,53.300000000000004,53.400000000000006,53.5,53.600000000000001,53.700000000000003,53.800000000000004,53.900000000000006,54,54.100000000000001,54.200000000000003,54.300000000000004,54.400000000000006,54.5,54.600000000000001,54.700000000000003,54.800000000000004,54.900000000000006,55,55.100000000000001,55.200000000000003,55.300000000000004,55.400000000000006,55.5,55.600000000000001,55.700000000000003,55.800000000000004,55.900000000000006,56,56.100000000000001,56.200000000000003,56.300000000000004,56.400000000000006,56.5,56.600000000000001,56.700000000000003,56.800000000000004,56.900000000000006,57,57.100000000000001,57.200000000000003,57.300000000000004,57.400000000000006,57.5,57.600000000000001,57.700000000000003,57.800000000000004,57.900000000000006,58,58.100000000000001,58.200000000000003,58.300000000000004,58.400000000000006,58.5,58.600000000000001,58.700000000000003,58.800000000000004,58.900000000000006,59,59.100000000000001,59.200000000000003,59.300000000000004,59.400000000000006,59.5,59.600000000000001,59.700000000000003,59.800000000000004,59.900000000000006,60,60.100000000000001,60.200000000000003,60.300000000000004,60.400000000000006,60.5,60.600000000000001,60.700000000000003,60.800000000000004,60.900000000000006,61,61.100000000000001,61.200000000000003,61.300000000000004,61.400000000000006,61.5,61.600000000000001,61.700000000000003,61.800000000000004,61.900000000000006,62,62.100000000000001,62.200000000000003,62.300000000000004,62.400000000000006,62.5,62.600000000000001,62.700000000000003,62.800000000000004,62.900000000000006,63,63.100000000000001,63.200000000000003,63.300000000000004,63.400000000000006,63.5,63.600000000000001,63.700000000000003,63.800000000000004,63.900000000000006,64,64.100000000000009,64.200000000000003,64.299999999999997,64.400000000000006,64.5,64.600000000000009,64.700000000000003,64.799999999999997,64.900000000000006,65,65.100000000000009,65.200000000000003,65.299999999999997,65.400000000000006,65.5,65.600000000000009,65.700000000000003,65.799999999999997,65.900000000000006,66,66.100000000000009,66.200000000000003,66.299999999999997,66.400000000000006,66.5,66.600000000000009,66.700000000000003,66.799999999999997,66.900000000000006,67,67.100000000000009,67.200000000000003,67.299999999999997,67.400000000000006,67.5,67.600000000000009,67.700000000000003,67.799999999999997,67.900000000000006,68,68.100000000000009,68.200000000000003,68.299999999999997,68.400000000000006,68.5,68.600000000000009,68.700000000000003,68.799999999999997,68.900000000000006,69,69.100000000000009,69.200000000000003,69.299999999999997,69.400000000000006,69.5,69.600000000000009,69.700000000000003,69.799999999999997,69.900000000000006,70,70.100000000000009,70.200000000000003,70.299999999999997,70.400000000000006,70.5,70.600000000000009,70.700000000000003,70.799999999999997,70.900000000000006,71,71.100000000000009,71.200000000000003,71.299999999999997,71.400000000000006,71.5,71.600000000000009,71.700000000000003,71.799999999999997,71.900000000000006,72,72.100000000000009,72.200000000000003,72.299999999999997,72.400000000000006,72.5,72.600000000000009,72.700000000000003,72.799999999999997,72.900000000000006,73,73.100000000000009,73.200000000000003,73.299999999999997,73.400000000000006,73.5,73.600000000000009,73.700000000000003,73.799999999999997,73.900000000000006,74,74.100000000000009,74.200000000000003,74.299999999999997,74.400000000000006,74.5,74.600000000000009,74.700000000000003,74.799999999999997,74.900000000000006,75,75.100000000000009,75.200000000000003,75.299999999999997,75.400000000000006,75.5,75.600000000000009,75.700000000000003,75.799999999999997,75.900000000000006,76,76.100000000000009,76.200000000000003,76.299999999999997,76.400000000000006,76.5,76.600000000000009,76.700000000000003,76.800000000000011,76.900000000000006,77,77.100000000000009,77.200000000000003,77.300000000000011,77.400000000000006,77.5,77.600000000000009,77.700000000000003,77.800000000000011,77.900000000000006,78,78.100000000000009,78.200000000000003,78.300000000000011,78.400000000000006,78.5,78.600000000000009,78.700000000000003,78.800000000000011,78.900000000000006,79,79.100000000000009,79.200000000000003,79.300000000000011,79.400000000000006,79.5,79.600000000000009,79.700000000000003,79.800000000000011,79.900000000000006,80,80.100000000000009,80.200000000000003,80.300000000000011,80.400000000000006,80.5,80.600000000000009,80.700000000000003,80.800000000000011,80.900000000000006,81,81.100000000000009,81.200000000000003,81.300000000000011,81.400000000000006,81.5,81.600000000000009,81.700000000000003,81.800000000000011,81.900000000000006,82,82.100000000000009,82.200000000000003,82.300000000000011,82.400000000000006,82.5,82.600000000000009,82.700000000000003,82.800000000000011,82.900000000000006,83,83.100000000000009,83.200000000000003,83.300000000000011,83.400000000000006,83.5,83.600000000000009,83.700000000000003,83.800000000000011,83.900000000000006,84,84.100000000000009,84.200000000000003,84.300000000000011,84.400000000000006,84.5,84.600000000000009,84.700000000000003,84.800000000000011,84.900000000000006,85,85.100000000000009,85.200000000000003,85.300000000000011,85.400000000000006,85.5,85.600000000000009,85.700000000000003,85.800000000000011,85.900000000000006,86,86.100000000000009,86.200000000000003,86.300000000000011,86.400000000000006,86.5,86.600000000000009,86.700000000000003,86.800000000000011,86.900000000000006,87,87.100000000000009,87.200000000000003,87.300000000000011,87.400000000000006,87.5,87.600000000000009,87.700000000000003,87.800000000000011,87.900000000000006,88,88.100000000000009,88.200000000000003,88.300000000000011,88.400000000000006,88.5,88.600000000000009,88.700000000000003,88.800000000000011,88.900000000000006,89,89.100000000000009,89.200000000000003,89.300000000000011,89.400000000000006,89.5,89.600000000000009,89.700000000000003,89.800000000000011,89.900000000000006,90,90.100000000000009,90.200000000000003,90.300000000000011,90.400000000000006,90.5,90.600000000000009,90.700000000000003,90.800000000000011,90.900000000000006,91,91.100000000000009,91.200000000000003,91.300000000000011,91.400000000000006,91.5,91.600000000000009,91.700000000000003,91.800000000000011,91.900000000000006,92,92.100000000000009,92.200000000000003,92.300000000000011,92.400000000000006,92.5,92.600000000000009,92.700000000000003,92.800000000000011,92.900000000000006,93,93.100000000000009,93.200000000000003,93.300000000000011,93.400000000000006,93.5,93.600000000000009,93.700000000000003,93.800000000000011,93.900000000000006,94,94.100000000000009,94.200000000000003,94.300000000000011,94.400000000000006,94.5,94.600000000000009,94.700000000000003,94.800000000000011,94.900000000000006,95,95.100000000000009,95.200000000000003,95.300000000000011,95.400000000000006,95.5,95.600000000000009,95.700000000000003,95.800000000000011,95.900000000000006,96,96.100000000000009,96.200000000000003,96.300000000000011,96.400000000000006,96.5,96.600000000000009,96.700000000000003,96.800000000000011,96.900000000000006,97,97.100000000000009,97.200000000000003,97.300000000000011,97.400000000000006,97.5,97.600000000000009,97.700000000000003,97.800000000000011,97.900000000000006,98,98.100000000000009,98.200000000000003,98.300000000000011,98.400000000000006,98.5,98.600000000000009,98.700000000000003,98.800000000000011,98.900000000000006,99,99.100000000000009,99.200000000000003,99.300000000000011,99.400000000000006,99.5,99.600000000000009,99.700000000000003,99.800000000000011,99.900000000000006,100,100.10000000000001,100.2,100.30000000000001,100.40000000000001,100.5,100.60000000000001,100.7,100.80000000000001,100.90000000000001,101,101.10000000000001,101.2,101.30000000000001,101.40000000000001,101.5,101.60000000000001,101.7,101.80000000000001,101.90000000000001,102,102.10000000000001,102.2,102.30000000000001,102.40000000000001,102.5,102.60000000000001,102.7,102.80000000000001,102.90000000000001,103,103.10000000000001,103.2,103.30000000000001,103.40000000000001,103.5,103.60000000000001,103.7,103.80000000000001,103.90000000000001,104,104.10000000000001,104.2,104.30000000000001,104.40000000000001,104.5,104.60000000000001,104.7,104.80000000000001,104.90000000000001,105,105.10000000000001,105.2,105.30000000000001,105.40000000000001,105.5,105.60000000000001,105.7,105.80000000000001,105.90000000000001,106,106.10000000000001,106.2,106.30000000000001,106.40000000000001,106.5,106.60000000000001,106.7,106.80000000000001,106.90000000000001,107,107.10000000000001,107.2,107.30000000000001,107.40000000000001,107.5,107.60000000000001,107.7,107.80000000000001,107.90000000000001,108,108.10000000000001,108.2,108.30000000000001,108.40000000000001,108.5,108.60000000000001,108.7,108.80000000000001,108.90000000000001,109,109.10000000000001,109.2,109.30000000000001,109.40000000000001,109.5,109.60000000000001,109.7,109.80000000000001,109.90000000000001,110,110.10000000000001,110.2,110.30000000000001,110.40000000000001,110.5,110.60000000000001,110.7,110.80000000000001,110.90000000000001,111,111.10000000000001,111.2,111.30000000000001,111.40000000000001,111.5,111.60000000000001,111.7,111.80000000000001,111.90000000000001,112,112.10000000000001,112.2,112.30000000000001,112.40000000000001,112.5,112.60000000000001,112.7,112.80000000000001,112.90000000000001,113,113.10000000000001,113.2,113.30000000000001,113.40000000000001,113.5,113.60000000000001,113.7,113.80000000000001,113.90000000000001,114,114.10000000000001,114.2,114.30000000000001,114.40000000000001,114.5,114.60000000000001,114.7,114.80000000000001,114.90000000000001,115,115.10000000000001,115.2,115.30000000000001,115.40000000000001,115.5,115.60000000000001,115.7,115.80000000000001,115.90000000000001,116,116.10000000000001,116.2,116.30000000000001,116.40000000000001,116.5,116.60000000000001,116.7,116.80000000000001,116.90000000000001,117,117.10000000000001,117.2,117.30000000000001,117.40000000000001,117.5,117.60000000000001,117.7,117.80000000000001,117.90000000000001,118,118.10000000000001,118.2,118.30000000000001,118.40000000000001,118.5,118.60000000000001,118.7,118.80000000000001,118.90000000000001,119,119.10000000000001,119.2,119.30000000000001,119.40000000000001,119.5,119.60000000000001,119.7,119.80000000000001,119.90000000000001,120,120.10000000000001,120.2,120.30000000000001,120.40000000000001,120.5,120.60000000000001,120.7,120.80000000000001,120.90000000000001,121,121.10000000000001,121.2,121.30000000000001,121.40000000000001,121.5,121.60000000000001,121.7,121.80000000000001,121.90000000000001,122,122.10000000000001,122.2,122.30000000000001,122.40000000000001,122.5,122.60000000000001,122.7,122.80000000000001,122.90000000000001,123,123.10000000000001,123.2,123.30000000000001,123.40000000000001,123.5,123.60000000000001,123.7,123.80000000000001,123.90000000000001,124,124.10000000000001,124.2,124.30000000000001,124.40000000000001,124.5,124.60000000000001,124.7,124.80000000000001,124.90000000000001,125,125.10000000000001,125.2,125.30000000000001,125.40000000000001,125.5,125.60000000000001,125.7,125.80000000000001,125.90000000000001,126,126.10000000000001,126.2,126.30000000000001,126.40000000000001,126.5,126.60000000000001,126.7,126.80000000000001,126.90000000000001,127,127.10000000000001,127.2,127.30000000000001,127.40000000000001,127.5,127.60000000000001,127.7,127.80000000000001,127.90000000000001,128,128.09999999999999,128.20000000000002,128.30000000000001,128.40000000000001,128.5,128.59999999999999,128.70000000000002,128.80000000000001,128.90000000000001,129,129.09999999999999,129.20000000000002,129.30000000000001,129.40000000000001,129.5,129.59999999999999,129.70000000000002,129.80000000000001,129.90000000000001,130,130.09999999999999,130.20000000000002,130.30000000000001,130.40000000000001,130.5,130.59999999999999,130.70000000000002,130.80000000000001,130.90000000000001,131,131.09999999999999,131.20000000000002,131.30000000000001,131.40000000000001,131.5,131.59999999999999,131.70000000000002,131.80000000000001,131.90000000000001,132,132.09999999999999,132.20000000000002,132.30000000000001,132.40000000000001,132.5,132.59999999999999,132.70000000000002,132.80000000000001,132.90000000000001,133,133.09999999999999,133.20000000000002,133.30000000000001,133.40000000000001,133.5,133.59999999999999,133.70000000000002,133.80000000000001,133.90000000000001,134,134.09999999999999,134.20000000000002,134.30000000000001,134.40000000000001,134.5,134.59999999999999,134.70000000000002,134.80000000000001,134.90000000000001,135,135.09999999999999,135.20000000000002,135.30000000000001,135.40000000000001,135.5,135.59999999999999,135.70000000000002,135.80000000000001,135.90000000000001,136,136.09999999999999,136.20000000000002,136.30000000000001,136.40000000000001,136.5,136.59999999999999,136.70000000000002,136.80000000000001,136.90000000000001,137,137.09999999999999,137.20000000000002,137.30000000000001,137.40000000000001,137.5,137.59999999999999,137.70000000000002,137.80000000000001,137.90000000000001,138,138.09999999999999,138.20000000000002,138.30000000000001,138.40000000000001,138.5,138.59999999999999,138.70000000000002,138.80000000000001,138.90000000000001,139,139.09999999999999,139.20000000000002,139.30000000000001,139.40000000000001,139.5,139.59999999999999,139.70000000000002,139.80000000000001,139.90000000000001,140,140.09999999999999,140.20000000000002,140.30000000000001,140.40000000000001,140.5,140.59999999999999,140.70000000000002,140.80000000000001,140.90000000000001,141,141.09999999999999,141.20000000000002,141.30000000000001,141.40000000000001,141.5,141.59999999999999,141.70000000000002,141.80000000000001,141.90000000000001,142,142.09999999999999,142.20000000000002,142.30000000000001,142.40000000000001,142.5,142.59999999999999,142.70000000000002,142.80000000000001,142.90000000000001,143,143.09999999999999,143.20000000000002,143.30000000000001,143.40000000000001,143.5,143.59999999999999,143.70000000000002,143.80000000000001,143.90000000000001,144,144.09999999999999,144.20000000000002,144.30000000000001,144.40000000000001,144.5,144.59999999999999,144.70000000000002,144.80000000000001,144.90000000000001,145,145.09999999999999,145.20000000000002,145.30000000000001,145.40000000000001,145.5,145.59999999999999,145.70000000000002,145.80000000000001,145.90000000000001,146,146.09999999999999,146.20000000000002,146.30000000000001,146.40000000000001,146.5,146.59999999999999,146.70000000000002,146.80000000000001,146.90000000000001,147,147.09999999999999,147.20000000000002,147.30000000000001,147.40000000000001,147.5,147.59999999999999,147.70000000000002,147.80000000000001,147.90000000000001,148,148.09999999999999,148.20000000000002,148.30000000000001,148.40000000000001,148.5,148.59999999999999,148.70000000000002,148.80000000000001,148.90000000000001,149,149.09999999999999,149.20000000000002,149.30000000000001,149.40000000000001,149.5,149.59999999999999,149.70000000000002,149.80000000000001,149.90000000000001,150,150.09999999999999,150.20000000000002,150.30000000000001,150.40000000000001,150.5,150.59999999999999,150.70000000000002,150.80000000000001,150.90000000000001,151,151.09999999999999,151.20000000000002,151.30000000000001,151.40000000000001,151.5,151.59999999999999,151.70000000000002,151.80000000000001,151.90000000000001,152,152.09999999999999,152.20000000000002,152.30000000000001,152.40000000000001,152.5,152.59999999999999,152.70000000000002,152.80000000000001,152.90000000000001,153,153.09999999999999,153.20000000000002,153.30000000000001,153.40000000000001,153.5,153.60000000000002,153.70000000000002,153.80000000000001,153.90000000000001,154,154.10000000000002,154.20000000000002,154.30000000000001,154.40000000000001,154.5,154.60000000000002,154.70000000000002,154.80000000000001,154.90000000000001,155,155.10000000000002,155.20000000000002,155.30000000000001,155.40000000000001,155.5,155.60000000000002,155.70000000000002,155.80000000000001,155.90000000000001,156,156.10000000000002,156.20000000000002,156.30000000000001,156.40000000000001,156.5,156.60000000000002,156.70000000000002,156.80000000000001,156.90000000000001,157,157.10000000000002,157.20000000000002,157.30000000000001,157.40000000000001,157.5,157.60000000000002,157.70000000000002,157.80000000000001,157.90000000000001,158,158.10000000000002,158.20000000000002,158.30000000000001,158.40000000000001,158.5,158.60000000000002,158.70000000000002,158.80000000000001,158.90000000000001,159,159.10000000000002,159.20000000000002,159.30000000000001,159.40000000000001,159.5,159.60000000000002,159.70000000000002,159.80000000000001,159.90000000000001,160,160.10000000000002,160.20000000000002,160.30000000000001,160.40000000000001,160.5,160.60000000000002,160.70000000000002,160.80000000000001,160.90000000000001,161,161.10000000000002,161.20000000000002,161.30000000000001,161.40000000000001,161.5,161.60000000000002,161.70000000000002,161.80000000000001,161.90000000000001,162,162.10000000000002,162.20000000000002,162.30000000000001,162.40000000000001,162.5,162.60000000000002,162.70000000000002,162.80000000000001,162.90000000000001,163,163.10000000000002,163.20000000000002,163.30000000000001,163.40000000000001,163.5,163.60000000000002,163.70000000000002,163.80000000000001,163.90000000000001,164,164.10000000000002,164.20000000000002,164.30000000000001,164.40000000000001,164.5,164.60000000000002,164.70000000000002,164.80000000000001,164.90000000000001,165,165.10000000000002,165.20000000000002,165.30000000000001,165.40000000000001,165.5,165.60000000000002,165.70000000000002,165.80000000000001,165.90000000000001,166,166.10000000000002,166.20000000000002,166.30000000000001,166.40000000000001,166.5,166.60000000000002,166.70000000000002,166.80000000000001,166.90000000000001,167,167.10000000000002,167.20000000000002,167.30000000000001,167.40000000000001,167.5,167.60000000000002,167.70000000000002,167.80000000000001,167.90000000000001,168,168.10000000000002,168.20000000000002,168.30000000000001,168.40000000000001,168.5,168.60000000000002,168.70000000000002,168.80000000000001,168.90000000000001,169,169.10000000000002,169.20000000000002,169.30000000000001,169.40000000000001,169.5,169.60000000000002,169.70000000000002,169.80000000000001,169.90000000000001,170,170.10000000000002,170.20000000000002,170.30000000000001,170.40000000000001,170.5,170.60000000000002,170.70000000000002,170.80000000000001,170.90000000000001,171,171.10000000000002,171.20000000000002,171.30000000000001,171.40000000000001,171.5,171.60000000000002,171.70000000000002,171.80000000000001,171.90000000000001,172,172.10000000000002,172.20000000000002,172.30000000000001,172.40000000000001,172.5,172.60000000000002,172.70000000000002,172.80000000000001,172.90000000000001,173,173.10000000000002,173.20000000000002,173.30000000000001,173.40000000000001,173.5,173.60000000000002,173.70000000000002,173.80000000000001,173.90000000000001,174,174.10000000000002,174.20000000000002,174.30000000000001,174.40000000000001,174.5,174.60000000000002,174.70000000000002,174.80000000000001,174.90000000000001,175,175.10000000000002,175.20000000000002,175.30000000000001,175.40000000000001,175.5,175.60000000000002,175.70000000000002,175.80000000000001,175.90000000000001,176,176.10000000000002,176.20000000000002,176.30000000000001,176.40000000000001,176.5,176.60000000000002,176.70000000000002,176.80000000000001,176.90000000000001,177,177.10000000000002,177.20000000000002,177.30000000000001,177.40000000000001,177.5,177.60000000000002,177.70000000000002,177.80000000000001,177.90000000000001,178,178.10000000000002,178.20000000000002,178.30000000000001,178.40000000000001,178.5,178.60000000000002,178.70000000000002,178.80000000000001,178.90000000000001,179,179.10000000000002,179.20000000000002,179.30000000000001,179.40000000000001,179.5,179.60000000000002,179.70000000000002,179.80000000000001,179.90000000000001,180,180.10000000000002,180.20000000000002,180.30000000000001,180.40000000000001,180.5,180.60000000000002,180.70000000000002,180.80000000000001,180.90000000000001,181,181.10000000000002,181.20000000000002,181.30000000000001,181.40000000000001,181.5,181.60000000000002,181.70000000000002,181.80000000000001,181.90000000000001,182,182.10000000000002,182.20000000000002,182.30000000000001,182.40000000000001,182.5,182.60000000000002,182.70000000000002,182.80000000000001,182.90000000000001,183,183.10000000000002,183.20000000000002,183.30000000000001,183.40000000000001,183.5,183.60000000000002,183.70000000000002,183.80000000000001,183.90000000000001,184,184.10000000000002,184.20000000000002,184.30000000000001,184.40000000000001,184.5,184.60000000000002,184.70000000000002,184.80000000000001,184.90000000000001,185,185.10000000000002,185.20000000000002,185.30000000000001,185.40000000000001,185.5,185.60000000000002,185.70000000000002,185.80000000000001,185.90000000000001,186,186.10000000000002,186.20000000000002,186.30000000000001,186.40000000000001,186.5,186.60000000000002,186.70000000000002,186.80000000000001,186.90000000000001,187,187.10000000000002,187.20000000000002,187.30000000000001,187.40000000000001,187.5,187.60000000000002,187.70000000000002,187.80000000000001,187.90000000000001,188,188.10000000000002,188.20000000000002,188.30000000000001,188.40000000000001,188.5,188.60000000000002,188.70000000000002,188.80000000000001,188.90000000000001,189,189.10000000000002,189.20000000000002,189.30000000000001,189.40000000000001,189.5,189.60000000000002,189.70000000000002,189.80000000000001,189.90000000000001,190,190.10000000000002,190.20000000000002,190.30000000000001,190.40000000000001,190.5,190.60000000000002,190.70000000000002,190.80000000000001,190.90000000000001,191,191.10000000000002,191.20000000000002,191.30000000000001,191.40000000000001,191.5,191.60000000000002,191.70000000000002,191.80000000000001,191.90000000000001,192,192.10000000000002,192.20000000000002,192.30000000000001,192.40000000000001,192.5,192.60000000000002,192.70000000000002,192.80000000000001,192.90000000000001,193,193.10000000000002,193.20000000000002,193.30000000000001,193.40000000000001,193.5,193.60000000000002,193.70000000000002,193.80000000000001,193.90000000000001,194,194.10000000000002,194.20000000000002,194.30000000000001,194.40000000000001,194.5,194.60000000000002,194.70000000000002,194.80000000000001,194.90000000000001,195,195.10000000000002,195.20000000000002,195.30000000000001,195.40000000000001,195.5,195.60000000000002,195.70000000000002,195.80000000000001,195.90000000000001,196,196.10000000000002,196.20000000000002,196.30000000000001,196.40000000000001,196.5,196.60000000000002,196.70000000000002,196.80000000000001,196.90000000000001,197,197.10000000000002,197.20000000000002,197.30000000000001,197.40000000000001,197.5,197.60000000000002,197.70000000000002,197.80000000000001,197.90000000000001,198,198.10000000000002,198.20000000000002,198.30000000000001,198.40000000000001,198.5,198.60000000000002,198.70000000000002,198.80000000000001,198.90000000000001,199,199.10000000000002,199.20000000000002,199.30000000000001,199.40000000000001,199.5,199.60000000000002,199.70000000000002,199.80000000000001,199.90000000000001,200],"y":[50,50.478829138844347,50.96224382457283,51.450287971054756,51.94300591270423,52.440442408507579,52.942642646089233,53.449652245816651,53.961517264944547,54.478284201798701,55.000000000000007,55.52671205272879,56.058468207030124,56.595316768160231,57.137306503974663,57.684486649358348,58.23690691069816,58.794617470398322,59.357668991439006,59.926112621978575,60.500000000000007,61.079383258001677,61.664315027733139,62.254848444976261,62.851037154372136,63.45293531429418,64.060597601767981,64.674079217438162,65.293435890582913,65.918723884176444,66.550000000000026,67.187321583801847,67.83074653050646,68.48033328947389,69.136140869809353,69.798228845723614,70.466657361944783,71.141487139181976,71.822779479641213,72.5105962725941,73.205000000000027,73.906053742182038,74.613821183557107,75.328366618421285,76.049754956790295,76.778051730295971,77.513323098139281,78.255635853100188,79.005057427605323,79.761655899853508,80.525500000000022,81.296659116400249,82.075203301912822,82.861203280263425,83.654730452469337,84.455856903325582,85.2646554079532,86.081199438410209,86.90556317036588,87.737821489838865,88.578050000000047,89.426325028040281,90.282723632104108,91.147323608289781,92.020203497716281,92.901442593658146,93.791120948748528,94.689319382251242,95.596119487402476,96.511603638822763,97.43585500000006,98.368957530844327,99.310995995314528,100.26205596911876,101.22222384748791,102.19158685302396,103.17023304362338,104.15825132047638,105.15573143614272,106.16276400270503,107.17944050000008,108.20585328392876,109.24209559484601,110.28826156603064,111.34444623223672,112.41074553832637,113.48725634798573,114.57407645252403,115.67130457975701,116.77904040297555,117.8973845500001,119.02643861232166,120.16630515433062,121.31708772263372,122.47889085546039,123.65182009215903,124.83598198278433,126.03148409777644,127.23843503773271,128.45694444327313,129.6871230050001,130.92908247355385,132.18293566976368,133.44879649489712,134.72677994100644,136.01700210137494,137.31958018106278,138.6346325075541,139.96227854150601,141.30263888760044,142.65583530550012,144.02199072090923,145.40122923674008,146.79367614438684,148.19945793510709,149.61870231151244,151.05153819916907,152.49809575830952,153.95850639565663,155.43290277636049,156.92141883605015,158.42418979300018,159.94135216041408,161.47304375882555,163.01940372861782,164.5805725426637,166.15669201908599,167.74790533414048,169.35435703522228,170.97619305399655,172.6135607196552,174.2666087723002,175.93548737645551,177.62034813470811,179.32134410147961,181.03862979693008,182.77236122099461,184.52269586755455,186.28979273874452,188.07381235939624,189.87491679162071,191.69326964953024,193.52903611410107,195.38238294817893,197.25347851162761,199.1424927766231,201.04959734309409,202.97496545431005,204.918772012619,206.8811935953359,208.86240847078281,210.86259661448327,212.88193972551119,214.92062124299682,216.97882636279036,219.05674205428539,221.15455707740352,223.27246199974104,225.41064921388093,227.56931295486947,229.74864931786109,231.94885627593163,234.1701336980623,236.41268336729655,238.67670899906949,240.96241625971396,243.27001278514388,245.59970819971514,247.95171413526904,250.32624425035652,252.72351424964725,255.14374190352481,257.58714706786856,260.05395170402619,262.54437989897644,265.05865788568542,267.59701406365826,270.15967901968668,272.74688554879594,275.35886867539216,277.99586567461199,280.65811609387731,283.34586177465542,286.05934687442885,288.79881788887411,291.56452367425396,294.35671547002414,297.17564692165536,300.02157410367556,302.89475554293142,305.79545224207322,308.72392770326502,311.68044795212114,314.66528156187172,317.67869967776153,320.72097604167936,323.79238701702661,326.89321161382099,330.02373151404316,333.1842310972246,336.37499746628055,339.59632047359156,342.84849274733324,346.13180971805895,349.44656964553775,352.79307364584736,356.17162571872927,359.58253277520316,363.02610466544752,366.50265420694706,370.01249721290861,373.55595252095077,377.13334202206659,380.74499068986489,384.39122661009151,388.07238101043208,391.78878829060227,395.54078605272349,399.32871513199228,403.15291962764184,407.01374693419956,410.91154777304587,414.84667622427327,418.81948975885138,422.83034927110077,426.87961911147534,430.96766711966251,435.09486465799591,439.26158664519158,443.46821159040599,447.71512162761951,452.00270255035048,456.33134384670069,460.7014387347366,465.11338419821078,469.56758102262296,474.06443383162878,478.60435112379554,483.18774530971081,487.81503274944669,492.48663379038146,497.20297280538563,501.96447823137078,506.77158260821028,511.62472261803191,516.52433912488527,521.4708772147917,526.46478623617509,531.5065198406819,536.59653602439141,541.73529716941971,546.92327008592429,552.16092605450785,557.44874086903144,562.78719487983517,568.17677303737389,573.61796493627094,579.11126485979264,584.65717182475009,590.25618962683052,595.90882688636168,601.61559709451672,607.37701865995871,613.19361495593455,619.06591436781878,624.99445034111125,630.97976142989808,637.02239134577189,643.12288900722513,649.28180858951373,655.49970957499795,661.77715680396841,668.11472052595468,674.51297645152806,680.9725058046007,687.49389537522245,694.07773757288794,700.72463048034922,707.43517790794772,714.20998944846508,721.04968053249786,727.9548724843653,734.92619257855017,741.96427409668092,749.06975638506083,756.2432849127448,763.48551133017679,770.79709352838415,778.17869569874256,785.63098839331167,793.15464858574762,800.75035973280194,808.41881183640521,816.16070150634914,823.97673202356691,831.86761340401938,839.83406246319453,847.87680288122283,855.99656526861679,864.19408723264291,872.47011344432246,880.82539570608219,889.26069302004601,897.77677165698401,906.37440522592362,915.05437474442135,923.81746870951406,932.66448316934498,941.59622179547875,950.6134959559073,959.71712478875486,968.90793527669052,978.18676232205041,987.55444882268262,997.01184574851618,1006.5598122188636,1016.1992155804656,1025.9309314862796,1035.7558439750267,1045.674845551498,1055.6888372676303,1065.7987288043596,1076.0054385542555,1086.3098937049513,1096.7130303233675,1107.2157934407501,1117.8191371385121,1128.5240246349078,1139.3314283725297,1150.2423301066476,1161.2577209943934,1172.3786016847957,1183.6059824096812,1194.9408830754464,1206.3843333557043,1217.9373727848251,1229.6010508523634,1241.3764270983986,1253.2645712097828,1265.2665631173124,1277.3834930938331,1289.6164618532753,1301.9665806506496,1314.4349713829913,1327.0227666912749,1339.7311100633078,1352.5611559376,1365.5140698082387,1378.5910283307612,1391.7932194290438,1405.1218424032165,1418.578108038603,1432.1632387157147,1445.8784685212904,1459.7250433604024,1473.7042210696386,1487.8172715313599,1502.0654767890626,1516.4501311638376,1530.9725413719484,1545.6340266435382,1560.4359188424635,1575.3795625872863,1590.4663153734195,1605.6975476964428,1621.0746431766026,1636.5989986844961,1652.272024467969,1668.0951442802216,1684.0697955091432,1700.197429307892,1716.47951072671,1732.9175188460151,1749.5129469107617,1766.2673024660871,1783.1821074942632,1800.258898552946,1817.4992269147658,1834.9046587082437,1852.4767750600579,1870.2171722386815,1888.1274617993811,1906.2092707306167,1924.4642416018382,1942.8940327126977,1961.5003182436894,1980.2847884082407,1999.2491496062428,2018.3951245790681,2037.7244525660651,2057.2388894625497,2076.940207979319,2096.8301978036784,2116.9106657620223,2137.1834359839672,2157.6503500680587,2178.3132672490647,2199.1740645668669,2220.2346370369751,2241.4968978226716,2262.9627784088052,2284.6342287772513,2306.5132175840463,2328.6017323382248,2350.9017795823647,2373.4153850748648,2396.1445939739715,2419.0914710235538,2442.2581007406729,2465.6465876049392,2489.2590562496857,2513.0976516549767,2537.1645393424515,2561.4619055720473,2585.9919575406011,2610.7569235823512,2635.7590533713692,2661.00061812591,2686.4839108147403,2712.211246365433,2738.1849618746542,2764.4074168204747,2790.8809932766967,2817.6080961292519,2844.5911532946616,2871.8326159405865,2899.3349587085058,2927.1006799385009,2955.1323018962148,2983.4323710019771,3012.00345806212,3040.8481585025224,3069.9690926043663,3099.3689057421775,3129.050268624128,3159.0158775346458,3189.2684545793572,3219.8107479323512,3250.6455320858363,3281.7756081021748,3313.2038038683327,3344.9329743527746,3376.9660018648037,3409.3057963163956,3441.9552954865408,3474.9174652881102,3508.1953000372928,3541.7918227255868,3575.7100852944204,3609.9531689123928,3644.5241842551659,3679.4262717880529,3714.662602051284,3750.2363759480354,3786.1508250351953,3822.4092118169219,3859.0148300410228,3895.9710049981454,3933.2810938238631,3970.9484858036321,4008.9766026806828,4047.3688989668581,4086.1288622564134,4125.2600135428393,4164.7659075387155,4204.650132998614,4244.9163130451252,4285.5681054979605,4326.6092032062497,4368.0433343839959,4409.8742629487515,4452.1057888635451,4494.7417484820544,4537.786014897124,4581.2424982925868,4625.1151462984762,4669.4079443496375,4714.1249160477573,4759.2701235268751,4804.847667822396,4850.8616892436276,4897.3163677498997,4944.21592333026,4991.5646163868369,5039.3667481218454,5087.6266609283239,5136.3487387846017,5185.5374076525331,5235.1971358795627,5285.3324346046356,5335.9478581679905,5387.0480045248896,5438.6375156632876,5490.7210780255209,5543.303422934031,5596.3893270211574,5649.9836126630635,5704.0911484177868,5758.7168494675188,5813.8656780650999,5869.5426439847888,5925.7528049773791,5982.5012672296161,6039.7931858280726,6097.6337652274342,6156.0282597232735,6214.9819739293698,6274.5002632595661,6334.5885344142716,6395.2522458716103,6456.4969083832693,6518.3280854751174,6580.7513939525788,6643.7725044108802,6707.397141750178,6771.6310856956015,6836.4801713223078,6901.9502895855221,6968.0473878556995,7034.7774704587719,7102.1465992215963,7170.1608940226297,7238.8265333478375,7308.1497548519692,7378.1368559251969,7448.7941942651614,7520.1281884545378,7592.1453185440769,7664.8521266412699,7738.2552175046494,7812.3612591437559,7887.1769834248935,7962.7091866826204,8038.9647303371676,8115.9505415177182,8193.6736136916788,8272.1410072999934,8351.3598503984831,8431.3373393053971,8512.080739255116,8593.597385058134,8675.8946817673823,8758.9801053508836,8842.8612033708851,8927.5455956694896,9013.0409750608487,9099.3551080299931,9186.4958354383325,9274.4710732359381,9363.2888131806285,9452.9571235639469,9543.4841499441227,9634.8781158859729,9727.1473237079736,9820.3001552364403,9914.3450725669318,10009.290618832993,10105.145418982169,10201.918180559533,10299.617694498691,10398.252835920342,10497.832564938535,10598.365927474571,10699.862056078773,10802.330170760086,10905.779579823628,11010.219680716295,11115.659960880386,11222.109998615488,11329.579463948561,11438.078119512378,11547.61582143239,11658.20252022203,11769.848261686649,11882.563187836095,11996.35753780599,12111.241648787924,12227.225956968425,12344.320998477036,12462.537410343419,12581.885931463617,12702.377403575631,12824.022772244234,12946.833087855317,13070.819506619704,13195.993291586592,13322.365813666718,13449.948552665268,13578.753098324742,13708.791151377762,13840.07452460998,13972.615143933195,14106.425049468657,14241.516396640851,14377.901457281674,14515.592620745252,14654.602395033391,14794.943407931796,14936.628408157216,15079.670266515537,15224.081977070979,15369.876658326515,15517.067554415524,15665.668036304936,15815.691603009844,15967.151882819777,16120.062634536731,16274.437748724979,16430.291248972942,16587.637293167096,16746.490174778079,16906.864324159167,17068.774309857079,17232.234839935431,17397.260763310831,17563.867071101758,17732.068897990404,17901.881523597476,18073.320373870236,18246.401022483802,18421.139192255887,18597.550756575085,18775.651740842786,18955.458323928975,19136.986839641915,19320.253778211936,19505.275787789447,19692.069675957224,19880.652411257259,20071.041124732186,20263.253111481477,20457.305832232596,20653.21691492707,20851.004156321877,21050.685523606109,21252.279156033128,21455.803366568394,21661.276643552948,21868.717652382988,22078.145237205408,22289.578422629627,22503.036415455874,22718.538606419777,22936.104571954049,23155.754075966721,23377.507071636443,23601.383703225252,23827.404307908248,24055.589417621271,24285.959760925951,24518.536264892591,24753.340057001464,24990.39246706176,25229.715029149454,25471.329483563393,25715.257778800089,25961.522073547781,26210.144738699073,26461.148359383402,26714.555737018549,26970.389891381852,27228.674062701612,27489.431713767935,27752.686532064406,28018.462431919739,28286.783556680104,28557.674280902556,28831.159212568986,29107.263195321746,29386.011310720402,29667.428880520045,29951.541468971776,30238.374885144731,30527.955185270843,30820.308675111715,31115.461912348117,31413.441708992814,31714.275133825886,32017.989514853922,32324.612441792447,32634.171768572047,32946.69561586895,33262.212373659204,33580.750703797938,33902.339542622889,34227.008103582928,34554.785879892101,34885.702647208476,35219.788466339312,35557.073685971693,35897.588945429256,36241.365177455853,36588.433611025132,36938.825774177727,37292.573496885176,37649.708913941227,38010.264467881316,38374.272911929322,38741.76731297325,39112.78105456887,39487.347839972179,39865.501695201441,40247.276972127642,40632.708351595502,41021.830846573706,41414.679805335349,41811.290914669451,42211.700203122266,42615.944044270575,43024.059160025754,43436.082623969407,43852.051864721594,44272.004669340415,44695.979186755059,45124.013931231078,45556.147785868889,45992.420006136395,46432.870223434489,46877.53844869764,47326.465076028333,47779.690886366356,48237.257051193752,48699.205136274461,49165.577105430566,49636.415324354188,50111.762564455777,50591.662006750048,51076.157245777948,51565.292293567414,52059.111583631173,52557.659975002993,53060.982756313126,53569.125649901915,54082.13481597363,54600.056856789604,55122.93882090137,55650.828207425046,56183.772970355742,56721.821522924154,57265.022741994304,57813.425972503297,58367.08103194445,58926.038214892105,59490.348297570992,60060.062542468571,60635.232702991503,61215.911028167553,61802.15026739132,62394.003675216576,62991.525016193737,63594.768569753629,64203.789135138904,64818.642036381323,65439.383127328096,66066.068796715437,66698.755973290652,67337.502130984314,67982.365294130461,68633.404042738242,69290.677517813121,69954.245426729001,70624.168048652791,71300.506240019458,71983.321440060929,72672.675676386978,73368.631570619735,74071.25234408275,74780.601823543519,75496.74444701217,76219.745269594438,76949.669969401904,77686.584853518085,78430.556864021419,79181.653584067128,79939.943244025693,80705.494727681711,81478.377578491039,82258.662005897873,83046.418891713387,83841.71979655388,84644.636966342106,85455.243338869899,86273.612550423553,87099.818942473852,87933.937568428271,88776.044200449891,89626.215336340159,90484.528206487666,91351.060780884742,92225.891776209275,93109.100662976314,94000.767672756891,94900.973805465925,95809.800836721246,96727.331325271109,97653.648620494889,98588.836869974184,99532.98102713644,100486.16685897323,101448.48095383021,102420.01072927396,103400.8444400326,104391.07118601253,105390.78092039337,106400.06445779823,107419.0134825444,108447.7205569716,109486.2791298501,110534.78354487056,111593.32904921324,112662.01180220136,113740.92888403586,114830.17830461379,115929.85901243272,117040.07090357805,118160.91483079884,119292.49261266878,120434.90704283511,121588.26189935762,122752.66195413457,123928.21298242149,125115.02177243945,126313.19613507517,127522.844913676,128744.07799393586,129977.00631387872,131221.74187393565,132478.39774711864,133747.08808929339,135027.92814954804,136321.03428066365,137626.52394968341,138944.51574858269,140275.12940504358,141618.48579332948,142974.70694526663,144343.91606132925,145726.23752183051,147121.79689822273,148530.72096450283,149953.13770873004,151389.17634465176,152838.967323441,154302.64234554797,155780.33437266242,157272.17763979328,158778.30766746218,160298.86127401359,161833.97658804504,163383.79306095318,164948.45147960307,166528.09397911697,168122.86405578509,169732.90658010278,171358.36780992866,172999.39540377262,174656.13843420841,176328.74740141493,178017.37424684953,179722.17236704848,181443.2966275634,183180.90337702868,184935.15046136364,186706.19723811309,188494.20459092158,190299.33494414992,192121.75227762928,193961.62214155647,195819.11167153454,197694.38960375334,199587.62629031975,201498.99371473154,203428.6655075,205376.8169619244,207343.62505001371,209329.2684385649,211333.9275053922,213357.78435571215,215401.02283868799,217463.82856412869,219546.38891935174,221648.89308620471,223771.53205825001,225914.49865811688,228077.98755501513,230262.19528242139,232467.32025593147,234693.56279128339,236941.12512255684,239210.2114205416,241501.02781128694,243813.78239482519,246148.68526407503,248505.94852392856,250885.78631051668,253288.41481066361,255714.05228152461,258162.91907041174,260635.23763481254,263131.2325625958,265651.13059241563,268195.16063430771,270763.55379048258,273356.54337632144,275974.36494156835,278617.25629172998,281285.4575096771,283979.21097745292,286698.76139829378,289444.35581885534,292216.24365165719,295014.67669773859,297839.90916953085,300692.19771395368,303571.80143572524,306478.98192090297,309414.00326064479,312377.13207519823,315368.63753812318,318388.79140074097,321437.86801682302,324516.14436751243,327623.90008648392,330761.417485349,333928.98157929775,337126.88011299336,340355.40358670935,343614.84528271807,346905.50129193551,350227.67054081504,353581.65481850528,356967.75880426372,360386.29009513237,363837.55923388392,367321.87973722757,370839.56812429271,374390.94394538034,377976.3298109899,381596.05142112914,385250.43759489659,388939.82030035584,392664.53468469012,396424.91910464567,400221.31515727239,404054.06771095033,407923.52493672195,411830.03833991836,415773.96279208898,419755.65656324208,423775.48135438631,427833.80233039154,431930.98815315915,436067.41101511026,440243.44667299965,444459.47448204545,448715.87743039418,453013.04217391025,457351.35907129786,461731.22221956629,466153.02948982501,470617.18256343063,475124.08696847514,479674.15211662138,484267.79134029965,488905.42193025001,493587.46517343371,498314.34639130131,503086.49497842771,507904.34444152296,512768.33243880747,517678.90081977373,522636.4956653227,527641.56732828356,532694.57047432964,537795.96412327513,542946.2116907771,548145.78103043151,553395.14447627054,558694.77888567536,564045.16568268824,569446.79090175126,574900.14523185499,580405.72406111192,585964.02752176265,591575.56053560262,597240.8328598548,602960.35913347465,608734.65892389754,614564.25677424297,620449.68225095712,626391.46999192634,632390.15975504054,638446.2964672232,644560.43027393892,650733.11658916296,656964.91614584043,663256.39504682226,669608.12481628743,676020.68245166726,682494.65047605289,689030.61699111899,695629.17573054461,702290.92611394555,709016.47330133291,715806.42824807926,722661.40776042454,729582.03455150453,736568.93729791616,743622.75069683406,750744.11552365823,757933.67869023106,765192.09330359916,772520.01872534014,779918.12063146627,787387.07107288728,794927.54853646702,802540.23800665501,810225.8310277079,817985.0257665175,825818.5270760241,833727.04655925429,841711.30263395922,849772.02059787419,857909.932694613,866125.77818017616,874420.30339011375,882794.26180732064,891248.41413047875,899783.52834316937,908400.37978362665,917099.75121517968,925882.43289735506,934749.22265766165,943700.92596407433,952738.35599819373,961862.33372912521,971073.68798805273,980373.25554352661,989761.88117748639,999240.4177619894,1008809.7263366977,1018470.6761870908,1028224.144923428,1038071.018560482,1048012.1915980133,1058048.5671020378,1068181.056786858,1078410.5810978794,1088738.069295235,1099164.4595381883,1109690.6989703677,1120317.7438057999,1131046.5594157707,1141878.1204165302,1152813.4107578145,1163853.4238122415,1174999.162465544,1186251.6392076674,1197611.8762247586,1209080.9054920073,1220659.7688674044,1232349.5181863799,1244151.2153573479,1256065.9324581833,1268094.7518335963,1280238.766193466,1292499.0787120985,1304876.8031284343,1317373.0638472347,1329988.9960412083,1342725.7457541451,1355584.4700050179,1368566.3368930828,1381672.5257040018,1394904.2270169558,1408262.6428128127,1421748.9865833083,1435364.4834412781,1449110.3702319581,1462987.8956453293,1476998.3203295597,1491142.9170055201,1505422.9705823914,1519839.778274402,1534394.6497186515,1549088.907094094,1563923.8852416393,1578900.9317854058,1594021.4072551541,1609286.6852098622,1624698.1523625157,1640257.2087060723,1655965.2676406305,1671823.7561018425,1687834.1146905168,1703997.7978035037,1720316.2737658035,1736791.0249639465,1753423.5479806699,1770215.3537308488,1787167.9675987675,1804282.9295766794,1821561.7944046939,1839006.1317120267,1856617.5261595687,1874397.5775838543,1892347.9011423839,1910470.1274603412,1928765.902778737,1947236.8891039335,1965884.7643586444,1984711.2225343478,2003717.9738451631,2022906.7448832295,2042279.2787755257,2061837.3353422398,2081582.6912566226,2101517.1402063761,2121642.4930566107,2141960.5780143272,2162473.2407945092,2183182.3447877825,2204089.7712296797,2225197.4193715528,2246507.2066530786,2268021.0688764639,2289740.9603822851,2311668.8542270134,2333806.742362272,2356156.6358157601,2378720.5648739599,2401500.5792665612,2424498.7483526482,2447717.1613087081,2471157.9273183867,2494823.1757641104,2518715.0564205139,2542835.7396497149,2567187.4165984993,2591772.2993973363,2616592.6213613562,2641650.6371932174,2666948.6231879131,2692488.8774395795,2718273.7200502255,2744305.4933405216,2770586.5620625652,2797119.3136146865,2823906.1582583492,2850949.5293370704,2878251.8834974924,2905815.7009125394,2933643.4855067045,2961737.7651835373,2990101.0920552481,3018736.0426745741,3047645.2182688219,3076831.2449761559,3106296.7740841848,3136044.4822707772,3166077.0718472418,3196397.2710037935,3227007.8340573753,3257911.5417018915,3289111.2012607735,3320609.646942032,3352409.7400957043,3384514.3694737717,3416926.4514926034,3449648.9304978554,3482684.7790319663,3516036.9981041732,3549708.6174631133,3583702.695872081,3618022.3213868514,3652670.6116362349,3687650.7141052755,3722965.8064211495,3758619.0966418637,3794613.8235476413,3830953.2569351629,3867640.6979145906,3904679.4792094245,3942072.965459289,3979824.5535255368,4017937.6727998592,4056415.7855158029,4095262.3870632639,4134481.0063060513,4174075.205902406,4214048.5826286804,4254404.7677060505,4295147.4271303676,4336280.2620052183,4377807.0088780904,4419731.4400798455,4462057.364067384,4504788.625769591,4547929.1069366559,4591482.7264926471,4635453.4408915481,4679845.2444766555,4724662.1698434046,4769908.288205741,4815587.7097658999,4861704.58408783,4908263.1004741229,4955267.4883465506,5002722.0176303219,5050630.999141912,5098998.7849807031,5147829.768924321,5197128.3868277464,5246899.1170263151,5297146.4807424909,5347875.0424966132,5399089.4105215352,5450794.2371812062,5502994.2193933548,5555694.0990561042,5608898.663478774,5662612.7458167542,5716841.2255105209,5771589.028728948,5826861.1288167397,5882662.5467462754,5938998.3515736898,5995873.6608993271,6053293.6413326915,6111263.5089617139,6169788.5298266523,6228874.0203984296,6288525.3480615737,6348747.9316018429,6409547.2416984141,6470928.8014209038,6532898.1867310582,6595461.0269892598,6658623.0054659611,6722389.8598578861,6786767.3828093177,6851761.4224382732,6917377.8828677312,6983622.7247620281,7050501.9658682561,7118021.6815629946,7186188.0054041659,7255007.1296881866,7324485.3060125578,7394628.8458436755,7465444.1210902501,7536937.5646821018,7609115.6711545046,7681984.99723823,7755552.1624550819,7829823.8497192943,7904806.8059445824,7980507.8426570063,8056933.8366138134,8134091.7304280428,8211988.5331992758,8290631.3211503122,8370027.2382699568,8450183.4969620537,8531107.3787005916,8612806.234691225,8695287.4865390416,8778558.626922708,8862627.2202751972,8947500.9034708496,9033187.3865192048,9119694.4532653447,9207029.9620969519,9295201.8466582615,9384218.1165706515,9474086.8581603486,9564816.2351929471,9656414.4896149803,9748889.9423027169,9842250.9938179348,9936506.1251711249,10031663.898591867,10127732.958306661,10224722.031324087,10322639.928227717,10421495.543976385,10521297.858712226,10622055.938576492,10723778.936532987,10826476.093199728,10930156.73768824,11034830.288451053,11140506.25413733,11247194.234456498,11354903.921050489,11463645.098374022,11573427.644583451,11684261.532434143,11796156.830186289,11909123.702519704,12023172.411457064,12138313.317296159,12254556.879551064,12371913.657902148,12490394.313155539,12610009.608211426,12730770.409041798,12852687.685677558,12975772.513204919,13100036.072771674,13225489.652602769,13352144.649025777,13480012.567506172,13609105.023692366,13739433.744471096,13871010.56903257,14003847.449945979,14137956.454245316,14273349.76452541,14410039.680048844,14548038.61786305,14687359.113928355,14828013.824256789,14970015.526061602,15113377.118918207,15258111.62593583,15404232.194940576,15551752.099669848,15700684.740977952,15851043.648053728,16002842.479649356,16156095.025321193,16310815.20668247,16467017.078667764,16624714.830810029,16783922.788529411,16944655.414434634,17106927.309636831,17270753.21507575,17436148.012859102,17603126.727614291,17771704.527853314,17941896.727350719,18113718.78653454,18287186.313891031,18462315.067382354,18639120.955878101,18817620.04060052,18997828.536583327,19179762.814145014,19363439.40037572,19548874.980638649,19736086.400085792,19925090.665187996,20115904.945280138,20308546.574120592,20503033.051465914,20699382.044660572,20897611.39024166,21097739.095559519,21299783.340413298,21503762.478702512,21709695.040094372,21917599.731706798,22127495.439808153,22339401.231532656,22553336.356612507,22769320.249126632,22987372.529265828,23207513.005115472,23429761.674454629,23654138.726572767,23880664.544103809,24109359.704877481,24340244.983788971,24573341.354685921,24808669.992273759,25046252.274039298,25286109.782192413,25528264.305627018,25772737.841900095,26019552.599230044,26268730.998514198,26520295.675365232,26774269.48216787,27030675.49015452,27289536.991501141,27550877.501443226,27814720.760411657,28081090.736189723,28350011.626090102,28621507.859153051,28895604.09836562,29172325.242901757,29451696.430384658,29733743.039169971,30018490.690651249,30305965.251587551,30596192.836452827,30889199.809808698,31185012.78869912,31483658.645068359,31785164.508202177,32089557.767191932,32396866.073423129,32707117.343086969,33020339.75971638,33336561.77674631,33655812.120098114,33978119.790789574,34303514.067569032,34632024.509575203,34963680.959022403,35298513.543911129,35636552.680765443,35977829.07739567,36322373.735688023,36670217.954420947,37021393.332107924,37375931.76986853,37733865.47432594,38095226.960532725,38460049.054924645,38828364.898302242,39200207.948841989,39575611.985135242,39954611.109256826,40337239.749863043,40723532.66531872,41113524.946855389,41507252.021758541,41904749.656585991,42306053.960417114,42711201.388132475,43120228.743726186,43533173.183648765,43950072.220182508,44370963.724849351,44795885.931850597,45224877.441540934,45657977.223934397,46095224.622244596,46536659.356458828,46982321.526945725,47432251.618098818,47886490.502013646,48345079.442200772,48808060.097334288,49275474.525035664,49747365.185695022,50223774.946327843,50704747.084469065,51190325.292104714,51680553.679640301,52175476.779908702,52675139.552215025,53179587.386420846,53688866.107067719,54203021.977539234,54722101.704264536,55246152.440960623,55775221.792915978,56309357.821315192,56848609.047604337,57393024.45789957,57942653.507436521,58497546.125062943,59057752.717774503,59623324.175293162,60194311.874690987,60770767.685056686,61352743.972207569,61940293.603446722,62533469.95236478,63132326.903689533,63736918.85818018,64347300.737569235,64963527.989551961,65585656.592822485,66213743.062160097,66847844.453562364,67488018.369428337,68134322.963791385,68786816.947601259,69445559.594058499,70110610.7439982,70782030.811326176,71459880.788507164,72144222.252104729,72835117.368376121,73532628.898918599,74236820.206371188,74947755.260170534,75665498.642361388,76390115.553464353,77121671.818398029,77860233.892458797,78605868.86735788,79358644.477315217,80118629.105213732,80885891.788810477,81660502.227008313,82442530.786187604,83232048.506597534,84029127.108810797,84833839.000237837,85646257.281704679,86466455.754093677,87294508.925046742,88130492.015735105,88974480.967691526,89826552.449709147,90686783.864806354,91555253.357257292,92432039.819691896,93317222.900261626,94210883.009875163,95113101.329503044,96023959.817551419,96943541.217308626,97871929.064460695,98809207.694680065,99755462.251287013,100710778.69298303,101675243.80166107,102648945.1902878,103631971.31086268,104624411.46245337,105626355.79930659,106637895.3390395,107659121.97090676,108690128.46414807,109731008.47641572,110781856.56228136,111842768.1818272,112913839.7093166,113995168.44194928,115086852.6086987,116188991.37923725,117301684.87294346,118425034.16799746,119559141.31056322,120704109.32405731,121860042.21850948,123027045.00000994,124205223.68024825,125394685.2861442,126595537.86956859,127807890.51716097,129031853.36023781,130267537.58479722,131515055.44161955,132774520.25646304,134046046.44036044,135329749.50001094,136625746.04827309,137934153.81475863,139255091.65652546,140588679.5688771,141935038.69626161,143294291.34327695,144666560.98578152,146051972.28210935,147450651.08439651,148862724.45001203,150288320.65310043,151727569.19623449,153180600.82217801,154647547.52576482,156128542.56588781,157623720.47760466,159133217.08435968,160657169.51032031,162195716.19283617,163748996.89501327,165317152.71841049,166900326.11585796,168498660.90439585,170112302.27834129,171741396.82247657,173386092.52536514,175046538.79279566,176722886.46135235,178415287.81211978,180123896.58451459,181848867.99025154,183590358.72744378,185348526.99483544,187123532.50617546,188915536.50472426,190724701.77790165,192551192.67207527,194395175.10748759,196256816.59333178,198136286.24296609,200033754.78927669,201949394.60018817,203883379.69431898,205835885.75679302,207807090.1551967,209797171.95569184,211806311.9392828,213834692.61823636,215882498.25266498,217949914.86726269,220037130.26820439,222144334.06020701,224271717.66375089,226419474.33247235,228587799.17071638,230776889.15126106,232986943.13321108,235218161.88006005,237470748.07793152,239744906.35398898,242040843.29502484,244358767.46622771,246698889.43012604,249061421.76571959,251446579.08778805,253854578.06638718,256285637.44653222,258739978.06806606,261217822.88572466,263719396.98938787,266244927.62452736,268794644.21285051,271368778.37313867,273967563.94229162,276591236.99656689,279240035.87302595,281914201.19118547,284613975.87487268,287339605.17429721,290091336.68832672,292869420.38698012,295674108.6341356,298505656.21045256,301364320.33652079,304250360.69622356,307164039.46032852,310105621.31030405,313075373.46235996,316073565.69172692,319100470.35715944,322156362.42567819,325241519.49754924,328356221.83149785,331500752.37017286,334675396.76584595,337880443.40636146,341116183.44133443,344382910.80859601,347680922.26089966,351010517.39287537,354371998.66824603,357765671.44730413,361191844.0146476,364650827.60719013,368142936.44243062,371668487.74699759,375227801.78546792,378821201.88945562,382449014.48698962,386111569.13216293,389809198.5350706,393542238.59203458,397311028.41611242,401115910.36790919,404957230.08667368,408835336.52169734,412750581.96401477,416703322.07840121,420693915.93568867,424722726.04537934,428790118.38857776,432896462.4512381,437042131.25772375,441227501.40470016,445452953.09534109,449718870.17386717,454025640.16041625,458373654.28624135,462763307.52925754,467194998.64991724,471669130.22743559,476186108.6963619,480746344.38349617,485350251.54517025,489998248.40487522,494690757.1912539,499428204.176458,504211019.71486557,509039638.28218329,513914498.51490903,518836043.25017911,523804719.5659982,528820978.82184571,533885276.69968724,538998073.24536276,544159832.91037929,549371024.59410381,554632121.68635213,559943602.11040175,565305948.3664,570719647.5751971,576185191.52259803,581703076.70403039,587273804.36965609,592897880.56989908,598575816.20141733,604308127.05351424,610095333.8549875,615937962.32144189,621836543.20304,627791612.33271682,633803710.67485785,639873384.37443352,646001184.80662167,652187668.62688911,658433397.82155907,664738939.75886571,671104867.24048615,677531758.55358613,684020197.52334404,690570773.56598866,697184081.74234366,703860722.81187689,710601303.28728402,717406435.48957813,724276737.60371506,731212833.7347523,738215353.964535,745284934.40894485,752422217.27567852,759627850.92258751,766902489.91657817,774246795.09306467,781661433.61601245,789147079.03853595,796704411.36408663,804334117.10822761,812036889.3609885,819813427.84983945,827664439.00324643,835590636.01484632,843592738.90823615,851671474.6023711,859827576.97761381,868061786.94238961,876374852.50049531,884767528.81905043,893240578.29708731,901794770.63482344,910430882.90357125,919149699.6163311,927952012.79905975,936838622.06260836,945810334.67537522,954867965.63662863,964012337.75054491,973244281.70095551,982564636.12679613,991974247.69830596,1001473971.1939282,1011064669.5779642,1020747214.0789658,1030522484.2688693,1040391368.1429127,1050354762.2002916,1060413571.5255996,1070568709.8710513,1080821099.739476,1091171672.4681365,1101621368.3133214,1112171136.5357609,1122821935.4868624,1133574732.6957562,1144430504.9572041,1155390238.4203207,1166454928.6781597,1177625580.8581564,1188903209.7134237,1200288839.7149503,1211783505.1446536,1223388250.189337,1235104129.0355489,1246932205.965332,1258873555.4529245,1270929262.2623529,1283100421.5459757,1295388138.9439723,1307793530.6847663,1320317723.6864452,1332961855.6591191,1345727075.2082708,1358614541.9391038,1371625426.5618653,1384760910.9982171,1398022188.4885886,1411410463.7005734,1424926952.8383694,1438572883.7532427,1452349496.05509,1466258041.2250309,1480299782.7290981,1494475996.1330142,1508787969.2180519,1523237002.0980392,1537824407.3374474,1552551510.070631,1567419648.1222067,1582430172.1285672,1597584445.6605992,1612883845.3475342,1628329761.002008,1643923595.7463157,1659666766.1398573,1675560702.3078432,1691606848.0711923,1707806661.0776942,1724161612.9344273,1740673189.341424,1757342890.2266593,1774172229.8822875,1791162737.1022086,1808315955.3209476,1825633442.7538433,1843116772.5386276,1860767532.8783116,1878587327.1854634,1896577774.2278702,1914740508.2755666,1933077179.2493253,1951589452.8705168,1970279010.8124297,1989147550.8530424,2008196787.0292277,2027428449.7924905,2046844286.1661429,2066446059.9040103,2086235551.6506574,2106214559.1031234,2126384897.1742582,2146748398.1575687,2167306911.8936729,2188062305.9383469,2209016465.7321506,2230171294.77174,2251528714.7827573,2273090665.8944116,2294859106.8157234,2316836015.0134358,2339023386.8916841,2361423237.9733257,2384037603.0830407,2406868536.5321817,2429918112.305366,2453188424.2489142,2476681586.2610331,2500399732.4838529,2524345017.4972959,2548519616.5147796,2572925725.5808525,2597565561.770658,2622441363.3913445,2647555390.1854,2672909923.535903,2698507266.6738057,2724349744.8871369,2750439705.7322383,2776779519.247026,2803371578.1662579,2830218298.138938,2857322117.9477243,2884685499.7304792,2912310929.2039404,2940200915.889493,2968357993.341186,2996784719.3758512,3025483676.3054624,3054457471.1717286,3083708735.9828839,3113240127.9528322,3143054329.7424974,3173154049.7035275,3203542022.1243348,3234221007.4784427,3265193792.6753054,3296463191.313436,3328032043.9360085,3359903218.2889013,3392079609.5811725,3424564140.7481155,3457359762.7167473,3490469454.6738806,3523896224.3367686,3557643108.2262874,3591713171.9428358,3626109510.4447803,3660835248.3296099,3695893540.1177921,3731287570.5392904,3767020554.8229275,3803095738.9884219,3839516400.1412687,3876285846.7704458,3913407419.0489163,3950884489.1371198,3988720461.4892588,4026918773.1625714,4065482894.1295719,4104416327.5932202,4143722610.3052206,4183405312.8872647,4223468040.1553965,4263914431.4474902,4304748160.9538088,4345972938.0508327,4387592507.6381845,4429610650.4788284,4472031183.5425291,4514857960.3525419,4558094871.335743,4601745844.1759911,4645814844.1709366,4690305874.5922403,4735222977.0491896,4780570231.855916,4826351758.4020033,4872571715.5267124,4919234301.8967829,4966343756.3877974,5013904358.4693174,5061920428.5935907,5110396328.5880308,5159336462.051465,5208745274.7541094,5258627255.0415077,5308986934.2422047,5359828887.0793839,5411157732.0864611,5462978132.026577,5515294794.3162498,5568112471.4529505,5621435961.4468336,5675270108.2566109,5729619802.2295198,5784489980.5456591,5839885627.6664248,5895811775.787322,5952273505.2951078,6009275945.2292347,6066824273.7478752,6124923718.5982466,6183579557.5915184,6242797119.0822725,6302581782.4524727,6362938978.6002254,6423874190.4330683,6485392953.3660555,6547500855.8246193,6610203539.7521591,6673506701.1226635,6737416090.4580708,6801937513.3506699,6867076830.9905005,6932839960.6977205,6999232876.460248,7066261609.4763756,7133932248.7026615,7202250941.4070816,7271223893.727376,7340857371.234931,7411157699.5038795,7482131264.6857376,7553784514.0895519,7626123956.7674932,7699156164.1062737,7772887770.4240141,7847325473.5729275,7922476035.5477896,7998346283.1001129,8074943108.3584251,8152273469.4542675,8230344391.1543112,8309162965.4985065,8388736352.4442434,8469071780.5169029,8550176547.4664164,8632058020.9302216,8714723639.1025715,8798180911.4101257,8882437419.1942673,8967500816.3996944,9053378830.269743,9140079262.0483589,9227609987.6886673,9315978958.568594,9405194202.2130585,9495263823.0232449],"name":"f(x)","type":"scatter","mode":"lines","marker":{"color":"rgba(255,127,14,1)","line":{"color":"rgba(255,127,14,1)"}},"error_y":{"color":"rgba(255,127,14,1)"},"error_x":{"color":"rgba(255,127,14,1)"},"line":{"color":"rgba(255,127,14,1)"},"xaxis":"x","yaxis":"y","frame":null}],"highlight":{"on":"plotly_click","persistent":false,"dynamic":false,"selectize":false,"opacityDim":0.20000000000000001,"selected":{"opacity":1},"debounce":0},"shinyEvents":["plotly_hover","plotly_click","plotly_selected","plotly_relayout","plotly_brushed","plotly_brushing","plotly_clickannotation","plotly_doubleclick","plotly_deselect","plotly_afterplot","plotly_sunburstclick"],"base_url":"https://plot.ly"},"evals":[],"jsHooks":[]}</script>
+</div>
+<div id="qexp" class="quiz">
+<p><strong>Quiz Exponential- und Logarithmusfunktionen</strong></p>
+<script>
+  // Generate a random question
+    const questionObj10 = {
+      question: "Vereinfache den Term \\(\\log_3(3^5\\cdot 9^r)\\). Welchen Ausdruck bekommst du?",
+      options: [ "\\(5-2r\\)", "\\(5+2r\\)", "\\(3-9r\\)","\\(3+9r\\)"],
+      answer: '2',
+      id: 10
+    };
+</script>
+<p class="question">
+<span id="question-text10"></span>
+</p>
+<div class="options">
+<label>
+<input type="radio" name="option10" value=1> \(5-2r\)
+</label>
+<label>
+<input type="radio" name="option10" value=2> \(5+2r\)
+</label>
+<label>
+<input type="radio" name="option10" value=3> \(3-9r\)
+</label>
+<label>
+<input type="radio" name="option10" value=4> \(3+9r\)
+</label>
+</div>
+<button onclick="checkAnswer_match(questionObj10)">Check</button>
+<p id="result10">
+</p>
+<script>
+  // Display the question
+    document.getElementById('question-text10').textContent = questionObj10.question;
+</script>
+<hr />
+<script>
+  // Generate a random question
+    const questionObj101 = {
+      question: "Vereinfache den Term \\(\\ln(x\\cdot\\text{e}^{3y})\\). Welchen Ausdruck bekommst du?",
+      options: [ "\\(\\ln(x) + 3\\ln(y)\\)", "\\(\\ln(x) \\cdot 3y\\)","\\(\\ln(x) \\cdot 3\\ln(y)\\)","\\(\\ln(x) + 3y\\)"],
+      answer: '4',
+      id: 101
+    };
+</script>
+<p class="question">
+<span id="question-text101"></span>
+</p>
+<div class="options">
+<label>
+<input type="radio" name="option101" value=1> \(\ln(x) + 3\ln(y)\)
+</label>
+<label>
+<input type="radio" name="option101" value=2> \(\ln(x) \cdot 3y\)
+</label>
+<label>
+<input type="radio" name="option101" value=3> \(\ln(x) \cdot 3\ln(y)\)
+</label>
+<label>
+<input type="radio" name="option101" value=4> \(\ln(x) + 3y\)
+</label>
+</div>
+<button onclick="checkAnswer_match(questionObj101)">Check</button>
+<p id="result101">
+</p>
+<script>
+  // Display the question
+    document.getElementById('question-text101').textContent = questionObj101.question;
+</script>
+<hr />
+<script>
+  // Generate a random question
+    const questionObj102 = {
+      question: "Vereinfache den Term \\(\\ln\\big(\\frac{\\text{e}^{3y}}{2}\\big)\\). Welchen Ausdruck bekommst du?",
+      options: ["\\(\\ln(2)-3y\\)", "\\(\\frac{3y}{\\ln(2)}\\)","\\(3y-\\ln(2)\\)", "\\(\\frac{\\ln(2)}{3y}\\)"],
+      answer: '3',
+      id: 102
+    };
+</script>
+<p class="question">
+<span id="question-text102"></span>
+</p>
+<div class="options">
+<label>
+<input type="radio" name="option102" value=1> \(\ln(2)-3y\)
+</label>
+<label>
+<input type="radio" name="option102" value=2> \(\frac{3y}{\ln(2)}\)
+</label>
+<label>
+<input type="radio" name="option102" value=3> \(3y-\ln(2)\)
+</label>
+<label>
+<input type="radio" name="option102" value=4>\(\frac{\ln(2)}{3y}\)
+</label>
+</div>
+<button onclick="checkAnswer_match(questionObj102)">Check</button>
+<p id="result102">
+</p>
+<script>
+  // Display the question
+    document.getElementById('question-text102').textContent = questionObj102.question;
+</script>
+<hr />
+<p id="question">
+<span id="question-text103"></span>
+<input type="number" id="answer103" placeholder="Antwort eingeben"> Bakterienzellen.
+</p>
+<button onclick="checkAnswer_num(questionObj103)">
+Check
+</button>
+<p id="result103">
+</p>
+<script>
+
+ // Generate a random question
+    const questionObj103 = generateQuestion_num(103);
+// Display the question
+    document.getElementById('question-text103').textContent = "Eine Bakterienzelle teilt sich alle \\( 30\\) Sekunden. Wenn vor einer Minute \\(1000\\) Zellen vorhanden waren, dann sind es jetzt" ;
+    questionObj103.answer = Math.pow(2,2)*1000
+</script>
+<hr />
+<p id="question">
+<span id="question-text104"></span>
+<input type="number" id="answer104" placeholder="Antwort eingeben">Minuten bis aus anfänglich \(1000\) Bakterienzellen \(10000\) sich gebildet haben.
+</p>
+<button onclick="checkAnswer_num(questionObj104)">
+Check
+</button>
+<p id="result104">
+</p>
+<script>
+
+ // Generate a random question
+    const questionObj104 = generateQuestion_num(104);
+// Display the question
+    document.getElementById('question-text104').textContent = "Eine Bakterienzelle teilt sich alle \\(30\\) Sekunden. Es dauert etwa";
+    questionObj104.answer = Math.log(10)/Math.log(2)/2
+</script>
+<hr />
+<p id="question">
+<span id="question-text106"></span>
+</p>
+<input type="number" id="answer106" placeholder="Antwort eingeben">
+<button onclick="checkAnswer_num(questionObj106)">Check</button>
+<p id="result106">
+</p>
+<script>
+
+ // Generate a random question
+    const questionObj106 = generateQuestion_num(106);
+// Display the question
+    document.getElementById('question-text106').textContent = "Die so genannte Cobb-Douglas Produktionsfunktion verbindet zwei Produktionsfaktoren, Arbeit \\(L\\) und Kapital \\(K\\), mit der Produktionsmenge in folgender Form: \\(x(K,L)=a\\cdot K^\\alpha\\cdot L^\\beta\\). Ein Unternehmen modelliert ihr Produktionsfunktion mit  \\(a=3\\) und \\(\\beta=\\frac 12\\). Da aber dieses Unternehmen eine neue Technologie einsetzt, ist \\(\\alpha\\) zunächst unbekannt. Finden Sie \\(\\alpha\\), wenn bekannt ist, dass \\(x(K=5,L=10)=150\\).";
+    questionObj106.answer = Math.log(50/10^0.5)/Math.log(5)
+</script>
+<hr />
+<p id="question">
+<span id="question-text105"></span>
+</p>
+<input type="number" id="answer105" placeholder="Antwort eingeben">
+<button onclick="checkAnswer_num(questionObj105)">Check</button>
+<p id="result105">
+</p>
+<script>
+
+ // Generate a random question
+    const questionObj105 = generateQuestion_num(105);
+// Display the question
+    document.getElementById('question-text105').textContent = "Angenommen, Sie legen heute \\(" + (questionObj105.question[1]*100) + "\\) Euro in einem Sparbuch mit Zinssatz \\(" + questionObj105.question[0] + "\\%\\) p. a. an, wobei die Verzinsung jährlich und mit Zinseszins erfolgt. Wieviele Jahre dauert es (ohne weitere Ein- und Auszahlungen) mindestens, bis Sie mehr als \\(" + (questionObj105.question[1]*200)+ "\\) Euro auf dem Sparbuch haben?";
+    questionObj105.answer = Math.log((questionObj105.question[1]*200)/(questionObj105.question[1]*100))/Math.log((1+questionObj105.question[0]/100))
+</script>
+</div>
+
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="funktionen-und-optimierung.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"whatsapp": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": "https://github.com/USERNAME/REPO/edit/BRANCH/10-WeitereFunktionen.Rmd",
+"text": "Edit"
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": ["_main.pdf", "_main.epub"],
+"search": {
+"engine": "fuse",
+"options": null
+},
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/latest.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>

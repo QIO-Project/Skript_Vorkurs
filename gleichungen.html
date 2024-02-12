@@ -1,0 +1,924 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Kapitel 7 Gleichungen | Vor- und Brückenkurs: Wirtschaftsmathematik</title>
+  <meta name="description" content="Das ist der Skript für den Kurs Vor- und Brückenkurs: Wirtschaftsmathematik." />
+  <meta name="generator" content="bookdown 0.34 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Kapitel 7 Gleichungen | Vor- und Brückenkurs: Wirtschaftsmathematik" />
+  <meta property="og:type" content="book" />
+  
+  <meta property="og:description" content="Das ist der Skript für den Kurs Vor- und Brückenkurs: Wirtschaftsmathematik." />
+  <meta name="github-repo" content="rstudio/bookdown-demo" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Kapitel 7 Gleichungen | Vor- und Brückenkurs: Wirtschaftsmathematik" />
+  
+  <meta name="twitter:description" content="Das ist der Skript für den Kurs Vor- und Brückenkurs: Wirtschaftsmathematik." />
+  
+
+<meta name="author" content="Maria Osipenko" />
+
+
+<meta name="date" content="2024-02-12" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="variablen-und-terme.html"/>
+<link rel="next" href="ungleichungen.html"/>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+<script src="libs/htmlwidgets-1.6.2/htmlwidgets.js"></script>
+<script src="libs/plotly-binding-4.10.2/plotly.js"></script>
+<script src="libs/typedarray-0.1/typedarray.min.js"></script>
+<link href="libs/crosstalk-1.2.0/css/crosstalk.min.css" rel="stylesheet" />
+<script src="libs/crosstalk-1.2.0/js/crosstalk.min.js"></script>
+<link href="libs/plotly-htmlwidgets-css-2.11.1/plotly-htmlwidgets.css" rel="stylesheet" />
+<script src="libs/plotly-main-2.11.1/plotly-latest.min.js"></script>
+
+
+<style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { color: #008000; } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { color: #008000; font-weight: bold; } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+<style type="text/css">
+  
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">A Minimal Book Example</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Grundlagen</a>
+<ul>
+<li class="chapter" data-level="1.1" data-path="index.html"><a href="index.html#rechenregeln"><i class="fa fa-check"></i><b>1.1</b> Rechenregeln</a>
+<ul>
+<li class="chapter" data-level="1.1.1" data-path="index.html"><a href="index.html#umwandlung-von-brüchen"><i class="fa fa-check"></i><b>1.1.1</b> Umwandlung von Brüchen</a></li>
+<li class="chapter" data-level="1.1.2" data-path="index.html"><a href="index.html#rehenfolge-der-rechenoperationen"><i class="fa fa-check"></i><b>1.1.2</b> Rehenfolge der Rechenoperationen</a></li>
+<li class="chapter" data-level="1.1.3" data-path="index.html"><a href="index.html#punkt--von-strich-rechnung"><i class="fa fa-check"></i><b>1.1.3</b> “Punkt- von Strich-”Rechnung</a></li>
+<li class="chapter" data-level="1.1.4" data-path="index.html"><a href="index.html#aufmachen-von-klammern-ausmultiplizieren"><i class="fa fa-check"></i><b>1.1.4</b> Aufmachen von Klammern, Ausmultiplizieren</a></li>
+</ul></li>
+<li class="chapter" data-level="1.2" data-path="index.html"><a href="index.html#notation"><i class="fa fa-check"></i><b>1.2</b> Notation</a>
+<ul>
+<li class="chapter" data-level="1.2.1" data-path="index.html"><a href="index.html#auslassen-von-punkt-bei-multiplikation-mit-variablen"><i class="fa fa-check"></i><b>1.2.1</b> Auslassen von Punkt bei Multiplikation mit Variablen</a></li>
+<li class="chapter" data-level="1.2.2" data-path="index.html"><a href="index.html#summen--und-produktzeichen"><i class="fa fa-check"></i><b>1.2.2</b> Summen- und Produktzeichen</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="mengen-und-zahlen.html"><a href="mengen-und-zahlen.html"><i class="fa fa-check"></i><b>2</b> Mengen und Zahlen</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="mengen-und-zahlen.html"><a href="mengen-und-zahlen.html#mengen"><i class="fa fa-check"></i><b>2.1</b> Mengen</a>
+<ul>
+<li class="chapter" data-level="2.1.1" data-path="mengen-und-zahlen.html"><a href="mengen-und-zahlen.html#mengenoperationen"><i class="fa fa-check"></i><b>2.1.1</b> Mengenoperationen</a></li>
+<li class="chapter" data-level="2.1.2" data-path="mengen-und-zahlen.html"><a href="mengen-und-zahlen.html#spezielle-mengen"><i class="fa fa-check"></i><b>2.1.2</b> Spezielle Mengen</a></li>
+<li class="chapter" data-level="2.1.3" data-path="mengen-und-zahlen.html"><a href="mengen-und-zahlen.html#mengen-zur-wahrscheinlichkeitsrechnung"><i class="fa fa-check"></i><b>2.1.3</b> Mengen zur Wahrscheinlichkeitsrechnung</a></li>
+</ul></li>
+<li class="chapter" data-level="2.2" data-path="mengen-und-zahlen.html"><a href="mengen-und-zahlen.html#zahlenmengen"><i class="fa fa-check"></i><b>2.2</b> Zahlenmengen</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="bruchrechnung.html"><a href="bruchrechnung.html"><i class="fa fa-check"></i><b>3</b> Bruchrechnung</a></li>
+<li class="chapter" data-level="4" data-path="potenzen-und-wurzel.html"><a href="potenzen-und-wurzel.html"><i class="fa fa-check"></i><b>4</b> Potenzen und Wurzel</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="potenzen-und-wurzel.html"><a href="potenzen-und-wurzel.html#potenzen"><i class="fa fa-check"></i><b>4.1</b> Potenzen</a></li>
+<li class="chapter" data-level="4.2" data-path="potenzen-und-wurzel.html"><a href="potenzen-und-wurzel.html#wurzel"><i class="fa fa-check"></i><b>4.2</b> Wurzel</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="prozent--und-zinsrechnung.html"><a href="prozent--und-zinsrechnung.html"><i class="fa fa-check"></i><b>5</b> Prozent- und Zinsrechnung</a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="prozent--und-zinsrechnung.html"><a href="prozent--und-zinsrechnung.html#prozentrechnung"><i class="fa fa-check"></i><b>5.1</b> Prozentrechnung</a></li>
+<li class="chapter" data-level="5.2" data-path="prozent--und-zinsrechnung.html"><a href="prozent--und-zinsrechnung.html#zinsrechnung"><i class="fa fa-check"></i><b>5.2</b> Zinsrechnung</a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="variablen-und-terme.html"><a href="variablen-und-terme.html"><i class="fa fa-check"></i><b>6</b> Variablen und Terme</a>
+<ul>
+<li class="chapter" data-level="6.1" data-path="variablen-und-terme.html"><a href="variablen-und-terme.html#umformung-von-termen"><i class="fa fa-check"></i><b>6.1</b> Umformung von Termen</a></li>
+<li class="chapter" data-level="6.2" data-path="variablen-und-terme.html"><a href="variablen-und-terme.html#binomische-formeln-1-3"><i class="fa fa-check"></i><b>6.2</b> Binomische Formeln 1-3</a></li>
+<li class="chapter" data-level="6.3" data-path="variablen-und-terme.html"><a href="variablen-und-terme.html#variablen-in-brüchen"><i class="fa fa-check"></i><b>6.3</b> Variablen in Brüchen</a></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="gleichungen.html"><a href="gleichungen.html"><i class="fa fa-check"></i><b>7</b> Gleichungen</a>
+<ul>
+<li class="chapter" data-level="7.1" data-path="gleichungen.html"><a href="gleichungen.html#definition-einer-gleichung"><i class="fa fa-check"></i><b>7.1</b> Definition einer Gleichung</a></li>
+<li class="chapter" data-level="7.2" data-path="gleichungen.html"><a href="gleichungen.html#lösen-von-gleichungen"><i class="fa fa-check"></i><b>7.2</b> Lösen von Gleichungen</a></li>
+<li class="chapter" data-level="7.3" data-path="gleichungen.html"><a href="gleichungen.html#spezielle-gleichungen"><i class="fa fa-check"></i><b>7.3</b> Spezielle Gleichungen</a>
+<ul>
+<li class="chapter" data-level="7.3.1" data-path="gleichungen.html"><a href="gleichungen.html#faktorisierte-gleichungen"><i class="fa fa-check"></i><b>7.3.1</b> Faktorisierte Gleichungen</a></li>
+<li class="chapter" data-level="7.3.2" data-path="gleichungen.html"><a href="gleichungen.html#betragsgleichungen"><i class="fa fa-check"></i><b>7.3.2</b> Betragsgleichungen</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="8" data-path="ungleichungen.html"><a href="ungleichungen.html"><i class="fa fa-check"></i><b>8</b> Ungleichungen</a>
+<ul>
+<li class="chapter" data-level="8.1" data-path="ungleichungen.html"><a href="ungleichungen.html#definition-von-ungleichungen"><i class="fa fa-check"></i><b>8.1</b> Definition von Ungleichungen</a></li>
+<li class="chapter" data-level="8.2" data-path="ungleichungen.html"><a href="ungleichungen.html#umformung-von-ungleichungen"><i class="fa fa-check"></i><b>8.2</b> Umformung von Ungleichungen</a></li>
+<li class="chapter" data-level="8.3" data-path="ungleichungen.html"><a href="ungleichungen.html#spezielle-ungleichungen"><i class="fa fa-check"></i><b>8.3</b> Spezielle Ungleichungen</a>
+<ul>
+<li class="chapter" data-level="8.3.1" data-path="ungleichungen.html"><a href="ungleichungen.html#faktorisierte-ungleichungen"><i class="fa fa-check"></i><b>8.3.1</b> Faktorisierte Ungleichungen</a></li>
+<li class="chapter" data-level="8.3.2" data-path="ungleichungen.html"><a href="ungleichungen.html#betragsungleichungen"><i class="fa fa-check"></i><b>8.3.2</b> Betragsungleichungen</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="9" data-path="lineare-gleichungssysteme.html"><a href="lineare-gleichungssysteme.html"><i class="fa fa-check"></i><b>9</b> Lineare Gleichungssysteme</a>
+<ul>
+<li class="chapter" data-level="9.1" data-path="lineare-gleichungssysteme.html"><a href="lineare-gleichungssysteme.html#lösung-von-lgs"><i class="fa fa-check"></i><b>9.1</b> Lösung von LGS</a></li>
+</ul></li>
+<li class="chapter" data-level="10" data-path="funktionen-und-optimierung.html"><a href="funktionen-und-optimierung.html"><i class="fa fa-check"></i><b>10</b> Funktionen und Optimierung</a>
+<ul>
+<li class="chapter" data-level="10.1" data-path="funktionen-und-optimierung.html"><a href="funktionen-und-optimierung.html#funktionen"><i class="fa fa-check"></i><b>10.1</b> Funktionen</a></li>
+<li class="chapter" data-level="10.2" data-path="funktionen-und-optimierung.html"><a href="funktionen-und-optimierung.html#lineare-und-quadratische-funktionen-polynome"><i class="fa fa-check"></i><b>10.2</b> Lineare und quadratische Funktionen, Polynome</a></li>
+<li class="chapter" data-level="10.3" data-path="funktionen-und-optimierung.html"><a href="funktionen-und-optimierung.html#ableitung"><i class="fa fa-check"></i><b>10.3</b> Ableitung</a>
+<ul>
+<li class="chapter" data-level="10.3.1" data-path="funktionen-und-optimierung.html"><a href="funktionen-und-optimierung.html#einige-ableitungsregeln"><i class="fa fa-check"></i><b>10.3.1</b> Einige Ableitungsregeln</a></li>
+</ul></li>
+<li class="chapter" data-level="10.4" data-path="funktionen-und-optimierung.html"><a href="funktionen-und-optimierung.html#einfache-optimierungsprobleme"><i class="fa fa-check"></i><b>10.4</b> Einfache Optimierungsprobleme</a></li>
+</ul></li>
+<li class="chapter" data-level="11" data-path="weitere-funktionen-für-ökonomische-modellierung.html"><a href="weitere-funktionen-für-ökonomische-modellierung.html"><i class="fa fa-check"></i><b>11</b> Weitere Funktionen für ökonomische Modellierung</a>
+<ul>
+<li class="chapter" data-level="11.1" data-path="weitere-funktionen-für-ökonomische-modellierung.html"><a href="weitere-funktionen-für-ökonomische-modellierung.html#exponentialfunktion"><i class="fa fa-check"></i><b>11.1</b> Exponentialfunktion</a></li>
+<li class="chapter" data-level="11.2" data-path="weitere-funktionen-für-ökonomische-modellierung.html"><a href="weitere-funktionen-für-ökonomische-modellierung.html#logarithmusfunktion"><i class="fa fa-check"></i><b>11.2</b> Logarithmusfunktion</a></li>
+</ul></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Vor- und Brückenkurs: Wirtschaftsmathematik</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="gleichungen" class="section level1 hasAnchor" number="7">
+<h1><span class="header-section-number">Kapitel 7</span> Gleichungen<a href="gleichungen.html#gleichungen" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<script>
+function checkAnswer_mmc(q) {
+      const selectedOptions = document.querySelectorAll('input[name="option'+q.id+'"]:checked');
+      if (selectedOptions.length === 2) {
+        const userAnswers = Array.from(selectedOptions).map(option => option.value);
+        const correctAnswers = q.answer;
+        const isCorrect = userAnswers.every(answer => correctAnswers.includes(answer));
+
+if (isCorrect) {
+          document.getElementById('result'+q.id).textContent = 'Glückwunsch! Deine Antwort ist richtig.';
+        } else {
+          document.getElementById('result'+q.id).textContent = `Leider falsch. Versuch es nochmal!`;
+        }
+      } else {
+        document.getElementById('result'+q.id).textContent = 'Bitte zwei Optionen auswählen.';
+      }
+    }
+// numeric
+function generateQuestion_num(id) {
+      // Generate two random numbers between 2 and 10
+      const num1 = Math.floor(Math.random() * 10) + 2;
+      const num2 = Math.floor(Math.random() * 10) + 2;
+      const x1 = Math.floor(Math.random() * 100) + 2;
+      const x2 = Math.floor(Math.random() * 100) + 2;
+      const x3 = Math.floor(Math.random() * 100) + 2;
+      const x4 = Math.floor(Math.random() * 100) + 2;
+      const x5 = Math.floor(Math.random() * 100) + 2;
+      const x6 = Math.floor(Math.random() * 100) + 2;
+
+       // Calculate the correct answer
+      let answer = num1*Math.sqrt(x1) + num2*Math.sqrt(x2);
+
+      // Return the question and answer as an object
+      return {
+       // question: num1 + "\\(\\sqrt{x}+\\)"+ num2 + "\\(\\sqrt{y}\\)" + " for \\(x=\\)" + x1 + " and \\(y=\\)" + x2,
+        question: [num1,num2,x1,x2,x3,x4,x5,x6],
+        answer: answer,
+        id: id
+      };
+    }
+
+function checkAnswer_num(q) {
+      const userAnswer = document.getElementById('answer'+q.id).value;
+      const isCorrect = Math.round(parseFloat(userAnswer)*100)/100 === Math.round(q.answer*100)/100;
+
+      if (isCorrect) {
+        document.getElementById('result'+q.id).textContent = 'Glückwunsch! Deine Antwort ist richtig.';
+      } else {
+        document.getElementById('result'+q.id).textContent = `Sorry, incorrect.`;
+      }
+  }
+
+// plain multiple choice
+  function checkAnswer_match(q) {
+      const selectedOption = document.querySelector('input[name="option'+q.id+'"]:checked');
+      if (selectedOption) {
+        const userAnswer = selectedOption.value;
+        const isCorrect = userAnswer === q.answer;
+
+        if (isCorrect) {
+          document.getElementById('result'+q.id).textContent = 'Glückwunsch! Deine Antwort ist richtig.';
+        } else {
+          document.getElementById('result'+q.id).textContent = `Leider falsch. Versuch es nochmal!`;
+        }
+      } else {
+        document.getElementById('result'+q.id).textContent = 'Bitte eine Option wählen.';
+      }
+    }
+</script>
+<div id="definition-einer-gleichung" class="section level2 hasAnchor" number="7.1">
+<h2><span class="header-section-number">7.1</span> Definition einer Gleichung<a href="gleichungen.html#definition-einer-gleichung" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div class="definition">
+<p><span id="def:defgleich" class="definition"><strong>Definition 7.1  (Gleichung) </strong></span><strong>Definition (Gleichung)</strong></p>
+<p>Eine <strong>Gleichung</strong> ist ein mathematischer Ausdruck der Form:</p>
+<p>Linke Seite = Rechte Seite</p>
+<p>wo in der Regel mindestens eine Variable ( <span class="math inline">\(x\)</span> ) vorkommt.</p>
+</div>
+<p>Gleichungen beschreiben Zusammenhänge zwischen Ausdrücken oder stellen ein zu lösendes Problem dar. Eine Gleichung wird durch manche Variablenwerte erfüllt und durch andere Werte nicht. Um dies zu prüfen, müssen die Werte in die Gleichung eingesetzt werden. Die Gleichung wird durch die eingesetzten Werte <strong>erfüllt</strong>, falls die beiden Seiten der Gleichung übereinstimmen:</p>
+<div class="example">
+<p><span id="exm:egleich" class="example"><strong>Beispiel 7.1  (Gleichung) </strong></span><strong>Beispiel (eine Gleichung)</strong></p>
+<p>Die Gleichung <span class="math inline">\(2x-1=x^2\)</span> besitzt die rechte Seite <span class="math inline">\(x^2\)</span> und die linke Seite <span class="math inline">\(2x-1\)</span>. Einsetzen von <span class="math inline">\(x=1\)</span> ergibt den Wert <span class="math inline">\(1\)</span> auf beiden Seiten, also ist <span class="math inline">\(x=1\)</span> eine Lösung dieser Gleichung. Dagegen ist <span class="math inline">\(x=2\)</span> keine Lösung, denn eine Auswertung ergibt <span class="math inline">\(4\)</span> auf der linken und <span class="math inline">\(3\)</span> auf der rechten Seite der Gleichung.</p>
+</div>
+</div>
+<div id="lösen-von-gleichungen" class="section level2 hasAnchor" number="7.2">
+<h2><span class="header-section-number">7.2</span> Lösen von Gleichungen<a href="gleichungen.html#lösen-von-gleichungen" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Eine Gleichung zu lösen bedeutet alle Zahlen zu finden, die, wenn sie an der Stelle der Variablen <span class="math inline">\(x\)</span> in die Gleichung eingesetzt sind, beide Seiten angleichen.</p>
+<div class="definition">
+<p><span id="def:defgleichlos" class="definition"><strong>Definition 7.2  (Lösung einer Gleichung) </strong></span><strong>Definition (Lösungsmenge)</strong></p>
+<p>Die <strong>Lösungsmenge</strong> <span class="math inline">\(L\)</span> einer Gleichung ist die Menge aller Zahlen, die, wenn in die Gleichung an Stelle der Variablen eingesetzt, dazu führen, dass die Gleichung erfüllt ist. Die Lösungsmenge wird in der Mengennotation angegeben (bspw. <span class="math inline">\(L=\{1;2;4\}\)</span> ).</p>
+</div>
+<p>Typische Lösungsschritte für Gleichungen sind:</p>
+<ul>
+<li>das Finden einer Gleichung, die ein textuell gegebenes Problem beschreibt.</li>
+<li>Umformen der Gleichung, insb. Auflösen nach den Variablen.</li>
+<li>Angabe der Lösungen einer Gleichung, d.h. aller Werte für die Unbestimmten, welche die Gleichung erfüllen.</li>
+</ul>
+<div class="example">
+<p><span id="exm:wptina" class="example"><strong>Beispiel 7.2  (Wertpapierthändlerin Tina) </strong></span><strong>Beispiel (Wertpapierthändlerin Tina)</strong></p>
+<p>Tina handelt gern mit Wertpapieren in ihrem Online-Wertpapierdepot. Sie tätigt eine Transaktion zum Kauf von Wertpapieren und bezahlt insgesamt <span class="math inline">\(\color{blue}{100}\)</span> Euro. Für jede Transaktion muss sie den festen Preis von <span class="math inline">\(\color{red}1\)</span> Euro und den variablen Preis von <span class="math inline">\(\color{green}{10\%}\)</span> (oder <span class="math inline">\(\color{green}{0,1}\)</span>) des Transaktionsvolumen an die Bank zahlen. Wie viel Geld hat nun Tina in die Wertpapiere investiert?</p>
+<details>
+<summary>
+Antwort
+</summary>
+<p>Die Aufgabenstellung wird zunächst in eine Gleichung übersetzt, wobei die Variable <span class="math inline">\(x\)</span> den investierten Betrag (den Transaktionsvolumen) darstellt. Die Gleichung lautet dann <span class="math inline">\(\color{red}1 + \color{green}{0,1} x + x = \color{blue}{100}\)</span>. Sie drückt aus, dass der gezahlte Betrag (rechte Seite) die festen und die variablen Kosten der Transaktion und die eigentliche Investition in die Wertpapiere decken soll (linke Seite).
+<br/><br/> Diese Gleichung kann dann nach <span class="math inline">\(x\)</span> aufgelöst werden, in dem man von beiden Seiten <span class="math inline">\(1\)</span> abzieht und dann durch <span class="math inline">\(1,1\)</span> teilt.</p>
+Die Lösung ist <span class="math inline">\(x=90\)</span>, Tina hat also eine Investition von 90 Euro in ihr Wertpapiergeschäft getätigt.
+</details>
+</div>
+<p>Zum Umformen der Gleichungen sind folgende Operationen erlaubt:</p>
+<ul>
+<li>Addieren/Subtrahieren von Termen auf beiden Seiten der Gleichung,</li>
+<li>Vertauschung der beiden Seiten der Gleichung,</li>
+<li>Umformen von Termen auf einer Seite der Gleichung,</li>
+<li>bekannte Zusammenhänge einsetzen,</li>
+<li>Multiplikation/Division mit einem Term (dieser Term darf nicht Null sein),</li>
+<li>Bilden des Kehrwerts auf beiden Seiten der Gleichung (beide Seiten müssen verschieden von Null sein).</li>
+</ul>
+<p>Solche Umformungen verändern nicht die Lösungsmenge einer Gleichung, man spricht von <strong>äquivalenten</strong>
+Gleichungen in dem Fall und drückt dies durch das Symbol “<span class="math inline">\(\Leftrightarrow\)</span>” aus.</p>
+<div class="example">
+<p><span id="exm:eumfgl" class="example"><strong>Beispiel 7.3  (Umformen von Gleichungen) </strong></span><strong>Beispiel (Umformen von Gleichungen)</strong></p>
+<p>Umformen von <span class="math inline">\(12+t=\frac{2t}{2t^2}+t\)</span>.</p>
+<p><span class="math display">\[\begin{align}
+&amp;12+t=\frac{2t}{2t^2}+t, ~~| -t,\\
+&amp;\Leftrightarrow 12=\frac{2t}{2t^2}, ~~|\text{Gleichung umgedreht},\\
+&amp;\Leftrightarrow \frac{2t}{2t^2}=12, ~~|: 2t,\\
+&amp;\Leftrightarrow \frac 1t = 12, ~~| \text{Kehrwerte genommen},\\
+&amp;\Leftrightarrow t = \frac 1{12}.
+\end{align}\]</span></p>
+</div>
+<div id="qumfgl" class="quiz">
+<p><strong>Quiz Lösen von Gleichungen</strong></p>
+<script>
+  // Generate a random question
+    const questionObj61 = {
+      question: "Löse die Gleichung \\(10 - (x + 3x +1)\\cdot 5 = 25\\). ",
+      options: ["\\(x=1\\)", "\\(x=-1\\)", "\\(x=-0,5\\)",  "\\(x=0,5\\)"],
+      answer: '2',
+      id: 61
+    };
+</script>
+<p class="question">
+<span id="question-text61"></span>
+</p>
+<div class="options">
+<label>
+<input type="radio" name="option61" value=1> \(x=1\)
+</label>
+<label>
+<input type="radio" name="option61" value=2> \(x=-1\)
+</label>
+<label>
+<input type="radio" name="option61" value=3> \(x=-0,5\)
+</label>
+<label>
+<input type="radio" name="option61" value=4> \(x=0,5\)
+</label>
+<label>
+<input type="radio" name="option61" value=5> \(x=0\)’
+</label>
+</div>
+<button onclick="checkAnswer_match(questionObj61)">Check</button>
+<p id="result61">
+</p>
+<script>
+  // Display the question
+    document.getElementById('question-text61').textContent = questionObj61.question;
+</script>
+<hr />
+<script>
+  // Generate a random question
+    const questionObj69 = {
+      question: "Löse die Gleichung \\(2x^2 = 2(x-1)^2\\)",
+      options: ["\\(x=-1\\)", "\\(x=1\\)", "\\(x=-0,5\\)",     "\\(x=0,5\\)"],
+      answer: '4',
+      id: 69
+    };
+</script>
+<p class="question">
+<span id="question-text69"></span>
+</p>
+<div class="options">
+<label>
+<input type="radio" name="option69" value=1> \(x=-1\)
+</label>
+<label>
+<input type="radio" name="option69" value=2> \(x=1\)
+</label>
+<label>
+<input type="radio" name="option69" value=3> \(x=-0,5\)
+</label>
+<label>
+<input type="radio" name="option69" value=4> \(x=0,5\)
+</label>
+<label>
+<input type="radio" name="option69" value=5> \(x=0\)
+</label>
+</div>
+<button onclick="checkAnswer_match(questionObj69)">Check</button>
+<p id="result69">
+</p>
+<script>
+  // Display the question
+    document.getElementById('question-text69').textContent = questionObj69.question;
+</script>
+<hr />
+<script>
+  // Generate a random question
+    const questionObj610 = {
+      question: "Löse die Gleichung für \\(x\\) (\\(a\\) ist ein Parameter) \\(\\frac 15 x - \\frac 13 x + 2 = a\\)",
+      options: [ "\\(x=30 - 15a\\)", "\\(x=15 a - 30\\)",  "\\(x=15 - 7,5a\\)", "\\(x=7,5a - 15\\)"],
+      answer: '3',
+      id: 610
+    };
+</script>
+<p class="question">
+<span id="question-text610"></span>
+</p>
+<div class="options">
+<label>
+<input type="radio" name="option610" value=1> \(x=30 - 15a\)
+</label>
+<label>
+<input type="radio" name="option610" value=2> \(x=15 a - 30\)
+</label>
+<label>
+<input type="radio" name="option610" value=3> \(x=15 - 7,5a\)
+</label>
+<label>
+<input type="radio" name="option610" value=4> \(x=7,5a - 15\)
+</label>
+<label>
+<input type="radio" name="option610" value=5> \(x=30a - 15\)
+</label>
+</div>
+<button onclick="checkAnswer_match(questionObj610)">Check</button>
+<p id="result610">
+</p>
+<script>
+  // Display the question
+    document.getElementById('question-text610').textContent = questionObj610.question;
+</script>
+<hr />
+<p id="question">
+<span id="question-text62"></span>
+</p>
+<input type="number" id="answer62" placeholder="Antwort eingeben">
+<button onclick="checkAnswer_num(questionObj62)">Check</button>
+<p id="result62">
+</p>
+<script>
+
+ // Generate a random question
+    const questionObj62 = generateQuestion_num(62);
+// Display the question
+    document.getElementById('question-text62').textContent = "Löse die Gleichung \\(" + questionObj62.question[1] + "= " + questionObj62.question[2] + "x - (" + questionObj62.question[0] + " - " + questionObj62.question[3]+ "x)\\). Runde auf vier Nachkommastellen.";
+    questionObj62.answer = (questionObj62.question[1]+ questionObj62.question[0])/(questionObj62.question[2]+questionObj62.question[3]);
+    
+</script>
+<hr />
+<p id="question">
+<span id="question-text6"></span>
+</p>
+<input type="number" id="answer6" placeholder="Antwort eingeben">
+<button onclick="checkAnswer_num(questionObj6)">Check</button>
+<p id="result6">
+</p>
+<script>
+
+ // Generate a random question
+    const questionObj6 = generateQuestion_num(6);
+// Display the question
+    document.getElementById('question-text6').textContent = "Löse die Gleichung \\(" + questionObj6.question[1] + "-("+questionObj6.question[0] +"x +" + questionObj6.question[2] + ") =  "+ questionObj62.question[1] + "(" + questionObj6.question[3]+ "-" + questionObj6.question[1]+"x)"+"\\). Runde auf vier Nachkommastellen.";
+    questionObj6.answer = (questionObj62.question[1]*questionObj6.question[3]-questionObj6.question[1] + questionObj6.question[2])/(questionObj62.question[1]*questionObj6.question[1]-questionObj6.question[0])
+</script>
+<hr />
+<p id="question">
+<span id="question-text63"></span>
+</p>
+<input type="number" id="answer63" placeholder="Antwort eingeben">
+<button onclick="checkAnswer_num(questionObj63)">Check</button>
+<p id="result63">
+</p>
+<script>
+
+ // Generate a random question
+    const questionObj63 = generateQuestion_num(63);
+// Display the question
+    document.getElementById('question-text63').textContent = "Löse die Gleichung \\(" + questionObj63.question[1] + "-("+questionObj63.question[0] +"x +" + questionObj63.question[2] + ") =  "+ questionObj62.question[1] + "(" + questionObj63.question[3]+ "-" + questionObj63.question[1]+"x)"+"\\). Runde auf vier Nachkommastellen.";
+    questionObj63.answer = (questionObj62.question[1]*questionObj63.question[3]-questionObj63.question[1] + questionObj63.question[2])/(questionObj62.question[1]*questionObj63.question[1]-questionObj63.question[0])
+</script>
+<hr />
+<p id="question">
+<span id="question-text64"></span>
+</p>
+<input type="number" id="answer64" placeholder="Antwort eingeben">
+<button onclick="checkAnswer_num(questionObj64)">Check</button>
+<p id="result64">
+</p>
+<script>
+
+ // Generate a random question
+    const questionObj64 = generateQuestion_num(64);
+// Display the question
+    document.getElementById('question-text64').textContent = "Löse die Gleichung \\(" + questionObj64.question[0] + "x-"+ questionObj6.question[1]+"("+questionObj64.question[1] +"+ " + questionObj6.question[0] + "x) = " + questionObj64.question[2]+"\\). Runde auf vier Nachkommastellen.";
+    questionObj64.answer = (questionObj64.question[2]+questionObj6.question[1]*questionObj64.question[1])/(questionObj64.question[0]- questionObj6.question[1]*questionObj6.question[0])
+</script>
+<hr />
+<p id="question">
+<span id="question-text65"></span>
+</p>
+<input type="number" id="answer65" placeholder="Antwort eingeben">
+<button onclick="checkAnswer_num(questionObj65)">Check</button>
+<p id="result65">
+</p>
+<script>
+
+ // Generate a random question
+    const questionObj65 = generateQuestion_num(65);
+// Display the question
+    document.getElementById('question-text65').textContent = "Löse die Gleichung \\(" + questionObj65.question[0] + "x-"+ questionObj6.question[1]+"("+questionObj65.question[1] + "+ " + questionObj6.question[0] + "x) = " + questionObj65.question[2]+ "\\). Runde auf vier Nachkommastellen.";
+    questionObj65.answer = (questionObj65.question[2]+questionObj6.question[1]*questionObj65.question[1])/(questionObj65.question[0]- questionObj6.question[1]*questionObj6.question[0])
+</script>
+<hr />
+<p id="question">
+<span id="question-text66"></span>
+</p>
+<input type="number" id="answer66" placeholder="Antwort eingeben">
+<button onclick="checkAnswer_num(questionObj66)">Check</button>
+<p id="result66">
+</p>
+<script>
+
+ // Generate a random question
+    const questionObj66 = generateQuestion_num(66);
+// Display the question
+    document.getElementById('question-text66').textContent = "Gib die Lösung der linearen Gleichung \\("+questionObj66.question[0] + "x-"+ questionObj6.question[0] + " = " + "\\frac x{" + questionObj66.question[1] + "} +  " + questionObj6.question[1] + "\\) an. Runde auf vier Nachkommastellen";
+    questionObj66.answer = (questionObj66.question[1]*questionObj6.question[1]+ questionObj66.question[1]*questionObj6.question[0])/(questionObj66.question[1]*questionObj66.question[0]-1)
+</script>
+<hr />
+<p id="question">
+<span id="question-text67"></span>
+</p>
+<input type="number" id="answer67" placeholder="Antwort eingeben">
+<button onclick="checkAnswer_num(questionObj67)">Check</button>
+<p id="result67">
+</p>
+<script>
+
+ // Generate a random question
+    const questionObj67 = generateQuestion_num(67);
+// Display the question
+    document.getElementById('question-text67').textContent = "Gib die Lösung der linearen Gleichung \\("+questionObj67.question[0] + "x-"+ questionObj62.question[0] + " = " + "\\frac x{" + questionObj67.question[1] + "} +  " + questionObj62.question[1] + "\\) an. Runde auf vier Nachkommastellen";
+    questionObj67.answer = (questionObj67.question[1]*questionObj62.question[1]+ questionObj67.question[1]*questionObj62.question[0])/(questionObj67.question[1]*questionObj67.question[0]-1)
+</script>
+<hr />
+<p id="question">
+<span id="question-text68"></span>
+</p>
+<input type="number" id="answer68" placeholder="Antwort eingeben">
+<button onclick="checkAnswer_num(questionObj68)">Check</button>
+<p id="result68">
+</p>
+<script>
+
+ // Generate a random question
+    const questionObj68 = generateQuestion_num(68);
+// Display the question
+    document.getElementById('question-text68').textContent = "Gib die Lösung der linearen Gleichung \\(\\frac{(x + "+questionObj68.question[0] + ")\\cdot (-"+ questionObj68.question[1] + ")} {" +  questionObj67.question[0] + "x} = " + questionObj67.question[1] + "\\) an.";
+    questionObj68.answer = (questionObj68.question[1]*questionObj68.question[0])/(-questionObj68.question[1]-questionObj67.question[1]*questionObj67.question[0])
+</script>
+<hr />
+<p id="question">
+<span id="question-text611"></span>
+</p>
+<input type="number" id="answer611" placeholder="Antwort eingeben">
+<button onclick="checkAnswer_num(questionObj611)">Check</button>
+<p id="result611">
+</p>
+<script>
+
+"Die leidenschaftliche Wertpapierhändlerin Tina hat die Bank gewechselt. Ihr neues Depot bietet ihr eine feste Transaktionsgebühr von \\(5\\) Euro aber dafür nur \\(5\\%\\) Gebühr auf das Transaktionsvolumen. Sie möchte nun  berechnen, wie viel sie in die Wertpapiere investiert ( \\(x\\) ), wenn sie insgesamt \\(215\\) Euro bezahlt."
+
+ // Generate a random question
+    const questionObj611 = generateQuestion_num(611);
+// Display the question
+    document.getElementById('question-text611').textContent = "Die leidenschaftliche Wertpapierhändlerin Tina hat die Bank gewechselt. Ihr neues Depot bietet ihr eine feste Transaktionsgebühr von \\(" +  questionObj611.question[0] + "\\) Euro und \\(" + questionObj611.question[1] + "\\%\\) Gebühr auf das Transaktionsvolumen. Sie möchte nun  berechnen, wie viel sie in die Wertpapiere investiert ( \\(x\\) ), wenn sie insgesamt \\(" + (questionObj611.question[2]*100) + "\\) Euro bezahlt. Runde auf vier Nachkommastellen.";
+    questionObj611.answer = (questionObj611.question[2]*100-questionObj611.question[0])/(1+questionObj611.question[1]/100)
+</script>
+</div>
+</div>
+<div id="spezielle-gleichungen" class="section level2 hasAnchor" number="7.3">
+<h2><span class="header-section-number">7.3</span> Spezielle Gleichungen<a href="gleichungen.html#spezielle-gleichungen" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="faktorisierte-gleichungen" class="section level3 hasAnchor" number="7.3.1">
+<h3><span class="header-section-number">7.3.1</span> Faktorisierte Gleichungen<a href="gleichungen.html#faktorisierte-gleichungen" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div class="definition">
+<p><span id="def:defgleichfakt" class="definition"><strong>Definition 7.3  (Faktorisierte Gleichung) </strong></span><strong>Definition (Faktorisierte Gleichung)</strong></p>
+<p>Ist eine Gleichung, in der die rechte Seite gleich null ist, in faktorisierter Form gebenen oder lässt sie sich in Faktoren zerlegen, so kann man sie lösen, in dem man jeden Faktor gleich Null setzt.</p>
+<p>Zwei Bedingungen müssen also erfüllt sein:</p>
+<ul>
+<li>auf der rechten Seite der Gleichung stehe <span class="math inline">\(0\)</span></li>
+<li>die linke Seite der Gleichung besteht aus Faktoren (bspw. <span class="math inline">\((x-1)(x+2)=0\)</span>)</li>
+</ul>
+</div>
+<div class="example">
+<p><span id="exm:efaktgl" class="example"><strong>Beispiel 7.4  (Faktorisieren von Gleichungen) </strong></span><strong>Beispiel (Lösung einer faktorisieren Gleichung)</strong></p>
+<p>Die Gleichung <span class="math inline">\((2x+1)(0,5x-2) = 0\)</span> hat die Lösungsmenge <span class="math inline">\(L=\{-\frac{1}{2};4\}\)</span>.</p>
+<p>Die Lösungen erhält man in dem man den ersten Faktor <span class="math inline">\(2x+1\)</span> gleich Null setzt (ergibt <span class="math inline">\(x=-\frac 12\)</span>) und den zweiten Faktor <span class="math inline">\(0,5-2\)</span> dann auch gleich Null setzt (ergibt <span class="math inline">\(x=4\)</span>).</p>
+</div>
+<p>Wird in einer faktorisierten Gleichung noch zusätzlich durch einen Term geteilt (z.b. <span class="math inline">\(\frac{(x-1)(x-2)}{x^2 -4} = 0\)</span>), so setzt man den Zähler gleich Null und prüft zusätzlich, dass die Lösung der Definitionsmenge angehört (Nenner ungleich Null).</p>
+<div class="example">
+<p><span id="exm:efaktgl2" class="example"><strong>Beispiel 7.5  (Faktorisieren von Gleichungen) </strong></span><strong>Beispiel (Lösung einer faktorisieren Gleichung mit Bruchtermen)</strong></p>
+<p>Der Zähler der Gleichung <span class="math inline">\(\frac{(x-1)(x-2)}{x^2 -4} = 0\)</span> ist gleich Null für <span class="math inline">\(x\in\{1;~2\}\)</span>. Als Definitionsmenge ermittelt man <span class="math inline">\(x^2 -4\not=0\)</span> <span class="math inline">\(\rightarrow x\not\in\{-2;~2\}\)</span> oder <span class="math inline">\(\mathbb D=\mathbb R\setminus\{-2;~2\}\)</span>. Also ist die Lösungsmenge <span class="math inline">\(L=\mathbb D\cap\{1;~2\} =\{1\}\)</span>.</p>
+</div>
+</div>
+<div id="betragsgleichungen" class="section level3 hasAnchor" number="7.3.2">
+<h3><span class="header-section-number">7.3.2</span> Betragsgleichungen<a href="gleichungen.html#betragsgleichungen" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div class="definition">
+<p><span id="def:defgleichbetr" class="definition"><strong>Definition 7.4  (Gleichungen mit Betrag) </strong></span><strong>Definition (Betragsgleichungen)</strong></p>
+<p>Die Betragsfunktion <span class="math inline">\(|x|\)</span> ordnet jedem reelen <span class="math inline">\(x\)</span> seinen Wert ohne das Vorzeichen zu:</p>
+<ul>
+<li>ist <span class="math inline">\(x\geq 0\)</span>, so ist <span class="math inline">\(|x|=x,\)</span></li>
+<li>ist <span class="math inline">\(x&lt; 0\)</span>, so ist <span class="math inline">\(|x|=-x ,\)</span> als Ergebnis hat man dann eine positive Zahl, da sich hinter <span class="math inline">\(x\)</span> eine negative Zahl verbirgt.</li>
+</ul>
+<p><strong>Betragsgleichungen</strong> sind Gleichungen, in denen ein oder mehrere Beträge vorkommen. Diese sind problematisch, da der Betrag eines Terms letztlich über eine Fallunterscheidung:</p>
+<p><span class="math display">\[\begin{align}
+|\text{Term}| = \begin{cases}\text{Term, falls Term}\geq 0,\\
+                            -\text{Term, falls Term}&lt; 0.
+                \end{cases}
+\end{align}\]</span></p>
+</div>
+<div class="example">
+<p><span id="exm:ebetrgl" class="example"><strong>Beispiel 7.6  (Lösen von Betragsgleichungen) </strong></span><strong>Beispiel (Lösen von Betragsgleichungen)</strong></p>
+<p>Die Betragsgleichung <span class="math inline">\(|x|=2\)</span> hat die Lösungsmenge <span class="math inline">\(L=\{2;-2\}\)</span>.</p>
+<p>Die Betragsgleichung <span class="math inline">\(|2x-1|=5\)</span> hat die Lösungsmenge <span class="math inline">\(L=\{3;-2\}\)</span> resultierend aus:</p>
+<ul>
+<li><span class="math inline">\(2x-1=5,\)</span> falls <span class="math inline">\(2x-1\geq 0\)</span> ( <span class="math inline">\(x\geq\frac 12\)</span> ),</li>
+<li><span class="math inline">\(1-2x=5,\)</span> falls <span class="math inline">\(2x-1\text{ &lt; }0\)</span> ( <span class="math inline">\(x\text{ &lt; }\frac 12\)</span> ).</li>
+</ul>
+</div>
+<div id="qspezgl" class="quiz">
+<p><strong>Quiz spezielle Gleichungen</strong></p>
+<script>
+  // Generate a random question
+    const questionObj612 = {
+      question: "Die Lösungsmenge zu \\(\\frac {(2x-10)\\cdot(x-10)}{x^2-100}=0\\) ist",
+      options: ["\\(L=\\{5; 10\\}\\)", "\\(L=\\{-10; 5; 10\\}\\)", "\\(L=\\{\\}\\)","\\(L=\\{5\\}\\)"],
+      answer: '4',
+      id: 612
+    };
+</script>
+<p class="question">
+<span id="question-text612"></span>
+</p>
+<div class="options">
+<label>
+<input type="radio" name="option612" value=1> \(L=\{5; 10\}\)
+</label>
+<label>
+<input type="radio" name="option612" value=2> \(L=\{-10; 5; 10\}\)
+</label>
+<label>
+<input type="radio" name="option612" value=3> \(L=\{\}\)
+</label>
+<label>
+<input type="radio" name="option612" value=4> \(L=\{5\}\)
+</label>
+<label>
+<input type="radio" name="option612" value=5> \(L=\{-10; 5\}\)
+</label>
+</div>
+<button onclick="checkAnswer_match(questionObj612)">Check</button>
+<p id="result612">
+</p>
+<script>
+  // Display the question
+    document.getElementById('question-text612').textContent = questionObj612.question;
+</script>
+<hr />
+<script>
+  // Generate a random question
+    const questionObj613 = {
+      question: "Betrachte die Gleichung: \\((2x-4)(x-1)(x+1)\\)=0. Die Gleichung ist erfüllt, nur dann, wenn",
+      options: ["\\(x\\in\\{-1;1;2\\}\\)", "\\(x\\in\\{1;2\\}\\)", "\\(x\\in\\{0;1;2\\}\\)", "\\(x\\in\\{-2;-1;1\\}\\)"],
+      answer: '1',
+      id: 613
+    };
+</script>
+<p class="question">
+<span id="question-text613"></span>
+</p>
+<div class="options">
+<label>
+<input type="radio" name="option613" value=1> \(x\in\{-1;1;2\}\)
+</label>
+<label>
+<input type="radio" name="option613" value=2> \(x\in\{1;2\}\)
+</label>
+<label>
+<input type="radio" name="option613" value=3> \(x\in\{0;1;2\}\)
+</label>
+<label>
+<input type="radio" name="option613" value=4> \(x\in\{-2;-1;1\}\)
+</label>
+<label>
+<input type="radio" name="option613" value=5> \(x\in\{-1;1\}\)
+</label>
+</div>
+<button onclick="checkAnswer_match(questionObj613)">Check</button>
+<p id="result613">
+</p>
+<script>
+  // Display the question
+    document.getElementById('question-text613').textContent = questionObj613.question;
+</script>
+<hr />
+<script>
+  // Generate a random question
+    const questionObj614 = {
+      question: "Die Lösungsmenge zu \\(|2x-6|=10\\) ist (Hinweis: Betrachte die zwei Fälle 1) \\(2x-6>0\\) und 2) \\(2x-6\\leq 0\\). Schreibe für jeden der Fälle die Gleichung ohne Betrag auf und stelle nach \\(x\\) um.)",
+      options: [ "\\(L=\\{-8; 2\\}\\)", "\\(L=\\{-2;8\\}\\)","\\(L=\\{2; 8\\}\\)", "\\(L=\\{-2; -8\\}\\)"],
+      answer: '2',
+      id: 614
+    };
+</script>
+<p class="question">
+<span id="question-text614"></span>
+</p>
+<div class="options">
+<label>
+<input type="radio" name="option614" value=1> \(L=\{-8; 2\}\)
+</label>
+<label>
+<input type="radio" name="option614" value=2> \(L=\{-2;8\}\)
+</label>
+<label>
+<input type="radio" name="option614" value=3> \(L=\{2; 8\}\)
+</label>
+<label>
+<input type="radio" name="option614" value=4> \(L=\{-2; -8\}\)
+</label>
+</div>
+<button onclick="checkAnswer_match(questionObj614)">Check</button>
+<p id="result614">
+</p>
+<script>
+  // Display the question
+    document.getElementById('question-text614').textContent = questionObj614.question;
+</script>
+<hr />
+<script>
+  // Generate a random question
+    const questionObj615 = {
+      question: "Die Lösungsmenge zu \\(|3x-3|=9\\) ist",
+      options: [ "\\(L=\\{-4; 2\\}\\)", "\\(L=\\{2\\}\\)",  "\\(L=\\{4\\}\\)","\\(L=\\{-2;4\\}\\)"],
+      answer: '4',
+      id: 615
+    };
+</script>
+<p class="question">
+<span id="question-text615"></span>
+</p>
+<div class="options">
+<label>
+<input type="radio" name="option615" value=1> \(L=\{-4; 2\}\)
+</label>
+<label>
+<input type="radio" name="option615" value=2> \(L=\{2\}\)
+</label>
+<label>
+<input type="radio" name="option615" value=3> \(L=\{4\}\)
+</label>
+<label>
+<input type="radio" name="option615" value=4> \(L=\{-2;4\}\)
+</label>
+</div>
+<button onclick="checkAnswer_match(questionObj615)">Check</button>
+<p id="result615">
+</p>
+<script>
+  // Display the question
+    document.getElementById('question-text615').textContent = questionObj615.question;
+</script>
+</div>
+</div>
+<div id="loopgleichungen" class="loop">
+<div id="übung-gleichungen" class="section level3 hasAnchor" number="7.3.3">
+<h3><span class="header-section-number">7.3.3</span> Übung: Gleichungen<a href="gleichungen.html#übung-gleichungen" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Übe das Lösen von Gleichungen in dieser Endlosschleife. Wenn du richtig antwortest und sicher bei deinen Antworten bist, werden die Aufgaben zunehmend herausfordernder.</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="gleichungen.html#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co">#withMathJax(uiOutput(&quot;dyn_exer_eq&quot;))</span></span></code></pre></div>
+</div>
+</div>
+
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="variablen-und-terme.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="ungleichungen.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"whatsapp": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": "https://github.com/USERNAME/REPO/edit/BRANCH/06-Gleichungen.Rmd",
+"text": "Edit"
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": ["_main.pdf", "_main.epub"],
+"search": {
+"engine": "fuse",
+"options": null
+},
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/latest.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>

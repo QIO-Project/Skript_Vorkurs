@@ -1,0 +1,1028 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Kapitel 10 Funktionen und Optimierung | Vor- und Brückenkurs: Wirtschaftsmathematik</title>
+  <meta name="description" content="Das ist der Skript für den Kurs Vor- und Brückenkurs: Wirtschaftsmathematik." />
+  <meta name="generator" content="bookdown 0.34 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Kapitel 10 Funktionen und Optimierung | Vor- und Brückenkurs: Wirtschaftsmathematik" />
+  <meta property="og:type" content="book" />
+  
+  <meta property="og:description" content="Das ist der Skript für den Kurs Vor- und Brückenkurs: Wirtschaftsmathematik." />
+  <meta name="github-repo" content="rstudio/bookdown-demo" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Kapitel 10 Funktionen und Optimierung | Vor- und Brückenkurs: Wirtschaftsmathematik" />
+  
+  <meta name="twitter:description" content="Das ist der Skript für den Kurs Vor- und Brückenkurs: Wirtschaftsmathematik." />
+  
+
+<meta name="author" content="Maria Osipenko" />
+
+
+<meta name="date" content="2024-02-12" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="lineare-gleichungssysteme.html"/>
+<link rel="next" href="weitere-funktionen-für-ökonomische-modellierung.html"/>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+<script src="libs/htmlwidgets-1.6.2/htmlwidgets.js"></script>
+<script src="libs/plotly-binding-4.10.2/plotly.js"></script>
+<script src="libs/typedarray-0.1/typedarray.min.js"></script>
+<link href="libs/crosstalk-1.2.0/css/crosstalk.min.css" rel="stylesheet" />
+<script src="libs/crosstalk-1.2.0/js/crosstalk.min.js"></script>
+<link href="libs/plotly-htmlwidgets-css-2.11.1/plotly-htmlwidgets.css" rel="stylesheet" />
+<script src="libs/plotly-main-2.11.1/plotly-latest.min.js"></script>
+
+
+<style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { color: #008000; } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { color: #008000; font-weight: bold; } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+<style type="text/css">
+  
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">A Minimal Book Example</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Grundlagen</a>
+<ul>
+<li class="chapter" data-level="1.1" data-path="index.html"><a href="index.html#rechenregeln"><i class="fa fa-check"></i><b>1.1</b> Rechenregeln</a>
+<ul>
+<li class="chapter" data-level="1.1.1" data-path="index.html"><a href="index.html#umwandlung-von-brüchen"><i class="fa fa-check"></i><b>1.1.1</b> Umwandlung von Brüchen</a></li>
+<li class="chapter" data-level="1.1.2" data-path="index.html"><a href="index.html#rehenfolge-der-rechenoperationen"><i class="fa fa-check"></i><b>1.1.2</b> Rehenfolge der Rechenoperationen</a></li>
+<li class="chapter" data-level="1.1.3" data-path="index.html"><a href="index.html#punkt--von-strich-rechnung"><i class="fa fa-check"></i><b>1.1.3</b> “Punkt- von Strich-”Rechnung</a></li>
+<li class="chapter" data-level="1.1.4" data-path="index.html"><a href="index.html#aufmachen-von-klammern-ausmultiplizieren"><i class="fa fa-check"></i><b>1.1.4</b> Aufmachen von Klammern, Ausmultiplizieren</a></li>
+</ul></li>
+<li class="chapter" data-level="1.2" data-path="index.html"><a href="index.html#notation"><i class="fa fa-check"></i><b>1.2</b> Notation</a>
+<ul>
+<li class="chapter" data-level="1.2.1" data-path="index.html"><a href="index.html#auslassen-von-punkt-bei-multiplikation-mit-variablen"><i class="fa fa-check"></i><b>1.2.1</b> Auslassen von Punkt bei Multiplikation mit Variablen</a></li>
+<li class="chapter" data-level="1.2.2" data-path="index.html"><a href="index.html#summen--und-produktzeichen"><i class="fa fa-check"></i><b>1.2.2</b> Summen- und Produktzeichen</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="mengen-und-zahlen.html"><a href="mengen-und-zahlen.html"><i class="fa fa-check"></i><b>2</b> Mengen und Zahlen</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="mengen-und-zahlen.html"><a href="mengen-und-zahlen.html#mengen"><i class="fa fa-check"></i><b>2.1</b> Mengen</a>
+<ul>
+<li class="chapter" data-level="2.1.1" data-path="mengen-und-zahlen.html"><a href="mengen-und-zahlen.html#mengenoperationen"><i class="fa fa-check"></i><b>2.1.1</b> Mengenoperationen</a></li>
+<li class="chapter" data-level="2.1.2" data-path="mengen-und-zahlen.html"><a href="mengen-und-zahlen.html#spezielle-mengen"><i class="fa fa-check"></i><b>2.1.2</b> Spezielle Mengen</a></li>
+<li class="chapter" data-level="2.1.3" data-path="mengen-und-zahlen.html"><a href="mengen-und-zahlen.html#mengen-zur-wahrscheinlichkeitsrechnung"><i class="fa fa-check"></i><b>2.1.3</b> Mengen zur Wahrscheinlichkeitsrechnung</a></li>
+</ul></li>
+<li class="chapter" data-level="2.2" data-path="mengen-und-zahlen.html"><a href="mengen-und-zahlen.html#zahlenmengen"><i class="fa fa-check"></i><b>2.2</b> Zahlenmengen</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="bruchrechnung.html"><a href="bruchrechnung.html"><i class="fa fa-check"></i><b>3</b> Bruchrechnung</a></li>
+<li class="chapter" data-level="4" data-path="potenzen-und-wurzel.html"><a href="potenzen-und-wurzel.html"><i class="fa fa-check"></i><b>4</b> Potenzen und Wurzel</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="potenzen-und-wurzel.html"><a href="potenzen-und-wurzel.html#potenzen"><i class="fa fa-check"></i><b>4.1</b> Potenzen</a></li>
+<li class="chapter" data-level="4.2" data-path="potenzen-und-wurzel.html"><a href="potenzen-und-wurzel.html#wurzel"><i class="fa fa-check"></i><b>4.2</b> Wurzel</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="prozent--und-zinsrechnung.html"><a href="prozent--und-zinsrechnung.html"><i class="fa fa-check"></i><b>5</b> Prozent- und Zinsrechnung</a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="prozent--und-zinsrechnung.html"><a href="prozent--und-zinsrechnung.html#prozentrechnung"><i class="fa fa-check"></i><b>5.1</b> Prozentrechnung</a></li>
+<li class="chapter" data-level="5.2" data-path="prozent--und-zinsrechnung.html"><a href="prozent--und-zinsrechnung.html#zinsrechnung"><i class="fa fa-check"></i><b>5.2</b> Zinsrechnung</a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="variablen-und-terme.html"><a href="variablen-und-terme.html"><i class="fa fa-check"></i><b>6</b> Variablen und Terme</a>
+<ul>
+<li class="chapter" data-level="6.1" data-path="variablen-und-terme.html"><a href="variablen-und-terme.html#umformung-von-termen"><i class="fa fa-check"></i><b>6.1</b> Umformung von Termen</a></li>
+<li class="chapter" data-level="6.2" data-path="variablen-und-terme.html"><a href="variablen-und-terme.html#binomische-formeln-1-3"><i class="fa fa-check"></i><b>6.2</b> Binomische Formeln 1-3</a></li>
+<li class="chapter" data-level="6.3" data-path="variablen-und-terme.html"><a href="variablen-und-terme.html#variablen-in-brüchen"><i class="fa fa-check"></i><b>6.3</b> Variablen in Brüchen</a></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="gleichungen.html"><a href="gleichungen.html"><i class="fa fa-check"></i><b>7</b> Gleichungen</a>
+<ul>
+<li class="chapter" data-level="7.1" data-path="gleichungen.html"><a href="gleichungen.html#definition-einer-gleichung"><i class="fa fa-check"></i><b>7.1</b> Definition einer Gleichung</a></li>
+<li class="chapter" data-level="7.2" data-path="gleichungen.html"><a href="gleichungen.html#lösen-von-gleichungen"><i class="fa fa-check"></i><b>7.2</b> Lösen von Gleichungen</a></li>
+<li class="chapter" data-level="7.3" data-path="gleichungen.html"><a href="gleichungen.html#spezielle-gleichungen"><i class="fa fa-check"></i><b>7.3</b> Spezielle Gleichungen</a>
+<ul>
+<li class="chapter" data-level="7.3.1" data-path="gleichungen.html"><a href="gleichungen.html#faktorisierte-gleichungen"><i class="fa fa-check"></i><b>7.3.1</b> Faktorisierte Gleichungen</a></li>
+<li class="chapter" data-level="7.3.2" data-path="gleichungen.html"><a href="gleichungen.html#betragsgleichungen"><i class="fa fa-check"></i><b>7.3.2</b> Betragsgleichungen</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="8" data-path="ungleichungen.html"><a href="ungleichungen.html"><i class="fa fa-check"></i><b>8</b> Ungleichungen</a>
+<ul>
+<li class="chapter" data-level="8.1" data-path="ungleichungen.html"><a href="ungleichungen.html#definition-von-ungleichungen"><i class="fa fa-check"></i><b>8.1</b> Definition von Ungleichungen</a></li>
+<li class="chapter" data-level="8.2" data-path="ungleichungen.html"><a href="ungleichungen.html#umformung-von-ungleichungen"><i class="fa fa-check"></i><b>8.2</b> Umformung von Ungleichungen</a></li>
+<li class="chapter" data-level="8.3" data-path="ungleichungen.html"><a href="ungleichungen.html#spezielle-ungleichungen"><i class="fa fa-check"></i><b>8.3</b> Spezielle Ungleichungen</a>
+<ul>
+<li class="chapter" data-level="8.3.1" data-path="ungleichungen.html"><a href="ungleichungen.html#faktorisierte-ungleichungen"><i class="fa fa-check"></i><b>8.3.1</b> Faktorisierte Ungleichungen</a></li>
+<li class="chapter" data-level="8.3.2" data-path="ungleichungen.html"><a href="ungleichungen.html#betragsungleichungen"><i class="fa fa-check"></i><b>8.3.2</b> Betragsungleichungen</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="9" data-path="lineare-gleichungssysteme.html"><a href="lineare-gleichungssysteme.html"><i class="fa fa-check"></i><b>9</b> Lineare Gleichungssysteme</a>
+<ul>
+<li class="chapter" data-level="9.1" data-path="lineare-gleichungssysteme.html"><a href="lineare-gleichungssysteme.html#lösung-von-lgs"><i class="fa fa-check"></i><b>9.1</b> Lösung von LGS</a></li>
+</ul></li>
+<li class="chapter" data-level="10" data-path="funktionen-und-optimierung.html"><a href="funktionen-und-optimierung.html"><i class="fa fa-check"></i><b>10</b> Funktionen und Optimierung</a>
+<ul>
+<li class="chapter" data-level="10.1" data-path="funktionen-und-optimierung.html"><a href="funktionen-und-optimierung.html#funktionen"><i class="fa fa-check"></i><b>10.1</b> Funktionen</a></li>
+<li class="chapter" data-level="10.2" data-path="funktionen-und-optimierung.html"><a href="funktionen-und-optimierung.html#lineare-und-quadratische-funktionen-polynome"><i class="fa fa-check"></i><b>10.2</b> Lineare und quadratische Funktionen, Polynome</a></li>
+<li class="chapter" data-level="10.3" data-path="funktionen-und-optimierung.html"><a href="funktionen-und-optimierung.html#ableitung"><i class="fa fa-check"></i><b>10.3</b> Ableitung</a>
+<ul>
+<li class="chapter" data-level="10.3.1" data-path="funktionen-und-optimierung.html"><a href="funktionen-und-optimierung.html#einige-ableitungsregeln"><i class="fa fa-check"></i><b>10.3.1</b> Einige Ableitungsregeln</a></li>
+</ul></li>
+<li class="chapter" data-level="10.4" data-path="funktionen-und-optimierung.html"><a href="funktionen-und-optimierung.html#einfache-optimierungsprobleme"><i class="fa fa-check"></i><b>10.4</b> Einfache Optimierungsprobleme</a></li>
+</ul></li>
+<li class="chapter" data-level="11" data-path="weitere-funktionen-für-ökonomische-modellierung.html"><a href="weitere-funktionen-für-ökonomische-modellierung.html"><i class="fa fa-check"></i><b>11</b> Weitere Funktionen für ökonomische Modellierung</a>
+<ul>
+<li class="chapter" data-level="11.1" data-path="weitere-funktionen-für-ökonomische-modellierung.html"><a href="weitere-funktionen-für-ökonomische-modellierung.html#exponentialfunktion"><i class="fa fa-check"></i><b>11.1</b> Exponentialfunktion</a></li>
+<li class="chapter" data-level="11.2" data-path="weitere-funktionen-für-ökonomische-modellierung.html"><a href="weitere-funktionen-für-ökonomische-modellierung.html#logarithmusfunktion"><i class="fa fa-check"></i><b>11.2</b> Logarithmusfunktion</a></li>
+</ul></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Vor- und Brückenkurs: Wirtschaftsmathematik</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="funktionen-und-optimierung" class="section level1 hasAnchor" number="10">
+<h1><span class="header-section-number">Kapitel 10</span> Funktionen und Optimierung<a href="funktionen-und-optimierung.html#funktionen-und-optimierung" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<script>
+function checkAnswer_mmc(q) {
+      const selectedOptions = document.querySelectorAll('input[name="option'+q.id+'"]:checked');
+      if (selectedOptions.length === 2) {
+        const userAnswers = Array.from(selectedOptions).map(option => option.value);
+        const correctAnswers = q.answer;
+        const isCorrect = userAnswers.every(answer => correctAnswers.includes(answer));
+
+if (isCorrect) {
+          document.getElementById('result'+q.id).textContent = 'Glückwunsch! Deine Antwort ist richtig.';
+        } else {
+          document.getElementById('result'+q.id).textContent = `Leider falsch. Versuch es nochmal!`;
+        }
+      } else {
+        document.getElementById('result'+q.id).textContent = 'Bitte zwei Optionen auswählen.';
+      }
+    }
+// numeric
+function generateQuestion_num(id) {
+      // Generate two random numbers between 2 and 10
+      const num1 = Math.floor(Math.random() * 10) + 2;
+      const num2 = Math.floor(Math.random() * 10) + 2;
+      const x1 = Math.floor(Math.random() * 100) + 2;
+      const x2 = Math.floor(Math.random() * 100) + 2;
+      const x3 = Math.floor(Math.random() * 100) + 2;
+      const x4 = Math.floor(Math.random() * 100) + 2;
+      const x5 = Math.floor(Math.random() * 100) + 2;
+      const x6 = Math.floor(Math.random() * 100) + 2;
+
+       // Calculate the correct answer
+      let answer = num1*Math.sqrt(x1) + num2*Math.sqrt(x2);
+
+      // Return the question and answer as an object
+      return {
+       // question: num1 + "\\(\\sqrt{x}+\\)"+ num2 + "\\(\\sqrt{y}\\)" + " for \\(x=\\)" + x1 + " and \\(y=\\)" + x2,
+        question: [num1,num2,x1,x2,x3,x4,x5,x6],
+        answer: answer,
+        id: id
+      };
+    }
+
+function checkAnswer_num(q) {
+      const userAnswer = document.getElementById('answer'+q.id).value;
+      const isCorrect = Math.round(parseFloat(userAnswer)*100)/100 === Math.round(q.answer*100)/100;
+
+      if (isCorrect) {
+        document.getElementById('result'+q.id).textContent = 'Glückwunsch! Deine Antwort ist richtig.';
+      } else {
+        document.getElementById('result'+q.id).textContent = `Sorry, incorrect.`;
+      }
+  }
+
+// plain multiple choice
+  function checkAnswer_match(q) {
+      const selectedOption = document.querySelector('input[name="option'+q.id+'"]:checked');
+      if (selectedOption) {
+        const userAnswer = selectedOption.value;
+        const isCorrect = userAnswer === q.answer;
+
+        if (isCorrect) {
+          document.getElementById('result'+q.id).textContent = 'Glückwunsch! Deine Antwort ist richtig.';
+        } else {
+          document.getElementById('result'+q.id).textContent = `Leider falsch. Versuch es nochmal!`;
+        }
+      } else {
+        document.getElementById('result'+q.id).textContent = 'Bitte eine Option wählen.';
+      }
+    }
+</script>
+<div id="funktionen" class="section level2 hasAnchor" number="10.1">
+<h2><span class="header-section-number">10.1</span> Funktionen<a href="funktionen-und-optimierung.html#funktionen" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Mathematische Funktionen beschreiben Zusammenhänge zwischen ökonomischen Größen:</p>
+<ul>
+<li><p>die Kosten eines Produktionsprozesses abhängig von der produzierten Menge,</p></li>
+<li><p>den Gewinn abhängig von dem Absatzvolumen und dem Preis eines Produktes,</p></li>
+<li><p>den Nutzen eines Konsumentes in Abhängigkeit von der konsumierten Mengen.</p></li>
+</ul>
+<div class="definition">
+<p><span id="def:deffun" class="definition"><strong>Definition 10.1  (Funktion) </strong></span><strong>Definition (Funktion)</strong></p>
+<p>Eine ist Funktion ( <span class="math inline">\(f\)</span> ) eine Vorschrift, die jedem Elementen einer Menge (Definitionsbereich dieser Funktion, <span class="math inline">\(D_f\)</span> ) eindeutig ein Element einer anderen Menge (Wertebereich dieser Funktion, <span class="math inline">\(W_f\)</span> ) zuordnet. Man schreibt:
+<span class="math display">\[f: D_f \rightarrow W_f.\]</span>
+Meist sind <span class="math inline">\(D_f\)</span> und <span class="math inline">\(W_f\)</span> Intervalle auf <span class="math inline">\(\mathbb R\)</span>, können aber bspw. <span class="math inline">\(\mathbb N\)</span> oder <span class="math inline">\(\mathbb Q\)</span> oder deren Teilmengen darstellen.</p>
+</div>
+<p>Funktionen können in unterschiedlicher Weise beschrieben werden. Meist werden sie in tabellarischer (Wertetabelle), graphischer (Funktionsgraph) oder analytischen Form (Gleichung) dargestellt.</p>
+<div class="example">
+<p><span id="exm:efun" class="example"><strong>Beispiel 10.1  (Funktionen) </strong></span><strong>Beispiel (Funktionen)</strong></p>
+<p>Eine lineare Funktion <span class="math inline">\(f\)</span>:</p>
+<ul>
+<li>analytisch:
+<span class="math display">\[f(x)=10-2x,\]</span></li>
+<li>graphisch:</li>
+</ul>
+<p><img src="www/fx.png" /></p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="funktionen-und-optimierung.html#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co">#img(src=&quot;fx.png&quot;, height=&quot;30%&quot;, width=&quot;30%&quot;, align=&quot;center&quot;)</span></span>
+<span id="cb5-2"><a href="funktionen-und-optimierung.html#cb5-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-3"><a href="funktionen-und-optimierung.html#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="co">#renderPlot({</span></span>
+<span id="cb5-4"><a href="funktionen-und-optimierung.html#cb5-4" aria-hidden="true" tabindex="-1"></a><span class="co">#   x&lt;-seq(-1,6,1)</span></span>
+<span id="cb5-5"><a href="funktionen-und-optimierung.html#cb5-5" aria-hidden="true" tabindex="-1"></a><span class="co"># par(xpd=T)</span></span>
+<span id="cb5-6"><a href="funktionen-und-optimierung.html#cb5-6" aria-hidden="true" tabindex="-1"></a><span class="co"># plot(x,10-2*x,type=&quot;l&quot;,axes=F, xlab=&quot; &quot;,ylab=&quot; &quot;,ylim=c(-1,12),col=2,lwd=2)</span></span>
+<span id="cb5-7"><a href="funktionen-und-optimierung.html#cb5-7" aria-hidden="true" tabindex="-1"></a><span class="co"># arrows(0,-3,0,12)</span></span>
+<span id="cb5-8"><a href="funktionen-und-optimierung.html#cb5-8" aria-hidden="true" tabindex="-1"></a><span class="co"># points(x,rep(0,length(x)),pch=&quot;|&quot;,cex=0.5)</span></span>
+<span id="cb5-9"><a href="funktionen-und-optimierung.html#cb5-9" aria-hidden="true" tabindex="-1"></a><span class="co"># text(0.2,-0.5,&quot;0&quot;)</span></span>
+<span id="cb5-10"><a href="funktionen-und-optimierung.html#cb5-10" aria-hidden="true" tabindex="-1"></a><span class="co"># text(-0.5,12,&quot;f(x)&quot;)</span></span>
+<span id="cb5-11"><a href="funktionen-und-optimierung.html#cb5-11" aria-hidden="true" tabindex="-1"></a><span class="co"># arrows(-2,0,7,0)</span></span>
+<span id="cb5-12"><a href="funktionen-und-optimierung.html#cb5-12" aria-hidden="true" tabindex="-1"></a><span class="co"># points(rep(0,length(x)),10-2*x,pch=&quot;-&quot;,cex=1.2)</span></span>
+<span id="cb5-13"><a href="funktionen-und-optimierung.html#cb5-13" aria-hidden="true" tabindex="-1"></a><span class="co"># text(7,-0.5,&quot;x&quot;)</span></span>
+<span id="cb5-14"><a href="funktionen-und-optimierung.html#cb5-14" aria-hidden="true" tabindex="-1"></a><span class="co">#}, height=10)</span></span></code></pre></div>
+<ul>
+<li>tabellarisch
+<span class="math display">\[\begin{array}{c|c}
+x&amp;f(x)\\\hline
+-1&amp; 12\\
+0&amp;10\\
+1&amp;8\\
+\ldots&amp;\ldots\\\hline
+\end{array}\]</span></li>
+</ul>
+<p>Weiter Beispiele für Funktionen in analytischer Schreibweise:
+<span class="math display">\[f(x) = x^2,\]</span>
+<span class="math display">\[f(x) = 2^x.\]</span></p>
+</div>
+</div>
+<div id="lineare-und-quadratische-funktionen-polynome" class="section level2 hasAnchor" number="10.2">
+<h2><span class="header-section-number">10.2</span> Lineare und quadratische Funktionen, Polynome<a href="funktionen-und-optimierung.html#lineare-und-quadratische-funktionen-polynome" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Lineare und quadratische Funktionen werden häufig verwendet um Erlös- und Kostenstruktur eines Unternehmens zu modellieren.</p>
+<div class="example">
+<p><span id="exm:elkos" class="example"><strong>Beispiel 10.2  (Kostenfunktionen) </strong></span><strong>Beispiel (Lineare Kostenfunktion)</strong></p>
+<p>Ein Betrieb weist folgende Kennzahlen für den Monat Juni auf:
+Fixkosten € 6 400,- Variable Kosten pro Mengeneinheit € 3,20. Bezeichnet <span class="math inline">\(x\)</span> die produzierte Menge, dann hat die Kostenfunktion für die Produktion in Juni folgende Form:
+<span class="math display">\[K(x) = 6400 + 3,20x.\]</span>
+Dem entsprechend belaufen die Kosten der Produktion von bspw. 4000 Einheiten auf
+<span class="math display">\[K(4000)=6400 + 3,20\cdot 4000= 19200.\]</span></p>
+</div>
+<div class="definition">
+<p><span id="def:deflfun" class="definition"><strong>Definition 10.2  (Lineare Funktion) </strong></span><strong>Definition (Lineare Funktion)</strong></p>
+<p>Eine <strong>lineare</strong> Funktion <span class="math inline">\(f:\mathbb R \rightarrow \mathbb R\)</span> hat die Form:
+<span class="math display">\[f(x)=ax+b,\]</span>
+wobei <span class="math inline">\(a,b\)</span> sind konstante reele Zahlen, Parameter der linearen Funktion. Die Konstante <span class="math inline">\(a\)</span> wird als <strong>Steigung</strong> bezeichnet, die Konstante <span class="math inline">\(b\)</span> als <strong>Achsenabschnitt</strong>.</p>
+<p>Die Steigung eine Gerade ist das Verhältnis zwischen der Änderung in <span class="math inline">\(y=f(x)\)</span> ( <span class="math inline">\(\Delta y\)</span> ) zu der Änderung in <span class="math inline">\(x\)</span> ( <span class="math inline">\(\Delta x\)</span> ). Also <span class="math inline">\(a=\frac{\Delta y}{\Delta x}\)</span>.</p>
+<p>Der Graph einer linearen Funktion ist eine <strong>Gerade</strong>.</p>
+<p><img src="www/fx1.png" /></p>
+<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb6-1"><a href="funktionen-und-optimierung.html#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co">#img(src=&quot;fx1.png&quot;, height=&quot;70%&quot;, width=&quot;70%&quot;, align=&quot;center&quot;)</span></span></code></pre></div>
+<p>positives <span class="math inline">\(a\)</span> in a) und c); negatives <span class="math inline">\(a\)</span> in b); <span class="math inline">\(b\)</span> = 0 in a) und b), positives <span class="math inline">\(b\)</span> in c).</p>
+</div>
+<p>In dem obigen Beispiel mit der Kostenfunktion <span class="math inline">\(a=3,20\)</span> (also die variablen Kosten pro Stück) und <span class="math inline">\(b=6400\)</span> (also die Fixkosten, die unabhängig von der Produktion, anfallen). Die Produktionskosten sind in dem Fall durch die entsprechende lineare Funktion beschrieben.</p>
+<p>In dem nächsten Beispiel wird eine quadratische Funktion benötigt, um den Erlös eines Monopolisten zu beschreiben.</p>
+<div class="example">
+<p><span id="exm:eqgew" class="example"><strong>Beispiel 10.3  (Gewinnfunktionen) </strong></span><strong>Beispiel (Gewinnfunktion eines Monopolisten)</strong></p>
+Die Marketing-Abteilung eines Monopolisten ermittelt folgende inverse Nachfragefunktion (auch Preis-Absatz-Funktion genannt):
+</p>
+<p><span class="math display">\[p(x)=1560 - 12x,\]</span>
+wobei <span class="math inline">\(x\)</span> ist die nachgefragte Menge und <span class="math inline">\(p(x)\)</span> ist der Preis. Die Firma hat lineare Kosten der Form:
+<span class="math display">\[K(x)=747+60x.\]</span></p>
+<p>Da der Monopolist per Definition der einzige Akteur in dem Markt ist, wählt er die Menge <span class="math inline">\(x\)</span>, die er produziert, aus, diese steht dann im Markt zur Verfügung und somit bestimmt den Preis.</p>
+<ul>
+<li><p>Der <strong>Erlös</strong> des Monopolisten ist dann (Preis mal Menge):
+<span class="math display">\[E(x)=p(x)\cdot x = (1560 -12 x)x = -12x^2 + 1560x\]</span>
+ist eine quadratische Funktion in der produzierten Menge <span class="math inline">\(x\)</span>.</p></li>
+<li><p>Der <strong>Gewinn</strong> des Monopolisten ist (Erlös minus Kosten):
+<span class="math display">\[\pi(x) = E(x) - K(x)= -12x^2 + 1560x - (747+60x) = -12x^2 + 1500 x - 747\]</span>
+ist auch eine quadratische Funktion in der produzierten Menge <span class="math inline">\(x\)</span>.</p></li>
+</ul>
+</div>
+<div class="definition">
+<p><span id="def:defqfun" class="definition"><strong>Definition 10.3  (Quadratische Funktion) </strong></span><strong>Definition (Quadratische Funktion)</strong></p>
+<p>Eine <strong>quadratische</strong> Funktion <span class="math inline">\(f:\mathbb R \rightarrow \mathbb R_+\)</span> hat die Form:
+<span class="math display">\[f(x)=ax^2+bx +c,\]</span>
+wobei <span class="math inline">\(a,b, c\)</span> sind konstante reele Zahlen, Parameter der quadratischen Funktion.</p>
+<p>Der Graph einer quadratischen Funktion ist eine <strong>Parabel</strong>.</p>
+<p><img src="www/fx2.png" /></p>
+<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="funktionen-und-optimierung.html#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co">#img(src=&quot;fx2.png&quot;, height=&quot;50%&quot;, width=&quot;50%&quot;, align=&quot;center&quot;)</span></span></code></pre></div>
+<p>positives <span class="math inline">\(a\)</span> in (a); negatives <span class="math inline">\(a\)</span> in (b).</p>
+</div>
+<p>Im obigen Beispiel die Gewinnfunktion <span class="math inline">\(\pi(x)\)</span> ist eine quadratische Funktion mit den Parametern <span class="math inline">\(a=-12\)</span>, <span class="math inline">\(b=1500\)</span> und <span class="math inline">\(c=-747.\)</span></p>
+<div class="definition">
+<p><span id="def:defqfunnull" class="definition"><strong>Definition 10.4  (NUllstellen) </strong></span><strong>Definition (Nullstellen einer quadratischen Funktion)</strong></p>
+<p>Die <strong>Nullstellen</strong> einer quadratischen Funktion bestimmt man in dem man die Gleichung <span class="math inline">\({\color{red}a}x^2+{\color{blue}b}x +{\color{green}c}=0\)</span> löst.
+Die Nullstellen können mit Hilfe der so genannten <span class="math inline">\(abc\)</span>-Formel bestimmt werden:</p>
+<p><span class="math display">\[x_{1,2}=\frac{-{\color{blue}b}\pm\sqrt{{\color{blue}b}^2-4{\color{red}a}{\color{green}c}}}{2{\color{red}a}}.\]</span></p>
+<p>Alternativ kann die Gleichung in <span class="math inline">\(pq\)</span>-Form überführt werden:
+<span class="math display">\[ax^2+bx +c=0 \rightarrow x^2+{\color{violet}p}x +{\color{orange}q}=0, ~~~p=\frac ba, q=\frac ca,\]</span></p>
+<p>und dann mit Hilfe der <span class="math inline">\(pq\)</span>-Formel gelöst werden:</p>
+<p><span class="math display">\[x_{1,2}=-\frac {\color{violet}p}2\pm\sqrt{\left(\frac {\color{violet}p}2\right)^2-{\color{orange}q}}.\]</span></p>
+</div>
+<div class="example">
+<p><span id="exm:eqgew" class="example"><strong>Beispiel 10.3  (Gewinnfunktionen) </strong></span><strong>Beispiel (Break-even-point für den Monopolisten)</strong></p>
+<p>Für unseren Monopolisten können wir mit Hilfe der Formel für die Nullstellen einer quadratischen Funktion, den <strong>Break-even-point</strong>, also die Produktionsmenge, ab der sein Gewinn zum ersten Mal positiv wird, bestimmen.</p>
+<p>Da <span class="math inline">\(\pi(x)=-12x^2 + 1500 x - 747\)</span> müssen wir die Gleichung <span class="math inline">\({\color{red}{-12}}x^2 + {\color{blue}{1500}} x {\color{green}{-747}}=0\)</span> lösen.
+- mit <span class="math inline">\(abc\)</span>-Formel:
+<span class="math display">\[x_{1,2}=\frac{-{\color{blue}{1500}}\pm\sqrt{{\color{blue}{1500}}^2-4({\color{red}{-12}})({\color{green}{-747}})}}{2({\color{red}{-12}})}\rightarrow x_1=0,5,~~x_2=124,5.\]</span></p>
+<ul>
+<li>mit <span class="math inline">\(pq\)</span>-Formel lösen wir <span class="math inline">\(x^2{\color{violet}{-125}}x + {\color{orange}{62.25}}=0\)</span>:
+<span class="math display">\[x_{1,2}=-\frac {\color{violet}{-125}}2\pm\sqrt{\left(\frac {\color{violet}{-125}}2\right)^2-{\color{orange}{62.25}}}\rightarrow x_1=0,5,~~x_2=124,5.\]</span>
+</li></li>
+</ul>
+<p>Also liegt der Break-even-Point bei <span class="math inline">\(x=0,5\)</span>. Produziert der Monopolist mehr als 0.5, wird sein Gewinn positiv. Ab der Produktionsmenge 124,5 fällt der Gewinn wieder ins Negative:</p>
+<p><img src="www/pix.png" /></p>
+<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb8-1"><a href="funktionen-und-optimierung.html#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="co"># x&lt;-seq(-10,150,by=0.5)</span></span>
+<span id="cb8-2"><a href="funktionen-und-optimierung.html#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="co"># y&lt;-function(x){-12*x^2 + 1500*x - 747}</span></span>
+<span id="cb8-3"><a href="funktionen-und-optimierung.html#cb8-3" aria-hidden="true" tabindex="-1"></a><span class="co"># ymax&lt;-50000</span></span>
+<span id="cb8-4"><a href="funktionen-und-optimierung.html#cb8-4" aria-hidden="true" tabindex="-1"></a><span class="co"># par(xpd=T)</span></span>
+<span id="cb8-5"><a href="funktionen-und-optimierung.html#cb8-5" aria-hidden="true" tabindex="-1"></a><span class="co"># plot(x,y(x),type=&quot;l&quot;, axes=F, xlab=&quot; &quot;,ylab=&quot; &quot;,ylim=c(-ymax,ymax),col=2,lwd=2)</span></span>
+<span id="cb8-6"><a href="funktionen-und-optimierung.html#cb8-6" aria-hidden="true" tabindex="-1"></a><span class="co"># arrows(-1,-ymax,-1,ymax)</span></span>
+<span id="cb8-7"><a href="funktionen-und-optimierung.html#cb8-7" aria-hidden="true" tabindex="-1"></a><span class="co"># arrows(-10,0,150,0)</span></span>
+<span id="cb8-8"><a href="funktionen-und-optimierung.html#cb8-8" aria-hidden="true" tabindex="-1"></a><span class="co"># text(-15,ymax,bquote(pi(x)))</span></span>
+<span id="cb8-9"><a href="funktionen-und-optimierung.html#cb8-9" aria-hidden="true" tabindex="-1"></a><span class="co"># text(150,-10000,&quot;x&quot;)</span></span>
+<span id="cb8-10"><a href="funktionen-und-optimierung.html#cb8-10" aria-hidden="true" tabindex="-1"></a><span class="co"># points(0.5,0,pch=&quot;|&quot;,col=4,cex=2)</span></span>
+<span id="cb8-11"><a href="funktionen-und-optimierung.html#cb8-11" aria-hidden="true" tabindex="-1"></a><span class="co"># text(15,-20000,bquote(x[1]==&quot;0,5&quot;),col=4)</span></span>
+<span id="cb8-12"><a href="funktionen-und-optimierung.html#cb8-12" aria-hidden="true" tabindex="-1"></a><span class="co"># points(124.5,0,pch=&quot;|&quot;,col=5,cex=2)</span></span>
+<span id="cb8-13"><a href="funktionen-und-optimierung.html#cb8-13" aria-hidden="true" tabindex="-1"></a><span class="co"># text(105,-20000,bquote(x[2]==&quot;124,5&quot;),col=5)</span></span>
+<span id="cb8-14"><a href="funktionen-und-optimierung.html#cb8-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-15"><a href="funktionen-und-optimierung.html#cb8-15" aria-hidden="true" tabindex="-1"></a><span class="co">#img(src=&quot;pix.png&quot;, height=&quot;50%&quot;, width=&quot;50%&quot;, align=&quot;center&quot;)</span></span></code></pre></div>
+</div>
+<p>Manchmal sind sogar höhere Potenzen von <span class="math inline">\(x\)</span> notwendig um ökonomische Zusammenhänge zu modellieren.
+Im Allgemeinem spricht man dann von <strong>Polynomen</strong> in <span class="math inline">\(x\)</span>.</p>
+<div class="definition">
+<p><span id="def:defpoly" class="definition"><strong>Definition 10.5  (Polynome) </strong></span><strong>Definition (Polynom <span class="math inline">\(n\)</span>-ten Grades)</strong></p>
+<p>Ein <strong>Polynom</strong> vom Grad <span class="math inline">\(n\)</span> ist eine Funktion der Form:
+<span class="math display">\[f(x) = a_0 + a_1x + a_2 x^2 + \ldots + a_n x^n\]</span>
+Dabei sind die Parameter <span class="math inline">\(a_0\)</span> bis <span class="math inline">\(a_{n}\)</span> reele Zahlen mit <span class="math inline">\(a_n\not=0\)</span>.</p>
+</div>
+<p>Lineare Funktionen sind Polynome <strong>ersten</strong> Grades. Quadratische Funktionen sind Polynome <strong>zweiten</strong> Grades.</p>
+<div class="example">
+<p><span id="exm:prodfun" class="example"><strong>Beispiel 10.4  (Produktionsfunktionen) </strong></span><strong>Beispiel (Produktionsfunktion)</strong></p>
+<p>In der Landwirtschaft führt eine Erhöhung des Düngers bei gleicher
+Bodenfläche zunächst zu einer starken Zunahme und später zu einer geringeren Zunahme des Gesamtertrags. Dies führt zu einer s.g. ertragsgesetzlichen Produktionsfunktion, die mittels eines Polynoms dritten Grades in der Inputmenge <span class="math inline">\(s\)</span> modelliert wird. Bspw. folgende Produktionsfunktion:
+<span class="math display">\[x(s)=0,001\cdot (-0,05s^3 +8 s^2 + 20s), ~~0\leq s \leq 110.\]</span></p>
+<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb9-1"><a href="funktionen-und-optimierung.html#cb9-1" aria-hidden="true" tabindex="-1"></a>    x<span class="ot">&lt;-</span><span class="fu">seq</span>(<span class="dv">0</span>,<span class="dv">163</span>,<span class="at">by=</span><span class="fl">0.5</span>)</span>
+<span id="cb9-2"><a href="funktionen-und-optimierung.html#cb9-2" aria-hidden="true" tabindex="-1"></a>    y<span class="ot">&lt;-</span><span class="cf">function</span>(x){<span class="fl">0.001</span><span class="sc">*</span>(<span class="sc">-</span><span class="fl">0.05</span><span class="sc">*</span>x<span class="sc">^</span><span class="dv">3</span><span class="sc">+</span><span class="dv">8</span><span class="sc">*</span>x<span class="sc">^</span><span class="dv">2</span> <span class="sc">+</span> <span class="dv">20</span><span class="sc">*</span>x)}</span>
+<span id="cb9-3"><a href="funktionen-und-optimierung.html#cb9-3" aria-hidden="true" tabindex="-1"></a>    ymax<span class="ot">&lt;-</span><span class="dv">35</span></span>
+<span id="cb9-4"><a href="funktionen-und-optimierung.html#cb9-4" aria-hidden="true" tabindex="-1"></a>    <span class="fu">par</span>(<span class="at">xpd=</span>T)</span>
+<span id="cb9-5"><a href="funktionen-und-optimierung.html#cb9-5" aria-hidden="true" tabindex="-1"></a>    <span class="fu">plot</span>(x,<span class="fu">y</span>(x),<span class="at">type=</span><span class="st">&quot;l&quot;</span>, <span class="at">axes=</span>F, <span class="at">xlab=</span><span class="st">&quot; &quot;</span>,<span class="at">ylab=</span><span class="st">&quot; &quot;</span>,<span class="at">ylim=</span><span class="fu">c</span>(<span class="dv">0</span>,ymax<span class="sc">+</span><span class="dv">1</span>),<span class="at">col=</span><span class="dv">2</span>,<span class="at">lwd=</span><span class="dv">2</span>)</span>
+<span id="cb9-6"><a href="funktionen-und-optimierung.html#cb9-6" aria-hidden="true" tabindex="-1"></a>    <span class="fu">arrows</span>(<span class="dv">0</span>,<span class="sc">-</span><span class="dv">10</span>,<span class="dv">0</span>,ymax)</span>
+<span id="cb9-7"><a href="funktionen-und-optimierung.html#cb9-7" aria-hidden="true" tabindex="-1"></a>    <span class="fu">arrows</span>(<span class="sc">-</span><span class="dv">20</span>,<span class="dv">0</span>,<span class="dv">170</span>,<span class="dv">0</span>)</span>
+<span id="cb9-8"><a href="funktionen-und-optimierung.html#cb9-8" aria-hidden="true" tabindex="-1"></a>    <span class="fu">text</span>(<span class="sc">-</span><span class="dv">15</span>,ymax<span class="dv">-1</span>,<span class="fu">bquote</span>(<span class="fu">x</span>(s)))</span>
+<span id="cb9-9"><a href="funktionen-und-optimierung.html#cb9-9" aria-hidden="true" tabindex="-1"></a>    <span class="fu">text</span>(<span class="dv">170</span>,<span class="sc">-</span><span class="dv">5</span>,<span class="st">&quot;s&quot;</span>)</span></code></pre></div>
+<p><img src="_main_files/figure-html/unnamed-chunk-192-1.png" width="672" /></p>
+<div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb10-1"><a href="funktionen-und-optimierung.html#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="co">#uiOutput(&quot;prodfun&quot;)</span></span></code></pre></div>
+</div>
+<!--::: {#apppoly .app }
+**Graphische Darstellung von Polynomen**
+
+
+:::
+-->
+<div id="qfun1" class="quiz">
+<p><strong>Quiz Funktionen</strong></p>
+<p id="question">
+<span id="question-text91"></span>
+<input type="number" id="answer91" placeholder="Antwort eingeben">\(\}\)
+</p>
+<button onclick="checkAnswer_num(questionObj91)">
+Check
+</button>
+<p id="result91">
+</p>
+<script>
+
+ // Generate a random question
+    const questionObj91 = generateQuestion_num(91);
+// Display the question
+    document.getElementById('question-text91').textContent = "Gegeben ist die quadratische Gleichung \\(-2x^2 + 100x = 0\\). Die Lösungsmenge ist \\(L = \\{0;\\)";
+    questionObj91.answer = 50
+</script>
+<hr />
+<p id="question">
+<span id="question-text92"></span>
+<input type="number" id="answer92" placeholder="Antwort eingeben">\(\}\)
+</p>
+<button onclick="checkAnswer_num(questionObj92)">
+Check
+</button>
+<p id="result92">
+</p>
+<script>
+
+ // Generate a random question
+    const questionObj92 = generateQuestion_num(92);
+// Display the question
+    document.getElementById('question-text92').textContent = "Gegeben ist die quadratische Gleichung \\(−y^2+2y+3=0\\). Die Lösungsmenge ist \\(L = \\{-1;\\)";
+    questionObj92.answer = 3
+</script>
+<hr />
+<p id="question">
+<span id="question-text93"></span>
+<input type="number" id="answer93" placeholder="Antwort eingeben">\(\}\)
+</p>
+<button onclick="checkAnswer_num(questionObj93)">
+Check
+</button>
+<p id="result93">
+</p>
+<script>
+
+ // Generate a random question
+    const questionObj93 = generateQuestion_num(93);
+// Display the question
+    document.getElementById('question-text93').textContent = "Gegeben ist die quadratische Gleichung \\(18=3x^2+3x\\). Die Lösungsmenge ist \\(L = \\{-3;\\)";
+    questionObj93.answer = 2
+</script>
+<hr />
+<p id="question">
+<span id="question-text94"></span>
+<input type="number" id="answer94" placeholder="Antwort eingeben">\(\}\)
+</p>
+<button onclick="checkAnswer_num(questionObj94)">
+Check
+</button>
+<p id="result94">
+</p>
+<script>
+
+ // Generate a random question
+    const questionObj94 = generateQuestion_num(94);
+// Display the question
+    document.getElementById('question-text94').textContent = "Gegeben ist die quadratische Gleichung \\(3x^2−24x−195=0\\). Die Lösungsmenge ist \\(L = \\{-5;\\)";
+    questionObj94.answer = 13
+</script>
+<hr />
+<p id="question">
+<span id="question-text95"></span>
+<input type="number" id="answer95" placeholder="Antwort eingeben">\(\}\)
+</p>
+<button onclick="checkAnswer_num(questionObj95)">
+Check
+</button>
+<p id="result95">
+</p>
+<script>
+
+ // Generate a random question
+    const questionObj95 = generateQuestion_num(95);
+// Display the question
+    document.getElementById('question-text95').textContent = "Gegeben ist die quadratische Gleichung \\(2−0,5z=0,25z^2\\). Die Lösungsmenge ist \\(L = \\{-4;\\)";
+    questionObj95.answer = 2
+</script>
+<hr />
+<p id="question">
+<span id="question-text96"></span>
+<input type="number" id="answer96" placeholder="Antwort eingeben">\(\}\)
+</p>
+<button onclick="checkAnswer_num(questionObj96)">
+Check
+</button>
+<p id="result96">
+</p>
+<script>
+
+ // Generate a random question
+    const questionObj96 = generateQuestion_num(96);
+// Display the question
+    document.getElementById('question-text96').textContent = "Gegeben ist die quadratische Gleichung \\(0=−4x^2+4x+24\\). Die Lösungsmenge ist \\(L = \\{-2;\\)";
+    questionObj96.answer = 3
+</script>
+<hr />
+<p id="question">
+<span id="question-text97"></span>
+<input type="number" id="answer97" placeholder="Antwort eingeben">\(;5\}\)
+</p>
+<button onclick="checkAnswer_num(questionObj97)">
+Check
+</button>
+<p id="result97">
+</p>
+<script>
+
+ // Generate a random question
+    const questionObj97 = generateQuestion_num(97);
+// Display the question
+    document.getElementById('question-text97').textContent = "Gegeben ist die quadratische Gleichung \\(3y−2,5=0,5y^2\\). Die Lösungsmenge ist \\(L = \\{\\)";
+    questionObj97.answer = 1
+</script>
+<hr />
+<p id="question">
+<span id="question-text98"></span>
+<input type="number" id="answer98" placeholder="Antwort eingeben">\(;3\}\)
+</p>
+<button onclick="checkAnswer_num(questionObj98)">
+Check
+</button>
+<p id="result98">
+</p>
+<script>
+
+ // Generate a random question
+    const questionObj98 = generateQuestion_num(98);
+// Display the question
+    document.getElementById('question-text98').textContent = "Gegeben ist die quadratische Gleichung \\(0,4a^2−0,4a−2,4=0\\). Die Lösungsmenge ist \\(L = \\{\\)";
+    questionObj98.answer = -2
+</script>
+<hr />
+<p id="question">
+<span id="question-text9"></span>
+</p>
+<input type="number" id="answer9" placeholder="Antwort eingeben">
+<button onclick="checkAnswer_num(questionObj9)">Check</button>
+<p id="result9">
+</p>
+<script>
+
+ // Generate a random question
+    const questionObj9 = generateQuestion_num(9);
+// Display the question
+    document.getElementById('question-text9').textContent = "Die Gewinnfunktion eines Monopolisten lautet \\(\\pi(x) = -" + questionObj9.question[0] + "x^2 + " + questionObj9.question[1] + "x - " + (questionObj9.question[1]*2) + "\\), dabei ist \\(x\\) die Produktionsmenge. Wie lautet der Break-Even-Point, also die niedrigste Produktionsmenge \\(x_1\\), ab der der Gewinn positiv wird? Wie lautet die kritische Produktionsmenge \\(x_2\\), deren Überschreitung wieder zu einem negativen Gewinn führt? (Hinweis: Löse die quadratische Gleichung. Die Nullstellen entsprechen dann den gesuchten Produktionsmengen. Runde auf vier Nachkommastellen.)";
+    questionObj9.answer = - questionObj9.question[1] + Math.pow((Math.pow(questionObj9.question[1],2) - 4*questionObj9.question[0]*questionObj9.question[1]*2), 0.5)/(2*questionObj9.question[0])
+</script>
+</div>
+</div>
+<div id="ableitung" class="section level2 hasAnchor" number="10.3">
+<h2><span class="header-section-number">10.3</span> Ableitung<a href="funktionen-und-optimierung.html#ableitung" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Wir wissen bereits, wie wir die Steigung einer Geraden berechnen können. Wenn wir aber eine Kurve haben (siehe Beispiel von Gewinnfunktion), deren Steigung wir bestimmen wollen? Das Problem dabei ist, dass jeder Punkt dieser Kurve eine andere Steigung besitzt. Mit Hilfe der <strong>Ableitungen</strong> sind wir in der Lage, die Steigung einer Kurve in einem Punkt zu berechnen.</p>
+<p>Die Idee dabei ist, eine Tangente zu der Kurve in dem Punkt, in dem wir die Steigung bestimmen wollen, zu ziehen und dann die Steigung dieser Tangente zu berechnen.</p>
+<div class="definition">
+<p><span id="def:defdefq" class="definition"><strong>Definition 10.6  (Differentialquotient) </strong></span><strong>Definition (Differentialquotient)</strong></p>
+<p>Die Steigung der Tangente im Punkt <span class="math inline">\(x_0\)</span> wird als <strong>Differentialquotient</strong> (oder auch momentane Änderungsrate) bezeichnet und wird als Grenzwert der Sekantensteigung (<strong>Differenzenquotient</strong> auch mittlere Änderungsrate) angenähert, wobei man <span class="math inline">\(\Delta x=h\)</span> immer kleiner werden lässt:</p>
+<ul>
+<li><span class="math inline">\(Differenzenquotient ~~a= \frac{f(x_0+h) - f(x_0)}{h}\)</span></li>
+<li><span class="math inline">\(Differenzialquotient =\lim_{\Delta x=h\rightarrow 0}\frac{f(x_0+h) - f(x_0)}{h}\)</span></li>
+</ul>
+<p><img src="www/deriv1.png" /></p>
+<p><img src="www/deriv2.png" /></p>
+<p><img src="www/deriv3.png" /></p>
+</div>
+<div id="einige-ableitungsregeln" class="section level3 hasAnchor" number="10.3.1">
+<h3><span class="header-section-number">10.3.1</span> Einige Ableitungsregeln<a href="funktionen-und-optimierung.html#einige-ableitungsregeln" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Damit man <span class="math inline">\(f&#39;(x)\)</span> als den entsprechenden Grenzwert nicht immer wieder aufs Neue kalkulieren muss, hat man einige Ableitungsregeln hergeleitet:</p>
+<div class="definition">
+<p><span id="def:defablr" class="definition"><strong>Definition 10.7  (Ableitungsregeln) </strong></span></p>
+<strong>Ableitungsregeln</strong>
+<table>
+<tr>
+<th>
+(Funktions-)Typ
+</th>
+<th>
+Funktion
+</th>
+<th>
+Ableitung
+</th>
+</tr>
+<tr>
+<td>
+1.konstante Funktion  
+</td>
+<td>
+<span class="math inline">\(f(x)=c\)</span>
+</td>
+<td>
+<span class="math inline">\(f^\prime(x)=0\)</span>
+</td>
+</tr>
+<tr>
+<td>
+2.lineare Funktion
+</td>
+<td>
+<span class="math inline">\(f(x)=ax + b\)</span>
+</td>
+<td>
+<span class="math inline">\(f^\prime(x)=a\)</span>
+</td>
+</tr>
+<tr>
+<td>
+3.Potenzfunktion
+</td>
+<td>
+<span class="math inline">\(f(x)=x^n\)</span>
+</td>
+<td>
+<span class="math inline">\(f^\prime(x)=n\, x^{n-1}\)</span>
+</td>
+</tr>
+<tr>
+<td>
+4.Skalierung
+</td>
+<td>
+<span class="math inline">\(g(x)=c\, f(x)\)</span>
+</td>
+<td>
+<span class="math inline">\(g^\prime(x)=c\,f^\prime(x)\)</span>
+</td>
+</tr>
+<tr>
+<td>
+5.Summenregel
+</td>
+<td>
+<span class="math inline">\(f(x)=g_1(x) + g_2(x)\)</span> 
+</td>
+<td>
+<span class="math inline">\(f^\prime(x) = g_1^\prime(x) + g_2^\prime(x)\)</span>
+</td>
+</tr>
+<tr>
+<td>
+</td>
+<td>
+<span class="math inline">\(f(x)=\sum_{i=1}^n g_i(x)\)</span>
+</td>
+<td>
+<span class="math inline">\(f^\prime(x) =\sum_{i=1}^n g_i^\prime(x)\)</span>
+</td>
+</tr>
+<tr>
+<td>
+6.Produktregel
+</td>
+<td>
+<span class="math inline">\(f(x)=g(x)\, h(x)\)</span>
+</td>
+<td>
+<span class="math inline">\(f^\prime(x) = g^\prime(x) h(x) + g(x) h^\prime(x)\)</span>
+</td>
+</tr>
+<tr>
+<td>
+7.Kettenregel
+</td>
+<td>
+<span class="math inline">\(f(x)=g(h(x))\)</span>
+</td>
+<td>
+<span class="math inline">\(f^\prime(x)=g^\prime(h(x))\,h^\prime(x)\)</span>
+</td>
+</tr>
+</table>
+</div>
+<div class="example">
+<p><span id="exm:eabl" class="example"><strong>Beispiel 10.5  (Ableitung) </strong></span><strong>Beispiel (Ableitung)</strong></p>
+<ul>
+<li><span class="math inline">\(f(x) = 0,1x^4 -x^3 + 3x^2 - 5x +10 \rightarrow f&#39;(x) = 0,4x^3-3x^2 + 6x-5. \text{ (Ableitungsregeln 1-5)}\)</span></li>
+<li><span class="math inline">\(f(x) = (2x-1)(3-5x^2) \rightarrow f&#39;(x) = \color{red}{(2x-1)&#39;}(3-5x^2) + (2x-1) \color{blue}{(3-5x^2)&#39;} = \color{red}{2}\cdot(3-5x^2) + (2x-1)\cdot \color{blue}{(-10x)}=\ldots\text{ (Ableitungsregeln 6 + 1-5)}\)</span></li>
+<li><span class="math inline">\(f(x) = (1-2x)^2 \rightarrow f&#39;(x) =\big(\color{red}(\color{blue}{1-2x}\color{red}{)^2}\big)\color{blue}&#39;\cdot\color{blue}{(1-2\color{orange}x)\color{orange}&#39;} =\color{red}{2\cdot(\color{blue}{1-2x})}\cdot\color{orange}{(-2)}=\ldots\text{ (Ableitungsregeln 7 + 1-5)}\)</span></li>
+</ul>
+</div>
+</div>
+<div id="loopableiten" class="loop">
+<div id="übung-ableiten-von-polynomen" class="section level3 hasAnchor" number="10.3.2">
+<h3><span class="header-section-number">10.3.2</span> Übung: Ableiten von Polynomen<a href="funktionen-und-optimierung.html#übung-ableiten-von-polynomen" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Übe das Ableiten von polynomischen Funktionen mit Parametern in dieser Endlosschleife. Wenn du richtig antwortest und sicher die Ableitungsregeln anwenden kannst, werden die Aufgaben zunehmend herausfordernder.</p>
+<div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb11-1"><a href="funktionen-und-optimierung.html#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="co">#uiOutput(&quot;dyn_exer&quot;)</span></span></code></pre></div>
+</div>
+</div>
+</div>
+<div id="einfache-optimierungsprobleme" class="section level2 hasAnchor" number="10.4">
+<h2><span class="header-section-number">10.4</span> Einfache Optimierungsprobleme<a href="funktionen-und-optimierung.html#einfache-optimierungsprobleme" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Optimierung beschäftigt sich damit, optimale Parameter eines Systems zu finden. “Optimal” bedeutet, dass eine Zielfunktion minimiert oder maximiert wird. Die einfache Optimierungsprobleme beinhalten das Auffinden eines Minimums oder Maximums einer Funktion.</p>
+<p>In ökonomischem Kontext spielen Optimierungsprobleme eine entscheidende Rolle bei bspw. Kostenmierung, Gewinnmaximierung und Nutzenmaximierung.</p>
+<p>In der obigen interaktiven App zu Ableitung kann man beobachten, dass unsere Gewinnfunktion ihren Maximum in dem Punkt annimmt, wo ihre Ableitung gleich Null ist ( <span class="math inline">\(\pi&#39;(x^*)=0\)</span> ). Intuitiv: wenn <span class="math inline">\(\pi&#39;(x)&gt;0\)</span> bedeutet dies, dass der Gewinn noch wächst, bzw. wenn <span class="math inline">\(\pi&#39;(x)&lt;0\)</span> sinkt der Gewinn, bei <span class="math inline">\(\pi&#39;(x)=0\)</span> wird ihr Maximum erreicht.</p>
+<p>Im Allgemeinen gilt:</p>
+<div class="definition">
+<p><span id="def:defablstat" class="definition"><strong>Definition 10.8  (Stationäre Punkte) </strong></span><strong>Definition (Nullstellen der Ableitung und stationäre Punkte)</strong></p>
+<p><strong>Nullstellen der Ableitung</strong> entsprechen den sogennanten <strong>stationären Punkten</strong> der Funktion (bezeichnet als <span class="math inline">\(x^*\)</span>). Diese stationären Punkte beinhalten Maxima a), Minima b) und Wendepunkte c):</p>
+<p><img src="www/opt.png" /></p>
+<div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb12-1"><a href="funktionen-und-optimierung.html#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="co">#img(src=&quot;opt.png&quot;, height=&quot;60%&quot;, width=&quot;60%&quot;, align=&quot;center&quot;)</span></span></code></pre></div>
+</div>
+<p>Um zu bestimmen, ob es sich um ein Maximum, Minimum oder einen Wendepunkt handelt, kann man z.B. auf die graphische Darstellung der Funktion zurückgreifen oder man zieht formale Kriterien hinzu. Hierfür wird die zweite Ableitung ( <span class="math inline">\(f&#39;&#39;(x)\)</span>, also die Ableitung der Ableitung) in allen stationären Punkten <span class="math inline">\(x^*\)</span> berechnet. Ist <span class="math inline">\(f&#39;&#39;(x^*)&lt;0\)</span> (wie in d) handelt es sich um eine Maximumstelle, Ist <span class="math inline">\(f&#39;&#39;(x^*)&gt;0\)</span> (wie in e) handelt es sich um eine Mimnimumstelle.</p>
+<div class="example">
+<p><span id="exm:emonmax" class="example"><strong>Beispiel 10.6  (Gewinnmaximum des Monopolisten) </strong></span><strong>Beispiel (Gewinnmaximum des Monopolisten)</strong></p>
+<p>Unsere Gewinnfunktion lautet:
+<span class="math display">\[\pi(x)=-12x^2 + 1500 x-747,\]</span>
+Die Ableitung ist (siehe die Ableitungsregeln):
+<span class="math display">\[\pi&#39;(x)=-12\cdot 2x + 1500 = -24x+1500.\]</span>
+Die Nullstellen der Ableitung sind:
+<span class="math display">\[-24x + 1500=0 \rightarrow 1500 = 24x \rightarrow x^* = \frac {1500}{24} = 62,5.\]</span>
+Da <span class="math inline">\(\pi&#39;&#39;(x) = -24\)</span> und somit immer <span class="math inline">\(&lt;0\)</span> handelt es sich um eine Maximumstelle.</p>
+</div>
+<div id="qfun2" class="quiz">
+<p><strong>Quiz Optimierung</strong></p>
+<p id="question">
+<span id="question-text99"></span>
+</p>
+<input type="number" id="answer99" placeholder="Antwort eingeben">
+<button onclick="checkAnswer_num(questionObj99)">Check</button>
+<p id="result99">
+</p>
+<script>
+
+ // Generate a random question
+    const questionObj99 = generateQuestion_num(99);
+// Display the question
+    document.getElementById('question-text99').textContent = "Finde die Produktionsmenge \\(x^*\\), bei der die Gewinnfunktion \\(\\pi(x) = -" + questionObj99.question[0] + "x^2 + " + questionObj99.question[1] + "x - " + (2*questionObj99.question[1]) + "\\) ihren Maximum annimmt. Runde auf vier Nachkommastellen.";
+    questionObj99.answer = -questionObj99.question[1]/(2*questionObj99.question[0])
+</script>
+<hr />
+<script>
+  // Generate a random question
+    const questionObj910 = {
+      question: "Wie kann man verifizieren, dass die gefundene Produktionsmenge auch wirklich den Gewinn maximiert (und nicht minimiert)?",
+      options: [ "Die erste Ableitung der Gewinnfunktion muss an der Stelle negativ sein",  "Die erste Ableitung der Gewinnfunktion muss an der Stelle positiv sein","Die zweite Ableitung der Gewinnfunktion muss an der Stelle negativ sein", "Die zweite Ableitung der Gewinnfunktion muss an der Stelle positiv sein"],
+      answer: '3',
+      id: 910
+    };
+</script>
+<p class="question">
+<span id="question-text910"></span>
+</p>
+<div class="options">
+<label>
+<input type="radio" name="option910" value=1> Die erste Ableitung der Gewinnfunktion muss an der Stelle negativ sein
+</label>
+<br>
+<label>
+<input type="radio" name="option910" value=2> Die erste Ableitung der Gewinnfunktion muss an der Stelle positiv sein
+</label>
+<br>
+<label>
+<input type="radio" name="option910" value=3> Die zweite Ableitung der Gewinnfunktion muss an der Stelle negativ sein
+</label>
+<br>
+<label>
+<input type="radio" name="option910" value=4> Die zweite Ableitung der Gewinnfunktion muss an der Stelle positiv sein
+</label>
+</div>
+<button onclick="checkAnswer_match(questionObj910)">Check</button>
+<p id="result910">
+</p>
+<script>
+  // Display the question
+    document.getElementById('question-text910').textContent = questionObj910.question;
+</script>
+<hr />
+<p id="question">
+<span id="question-text911"></span>
+</p>
+<input type="number" id="answer911" placeholder="Antwort eingeben">
+<button onclick="checkAnswer_num(questionObj911)">Check</button>
+<p id="result911">
+</p>
+<script>
+
+ // Generate a random question
+    const questionObj911 = generateQuestion_num(911);
+// Display the question
+    document.getElementById('question-text911').textContent = "Ein Landwirtschaftsbetrieb hat folgende Produktionsfunktion: \\(0,001\\cdot (−0,05s^3+8s^2+20s)\\). Welche optimale Menge \\(s_{opt}\\) von dem Inputfaktor \\(s>0\\) maximiert den Ertrag? Runde auf vier Nachkommastellen.";
+    questionObj911.answer = 107.9024
+</script>
+<hr />
+<script>
+  // Generate a random question
+    const questionObj913 = {
+      question: "Ein Monopolist hat folgende Preis-Absatz-Funktion: \\(p(x)=1560−12x\\). Weiterhin ist die Kostenfunktion: \\(K(x)=2x^2+20x+24000\\). Welche der folgenden Funktionen entspricht der Gewinnfunktion des Monopolisten?",
+      options: ["\\(-14x^2 + 1540 x - 24000\\)", "\\(-14x^2 + 1540 x + 24000\\)", "\\(-10x^2 + 1580 x - 24000\\)","\\(-10x^2 + 1580 x + 24000\\)"],
+      answer: '1',
+      id: 913
+    };
+</script>
+<p class="question">
+<span id="question-text913"></span>
+</p>
+<div class="options">
+<label>
+<input type="radio" name="option913" value=1> \(-14x^2 + 1540 x - 24000\)
+</label>
+<br>
+<label>
+<input type="radio" name="option913" value=2> \(-14x^2 + 1540 x + 24000\)
+</label>
+<br>
+<label>
+<input type="radio" name="option913" value=3> \(-10x^2 + 1580 x - 24000\)
+</label>
+<br>
+<label>
+<input type="radio" name="option913" value=4> \(-10x^2 + 1580 x + 24000\)
+</label>
+</div>
+<button onclick="checkAnswer_match(questionObj913)">Check</button>
+<p id="result913">
+</p>
+<script>
+  // Display the question
+    document.getElementById('question-text913').textContent = questionObj913.question;
+</script>
+<hr />
+<p id="question">
+<span id="question-text912"></span>
+<input type="number" id="answer912" placeholder="Antwort eingeben">
+</p>
+<button onclick="checkAnswer_num(questionObj912)">
+Check
+</button>
+<p id="result912">
+</p>
+<script>
+
+ // Generate a random question
+    const questionObj912 = generateQuestion_num(912);
+// Display the question
+    document.getElementById('question-text912').textContent = "Wie lautet die optimale Produktionsmenge des Monopolisten? \\(x_{opt}=\\)";
+    questionObj912.answer = 55
+</script>
+</div>
+
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="lineare-gleichungssysteme.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="weitere-funktionen-für-ökonomische-modellierung.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"whatsapp": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": "https://github.com/USERNAME/REPO/edit/BRANCH/09-FunktionenOptimierung.Rmd",
+"text": "Edit"
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": ["_main.pdf", "_main.epub"],
+"search": {
+"engine": "fuse",
+"options": null
+},
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/latest.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>

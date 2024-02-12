@@ -1,0 +1,1076 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Kapitel 6 Variablen und Terme | Vor- und Brückenkurs: Wirtschaftsmathematik</title>
+  <meta name="description" content="Das ist der Skript für den Kurs Vor- und Brückenkurs: Wirtschaftsmathematik." />
+  <meta name="generator" content="bookdown 0.34 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Kapitel 6 Variablen und Terme | Vor- und Brückenkurs: Wirtschaftsmathematik" />
+  <meta property="og:type" content="book" />
+  
+  <meta property="og:description" content="Das ist der Skript für den Kurs Vor- und Brückenkurs: Wirtschaftsmathematik." />
+  <meta name="github-repo" content="rstudio/bookdown-demo" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Kapitel 6 Variablen und Terme | Vor- und Brückenkurs: Wirtschaftsmathematik" />
+  
+  <meta name="twitter:description" content="Das ist der Skript für den Kurs Vor- und Brückenkurs: Wirtschaftsmathematik." />
+  
+
+<meta name="author" content="Maria Osipenko" />
+
+
+<meta name="date" content="2024-02-12" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="prozent--und-zinsrechnung.html"/>
+<link rel="next" href="gleichungen.html"/>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+<script src="libs/htmlwidgets-1.6.2/htmlwidgets.js"></script>
+<script src="libs/plotly-binding-4.10.2/plotly.js"></script>
+<script src="libs/typedarray-0.1/typedarray.min.js"></script>
+<link href="libs/crosstalk-1.2.0/css/crosstalk.min.css" rel="stylesheet" />
+<script src="libs/crosstalk-1.2.0/js/crosstalk.min.js"></script>
+<link href="libs/plotly-htmlwidgets-css-2.11.1/plotly-htmlwidgets.css" rel="stylesheet" />
+<script src="libs/plotly-main-2.11.1/plotly-latest.min.js"></script>
+
+
+<style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { color: #008000; } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { color: #008000; font-weight: bold; } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+<style type="text/css">
+  
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">A Minimal Book Example</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Grundlagen</a>
+<ul>
+<li class="chapter" data-level="1.1" data-path="index.html"><a href="index.html#rechenregeln"><i class="fa fa-check"></i><b>1.1</b> Rechenregeln</a>
+<ul>
+<li class="chapter" data-level="1.1.1" data-path="index.html"><a href="index.html#umwandlung-von-brüchen"><i class="fa fa-check"></i><b>1.1.1</b> Umwandlung von Brüchen</a></li>
+<li class="chapter" data-level="1.1.2" data-path="index.html"><a href="index.html#rehenfolge-der-rechenoperationen"><i class="fa fa-check"></i><b>1.1.2</b> Rehenfolge der Rechenoperationen</a></li>
+<li class="chapter" data-level="1.1.3" data-path="index.html"><a href="index.html#punkt--von-strich-rechnung"><i class="fa fa-check"></i><b>1.1.3</b> “Punkt- von Strich-”Rechnung</a></li>
+<li class="chapter" data-level="1.1.4" data-path="index.html"><a href="index.html#aufmachen-von-klammern-ausmultiplizieren"><i class="fa fa-check"></i><b>1.1.4</b> Aufmachen von Klammern, Ausmultiplizieren</a></li>
+</ul></li>
+<li class="chapter" data-level="1.2" data-path="index.html"><a href="index.html#notation"><i class="fa fa-check"></i><b>1.2</b> Notation</a>
+<ul>
+<li class="chapter" data-level="1.2.1" data-path="index.html"><a href="index.html#auslassen-von-punkt-bei-multiplikation-mit-variablen"><i class="fa fa-check"></i><b>1.2.1</b> Auslassen von Punkt bei Multiplikation mit Variablen</a></li>
+<li class="chapter" data-level="1.2.2" data-path="index.html"><a href="index.html#summen--und-produktzeichen"><i class="fa fa-check"></i><b>1.2.2</b> Summen- und Produktzeichen</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="mengen-und-zahlen.html"><a href="mengen-und-zahlen.html"><i class="fa fa-check"></i><b>2</b> Mengen und Zahlen</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="mengen-und-zahlen.html"><a href="mengen-und-zahlen.html#mengen"><i class="fa fa-check"></i><b>2.1</b> Mengen</a>
+<ul>
+<li class="chapter" data-level="2.1.1" data-path="mengen-und-zahlen.html"><a href="mengen-und-zahlen.html#mengenoperationen"><i class="fa fa-check"></i><b>2.1.1</b> Mengenoperationen</a></li>
+<li class="chapter" data-level="2.1.2" data-path="mengen-und-zahlen.html"><a href="mengen-und-zahlen.html#spezielle-mengen"><i class="fa fa-check"></i><b>2.1.2</b> Spezielle Mengen</a></li>
+<li class="chapter" data-level="2.1.3" data-path="mengen-und-zahlen.html"><a href="mengen-und-zahlen.html#mengen-zur-wahrscheinlichkeitsrechnung"><i class="fa fa-check"></i><b>2.1.3</b> Mengen zur Wahrscheinlichkeitsrechnung</a></li>
+</ul></li>
+<li class="chapter" data-level="2.2" data-path="mengen-und-zahlen.html"><a href="mengen-und-zahlen.html#zahlenmengen"><i class="fa fa-check"></i><b>2.2</b> Zahlenmengen</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="bruchrechnung.html"><a href="bruchrechnung.html"><i class="fa fa-check"></i><b>3</b> Bruchrechnung</a></li>
+<li class="chapter" data-level="4" data-path="potenzen-und-wurzel.html"><a href="potenzen-und-wurzel.html"><i class="fa fa-check"></i><b>4</b> Potenzen und Wurzel</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="potenzen-und-wurzel.html"><a href="potenzen-und-wurzel.html#potenzen"><i class="fa fa-check"></i><b>4.1</b> Potenzen</a></li>
+<li class="chapter" data-level="4.2" data-path="potenzen-und-wurzel.html"><a href="potenzen-und-wurzel.html#wurzel"><i class="fa fa-check"></i><b>4.2</b> Wurzel</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="prozent--und-zinsrechnung.html"><a href="prozent--und-zinsrechnung.html"><i class="fa fa-check"></i><b>5</b> Prozent- und Zinsrechnung</a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="prozent--und-zinsrechnung.html"><a href="prozent--und-zinsrechnung.html#prozentrechnung"><i class="fa fa-check"></i><b>5.1</b> Prozentrechnung</a></li>
+<li class="chapter" data-level="5.2" data-path="prozent--und-zinsrechnung.html"><a href="prozent--und-zinsrechnung.html#zinsrechnung"><i class="fa fa-check"></i><b>5.2</b> Zinsrechnung</a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="variablen-und-terme.html"><a href="variablen-und-terme.html"><i class="fa fa-check"></i><b>6</b> Variablen und Terme</a>
+<ul>
+<li class="chapter" data-level="6.1" data-path="variablen-und-terme.html"><a href="variablen-und-terme.html#umformung-von-termen"><i class="fa fa-check"></i><b>6.1</b> Umformung von Termen</a></li>
+<li class="chapter" data-level="6.2" data-path="variablen-und-terme.html"><a href="variablen-und-terme.html#binomische-formeln-1-3"><i class="fa fa-check"></i><b>6.2</b> Binomische Formeln 1-3</a></li>
+<li class="chapter" data-level="6.3" data-path="variablen-und-terme.html"><a href="variablen-und-terme.html#variablen-in-brüchen"><i class="fa fa-check"></i><b>6.3</b> Variablen in Brüchen</a></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="gleichungen.html"><a href="gleichungen.html"><i class="fa fa-check"></i><b>7</b> Gleichungen</a>
+<ul>
+<li class="chapter" data-level="7.1" data-path="gleichungen.html"><a href="gleichungen.html#definition-einer-gleichung"><i class="fa fa-check"></i><b>7.1</b> Definition einer Gleichung</a></li>
+<li class="chapter" data-level="7.2" data-path="gleichungen.html"><a href="gleichungen.html#lösen-von-gleichungen"><i class="fa fa-check"></i><b>7.2</b> Lösen von Gleichungen</a></li>
+<li class="chapter" data-level="7.3" data-path="gleichungen.html"><a href="gleichungen.html#spezielle-gleichungen"><i class="fa fa-check"></i><b>7.3</b> Spezielle Gleichungen</a>
+<ul>
+<li class="chapter" data-level="7.3.1" data-path="gleichungen.html"><a href="gleichungen.html#faktorisierte-gleichungen"><i class="fa fa-check"></i><b>7.3.1</b> Faktorisierte Gleichungen</a></li>
+<li class="chapter" data-level="7.3.2" data-path="gleichungen.html"><a href="gleichungen.html#betragsgleichungen"><i class="fa fa-check"></i><b>7.3.2</b> Betragsgleichungen</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="8" data-path="ungleichungen.html"><a href="ungleichungen.html"><i class="fa fa-check"></i><b>8</b> Ungleichungen</a>
+<ul>
+<li class="chapter" data-level="8.1" data-path="ungleichungen.html"><a href="ungleichungen.html#definition-von-ungleichungen"><i class="fa fa-check"></i><b>8.1</b> Definition von Ungleichungen</a></li>
+<li class="chapter" data-level="8.2" data-path="ungleichungen.html"><a href="ungleichungen.html#umformung-von-ungleichungen"><i class="fa fa-check"></i><b>8.2</b> Umformung von Ungleichungen</a></li>
+<li class="chapter" data-level="8.3" data-path="ungleichungen.html"><a href="ungleichungen.html#spezielle-ungleichungen"><i class="fa fa-check"></i><b>8.3</b> Spezielle Ungleichungen</a>
+<ul>
+<li class="chapter" data-level="8.3.1" data-path="ungleichungen.html"><a href="ungleichungen.html#faktorisierte-ungleichungen"><i class="fa fa-check"></i><b>8.3.1</b> Faktorisierte Ungleichungen</a></li>
+<li class="chapter" data-level="8.3.2" data-path="ungleichungen.html"><a href="ungleichungen.html#betragsungleichungen"><i class="fa fa-check"></i><b>8.3.2</b> Betragsungleichungen</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="9" data-path="lineare-gleichungssysteme.html"><a href="lineare-gleichungssysteme.html"><i class="fa fa-check"></i><b>9</b> Lineare Gleichungssysteme</a>
+<ul>
+<li class="chapter" data-level="9.1" data-path="lineare-gleichungssysteme.html"><a href="lineare-gleichungssysteme.html#lösung-von-lgs"><i class="fa fa-check"></i><b>9.1</b> Lösung von LGS</a></li>
+</ul></li>
+<li class="chapter" data-level="10" data-path="funktionen-und-optimierung.html"><a href="funktionen-und-optimierung.html"><i class="fa fa-check"></i><b>10</b> Funktionen und Optimierung</a>
+<ul>
+<li class="chapter" data-level="10.1" data-path="funktionen-und-optimierung.html"><a href="funktionen-und-optimierung.html#funktionen"><i class="fa fa-check"></i><b>10.1</b> Funktionen</a></li>
+<li class="chapter" data-level="10.2" data-path="funktionen-und-optimierung.html"><a href="funktionen-und-optimierung.html#lineare-und-quadratische-funktionen-polynome"><i class="fa fa-check"></i><b>10.2</b> Lineare und quadratische Funktionen, Polynome</a></li>
+<li class="chapter" data-level="10.3" data-path="funktionen-und-optimierung.html"><a href="funktionen-und-optimierung.html#ableitung"><i class="fa fa-check"></i><b>10.3</b> Ableitung</a>
+<ul>
+<li class="chapter" data-level="10.3.1" data-path="funktionen-und-optimierung.html"><a href="funktionen-und-optimierung.html#einige-ableitungsregeln"><i class="fa fa-check"></i><b>10.3.1</b> Einige Ableitungsregeln</a></li>
+</ul></li>
+<li class="chapter" data-level="10.4" data-path="funktionen-und-optimierung.html"><a href="funktionen-und-optimierung.html#einfache-optimierungsprobleme"><i class="fa fa-check"></i><b>10.4</b> Einfache Optimierungsprobleme</a></li>
+</ul></li>
+<li class="chapter" data-level="11" data-path="weitere-funktionen-für-ökonomische-modellierung.html"><a href="weitere-funktionen-für-ökonomische-modellierung.html"><i class="fa fa-check"></i><b>11</b> Weitere Funktionen für ökonomische Modellierung</a>
+<ul>
+<li class="chapter" data-level="11.1" data-path="weitere-funktionen-für-ökonomische-modellierung.html"><a href="weitere-funktionen-für-ökonomische-modellierung.html#exponentialfunktion"><i class="fa fa-check"></i><b>11.1</b> Exponentialfunktion</a></li>
+<li class="chapter" data-level="11.2" data-path="weitere-funktionen-für-ökonomische-modellierung.html"><a href="weitere-funktionen-für-ökonomische-modellierung.html#logarithmusfunktion"><i class="fa fa-check"></i><b>11.2</b> Logarithmusfunktion</a></li>
+</ul></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Vor- und Brückenkurs: Wirtschaftsmathematik</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="variablen-und-terme" class="section level1 hasAnchor" number="6">
+<h1><span class="header-section-number">Kapitel 6</span> Variablen und Terme<a href="variablen-und-terme.html#variablen-und-terme" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<script>
+function checkAnswer_mmc(q) {
+      const selectedOptions = document.querySelectorAll('input[name="option'+q.id+'"]:checked');
+      if (selectedOptions.length === 2) {
+        const userAnswers = Array.from(selectedOptions).map(option => option.value);
+        const correctAnswers = q.answer;
+        const isCorrect = userAnswers.every(answer => correctAnswers.includes(answer));
+
+if (isCorrect) {
+          document.getElementById('result'+q.id).textContent = 'Glückwunsch! Deine Antwort ist richtig.';
+        } else {
+          document.getElementById('result'+q.id).textContent = `Leider falsch. Versuch es nochmal!`;
+        }
+      } else {
+        document.getElementById('result'+q.id).textContent = 'Bitte zwei Optionen auswählen.';
+      }
+    }
+// numeric
+function generateQuestion_num(id) {
+      // Generate two random numbers between 2 and 10
+      const num1 = Math.floor(Math.random() * 10) + 2;
+      const num2 = Math.floor(Math.random() * 10) + 2;
+      const x1 = Math.floor(Math.random() * 100) + 2;
+      const x2 = Math.floor(Math.random() * 100) + 2;
+      const x3 = Math.floor(Math.random() * 100) + 2;
+      const x4 = Math.floor(Math.random() * 100) + 2;
+      const x5 = Math.floor(Math.random() * 100) + 2;
+      const x6 = Math.floor(Math.random() * 100) + 2;
+
+       // Calculate the correct answer
+      let answer = num1*Math.sqrt(x1) + num2*Math.sqrt(x2);
+
+      // Return the question and answer as an object
+      return {
+       // question: num1 + "\\(\\sqrt{x}+\\)"+ num2 + "\\(\\sqrt{y}\\)" + " for \\(x=\\)" + x1 + " and \\(y=\\)" + x2,
+        question: [num1,num2,x1,x2,x3,x4,x5,x6],
+        answer: answer,
+        id: id
+      };
+    }
+
+function checkAnswer_num(q) {
+      const userAnswer = document.getElementById('answer'+q.id).value;
+      const isCorrect = Math.round(parseFloat(userAnswer)*100)/100 === Math.round(q.answer*100)/100;
+
+      if (isCorrect) {
+        document.getElementById('result'+q.id).textContent = 'Glückwunsch! Deine Antwort ist richtig.';
+      } else {
+        document.getElementById('result'+q.id).textContent = `Sorry, incorrect.`;
+      }
+  }
+
+// plain multiple choice
+  function checkAnswer_match(q) {
+      const selectedOption = document.querySelector('input[name="option'+q.id+'"]:checked');
+      if (selectedOption) {
+        const userAnswer = selectedOption.value;
+        const isCorrect = userAnswer === q.answer;
+
+        if (isCorrect) {
+          document.getElementById('result'+q.id).textContent = 'Glückwunsch! Deine Antwort ist richtig.';
+        } else {
+          document.getElementById('result'+q.id).textContent = `Leider falsch. Versuch es nochmal!`;
+        }
+      } else {
+        document.getElementById('result'+q.id).textContent = 'Bitte eine Option wählen.';
+      }
+    }
+</script>
+<p>Die Verwendung von Variablen, Termen und Gleichungen ist notwendig, um unbestimmte Werte zum Audruck zu bringen.</p>
+<div class="definition">
+<p><span id="def:defterm" class="definition"><strong>Definition 6.1  (Variablen und Terme) </strong></span><strong>Definition (Variablen und Terme)</strong></p>
+<ul>
+<li><p>Eine <strong>Variable</strong> ist ein Symbol (typischerweise ein Buchstabe), das als Platzhalter für einen unbestimmten Wert eingesetzt wird.</p></li>
+<li><p>Ein <strong>Term</strong> ist ein mathematischer Ausdruck, der Variablen, Rechenoperationen und weitere Symbole enthalten kann, und der nach Einsetzung von Zahlen für die Variablen einen konkreten Zahlenwert ergibt.</p></li>
+</ul>
+</div>
+<p>Variablen (und manchmal Terme) werden meist mit kleinen lateinischen Buchstaben <span class="math inline">\(a,b,c,\ldots, x,y,z,\ldots\)</span> bezeichnet.</p>
+<p>Terme können zu Gleichungen bzw. Ungleichungen kombiniert oder in Funktionsbeschreibungen eingesetzt werden, dazu später mehr.</p>
+<div class="example">
+<p><span id="exm:evarter" class="example"><strong>Beispiel 6.1  (Variablen und Terme) </strong></span><strong>Beispiel (Wertpapierportfolio)</strong></p>
+<p>Die textuelle Frage</p>
+<p>“Ein Wertpapierportfolio besteht aus Aktien und Anleihen. Der Aktienwert in dem Portfolio beträgt 60 Euro mehr als der Wert von den Anlehen. Wenn der gesamte Portfoliowert derzeit bei 240 EUR liegt, wieviel Geld sind die Aktien in diesem Portfolio wert?”</p>
+<p>kann man formalisieren, in dem die Variable <span class="math inline">\(x\)</span> für den Wert der Anleihen und <span class="math inline">\(y\)</span> für den Wert der Aktien wählt und damit die beiden Gleichungen: <span class="math inline">\(x+60=y\)</span> und <span class="math inline">\(x+y=240\)</span> aufstellt.</p>
+<p>Durch Einsetzen bekommt man die Lösung: <span class="math inline">\(x=90\)</span>, <span class="math inline">\(y=150\)</span>.</p>
+<p>Der Aktienwert in dem Portfolio beträgt also 150 Euro.</p>
+<p>Dabei ist bspw. <span class="math inline">\(x+60\)</span> ein Term, <span class="math inline">\(x\)</span> eine Variable und <span class="math inline">\(x+y=240\)</span> eine Gleichung.</p>
+</div>
+<p>Ein Term kann zu einem konkreten Zahlenwert ausgewertet werden, wenn man Zahlen für die im Term auftretenden Variablen einsetzt:</p>
+<div class="example">
+<p><span id="exm:evarter2" class="example"><strong>Beispiel 6.2  (Variablen und Terme) </strong></span><strong>Beispiel (Auswertung von Termen)</strong></p>
+<p>Der Term <span class="math inline">\(x+60\)</span> nimmt für einen <span class="math inline">\(x\)</span>-Wert <span class="math inline">\(x=100\)</span> den Zahlenwert <span class="math inline">\(160\)</span> an.</p>
+</div>
+<p>Terme können auch ineinander eingesetzt werden, dabei erhält man einen neuen Term:</p>
+<div class="example">
+<p><span id="exm:evarte3r" class="example"><strong>Beispiel 6.3  (Variablen und Terme) </strong></span><strong>Beispiel (Einsetzen von Termen)</strong></p>
+<p>Setzt man den Ausdruck <span class="math inline">\(y=x+60\)</span> in den Term <span class="math inline">\(x+y\)</span> ein, so bekommt man einen neuen Term <span class="math inline">\(2x+60\)</span>: <span class="math inline">\(x+y=x+(x+60)=2x+60.\)</span> Dieser Term stellt den Portfoliowert abhängig von <span class="math inline">\(x\)</span> dar.</p>
+</div>
+<p>Es gibt meist mehrere Wege das selbe Problem zu formalisieren:</p>
+<div class="example">
+<p><span id="exm:evarter4" class="example"><strong>Beispiel 6.4  (Variablen und Terme) </strong></span><strong>Beispiel (Darstellung durch Terme)</strong></p>
+<p>für das obige Beispiel “Wertpapierportfolio”
+gilt auch <span class="math inline">\(x=y-60\)</span>. Eingesetzt in den Term <span class="math inline">\(x+y\)</span>, bekommt man einen neuen Term <span class="math inline">\(2y-60\)</span>: <span class="math inline">\(x+y=(y-60)+y=2y-60.\)</span> Dieser Term stellt den Portfoliowert abhängig von <span class="math inline">\(y\)</span> dar.</p>
+</div>
+<div id="umformung-von-termen" class="section level2 hasAnchor" number="6.1">
+<h2><span class="header-section-number">6.1</span> Umformung von Termen<a href="variablen-und-terme.html#umformung-von-termen" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Verschiedene Operationen in einem Term können den gleichen Wert beschreiben, bspw. <span class="math inline">\(x + x = 2x\)</span>.
+In den betrachteten Beispielen haben wir bereits einige Terme <strong>umgeformt</strong>.</p>
+<div class="definition">
+<p><span id="def:defumf" class="definition"><strong>Definition 6.2  (Umformung von Termen) </strong></span><strong>Definition (Umformung von Termen)</strong></p>
+<p>Eine <strong>Umformung</strong> beinhaltet, dass man die Rechenregeln auf einen Term anwendet.</p>
+<ul>
+<li>Zusammenfassen: <span class="math inline">\(x+x+x+\ldots+x=n\cdot x\)</span> ( <span class="math inline">\(n\)</span> ist die Anzahl der Summanden)</li>
+<li>Distributivgesetze („Ausmultiplizieren“): <span class="math inline">\((a+b)\cdot c= ac+bc\)</span> und <span class="math inline">\(c\cdot (a+b)= ca+cb.\)</span></li>
+<li>Kommutativgesetz: <span class="math inline">\(a+b=b+a\)</span>, <span class="math inline">\(ab=ba\)</span> und <span class="math inline">\(ca+cb=ac+bc=bc + ac\)</span>.</li>
+<li>Assoziativgesetz („Klammern umsetzen bei gleichen Operationen“):
+<span class="math inline">\(a+ (b+c)= (a+b) + c = a+b+c\)</span>, ebenso für die Multiplikation.</li>
+<li>Rechenregeln für Brüche: <span class="math inline">\(\frac 1{\frac ab}=\frac ba\)</span>. Wenn eine Variable im Nenner des Bruches enthalten ist, muss man <strong>ausschließen</strong> können, dass <strong>der Nenner Null</strong> wird. D.h. <strong>man entfernt die Werte der Variable, die dazu führen, dass der Nenner Null wird, aus dem Definitionsbereichs des Termes</strong>.</li>
+<li>Rechenregeln für Potenzen und spezielle Funktionen.</li>
+<li>Rechenregeln für bestimmte Formen von Termen (z.B. die binomischen Formeln).</li>
+</ul>
+</div>
+<p>Dabei gelten die algemeine Rechenregeln wie:</p>
+<ul>
+<li>Punkt- vor Strichrechnung - erst Multiplikation oder Division, danach Addition oder Subtraktion</li>
+<li>Rechnen mit Klammern - eine Klammer wird zuerst berechnet, immer zuerst die innere Klammer rechnen.</li>
+</ul>
+<p>Ziel dieser Umformungen ist es meist, den Term einfacher zu machen, einzelne Variablen zu isolieren oder den Term in eine gewünschte Form zu bringen:</p>
+<div class="example">
+<p><span id="exm:umformterm" class="example"><strong>Beispiel 6.5  (Variablen und Terme) </strong></span><strong>Beispiel (Umformung von Termen)</strong></p>
+<p>Zulässige Umformungen sind</p>
+<ul>
+<li><span class="math inline">\(x(x+x)+x^2=x^2 + x^2+ x^2= 3x^2\)</span> (der Term auf der rechten Seite ist einfacher da er weniger Symbole benötigt).</li>
+<li><span class="math inline">\((x+3)^2 -9 = (x^2 + 6x + 9) - 9 = x^2 + 6x = x(x+6)\)</span> (an der rechten Seite kann man die beiden Nullstellen <span class="math inline">\(x_1=0\)</span>, <span class="math inline">\(x_2=-6\)</span> ablesen)</li>
+<li><span class="math inline">\(1+\frac 1a = \frac{a+1} a\)</span> (linke Seite: für sehr große <span class="math inline">\(a\)</span> strebt der Term gegen 1; rechte Seite: Nullstelle bei <span class="math inline">\(a_1=-1\)</span>). Hier muss man explizit <span class="math inline">\(a=0\)</span> aus dem Definitionsbereich des Termes ausschließen.</li>
+</ul>
+</div>
+<p>Bei einer <strong>Produktdarstellung</strong> ist die Produktoperation die zuletzt ausgeführte Operation. Wegen der Punkt-vor-Strich-Regel erreicht man diese Form nur dadurch, dass man Klammern um die Faktoren setzt. Aus der Produktdarstellung kann man besonders einfach ablesen, wann der fragliche Term den Wert Null annimmt. Das passiert genau dann, wenn einer der Faktoren Null wird.</p>
+<p>Beispielsweise wird der Term <span class="math inline">\((x-1)(x+2)\)</span> zu Null, falls <span class="math inline">\(x=1\)</span> oder <span class="math inline">\(x=-2\)</span> eingesetzt wird. Für alle anderen Werte für <span class="math inline">\(x\)</span> ist er nicht Null.</p>
+<p>Bei einer <strong>Summendarstellung</strong> ist Addition bzw. Subtraktion die zuletzt ausgeführte Operation. Wegen der Punkt-vor-Strich-Regel sind Terme ohne Klammern automatisch in dieser Form. In der Summendarstellung lässt sich das asymptotische Verhalten eines Ausdrucks besonders leicht ablesen (wenn man immer größeren Werten der Variable einsetzt).</p>
+<p>Beispielsweise geht der Term <span class="math inline">\(10 + \frac 1x\)</span> gegen 10, wenn <span class="math inline">\(x\)</span> immer größer wird.</p>
+<p>Um die Produktdarstellung in die Summendarstellung zu überführen, verwendet man das <strong>Ausmultiplizieren</strong>. Beim Ausmultiplizieren werden Faktoren multipliziert, indem jeder Summand eines Faktors mit jedem Summanden des anderen Faktors multipliziert und die Ergebnisse summiert werden. Liegen mehr als zwei Faktoren vor, so sollten diese schrittweise (immer nur zwei miteinander) ausmultipliziert werden.</p>
+<div id="qterme" class="quiz">
+<p><strong>Quiz Umformungen</strong></p>
+<script>
+
+
+// Generate a random question
+  const questionObj51 = {
+      question: "Die korrekten Umformungen von \\(10 - (x + 3x +1)\\cdot 5\\) sind:",
+      options: ["\\(15 - 20x\\)", "\\(15 + 20x\\)","\\(5 - 20x\\)", "\\(10-(20x+5)\\)", "\\(10-(20x+1)\\)", "\\(10+(20x-5)\\)"],
+      answer: ['4','3'],
+      id: 51
+    };
+</script>
+<p class="question">
+Frage: <span id="question-text51"></span>
+</p>
+<div class="options">
+<p><label>
+<input type="checkbox" name="option51" value=1> \(15 - 20x\)
+</label>
+<label>
+<input type="checkbox" name="option51" value=2> \(15 + 20x\)
+</label>
+<label>
+<input type="checkbox" name="option51" value=3> \(5 - 20x\)
+</label>
+<label>
+<input type="checkbox" name="option51" value=4> \(10-(20x+5)\)
+</label>
+<label>
+<input type="checkbox" name="option51" value=5> \(10-(20x+1)\)
+</label>
+<label>
+<input type="checkbox" name="option51" value=6> \(10+(20x-5)\)
+</label></p>
+</div>
+<button onclick="checkAnswer_mmc(questionObj51)">
+Submit
+</button>
+<p id="result51">
+</p>
+<script>
+    // Display the question
+    document.getElementById('question-text51').textContent = questionObj51.question;
+
+</script>
+<hr />
+<script>
+
+
+// Generate a random question
+  const questionObj52 = {
+      question: 'Die korrekten Umformungen von \\(y(10+2x) - (6y+1)\\) sind:',
+      options: ["\\(4y + 2xy - 1\\)", "\\(16y + 2xy + 1\\)", "\\(4y + 2xy + 1\\)","\\(2y(8+x)+1\\)",
+            "\\(2y(2+x)+1\\)", "\\(2y(2+x)-1\\)"],
+      answer: ['1','6'],
+      id: 52
+    };
+</script>
+<p class="question">
+Frage: <span id="question-text52"></span>
+</p>
+<div class="options">
+<p><label>
+<input type="checkbox" name="option52" value=1> \(4y + 2xy - 1\)
+</label>
+<label>
+<input type="checkbox" name="option52" value=2> \(16y + 2xy + 1\)
+</label>
+<label>
+<input type="checkbox" name="option52" value=3> \(4y + 2xy + 1\)
+</label>
+<label>
+<input type="checkbox" name="option52" value=4> \(2y(8+x)+1\)
+</label>
+<label>
+<input type="checkbox" name="option52" value=5> \(2y(2+x)+1\)
+</label>
+<label>
+<input type="checkbox" name="option52" value=6> \(2y(2+x)-1\)
+</label></p>
+</div>
+<button onclick="checkAnswer_mmc(questionObj52)">
+Submit
+</button>
+<p id="result52">
+</p>
+<script>
+    // Display the question
+    document.getElementById('question-text52').textContent = questionObj52.question;
+
+</script>
+<hr />
+<script>
+
+
+// Generate a random question
+  const questionObj53 = {
+      question: "Gegeben ist der Term \\((8a+b)(a−2b)−(a−2b)^2\\). Wähle die Darstellungen, die durch das Faktorisieren des Termes entstehen.",
+      options: ["\\(-(8a+b)(a−2b)\\)", "\\((a−2b)(8a+b−a+2b)\\)", "\\((a−2b)(8a+b−a−2b)\\)", "\\((a−2b)(7a+3b)\\)","\\((a−2b)(7a−b)\\)"],
+      answer: ['2','4'],
+      id: 53
+    };
+</script>
+<p class="question">
+Frage: <span id="question-text53"></span>
+</p>
+<div class="options">
+<p><label>
+<input type="checkbox" name="option53" value=1> \(-(8a+b)(a−2b)\)
+</label>
+<label>
+<input type="checkbox" name="option53" value=2> \((a−2b)(8a+b−a+2b)\)
+</label>
+<label>
+<input type="checkbox" name="option53" value=3> \((a−2b)(8a+b−a−2b)\)
+</label>
+<label>
+<input type="checkbox" name="option53" value=4> \((a−2b)(7a+3b)\)
+</label>
+<label>
+<input type="checkbox" name="option53" value=4> \((a−2b)(7a−b)\)
+</label></p>
+</div>
+<button onclick="checkAnswer_mmc(questionObj53)">
+Submit
+</button>
+<p id="result53">
+</p>
+<script>
+    // Display the question
+    document.getElementById('question-text53').textContent = questionObj53.question;
+
+</script>
+<hr />
+<script>
+  // Generate a random question
+    const questionObj54 = {
+      question: "Vereinfache den Term: \\(b \\cdot (-2b)^3 – b^2 \\cdot (-3b)^2\\)",
+      options: ["\\(1\\)", "\\(-17b^4\\)", "\\(8b^3\\)", "\\(8b^4\\)","\\(-6b^4\\)", "\\(-b^2\\)"],
+      answer: '2',
+      id: 54
+    };
+</script>
+<p class="question">
+<span id="question-text54"></span>
+</p>
+<div class="options">
+<label>
+<input type="radio" name="option54" value=1> \(1\)
+</label>
+<label>
+<input type="radio" name="option54" value=2> \(-17b^4\)
+</label>
+<label>
+<input type="radio" name="option54" value=3> \(8b^3\)
+</label>
+<label>
+<input type="radio" name="option54" value=4> \(8b^4\)
+</label>
+<label>
+<input type="radio" name="option54" value=5> \(-6b^4\)
+</label>
+<label>
+<input type="radio" name="option54" value=6> \(-b^2\)
+</label>
+</div>
+<button onclick="checkAnswer_match(questionObj54)">Check</button>
+<p id="result54">
+</p>
+<script>
+  // Display the question
+    document.getElementById('question-text54').textContent = questionObj54.question;
+</script>
+<hr />
+<script>
+  // Generate a random question
+    const questionObj55 = {
+      question: "Vereinfache den Term: \\(b \\cdot b^2 – b^2 \\cdot (b + 1)\\)",
+      options: ["\\(1\\)", "\\(-17b^4\\)", "\\(8b^3\\)", "\\(8b^4\\)","\\(-6b^4\\)", "\\(-b^2\\)"],
+      answer: '6',
+      id: 55
+    };
+</script>
+<p class="question">
+<span id="question-text55"></span>
+</p>
+<div class="options">
+<label>
+<input type="radio" name="option55" value=1> \(1\)
+</label>
+<label>
+<input type="radio" name="option55" value=2> \(-17b^4\)
+</label>
+<label>
+<input type="radio" name="option55" value=3> \(8b^3\)
+</label>
+<label>
+<input type="radio" name="option55" value=4> \(8b^4\)
+</label>
+<label>
+<input type="radio" name="option55" value=5> \(-6b^4\)
+</label>
+<label>
+<input type="radio" name="option55" value=6> \(-b^2\)
+</label>
+</div>
+<button onclick="checkAnswer_match(questionObj55)">Check</button>
+<p id="result55">
+</p>
+<script>
+  // Display the question
+    document.getElementById('question-text55').textContent = questionObj55.question;
+</script>
+<hr />
+<script>
+  // Generate a random question
+    const questionObj56 = {
+      question: "Vereinfache den Term: \\(2b^3 \\cdot b – (2b)^3 \\cdot b\\)",
+      options: ["\\(1\\)", "\\(-17b^4\\)", "\\(8b^3\\)", "\\(8b^4\\)","\\(-6b^4\\)", "\\(-b^2\\)"],
+      answer: '5',
+      id: 56
+    };
+</script>
+<p class="question">
+<span id="question-text56"></span>
+</p>
+<div class="options">
+<label>
+<input type="radio" name="option56" value=1> \(1\)
+</label>
+<label>
+<input type="radio" name="option56" value=2> \(-17b^4\)
+</label>
+<label>
+<input type="radio" name="option56" value=3> \(8b^3\)
+</label>
+<label>
+<input type="radio" name="option56" value=4> \(8b^4\)
+</label>
+<label>
+<input type="radio" name="option56" value=5> \(-6b^4\)
+</label>
+<label>
+<input type="radio" name="option56" value=6> \(-b^2\)
+</label>
+</div>
+<button onclick="checkAnswer_match(questionObj56)">Check</button>
+<p id="result56">
+</p>
+<script>
+  // Display the question
+    document.getElementById('question-text56').textContent = questionObj56.question;
+</script>
+<hr />
+<script>
+  // Generate a random question
+    const questionObj57 = {
+      question: "Vereinfache den Term: \\(2b \\cdot (4b^2 – 8b^3) + 4b^2 \\cdot (-2b)^2\\)",
+      options: ["\\(1\\)", "\\(-17b^4\\)", "\\(8b^3\\)", "\\(8b^4\\)","\\(-6b^4\\)", "\\(-b^2\\)"],
+      answer: '3',
+      id: 57
+    };
+</script>
+<p class="question">
+<span id="question-text57"></span>
+</p>
+<div class="options">
+<label>
+<input type="radio" name="option57" value=1> \(1\)
+</label>
+<label>
+<input type="radio" name="option57" value=2> \(-17b^4\)
+</label>
+<label>
+<input type="radio" name="option57" value=3> \(8b^3\)
+</label>
+<label>
+<input type="radio" name="option57" value=4> \(8b^4\)
+</label>
+<label>
+<input type="radio" name="option57" value=5> \(-6b^4\)
+</label>
+<label>
+<input type="radio" name="option57" value=6> \(-b^2\)
+</label>
+</div>
+<button onclick="checkAnswer_match(questionObj57)">Check</button>
+<p id="result57">
+</p>
+<script>
+  // Display the question
+    document.getElementById('question-text57').textContent = questionObj57.question;
+</script>
+</div>
+</div>
+<div id="binomische-formeln-1-3" class="section level2 hasAnchor" number="6.2">
+<h2><span class="header-section-number">6.2</span> Binomische Formeln 1-3<a href="variablen-und-terme.html#binomische-formeln-1-3" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Binomische Formel erleichtern das Ausmultiplizieren und Zusammenfassen von bestimmten Termen. Sie ergeben sich aus den Rechengesetzen und erlauben schnelleres Umformen.</p>
+<div class="definition">
+<p><span id="def:defumf" class="definition"><strong>Definition 6.2  (Umformung von Termen) </strong></span><strong>Definition (Binomische Formeln)</strong></p>
+<p>1.Binomische Formel: <span class="math inline">\((a+b)^2=a^2 + 2ab + b^2\)</span>
+2.Binomische Formel: <span class="math inline">\((a-b)^2=a^2 - 2ab + b^2\)</span>
+3.Binomische Formel: <span class="math inline">\((a+b)\cdot(a-b)=a^2 - b^2\)</span></p>
+</div>
+<div class="example">
+<p><span id="exm:umformterm" class="example"><strong>Beispiel 6.5  (Variablen und Terme) </strong></span><strong>Beispiel (Umformung von Termen)</strong></p>
+<p>Umformen:</p>
+<ul>
+<li><span class="math inline">\((x+5)^2\)</span> <span class="math inline">\(\rightarrow\)</span> 1. Binomische Formel <span class="math inline">\(\rightarrow\)</span> <span class="math inline">\((x+5)^2=x^2 + 10x + 25\)</span>.</li>
+<li><span class="math inline">\((4-2y)^2\)</span> <span class="math inline">\(\rightarrow\)</span> 2. Binomische Formel: <span class="math inline">\(\rightarrow\)</span> <span class="math inline">\((4-2y)^2=16 - 16y + 4y^2\)</span>.</li>
+<li><span class="math inline">\((3x+2y)\cdot(3x-2y)\)</span> <span class="math inline">\(\rightarrow\)</span> 3. Binomische Formel: <span class="math inline">\((3x+2y)\cdot(3x-2y)=9x^2 - 4y^2\)</span>.</li>
+</ul>
+</div>
+<div id="qbinomf" class="quiz">
+<p><strong>Quiz binomische Formeln</strong></p>
+<script>
+
+
+// Generate a random question
+  const questionObj58 = {
+      question: "Die korrekten Umformungen von \\(2xy - 3\\cdot(x - y)^2\\) sind:",
+      options: [ "\\( 8xy - 3 ( x^2 - y^2 ) \\)", "\\( 2xy - 3 ( x^2 + y^2 ) \\)","\\(2xy - 3x^2 - 6xy - 3y^2\\)","\\(8xy - 3(x^2+y^2)\\)", "\\(2xy - 3x^2 + 6xy - 3y^2\\)"],
+      answer: ['4','5'],
+      id: 58
+    };
+</script>
+<p class="question">
+Frage: <span id="question-text58"></span>
+</p>
+<div class="options">
+<p><label>
+<input type="checkbox" name="option58" value=1> \(8xy - 3( x^2 - y^2 )\)
+</label>
+<label>
+<input type="checkbox" name="option58" value=2> \(2xy - 3( x^2 + y^2 )\)
+</label>
+<label>
+<input type="checkbox" name="option58" value=3> \(2xy - 3x^2 - 6xy - 3y^2\)
+</label>
+<label>
+<input type="checkbox" name="option58" value=4> \(8xy - 3( x^2 + y^2 )\)
+</label>
+<label>
+<input type="checkbox" name="option58" value=5> \(2xy - 3x^2 + 6xy - 3y^2\)
+</label></p>
+</div>
+<button onclick="checkAnswer_mmc(questionObj58)">
+Check
+</button>
+<p id="result58">
+</p>
+<script>
+    // Display the question
+    document.getElementById('question-text58').textContent = questionObj58.question;
+
+</script>
+<hr />
+<script>
+
+
+// Generate a random question
+  const questionObj59 = {
+      question: "Die korrekten Umformungen von \\((-0,5x)^2 - (-3y)^2\\) sind:",
+      options: [ "\\(0,25 x^2 + 9 y^2\\)", "\\(-0,25 x^2 + 9 y^2\\)","\\(0,25 x^2 - 9 y^2\\)","\\(-0,25 x^2 - 9 y^2\\)","\\((0,5x + 3y)\\cdot(0,5x - 3y)\\)","\\((0,5x - 3y)^2\\)"],
+      answer: ['3','5'],
+      id: 59
+    };
+</script>
+<p class="question">
+Frage: <span id="question-text59"></span>
+</p>
+<div class="options">
+<p><label>
+<input type="checkbox" name="option59" value=1> \(0,25 x^2 + 9 y^2\)
+</label>
+<label>
+<input type="checkbox" name="option59" value=2> \(-0,25 x^2 + 9 y^2\)
+</label>
+<label>
+<input type="checkbox" name="option59" value=3> \(0,25 x^2 - 9 y^2\)
+</label>
+<label>
+<input type="checkbox" name="option59" value=4> \(-0,25 x^2 - 9 y^2\)
+</label>
+<label>
+<input type="checkbox" name="option59" value=5> \((0,5x + 3y)\cdot(0,5x - 3y)\)
+</label>
+<label>
+<input type="checkbox" name="option59" value=6> \((0,5x - 3y)^2\)
+</label></p>
+</div>
+<button onclick="checkAnswer_mmc(questionObj59)">
+Submit
+</button>
+<p id="result59">
+</p>
+<script>
+    // Display the question
+    document.getElementById('question-text59').textContent = questionObj59.question;
+
+</script>
+</div>
+<div id="looptermen" class="loop">
+<div id="übung-umformen-von-termen" class="section level3 hasAnchor" number="6.2.1">
+<h3><span class="header-section-number">6.2.1</span> Übung: Umformen von Termen<a href="variablen-und-terme.html#übung-umformen-von-termen" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Übe das Umformen von Termen mit Variable <span class="math inline">\(x\)</span> und mit und ohne Parameter durchs Anwenden von Binomischen Formeln oder Ausmultiplizieren in dieser Endlosschleife. Wenn du richtig antwortest und sicher das Umformen beherrschst, werden die Aufgaben zunehmend herausfordernder.</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="variablen-und-terme.html#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co">#uiOutput(&quot;dyn_exer_term&quot;)</span></span></code></pre></div>
+</div>
+</div>
+</div>
+<div id="variablen-in-brüchen" class="section level2 hasAnchor" number="6.3">
+<h2><span class="header-section-number">6.3</span> Variablen in Brüchen<a href="variablen-und-terme.html#variablen-in-brüchen" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Wenn Variablen in Zähler und in Nenner auftreten, können sie ähnlich wie Zahlen (aber nicht mit Zahlen) gekürzt werden, beispielsweise ist:
+<span class="math display">\[\frac{4x^2y + 2y}{10 y} = \frac{2x^2 + 1}{5}\]</span>
+nach Kürzung durch den Term <span class="math inline">\(2y\)</span> von Zähler und Nenner.</p>
+<div class="example">
+<p><span id="exm:varbr" class="example"><strong>Beispiel 6.6  (Variablen in Brüchen) </strong></span><strong>Beispiel (Variablen in Brüchen)</strong>
+<br/>
+Sind <span class="math inline">\(x\)</span> und <span class="math inline">\(y\)</span> Variablen, so gilt
+<span class="math display">\[\begin{align*}
+\frac 13 + \frac 1x &amp;= \frac{1\cdot x}{3\cdot x} + \frac{1\cdot 3}{3\cdot x} = \frac{x+3}{3x}\\
+\frac 1x + \frac 1y &amp;= \frac{1\cdot y}{x\cdot y} + \frac{1\cdot x}{x\cdot y} = \frac{x+y}{xy}\\
+\frac 1{(x+1)^2} + \frac 1{x+1} &amp;= \frac{1}{(x+1)^2} + \frac{1\cdot (x+1)}{(x+1)^2} = \frac{x+2}{(x+1)^2}
+\end{align*}\]</span></p>
+</div>
+<p>In dem obigen Beispiel müssen wir noch die Definitionsbereiche der entsprechenden Brüche angeben. Für die erste Zeile gilt <span class="math inline">\(x\not=0\)</span> oder <span class="math inline">\(x\in\mathbb R\setminus \{0\}\)</span>, für die zweite - <span class="math inline">\(x,y\not=0\)</span> oder <span class="math inline">\(x,y\in\mathbb R\setminus \{0\}\)</span> und für die dritte Zeile - <span class="math inline">\(x\not = -1\)</span> oder <span class="math inline">\(x\in\mathbb R\setminus \{-1\}\)</span>.</p>
+<div id="qvarbr" class="quiz">
+<p><strong>Quiz Variablen in Brüchen</strong></p>
+<script>
+
+
+// Generate a random question
+  const questionObj510 = {
+      question: "Der Definitionsbereich von \\(\\frac{x-20}{x^2-100}\\) entspricht ",
+      options: [ "\\(\\mathbb R\\setminus\\{ 10\\}\\)", "\\(x\\not=10\\)",
+      "\\(\\mathbb R\\setminus\\{-10; 10\\}\\)", "\\(x\\not\\in\\{-10;10\\}\\)",
+             "\\(\\mathbb R\\setminus\\{20\\}\\)", "\\(x\\not=20\\)"],
+      answer: ['4','3'],
+      id: 510
+    };
+</script>
+<p class="question">
+<span id="question-text510"></span>
+</p>
+<div class="options">
+<p><label>
+<input type="checkbox" name="option510" value=1> \(\mathbb R\setminus\{ 10\}\)
+</label>
+<label>
+<input type="checkbox" name="option510" value=2> \(x\not=10\)
+</label>
+<label>
+<input type="checkbox" name="option510" value=3> \(\mathbb R\setminus\{-10; 10\}\)
+</label>
+<label>
+<input type="checkbox" name="option510" value=4> \(x\not\in\{-10;10\}\)
+</label>
+<label>
+<input type="checkbox" name="option510" value=5> \(\mathbb R\setminus\{20\}\)
+</label>
+<label>
+<input type="checkbox" name="option510" value=6> \(x\not=20\)
+</label></p>
+</div>
+<button onclick="checkAnswer_mmc(questionObj510)">
+Check
+</button>
+<p id="result510">
+</p>
+<script>
+    // Display the question
+    document.getElementById('question-text510').textContent = questionObj510.question;
+
+</script>
+<hr />
+<script>
+  // Generate a random question
+    const questionObj511 = {
+      question: "Kreuze den Definitionsbereich des gegebenen Bruchterms: \\(\\frac{3x+4}{49+14x+x^2}\\) an.",
+      options: ["\\(\\mathbb D=\\mathbb R\\)", "\\(\\mathbb D=\\mathbb R\\setminus \\{-7\\}\\)",
+             "\\(\\mathbb D=\\mathbb R\\setminus \\{14;49\\}\\)", "\\(\\mathbb D=\\mathbb R\\setminus \\{0\\}\\)",
+             "\\(\\mathbb D=\\mathbb R\\setminus \\{-7;7\\}\\)", "\\(\\mathbb D=\\mathbb R\\setminus \\{7\\}\\)"],
+      answer: '2',
+      id: 511
+    };
+</script>
+<p class="question">
+<span id="question-text511"></span>
+</p>
+<div class="options">
+<label>
+<input type="radio" name="option511" value=1> \(\mathbb D=\mathbb R\)
+</label>
+<label>
+<input type="radio" name="option511" value=2> \(\mathbb D=\mathbb R\setminus \{-7\}\)
+</label>
+<label>
+<input type="radio" name="option511" value=3>\(\mathbb D=\mathbb R\setminus \{14;49\}\)
+</label>
+<label>
+<input type="radio" name="option511" value=4> \(\mathbb D=\mathbb R\setminus \{0\}\)
+</label>
+<label>
+<input type="radio" name="option511" value=5> \(\mathbb D=\mathbb R\setminus \{-7;7\}\)
+</label>
+<label>
+<input type="radio" name="option511" value=6> \(\mathbb D=\mathbb R\setminus \{7\}\)
+</label>
+</div>
+<button onclick="checkAnswer_match(questionObj511)">Check</button>
+<p id="result511">
+</p>
+<script>
+  // Display the question
+    document.getElementById('question-text511').textContent = questionObj511.question;
+</script>
+<hr />
+<script>
+  // Generate a random question
+    const questionObj512 = {
+      question: "Der Definitionsbereich von \\(\\frac{3x}{5+x}\\) entspricht ",
+      options: ["\\(\\mathbb R\\setminus\\{-2; 0\\}\\)", "\\(\\mathbb R\\setminus\\{0\\}\\)",
+             "\\(\\mathbb R\\setminus\\{0;5\\}\\)", "\\(\\mathbb R\\setminus\\{-5\\}\\)",
+             "\\(\\mathbb R\\setminus\\{0;2\\}\\)", "\\(\\mathbb R\\setminus\\{2\\}\\)"],
+      answer: '4',
+      id: 512
+    };
+</script>
+<p class="question">
+<span id="question-text512"></span>
+</p>
+<div class="options">
+<label>
+<input type="radio" name="option512" value=1> \(\mathbb R\setminus\{-2; 0\}\)
+</label>
+<label>
+<input type="radio" name="option512" value=2> \(\mathbb R\setminus\{0\}\)
+</label>
+<label>
+<input type="radio" name="option512" value=3> \(\mathbb R\setminus\{0;5\}\)
+</label>
+<label>
+<input type="radio" name="option512" value=4> \(\mathbb R\setminus\{-5\}\)
+</label>
+<label>
+<input type="radio" name="option512" value=5> \(\mathbb R\setminus\{0;2\}\)
+</label>
+<label>
+<input type="radio" name="option512" value=6> \(\mathbb R\setminus\{2\}\)
+</label>
+</div>
+<button onclick="checkAnswer_match(questionObj512)">Check</button>
+<p id="result512">
+</p>
+<script>
+  // Display the question
+    document.getElementById('question-text512').textContent = questionObj512.question;
+</script>
+<hr />
+<script>
+  // Generate a random question
+    const questionObj513 = {
+      question: "Der Definitionsbereich von \\(\\frac{5}{x(2+x)}\\) entspricht ",
+      options: [ "\\(\\mathbb R\\setminus\\{0\\}\\)",
+             "\\(\\mathbb R\\setminus\\{0;5\\}\\)", "\\(\\mathbb R\\setminus\\{-5\\}\\)",
+             "\\(\\mathbb R\\setminus\\{0;2\\}\\)", "\\(\\mathbb R\\setminus\\{-2; 0\\}\\)","\\(\\mathbb R\\setminus\\{2\\}\\)"],
+      answer: '5',
+      id: 513
+    };
+</script>
+<p class="question">
+<span id="question-text513"></span>
+</p>
+<div class="options">
+<label>
+<input type="radio" name="option513" value=1> \(\mathbb R\setminus\{0\}\)
+</label>
+<label>
+<input type="radio" name="option513" value=2> \(\mathbb R\setminus\{0;5\}\)
+</label>
+<label>
+<input type="radio" name="option513" value=3> \(\mathbb R\setminus\{-5\}\)
+</label>
+<label>
+<input type="radio" name="option513" value=4> \(\mathbb R\setminus\{0;2\}\)
+</label>
+<label>
+<input type="radio" name="option513" value=5> \(\mathbb R\setminus\{-2; 0\}\)
+</label>
+<label>
+<input type="radio" name="option513" value=6> \(\mathbb R\setminus\{2\}\)
+</label>
+</div>
+<button onclick="checkAnswer_match(questionObj513)">Check</button>
+<p id="result513">
+</p>
+<script>
+  // Display the question
+    document.getElementById('question-text513').textContent = questionObj513.question;
+</script>
+</div>
+
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="prozent--und-zinsrechnung.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="gleichungen.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"whatsapp": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": "https://github.com/USERNAME/REPO/edit/BRANCH/05-Terme.Rmd",
+"text": "Edit"
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": ["_main.pdf", "_main.epub"],
+"search": {
+"engine": "fuse",
+"options": null
+},
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/latest.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>

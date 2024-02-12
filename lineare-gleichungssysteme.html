@@ -1,0 +1,711 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Kapitel 9 Lineare Gleichungssysteme | Vor- und Brückenkurs: Wirtschaftsmathematik</title>
+  <meta name="description" content="Das ist der Skript für den Kurs Vor- und Brückenkurs: Wirtschaftsmathematik." />
+  <meta name="generator" content="bookdown 0.34 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Kapitel 9 Lineare Gleichungssysteme | Vor- und Brückenkurs: Wirtschaftsmathematik" />
+  <meta property="og:type" content="book" />
+  
+  <meta property="og:description" content="Das ist der Skript für den Kurs Vor- und Brückenkurs: Wirtschaftsmathematik." />
+  <meta name="github-repo" content="rstudio/bookdown-demo" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Kapitel 9 Lineare Gleichungssysteme | Vor- und Brückenkurs: Wirtschaftsmathematik" />
+  
+  <meta name="twitter:description" content="Das ist der Skript für den Kurs Vor- und Brückenkurs: Wirtschaftsmathematik." />
+  
+
+<meta name="author" content="Maria Osipenko" />
+
+
+<meta name="date" content="2024-02-12" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="ungleichungen.html"/>
+<link rel="next" href="funktionen-und-optimierung.html"/>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+<script src="libs/htmlwidgets-1.6.2/htmlwidgets.js"></script>
+<script src="libs/plotly-binding-4.10.2/plotly.js"></script>
+<script src="libs/typedarray-0.1/typedarray.min.js"></script>
+<link href="libs/crosstalk-1.2.0/css/crosstalk.min.css" rel="stylesheet" />
+<script src="libs/crosstalk-1.2.0/js/crosstalk.min.js"></script>
+<link href="libs/plotly-htmlwidgets-css-2.11.1/plotly-htmlwidgets.css" rel="stylesheet" />
+<script src="libs/plotly-main-2.11.1/plotly-latest.min.js"></script>
+
+
+<style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { color: #008000; } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { color: #008000; font-weight: bold; } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+<style type="text/css">
+  
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">A Minimal Book Example</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Grundlagen</a>
+<ul>
+<li class="chapter" data-level="1.1" data-path="index.html"><a href="index.html#rechenregeln"><i class="fa fa-check"></i><b>1.1</b> Rechenregeln</a>
+<ul>
+<li class="chapter" data-level="1.1.1" data-path="index.html"><a href="index.html#umwandlung-von-brüchen"><i class="fa fa-check"></i><b>1.1.1</b> Umwandlung von Brüchen</a></li>
+<li class="chapter" data-level="1.1.2" data-path="index.html"><a href="index.html#rehenfolge-der-rechenoperationen"><i class="fa fa-check"></i><b>1.1.2</b> Rehenfolge der Rechenoperationen</a></li>
+<li class="chapter" data-level="1.1.3" data-path="index.html"><a href="index.html#punkt--von-strich-rechnung"><i class="fa fa-check"></i><b>1.1.3</b> “Punkt- von Strich-”Rechnung</a></li>
+<li class="chapter" data-level="1.1.4" data-path="index.html"><a href="index.html#aufmachen-von-klammern-ausmultiplizieren"><i class="fa fa-check"></i><b>1.1.4</b> Aufmachen von Klammern, Ausmultiplizieren</a></li>
+</ul></li>
+<li class="chapter" data-level="1.2" data-path="index.html"><a href="index.html#notation"><i class="fa fa-check"></i><b>1.2</b> Notation</a>
+<ul>
+<li class="chapter" data-level="1.2.1" data-path="index.html"><a href="index.html#auslassen-von-punkt-bei-multiplikation-mit-variablen"><i class="fa fa-check"></i><b>1.2.1</b> Auslassen von Punkt bei Multiplikation mit Variablen</a></li>
+<li class="chapter" data-level="1.2.2" data-path="index.html"><a href="index.html#summen--und-produktzeichen"><i class="fa fa-check"></i><b>1.2.2</b> Summen- und Produktzeichen</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="mengen-und-zahlen.html"><a href="mengen-und-zahlen.html"><i class="fa fa-check"></i><b>2</b> Mengen und Zahlen</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="mengen-und-zahlen.html"><a href="mengen-und-zahlen.html#mengen"><i class="fa fa-check"></i><b>2.1</b> Mengen</a>
+<ul>
+<li class="chapter" data-level="2.1.1" data-path="mengen-und-zahlen.html"><a href="mengen-und-zahlen.html#mengenoperationen"><i class="fa fa-check"></i><b>2.1.1</b> Mengenoperationen</a></li>
+<li class="chapter" data-level="2.1.2" data-path="mengen-und-zahlen.html"><a href="mengen-und-zahlen.html#spezielle-mengen"><i class="fa fa-check"></i><b>2.1.2</b> Spezielle Mengen</a></li>
+<li class="chapter" data-level="2.1.3" data-path="mengen-und-zahlen.html"><a href="mengen-und-zahlen.html#mengen-zur-wahrscheinlichkeitsrechnung"><i class="fa fa-check"></i><b>2.1.3</b> Mengen zur Wahrscheinlichkeitsrechnung</a></li>
+</ul></li>
+<li class="chapter" data-level="2.2" data-path="mengen-und-zahlen.html"><a href="mengen-und-zahlen.html#zahlenmengen"><i class="fa fa-check"></i><b>2.2</b> Zahlenmengen</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="bruchrechnung.html"><a href="bruchrechnung.html"><i class="fa fa-check"></i><b>3</b> Bruchrechnung</a></li>
+<li class="chapter" data-level="4" data-path="potenzen-und-wurzel.html"><a href="potenzen-und-wurzel.html"><i class="fa fa-check"></i><b>4</b> Potenzen und Wurzel</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="potenzen-und-wurzel.html"><a href="potenzen-und-wurzel.html#potenzen"><i class="fa fa-check"></i><b>4.1</b> Potenzen</a></li>
+<li class="chapter" data-level="4.2" data-path="potenzen-und-wurzel.html"><a href="potenzen-und-wurzel.html#wurzel"><i class="fa fa-check"></i><b>4.2</b> Wurzel</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="prozent--und-zinsrechnung.html"><a href="prozent--und-zinsrechnung.html"><i class="fa fa-check"></i><b>5</b> Prozent- und Zinsrechnung</a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="prozent--und-zinsrechnung.html"><a href="prozent--und-zinsrechnung.html#prozentrechnung"><i class="fa fa-check"></i><b>5.1</b> Prozentrechnung</a></li>
+<li class="chapter" data-level="5.2" data-path="prozent--und-zinsrechnung.html"><a href="prozent--und-zinsrechnung.html#zinsrechnung"><i class="fa fa-check"></i><b>5.2</b> Zinsrechnung</a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="variablen-und-terme.html"><a href="variablen-und-terme.html"><i class="fa fa-check"></i><b>6</b> Variablen und Terme</a>
+<ul>
+<li class="chapter" data-level="6.1" data-path="variablen-und-terme.html"><a href="variablen-und-terme.html#umformung-von-termen"><i class="fa fa-check"></i><b>6.1</b> Umformung von Termen</a></li>
+<li class="chapter" data-level="6.2" data-path="variablen-und-terme.html"><a href="variablen-und-terme.html#binomische-formeln-1-3"><i class="fa fa-check"></i><b>6.2</b> Binomische Formeln 1-3</a></li>
+<li class="chapter" data-level="6.3" data-path="variablen-und-terme.html"><a href="variablen-und-terme.html#variablen-in-brüchen"><i class="fa fa-check"></i><b>6.3</b> Variablen in Brüchen</a></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="gleichungen.html"><a href="gleichungen.html"><i class="fa fa-check"></i><b>7</b> Gleichungen</a>
+<ul>
+<li class="chapter" data-level="7.1" data-path="gleichungen.html"><a href="gleichungen.html#definition-einer-gleichung"><i class="fa fa-check"></i><b>7.1</b> Definition einer Gleichung</a></li>
+<li class="chapter" data-level="7.2" data-path="gleichungen.html"><a href="gleichungen.html#lösen-von-gleichungen"><i class="fa fa-check"></i><b>7.2</b> Lösen von Gleichungen</a></li>
+<li class="chapter" data-level="7.3" data-path="gleichungen.html"><a href="gleichungen.html#spezielle-gleichungen"><i class="fa fa-check"></i><b>7.3</b> Spezielle Gleichungen</a>
+<ul>
+<li class="chapter" data-level="7.3.1" data-path="gleichungen.html"><a href="gleichungen.html#faktorisierte-gleichungen"><i class="fa fa-check"></i><b>7.3.1</b> Faktorisierte Gleichungen</a></li>
+<li class="chapter" data-level="7.3.2" data-path="gleichungen.html"><a href="gleichungen.html#betragsgleichungen"><i class="fa fa-check"></i><b>7.3.2</b> Betragsgleichungen</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="8" data-path="ungleichungen.html"><a href="ungleichungen.html"><i class="fa fa-check"></i><b>8</b> Ungleichungen</a>
+<ul>
+<li class="chapter" data-level="8.1" data-path="ungleichungen.html"><a href="ungleichungen.html#definition-von-ungleichungen"><i class="fa fa-check"></i><b>8.1</b> Definition von Ungleichungen</a></li>
+<li class="chapter" data-level="8.2" data-path="ungleichungen.html"><a href="ungleichungen.html#umformung-von-ungleichungen"><i class="fa fa-check"></i><b>8.2</b> Umformung von Ungleichungen</a></li>
+<li class="chapter" data-level="8.3" data-path="ungleichungen.html"><a href="ungleichungen.html#spezielle-ungleichungen"><i class="fa fa-check"></i><b>8.3</b> Spezielle Ungleichungen</a>
+<ul>
+<li class="chapter" data-level="8.3.1" data-path="ungleichungen.html"><a href="ungleichungen.html#faktorisierte-ungleichungen"><i class="fa fa-check"></i><b>8.3.1</b> Faktorisierte Ungleichungen</a></li>
+<li class="chapter" data-level="8.3.2" data-path="ungleichungen.html"><a href="ungleichungen.html#betragsungleichungen"><i class="fa fa-check"></i><b>8.3.2</b> Betragsungleichungen</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="9" data-path="lineare-gleichungssysteme.html"><a href="lineare-gleichungssysteme.html"><i class="fa fa-check"></i><b>9</b> Lineare Gleichungssysteme</a>
+<ul>
+<li class="chapter" data-level="9.1" data-path="lineare-gleichungssysteme.html"><a href="lineare-gleichungssysteme.html#lösung-von-lgs"><i class="fa fa-check"></i><b>9.1</b> Lösung von LGS</a></li>
+</ul></li>
+<li class="chapter" data-level="10" data-path="funktionen-und-optimierung.html"><a href="funktionen-und-optimierung.html"><i class="fa fa-check"></i><b>10</b> Funktionen und Optimierung</a>
+<ul>
+<li class="chapter" data-level="10.1" data-path="funktionen-und-optimierung.html"><a href="funktionen-und-optimierung.html#funktionen"><i class="fa fa-check"></i><b>10.1</b> Funktionen</a></li>
+<li class="chapter" data-level="10.2" data-path="funktionen-und-optimierung.html"><a href="funktionen-und-optimierung.html#lineare-und-quadratische-funktionen-polynome"><i class="fa fa-check"></i><b>10.2</b> Lineare und quadratische Funktionen, Polynome</a></li>
+<li class="chapter" data-level="10.3" data-path="funktionen-und-optimierung.html"><a href="funktionen-und-optimierung.html#ableitung"><i class="fa fa-check"></i><b>10.3</b> Ableitung</a>
+<ul>
+<li class="chapter" data-level="10.3.1" data-path="funktionen-und-optimierung.html"><a href="funktionen-und-optimierung.html#einige-ableitungsregeln"><i class="fa fa-check"></i><b>10.3.1</b> Einige Ableitungsregeln</a></li>
+</ul></li>
+<li class="chapter" data-level="10.4" data-path="funktionen-und-optimierung.html"><a href="funktionen-und-optimierung.html#einfache-optimierungsprobleme"><i class="fa fa-check"></i><b>10.4</b> Einfache Optimierungsprobleme</a></li>
+</ul></li>
+<li class="chapter" data-level="11" data-path="weitere-funktionen-für-ökonomische-modellierung.html"><a href="weitere-funktionen-für-ökonomische-modellierung.html"><i class="fa fa-check"></i><b>11</b> Weitere Funktionen für ökonomische Modellierung</a>
+<ul>
+<li class="chapter" data-level="11.1" data-path="weitere-funktionen-für-ökonomische-modellierung.html"><a href="weitere-funktionen-für-ökonomische-modellierung.html#exponentialfunktion"><i class="fa fa-check"></i><b>11.1</b> Exponentialfunktion</a></li>
+<li class="chapter" data-level="11.2" data-path="weitere-funktionen-für-ökonomische-modellierung.html"><a href="weitere-funktionen-für-ökonomische-modellierung.html#logarithmusfunktion"><i class="fa fa-check"></i><b>11.2</b> Logarithmusfunktion</a></li>
+</ul></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Vor- und Brückenkurs: Wirtschaftsmathematik</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="lineare-gleichungssysteme" class="section level1 hasAnchor" number="9">
+<h1><span class="header-section-number">Kapitel 9</span> Lineare Gleichungssysteme<a href="lineare-gleichungssysteme.html#lineare-gleichungssysteme" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<script>
+function checkAnswer_mmc(q) {
+      const selectedOptions = document.querySelectorAll('input[name="option'+q.id+'"]:checked');
+      if (selectedOptions.length === 2) {
+        const userAnswers = Array.from(selectedOptions).map(option => option.value);
+        const correctAnswers = q.answer;
+        const isCorrect = userAnswers.every(answer => correctAnswers.includes(answer));
+
+if (isCorrect) {
+          document.getElementById('result'+q.id).textContent = 'Glückwunsch! Deine Antwort ist richtig.';
+        } else {
+          document.getElementById('result'+q.id).textContent = `Leider falsch. Versuch es nochmal!`;
+        }
+      } else {
+        document.getElementById('result'+q.id).textContent = 'Bitte zwei Optionen auswählen.';
+      }
+    }
+// numeric
+function generateQuestion_num(id) {
+      // Generate two random numbers between 2 and 10
+      const num1 = Math.floor(Math.random() * 10) + 2;
+      const num2 = Math.floor(Math.random() * 10) + 2;
+      const x1 = Math.floor(Math.random() * 100) + 2;
+      const x2 = Math.floor(Math.random() * 100) + 2;
+      const x3 = Math.floor(Math.random() * 100) + 2;
+      const x4 = Math.floor(Math.random() * 100) + 2;
+      const x5 = Math.floor(Math.random() * 100) + 2;
+      const x6 = Math.floor(Math.random() * 100) + 2;
+
+       // Calculate the correct answer
+      let answer = num1*Math.sqrt(x1) + num2*Math.sqrt(x2);
+
+      // Return the question and answer as an object
+      return {
+       // question: num1 + "\\(\\sqrt{x}+\\)"+ num2 + "\\(\\sqrt{y}\\)" + " for \\(x=\\)" + x1 + " and \\(y=\\)" + x2,
+        question: [num1,num2,x1,x2,x3,x4,x5,x6],
+        answer: answer,
+        id: id
+      };
+    }
+
+function checkAnswer_num(q) {
+      const userAnswer = document.getElementById('answer'+q.id).value;
+      const isCorrect = Math.round(parseFloat(userAnswer)*100)/100 === Math.round(q.answer*100)/100;
+
+      if (isCorrect) {
+        document.getElementById('result'+q.id).textContent = 'Glückwunsch! Deine Antwort ist richtig.';
+      } else {
+        document.getElementById('result'+q.id).textContent = `Sorry, incorrect.`;
+      }
+  }
+
+// plain multiple choice
+  function checkAnswer_match(q) {
+      const selectedOption = document.querySelector('input[name="option'+q.id+'"]:checked');
+      if (selectedOption) {
+        const userAnswer = selectedOption.value;
+        const isCorrect = userAnswer === q.answer;
+
+        if (isCorrect) {
+          document.getElementById('result'+q.id).textContent = 'Glückwunsch! Deine Antwort ist richtig.';
+        } else {
+          document.getElementById('result'+q.id).textContent = `Leider falsch. Versuch es nochmal!`;
+        }
+      } else {
+        document.getElementById('result'+q.id).textContent = 'Bitte eine Option wählen.';
+      }
+    }
+</script>
+<p>Es finden sich häufig Situationen und Aufgaben, die in der mathematischen Modellierung auf mehrere Gleichungen in mehreren Unbekannten führen. Hierzu wird ein erstes einfaches Beispiel betrachtet:</p>
+<div class="example">
+<p><span id="exm:tinalgs" class="example"><strong>Beispiel 9.1  (Wertpapierhändlerin Tina) </strong></span><strong>Beispiel (Wertpapierhändlerin Tina)</strong></p>
+<p>Die leidenschaftliche Wertpapierhändlerin Tina ist vergesslich. Sie bekommt von ihrer Bank die neuen Konditionen zu dem Handeln mit Wertpapieren. Zu blöd, dass sie sich nicht mehr an die alten Konditionen errinnern kann! Das Einzige was ihr noch einfällt ist:</p>
+<ul>
+<li><p>Die Bank hat immer eine feste Gebühr <span class="math inline">\(\color{red}x\)</span> pro Transaktion verlangt und noch zusätzlich einen Anteil <span class="math inline">\(\color{blue}y\)</span> auf das Transaktionsvolumen in Rechnung gestellt.</p></li>
+<li><p>Zu den alten Konditionen hat sie für eine Transaktion von <span class="math inline">\(\color{black}{90}\)</span> Euro <span class="math inline">\(\color{purple}{10}\)</span> Euro Gebühren insgesamt bezahlt.</p></li>
+<li><p>In dem Brief der Bank mit den neuen Konditionen steht, sie würde für die gleiche Transaktion jetzt nur noch <span class="math inline">\(\color{purple}{8,75}\)</span> Euro Gebühren zahlen müssen.</p></li>
+<li><p>Ausserdem, wird in dem Brief bekannt gegeben, dass die Gebühr pro Transaktion <strong>verdoppelt</strong> aber gleichzeitig der variable Kostenanteil auf das Transaktionsvolumen um <span class="math inline">\(25\%\)</span>, also um Faktor <span class="math inline">\({0,25}\)</span>, reduziert wird.</p></li>
+</ul>
+<p>Wie lauteten denn die alten Konditionen (der Gebühr pro Transaktion <span class="math inline">\(\color{red}x\)</span> und der variable Anteil <span class="math inline">\(\color{blue}y\)</span>)?</p>
+<details>
+<summary>
+Antwort
+</summary>
+Aufstellung der Gleichungen:
+<ul>
+<li>
+Da Tina zu den alten Konditionen <span class="math inline">\(\color{purple}{10}\)</span> Euro für eine Transaktion von <span class="math inline">\(\color{black}{90}\)</span> Euro bezahlt hat: <span class="math inline">\(\color{red}x+\color{black}{90}\color{blue}{y}=\color{purple}{10}\)</span> (die erste Gleichung).
+</li>
+<li>
+Zu den neuen Konditionen würde sie für die gleiche Transaktion nur <span class="math inline">\(\color{purple}{8,75}\)</span> Euro zahlen, dabei wird die feste Transaktionsgebühr verdoppelt, also <span class="math inline">\(2x\)</span>, und der variable Anteil wird um <span class="math inline">\(25\%\)</span> reduziert, also <span class="math inline">\((1-0,25)y\)</span>, d.h. <span class="math inline">\(2\color{red}x+90\cdot(1-0,25)\color{blue}y=\color{purple}{8,75}\)</span> (die zweite Gleichung).
+</li>
+</ul>
+Durch die Lösung des System bestehen aus den beiden Gleichungen können wir die Konditionen erfahren. Mehr dazu später.
+</details>
+</div>
+<p>Die Werte von <span class="math inline">\(x\)</span> und <span class="math inline">\(y\)</span>, die dazu führen, dass die beiden Gleichungen erfüllt sind, kann man durch Ausprobieren ermitteln. Dennoch ist es praktischer <strong>systematische Methoden</strong> zur Lösung solcher Fragestellungen zu haben. Wir begrenzen uns hier auf Gleichungsysteme mit zwei Gleichungen und zwei Unbekannten bzw. drei Gleichungen und drei Unbekannten.</p>
+<div class="definition">
+<p><span id="def:defgls" class="definition"><strong>Definition 9.1  (Lineares Gleichungssystem mit zwei Gleichungen) </strong></span><strong>Definition (Lineares Gleichungssystem mit zwei Gleichungen)</strong></p>
+<p>Ein System bestehend aus zwei linearen Gleichungen mit je zwei Unbekannten ist ein lineares Gleichungssystem (LGS) wenn sie folgende Form hat:
+<span class="math display">\[\begin{align}
+&amp;a_{11}\cdot x + a_{12}\cdot y = b_1,\\
+&amp;a_{21}\cdot x + a_{22}\cdot y = b_2,
+\end{align}\]</span>
+Dabei sind <span class="math inline">\(a_{11},a_{12},a_{21}\)</span> und <span class="math inline">\(a_{22}\)</span> die bekannten Koeffizienten des LGS, <span class="math inline">\(b_1\)</span> und <span class="math inline">\(b_2\)</span> sind bekannte Konstanten.</p>
+</div>
+Da beide Gleichungen linear sind, erhält man zwei Geraden als graphische Darstellung. Wenn diese Geraden einen Schnittpunkt haben, dann hat das LGS eine Lösung, d.h. dass beide Gleichungen gleichzeitig erfüllt sind.
+</p>
+<div class="example">
+<p><span id="exm:tinalgs2" class="example"><strong>Beispiel 9.2  (Wertpapierhändlerin Tina) </strong></span><strong>Beispiel (Wertpapierhändlerin Tina)</strong></p>
+<p>In unserer vorangegangener Fragestellung und der daraus resultierenden LGS lauten die Koeffizienten:
+<span class="math display">\[\begin{align}
+a_{11}=1,&amp; ~a_{12}=90,\\
+a_{21}=2,&amp; ~a_{22}=90\cdot(1-0,25)=67,5,\\
+b_{1}=10,&amp; ~b_{2}=8,75.
+\end{align}\]</span></p>
+</div>
+<p>Ein LGS kann auch auf drei Gleichungen mit drei Unbekannten bzw. im Allgemeinen auf <span class="math inline">\(n\)</span> Gleichungen erweitert werden.</p>
+<div class="definition">
+<p><span id="def:defgls3" class="definition"><strong>Definition 9.2  (Lineares Gleichungssystem mit drei Gleichungen) </strong></span><strong>Definition (Lineares Gleichungssystem mit drei Gleichungen)</strong></p>
+<p>Ein System bestehend aus drei linearen Gleichungen mit je drei Unbekannten ist ein lineares Gleichungssystem (LGS) wenn sie folgende Form hat:
+<span class="math display">\[\begin{align}
+&amp;a_{11}\cdot x_1 + a_{12}\cdot x_2 + a_{13}\cdot x_3= b_1,\\
+&amp;a_{21}\cdot x_1 + a_{22}\cdot x_2 + a_{23}\cdot x_2= b_2,\\
+&amp;a_{31}\cdot x_1 + a_{32}\cdot x_2 + a_{33}\cdot x_2= b_3,
+\end{align}\]</span>
+Dabei sind <span class="math inline">\(a_{11},a_{12},a_{21},\ldots\)</span> und <span class="math inline">\(a_{33}\)</span> die bekannten Koeffizienten des LGS, <span class="math inline">\(b_1,\)</span> und <span class="math inline">\(b_3\)</span> sind bekannte Konstanten.</p>
+</div>
+<div class="example">
+<p><span id="exm:parab" class="example"><strong>Beispiel 9.3  (Parameter einer quadratischen Funktion) </strong></span><strong>Beispiel (Parameter einer quadratischen Funktion)</strong></p>
+<p>Sucht man die Parameter <span class="math inline">\(a,b,c\)</span> einer Parabel (Funktionsgraph von <span class="math inline">\(y=ax^2+bx+c\)</span>), die durch drei Punkte mit Koordinaten <span class="math inline">\((x,y)=(3;2), (-3,2)\)</span> und <span class="math inline">\((0,-1)\)</span> verläuft, so ergibt sich das LGS:
+<span class="math display">\[\begin{align}
+9a+3b+c&amp;=2,\\
+9a-3b+c&amp;=2,\\
+0a+0b+c&amp;=-1.
+\end{align}\]</span></p>
+</div>
+<div id="lösung-von-lgs" class="section level2 hasAnchor" number="9.1">
+<h2><span class="header-section-number">9.1</span> Lösung von LGS<a href="lineare-gleichungssysteme.html#lösung-von-lgs" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Es gibt mehrere Methoden zur Lösung von LGS. Wir begrenzen uns in diesem Kurs auf die Lösung durch <strong>Substitution/ Einsetzungsverfahren</strong></p>
+<div class="definition">
+<p><span id="def:defsubst" class="definition"><strong>Definition 9.3  (Lösung durch Substitution) </strong></span><strong>Anleitung (Lösung durch Substitution)</strong></p>
+<p>Um ein LGS mittels Substitution zu lösen:</p>
+<ul>
+<li>eine der Gleichungen wird nach einer der Variablen (bspw. <span class="math inline">\(x\)</span>) aufgelöst und der Ausdrück wird in die anderen Gleichungen eingesetzt.</li>
+<li>Eine weitere Gleichung wird nach einer weiteren Variablen (bspw. <span class="math inline">\(y\)</span>) aufgelöst und in die verbliebenen Gleichungen eingesetzt.</li>
+<li>Dies wird solange mit weiteren Variablen wiederholt, bis nur eine Gleichung mit nur einer Variable verbleibt.</li>
+<li>Diese Gleichung wird dann aufgelöst um einen konkreten Wert für die Variable zu finden.</li>
+<li>Durch das Einsetzen in die anderen Gleichungen, findet man die Werte für die verbliebenen Variablen.</li>
+</ul>
+</div>
+<p>Wir lösen das LGS mit dem Beispiel von Tina durch Substitution.</p>
+<div class="example">
+<p><span id="exm:tinalgs3" class="example"><strong>Beispiel 9.4  (Wertpapierhändlerin Tina) </strong></span><strong>Beispiel (Wertpapierhändlerin Tina)</strong></p>
+<p>Aufstellung der Gleichungen</p>
+<ul>
+<li><p>Da Tina zu den alten Konditionen 10 Euro für eine Transaktion von 90 Euro bezahlt hat: <span class="math inline">\(x+90y=10\)</span> (die erste Gleichung).</p></li>
+<li><p>Zu den neuen Konditionen würde sie für die gleiche Transaktion nur 7 Euro zahlen, dabei soll sich die feste Transaktionsgebühr verdoppelt haben, also <span class="math inline">\(2x\)</span> nun beträgt, und der variable Anteil soll um 25% reduziert werden, also <span class="math inline">\((1-0,25)y\)</span> nun beträgt: <span class="math inline">\(2x+90\cdot(1-0,25)y=8,75\)</span> (die zweite Gleichung).</p></li>
+</ul>
+<p>Das Auflösen der ersten Gleichung nach <span class="math inline">\(x\)</span> ergibt den Ausdrück <span class="math inline">\(x=10-90y\)</span>. Eingesetzt in die zweite Gleichung ergibt dies: <span class="math inline">\(20-112,5 y = 8,75\)</span> und das Umstellen nach <span class="math inline">\(y\)</span> führt zu: <span class="math inline">\(y=0,1\)</span>. Aus dem bekannten Zusammenhang zwischen <span class="math inline">\(x\)</span> und <span class="math inline">\(y\)</span> ermittelt man: <span class="math inline">\(x=1\)</span>.</p>
+</div>
+<div id="applgs" class="app">
+<p><strong>Graphische Darstellung von LGS mit zwei Gleichungen</strong></p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="lineare-gleichungssysteme.html#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co">#uiOutput(&quot;gleichsys&quot;)</span></span></code></pre></div>
+</div>
+<div class="exercise">
+<p><span id="exr:prod" class="exercise"><strong>Aufgabe 9.1  (Produktionsprozess) </strong></span><strong>Aufgabe (Produktionsprozess)</strong></p>
+<p>In einem Unternehmen werden zwei Produkte (A und B) auf zwei Maschinen (1 und 2) gefertigt. Um eine Tonne von Produkt A herzustellen, benötigt man zwei Maschinenstunden auf Maschine 1 und eine Stunde auf Maschine 2. Um eine Tonne von Produkt B herzustellen, benötigt man eine Stunde auf Maschine 1 und drei Stunden auf Maschine 2. Wenn beide Maschinen jeweils acht Stunden am Tag zur Verfügung stehen, stelle das LGS zur Beantwortung der Frage: wie viele Tonnen von Produkt A ( <span class="math inline">\(x\)</span> ) und von Produkt B( <span class="math inline">\(y\)</span> ) am einem Tag produziert werden?</p>
+<details>
+<summary>
+Hinweis
+</summary>
+Wenn <span class="math inline">\(x\)</span> und <span class="math inline">\(y\)</span> jeweils die Mengen von Produkt A und B bezeichnen, dann:
+<span class="math display">\[2\cdot x + 1\cdot y = 8 \text{ (Maschine 1)}\]</span>
+und
+<span class="math display">\[1\cdot x + 3\cdot y = 8 \text{ (Maschine 2)}\]</span>
+</details>
+</div>
+<div id="qgls" class="quiz">
+<p><strong>Quiz Gleichungssysteme</strong></p>
+<script>
+  // Generate a random question
+    const questionObj8 = {
+      question: "In einem Betrieb werden zwei Produkte \\(X\\) und \\(Y\\) produziert. Für die Produktion einer Einheit von \\(X\\) benötigt man \\(10\\) Arbeitstunden und \\(8\\) Maschinenstunden. Für die Produktion von \\(Y\\) benötigt man \\(2\\) Arbeitsstunden und \\(5\\) Maschinenstunden. Insgesamt stehen \\(160\\) Arbeitsstunden und \\(230\\) Maschinenstunden für die Produktion zur Verfügung. Die produzierten Einheiten von \\(X\\) werden als \\(x\\) und die von \\(Y\\) als \\(y\\) bezeichnet. Um bestimmen zu können, wieviele Einheiten der beiden Produkte mit begrenzten Ressourcen produziert werden können, stellt man ein Gleichungsystem auf. Welches Gleichungssystem ist in diesem Fall richtig?",
+      options: [, "\\(I.~ 10 x + 8 y = 160 ;~~ II.~2x + 5y = 230\\)", "\\(I.~8x + 2 y = 160;~~II.~10x + 5y = 230\\)","\\(I.~10x + 2 y = 160;~~II.~8x + 5y = 230\\)","\\(I.~5x + 2 y = 160;~~II.~8x + 10y = 230\\)"],
+      answer: '3',
+      id: 8
+    };
+</script>
+<p class="question">
+<span id="question-text8"></span>
+</p>
+<div class="options">
+<label>
+<input type="radio" name="option8" value=1> \( I.~ 10x + 8 y = 160;~~ II. ~2x + 5y = 230\)
+</label>
+<br>
+<label>
+<input type="radio" name="option8" value=2> \( I.~8x + 2 y = 160;~~ II.~10x + 5y = 230\)
+</label>
+<br>
+<label>
+<input type="radio" name="option8" value=3> \( I.~10x + 2 y = 160;~~ II.~8x + 5y = 230\)
+</label>
+<br>
+<label>
+<input type="radio" name="option8" value=4> \( I.~5x + 2 y = 160;~~ II.~8x + 10y = 230\)
+</label>
+</div>
+<button onclick="checkAnswer_match(questionObj8)">Check</button>
+<p id="result8">
+</p>
+<script>
+  // Display the question
+    document.getElementById('question-text8').textContent = questionObj8.question;
+</script>
+<hr />
+<script>
+  // Generate a random question
+    const questionObj81 = {
+      question: "Löse nun das Produktionsproblem! Wie viele Einheiten von \\(X\\) und wie viele von \\(Y\\) werden prodiziert?",
+      options: ["\\(x=1, y=3\\)", "\\(x=30, y=10\\)", "\\(x=100, y=300\\)","\\(x=300, y=100\\)", "\\(x=10, y=30\\)"],
+      answer: '5',
+      id: 81
+    };
+</script>
+<p class="question">
+<span id="question-text81"></span>
+</p>
+<div class="options">
+<label>
+<input type="radio" name="option81" value=1> \(x=1, y=3\)
+</label>
+<label>
+<input type="radio" name="option81" value=2> \(x=30, y=10\)
+</label>
+<label>
+<input type="radio" name="option81" value=3> \(x=100, y=300\)
+</label>
+<label>
+<input type="radio" name="option81" value=4> \(x=300, y=100\)
+</label>
+<label>
+<input type="radio" name="option81" value=5> \(x=10, y=30\)
+</label>
+</div>
+<button onclick="checkAnswer_match(questionObj81)">Check</button>
+<p id="result81">
+</p>
+<script>
+  // Display the question
+    document.getElementById('question-text81').textContent = questionObj81.question;
+</script>
+<hr />
+<script>
+  // Generate a random question
+    const questionObj82 = {
+      question: "Tina möchte ein Wertpapierportfolio aus zwei Wertpapierarten \\(Y\\) und \\(Z\\) zusammenstellen. Da sie glaubt, dass die Rendite von \\(Y\\) höchstwahrscheilich demnächst durch die Decke geht, möchte sie doppelt so viele Anteile von \\(Y\\) wie von \\(Z\\) kaufen. Die Kosten für die Anschaffung der Wertpapieranteile sollen genau \\(100\\) Euro betragen. Es ist bekannt, dass ein Anteil von \\(Y\\) \\(8\\) Euro und ein Anteil von \\(Z\\) \\(4\\) Euro kostet. Wir bezeichnen die Anteile von \\(Y\\) im Portfolio als \\(y\\) und die Anteile von \\(Z\\) als \\(z\\). Welches Gleichungssystem stellt Tina auf, um herauszufinden, wie viele Anteile von \\(Y\\) und \\(Z\\) sie in ihrem Portfolio halten soll?",
+      options: [ "\\(I.~2y - z = 0;~~II.~8y + 4z = 100\\)","\\(I.~y - 2z = 0;~~II.~8y + 4z = 100\\)", "\\(I.~y - 2z = 0;~~II.~4y + 8z = 100\\)","\\(I.~2y - z = 0;~~II.~4y + 8z = 100\\)"],
+      answer: '2',
+      id: 82
+    };
+</script>
+<p class="question">
+<span id="question-text82"></span>
+</p>
+<div class="options">
+<label>
+<input type="radio" name="option82" value=1> \( I.~2y - z = 0;~~ II.~8y + 4z = 100\)
+</label>
+<br>
+<label>
+<input type="radio" name="option82" value=2> \( I.~y - 2z = 0;~~ II.~8y + 4z = 100\)
+</label>
+<br>
+<label>
+<input type="radio" name="option82" value=3> \( I.~y - 2z = 0;~~ II.~4y + 8z = 100\)
+</label>
+<br>
+<label>
+<input type="radio" name="option82" value=4> \( I.~2y - z = 0;~~ II.~4y + 8z = 100\)
+</label>
+</div>
+<button onclick="checkAnswer_match(questionObj82)">Check</button>
+<p id="result82">
+</p>
+<script>
+  // Display the question
+    document.getElementById('question-text82').textContent = questionObj82.question;
+</script>
+<hr />
+<script>
+  // Generate a random question
+    const questionObj83 = {
+      question:"Löse nun Tinas Portfolioproblem! Wie viele Anteile von \\(Y\\) und wie viele von \\(Z\\) landen in ihrem Portfolio?",
+      options: ["\\(y=5, z=10\\)", "\\(y=20, z=10\\)","\\(y=10, z=5\\)", "\\(y=10, z=20\\)"],
+      answer: '3',
+      id: 83
+    };
+</script>
+<p class="question">
+<span id="question-text83"></span>
+</p>
+<div class="options">
+<label>
+<input type="radio" name="option83" value=1> \(y=5, z=10\)
+</label>
+<label>
+<input type="radio" name="option83" value=2> \(y=20, z=10\)
+</label>
+<label>
+<input type="radio" name="option83" value=3> \(y=10, z=5\)
+</label>
+<label>
+<input type="radio" name="option83" value=4> \(y=10, z=20\)
+</label>
+</div>
+<button onclick="checkAnswer_match(questionObj83)">Check</button>
+<p id="result83">
+</p>
+<script>
+  // Display the question
+    document.getElementById('question-text83').textContent = questionObj83.question;
+</script>
+<hr />
+<p id="question">
+<span id="question-text84"></span>
+<input type="number" id="answer84" placeholder="Antwort eingeben">
+</p>
+<button onclick="checkAnswer_num(questionObj84)">
+Check
+</button>
+<p id="result84">
+</p>
+<script>
+
+ // Generate a random question
+    const questionObj84 = generateQuestion_num(84);
+// Display the question
+    document.getElementById('question-text84').textContent = "Gegeben ist ein Gleichungssystem mit den Unbekannten \\(a\\) und \\(b\\): I:  \\(17a - b = 87\\), II: \\(b = 3a - 17\\). Die Lösung für \\(b=\\)";
+    questionObj84.answer = -2
+</script>
+<hr />
+<p id="question">
+<span id="question-text85"></span>
+<input type="number" id="answer85" placeholder="Antwort eingeben">
+</p>
+<button onclick="checkAnswer_num(questionObj85)">
+Check
+</button>
+<p id="result85">
+</p>
+<script>
+
+ // Generate a random question
+    const questionObj85 = generateQuestion_num(85);
+// Display the question
+    document.getElementById('question-text85').textContent = "Gegeben ist ein Gleichungssystem mit den Unbekannten \\(a\\) und \\(b\\): I:  \\(35a - 18b = 139\\), II: \\(25a + 27b = 179\\). Die Lösung für \\(a=\\)";
+    questionObj85.answer = 5
+</script>
+<hr />
+<p id="question">
+<span id="question-text86"></span>
+<input type="number" id="answer86" placeholder="Antwort eingeben">
+</p>
+<button onclick="checkAnswer_num(questionObj86)">
+Check
+</button>
+<p id="result86">
+</p>
+<script>
+
+ // Generate a random question
+    const questionObj86 = generateQuestion_num(86);
+// Display the question
+    document.getElementById('question-text86').textContent = "In einem Stall sind Kaninchen und Hühner. Insgesamt sind es \\(36\\) Tiere mit insgesamt \\(96\\) Beinen. Diese Aufgabe kann mithilfe eines linearen Gleichungssystems gelöst werden, bei dem die Anzahl der Kaninchen mit \\(k\\) und die Anzahl der Hühner mit \\(h\\) bezeichnet wird. Aufgabenstellung: Stelle das Gleichungssystem auf und löse anschließend das Gleichungssystem. Die Lösung für \\(k=\\)";
+    questionObj86.answer = 12
+</script>
+</div>
+
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="ungleichungen.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="funktionen-und-optimierung.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"whatsapp": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": "https://github.com/USERNAME/REPO/edit/BRANCH/08-LGS.Rmd",
+"text": "Edit"
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": ["_main.pdf", "_main.epub"],
+"search": {
+"engine": "fuse",
+"options": null
+},
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/latest.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>

@@ -1,0 +1,938 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Kapitel 3 Bruchrechnung | Vor- und Brückenkurs: Wirtschaftsmathematik</title>
+  <meta name="description" content="Das ist der Skript für den Kurs Vor- und Brückenkurs: Wirtschaftsmathematik." />
+  <meta name="generator" content="bookdown 0.34 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Kapitel 3 Bruchrechnung | Vor- und Brückenkurs: Wirtschaftsmathematik" />
+  <meta property="og:type" content="book" />
+  
+  <meta property="og:description" content="Das ist der Skript für den Kurs Vor- und Brückenkurs: Wirtschaftsmathematik." />
+  <meta name="github-repo" content="rstudio/bookdown-demo" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Kapitel 3 Bruchrechnung | Vor- und Brückenkurs: Wirtschaftsmathematik" />
+  
+  <meta name="twitter:description" content="Das ist der Skript für den Kurs Vor- und Brückenkurs: Wirtschaftsmathematik." />
+  
+
+<meta name="author" content="Maria Osipenko" />
+
+
+<meta name="date" content="2024-02-12" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="mengen-und-zahlen.html"/>
+<link rel="next" href="potenzen-und-wurzel.html"/>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+<script src="libs/htmlwidgets-1.6.2/htmlwidgets.js"></script>
+<script src="libs/plotly-binding-4.10.2/plotly.js"></script>
+<script src="libs/typedarray-0.1/typedarray.min.js"></script>
+<link href="libs/crosstalk-1.2.0/css/crosstalk.min.css" rel="stylesheet" />
+<script src="libs/crosstalk-1.2.0/js/crosstalk.min.js"></script>
+<link href="libs/plotly-htmlwidgets-css-2.11.1/plotly-htmlwidgets.css" rel="stylesheet" />
+<script src="libs/plotly-main-2.11.1/plotly-latest.min.js"></script>
+
+
+<style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { color: #008000; } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { color: #008000; font-weight: bold; } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+<style type="text/css">
+  
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">A Minimal Book Example</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Grundlagen</a>
+<ul>
+<li class="chapter" data-level="1.1" data-path="index.html"><a href="index.html#rechenregeln"><i class="fa fa-check"></i><b>1.1</b> Rechenregeln</a>
+<ul>
+<li class="chapter" data-level="1.1.1" data-path="index.html"><a href="index.html#umwandlung-von-brüchen"><i class="fa fa-check"></i><b>1.1.1</b> Umwandlung von Brüchen</a></li>
+<li class="chapter" data-level="1.1.2" data-path="index.html"><a href="index.html#rehenfolge-der-rechenoperationen"><i class="fa fa-check"></i><b>1.1.2</b> Rehenfolge der Rechenoperationen</a></li>
+<li class="chapter" data-level="1.1.3" data-path="index.html"><a href="index.html#punkt--von-strich-rechnung"><i class="fa fa-check"></i><b>1.1.3</b> “Punkt- von Strich-”Rechnung</a></li>
+<li class="chapter" data-level="1.1.4" data-path="index.html"><a href="index.html#aufmachen-von-klammern-ausmultiplizieren"><i class="fa fa-check"></i><b>1.1.4</b> Aufmachen von Klammern, Ausmultiplizieren</a></li>
+</ul></li>
+<li class="chapter" data-level="1.2" data-path="index.html"><a href="index.html#notation"><i class="fa fa-check"></i><b>1.2</b> Notation</a>
+<ul>
+<li class="chapter" data-level="1.2.1" data-path="index.html"><a href="index.html#auslassen-von-punkt-bei-multiplikation-mit-variablen"><i class="fa fa-check"></i><b>1.2.1</b> Auslassen von Punkt bei Multiplikation mit Variablen</a></li>
+<li class="chapter" data-level="1.2.2" data-path="index.html"><a href="index.html#summen--und-produktzeichen"><i class="fa fa-check"></i><b>1.2.2</b> Summen- und Produktzeichen</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="mengen-und-zahlen.html"><a href="mengen-und-zahlen.html"><i class="fa fa-check"></i><b>2</b> Mengen und Zahlen</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="mengen-und-zahlen.html"><a href="mengen-und-zahlen.html#mengen"><i class="fa fa-check"></i><b>2.1</b> Mengen</a>
+<ul>
+<li class="chapter" data-level="2.1.1" data-path="mengen-und-zahlen.html"><a href="mengen-und-zahlen.html#mengenoperationen"><i class="fa fa-check"></i><b>2.1.1</b> Mengenoperationen</a></li>
+<li class="chapter" data-level="2.1.2" data-path="mengen-und-zahlen.html"><a href="mengen-und-zahlen.html#spezielle-mengen"><i class="fa fa-check"></i><b>2.1.2</b> Spezielle Mengen</a></li>
+<li class="chapter" data-level="2.1.3" data-path="mengen-und-zahlen.html"><a href="mengen-und-zahlen.html#mengen-zur-wahrscheinlichkeitsrechnung"><i class="fa fa-check"></i><b>2.1.3</b> Mengen zur Wahrscheinlichkeitsrechnung</a></li>
+</ul></li>
+<li class="chapter" data-level="2.2" data-path="mengen-und-zahlen.html"><a href="mengen-und-zahlen.html#zahlenmengen"><i class="fa fa-check"></i><b>2.2</b> Zahlenmengen</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="bruchrechnung.html"><a href="bruchrechnung.html"><i class="fa fa-check"></i><b>3</b> Bruchrechnung</a></li>
+<li class="chapter" data-level="4" data-path="potenzen-und-wurzel.html"><a href="potenzen-und-wurzel.html"><i class="fa fa-check"></i><b>4</b> Potenzen und Wurzel</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="potenzen-und-wurzel.html"><a href="potenzen-und-wurzel.html#potenzen"><i class="fa fa-check"></i><b>4.1</b> Potenzen</a></li>
+<li class="chapter" data-level="4.2" data-path="potenzen-und-wurzel.html"><a href="potenzen-und-wurzel.html#wurzel"><i class="fa fa-check"></i><b>4.2</b> Wurzel</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="prozent--und-zinsrechnung.html"><a href="prozent--und-zinsrechnung.html"><i class="fa fa-check"></i><b>5</b> Prozent- und Zinsrechnung</a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="prozent--und-zinsrechnung.html"><a href="prozent--und-zinsrechnung.html#prozentrechnung"><i class="fa fa-check"></i><b>5.1</b> Prozentrechnung</a></li>
+<li class="chapter" data-level="5.2" data-path="prozent--und-zinsrechnung.html"><a href="prozent--und-zinsrechnung.html#zinsrechnung"><i class="fa fa-check"></i><b>5.2</b> Zinsrechnung</a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="variablen-und-terme.html"><a href="variablen-und-terme.html"><i class="fa fa-check"></i><b>6</b> Variablen und Terme</a>
+<ul>
+<li class="chapter" data-level="6.1" data-path="variablen-und-terme.html"><a href="variablen-und-terme.html#umformung-von-termen"><i class="fa fa-check"></i><b>6.1</b> Umformung von Termen</a></li>
+<li class="chapter" data-level="6.2" data-path="variablen-und-terme.html"><a href="variablen-und-terme.html#binomische-formeln-1-3"><i class="fa fa-check"></i><b>6.2</b> Binomische Formeln 1-3</a></li>
+<li class="chapter" data-level="6.3" data-path="variablen-und-terme.html"><a href="variablen-und-terme.html#variablen-in-brüchen"><i class="fa fa-check"></i><b>6.3</b> Variablen in Brüchen</a></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="gleichungen.html"><a href="gleichungen.html"><i class="fa fa-check"></i><b>7</b> Gleichungen</a>
+<ul>
+<li class="chapter" data-level="7.1" data-path="gleichungen.html"><a href="gleichungen.html#definition-einer-gleichung"><i class="fa fa-check"></i><b>7.1</b> Definition einer Gleichung</a></li>
+<li class="chapter" data-level="7.2" data-path="gleichungen.html"><a href="gleichungen.html#lösen-von-gleichungen"><i class="fa fa-check"></i><b>7.2</b> Lösen von Gleichungen</a></li>
+<li class="chapter" data-level="7.3" data-path="gleichungen.html"><a href="gleichungen.html#spezielle-gleichungen"><i class="fa fa-check"></i><b>7.3</b> Spezielle Gleichungen</a>
+<ul>
+<li class="chapter" data-level="7.3.1" data-path="gleichungen.html"><a href="gleichungen.html#faktorisierte-gleichungen"><i class="fa fa-check"></i><b>7.3.1</b> Faktorisierte Gleichungen</a></li>
+<li class="chapter" data-level="7.3.2" data-path="gleichungen.html"><a href="gleichungen.html#betragsgleichungen"><i class="fa fa-check"></i><b>7.3.2</b> Betragsgleichungen</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="8" data-path="ungleichungen.html"><a href="ungleichungen.html"><i class="fa fa-check"></i><b>8</b> Ungleichungen</a>
+<ul>
+<li class="chapter" data-level="8.1" data-path="ungleichungen.html"><a href="ungleichungen.html#definition-von-ungleichungen"><i class="fa fa-check"></i><b>8.1</b> Definition von Ungleichungen</a></li>
+<li class="chapter" data-level="8.2" data-path="ungleichungen.html"><a href="ungleichungen.html#umformung-von-ungleichungen"><i class="fa fa-check"></i><b>8.2</b> Umformung von Ungleichungen</a></li>
+<li class="chapter" data-level="8.3" data-path="ungleichungen.html"><a href="ungleichungen.html#spezielle-ungleichungen"><i class="fa fa-check"></i><b>8.3</b> Spezielle Ungleichungen</a>
+<ul>
+<li class="chapter" data-level="8.3.1" data-path="ungleichungen.html"><a href="ungleichungen.html#faktorisierte-ungleichungen"><i class="fa fa-check"></i><b>8.3.1</b> Faktorisierte Ungleichungen</a></li>
+<li class="chapter" data-level="8.3.2" data-path="ungleichungen.html"><a href="ungleichungen.html#betragsungleichungen"><i class="fa fa-check"></i><b>8.3.2</b> Betragsungleichungen</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="9" data-path="lineare-gleichungssysteme.html"><a href="lineare-gleichungssysteme.html"><i class="fa fa-check"></i><b>9</b> Lineare Gleichungssysteme</a>
+<ul>
+<li class="chapter" data-level="9.1" data-path="lineare-gleichungssysteme.html"><a href="lineare-gleichungssysteme.html#lösung-von-lgs"><i class="fa fa-check"></i><b>9.1</b> Lösung von LGS</a></li>
+</ul></li>
+<li class="chapter" data-level="10" data-path="funktionen-und-optimierung.html"><a href="funktionen-und-optimierung.html"><i class="fa fa-check"></i><b>10</b> Funktionen und Optimierung</a>
+<ul>
+<li class="chapter" data-level="10.1" data-path="funktionen-und-optimierung.html"><a href="funktionen-und-optimierung.html#funktionen"><i class="fa fa-check"></i><b>10.1</b> Funktionen</a></li>
+<li class="chapter" data-level="10.2" data-path="funktionen-und-optimierung.html"><a href="funktionen-und-optimierung.html#lineare-und-quadratische-funktionen-polynome"><i class="fa fa-check"></i><b>10.2</b> Lineare und quadratische Funktionen, Polynome</a></li>
+<li class="chapter" data-level="10.3" data-path="funktionen-und-optimierung.html"><a href="funktionen-und-optimierung.html#ableitung"><i class="fa fa-check"></i><b>10.3</b> Ableitung</a>
+<ul>
+<li class="chapter" data-level="10.3.1" data-path="funktionen-und-optimierung.html"><a href="funktionen-und-optimierung.html#einige-ableitungsregeln"><i class="fa fa-check"></i><b>10.3.1</b> Einige Ableitungsregeln</a></li>
+</ul></li>
+<li class="chapter" data-level="10.4" data-path="funktionen-und-optimierung.html"><a href="funktionen-und-optimierung.html#einfache-optimierungsprobleme"><i class="fa fa-check"></i><b>10.4</b> Einfache Optimierungsprobleme</a></li>
+</ul></li>
+<li class="chapter" data-level="11" data-path="weitere-funktionen-für-ökonomische-modellierung.html"><a href="weitere-funktionen-für-ökonomische-modellierung.html"><i class="fa fa-check"></i><b>11</b> Weitere Funktionen für ökonomische Modellierung</a>
+<ul>
+<li class="chapter" data-level="11.1" data-path="weitere-funktionen-für-ökonomische-modellierung.html"><a href="weitere-funktionen-für-ökonomische-modellierung.html#exponentialfunktion"><i class="fa fa-check"></i><b>11.1</b> Exponentialfunktion</a></li>
+<li class="chapter" data-level="11.2" data-path="weitere-funktionen-für-ökonomische-modellierung.html"><a href="weitere-funktionen-für-ökonomische-modellierung.html#logarithmusfunktion"><i class="fa fa-check"></i><b>11.2</b> Logarithmusfunktion</a></li>
+</ul></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Vor- und Brückenkurs: Wirtschaftsmathematik</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="bruchrechnung" class="section level1 hasAnchor" number="3">
+<h1><span class="header-section-number">Kapitel 3</span> Bruchrechnung<a href="bruchrechnung.html#bruchrechnung" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<script>
+function checkAnswer_mmc(q) {
+      const selectedOptions = document.querySelectorAll('input[name="option'+q.id+'"]:checked');
+      if (selectedOptions.length === 2) {
+        const userAnswers = Array.from(selectedOptions).map(option => option.value);
+        const correctAnswers = q.answer;
+        const isCorrect = userAnswers.every(answer => correctAnswers.includes(answer));
+
+if (isCorrect) {
+          document.getElementById('result'+q.id).textContent = 'Glückwunsch! Deine Antwort ist richtig.';
+        } else {
+          document.getElementById('result'+q.id).textContent = `Leider falsch. Versuch es nochmal!`;
+        }
+      } else {
+        document.getElementById('result'+q.id).textContent = 'Bitte zwei Optionen auswählen.';
+      }
+    }
+// numeric
+function generateQuestion_num(id) {
+      // Generate two random numbers between 2 and 10
+      const num1 = Math.floor(Math.random() * 10) + 2;
+      const num2 = Math.floor(Math.random() * 10) + 2;
+      const x1 = Math.floor(Math.random() * 100) + 2;
+      const x2 = Math.floor(Math.random() * 100) + 2;
+      const x3 = Math.floor(Math.random() * 100) + 2;
+      const x4 = Math.floor(Math.random() * 100) + 2;
+      const x5 = Math.floor(Math.random() * 100) + 2;
+      const x6 = Math.floor(Math.random() * 100) + 2;
+
+       // Calculate the correct answer
+      let answer = num1*Math.sqrt(x1) + num2*Math.sqrt(x2);
+
+      // Return the question and answer as an object
+      return {
+       // question: num1 + "\\(\\sqrt{x}+\\)"+ num2 + "\\(\\sqrt{y}\\)" + " for \\(x=\\)" + x1 + " and \\(y=\\)" + x2,
+        question: [num1,num2,x1,x2,x3,x4,x5,x6],
+        answer: answer,
+        id: id
+      };
+    }
+
+function checkAnswer_num(q) {
+      const userAnswer = document.getElementById('answer'+q.id).value;
+      const isCorrect = Math.round(parseFloat(userAnswer)*100)/100 === Math.round(q.answer*100)/100;
+
+      if (isCorrect) {
+        document.getElementById('result'+q.id).textContent = 'Glückwunsch! Deine Antwort ist richtig.';
+      } else {
+        document.getElementById('result'+q.id).textContent = `Sorry, incorrect.`;
+      }
+  }
+
+// plain multiple choice
+  function checkAnswer_match(q) {
+      const selectedOption = document.querySelector('input[name="option'+q.id+'"]:checked');
+      if (selectedOption) {
+        const userAnswer = selectedOption.value;
+        const isCorrect = userAnswer === q.answer;
+
+        if (isCorrect) {
+          document.getElementById('result'+q.id).textContent = 'Glückwunsch! Deine Antwort ist richtig.';
+        } else {
+          document.getElementById('result'+q.id).textContent = `Leider falsch. Versuch es nochmal!`;
+        }
+      } else {
+        document.getElementById('result'+q.id).textContent = 'Bitte eine Option wählen.';
+      }
+    }
+</script>
+<p>Ein Bruch ist eine rationale Zahl der Form <span class="math inline">\(\frac{\text{Zähler}}{\text{Nenner}}\)</span>, wobei Zähler und Nenner ganze Zahlen sind und der Nenner <span class="math inline">\(\not=0\)</span>.</p>
+<p>Beispiele:</p>
+<p><span class="math display">\[\frac 13, \frac{-5}{12}, \frac1{23},\ldots\]</span></p>
+<p>Ein und dieselbe rationale Zahl beliebig viele äquivalente Darstellungen haben kann:</p>
+<p><span class="math display">\[\frac{12}{36}=\frac13=\frac 39=\ldots\]</span></p>
+<p>Die verschiedenen Darstellungen gehen durch <strong>Kürzen</strong> bzw. <strong>Erweitern</strong> ineinander über.</p>
+<div class="definition">
+<p><span id="def:defbr" class="definition"><strong>Definition 3.1  (Brüche) </strong></span><strong>Defintion (Brüche kürzen, erweitern, addieren und substrahieren)</strong></p>
+<ul>
+<li><p>Brüche werden <strong>gekürzt</strong>, indem Zähler und Nenner durch dieselbe ganze Zahl ungleich Null dividiert werden:
+<span class="math display">\[\frac{ab}{bc} = \frac ac.\]</span></p></li>
+<li><p>Brüche werden <strong>erweitert</strong>, indem Zähler und Nenner mit derselben ganzen Zahl ungleich Null multipliziert werden:
+<span class="math display">\[\frac{a}{c} = \frac{ab}{cb}.\]</span></p></li>
+<li><p>Brüche werden <strong>addiert/subtrahiert</strong>, indem man sie auf den gleichen Nenner bringt und die Zähler anschließend addiert/subtrahiert, d. h.</p></li>
+</ul>
+<p><span class="math display">\[\frac ab \pm \frac cd = \frac{ad}{bd} \pm \frac{cb}{bd} = \frac{ad \pm cb}{bd}\]</span>.</p>
+</div>
+<div class="example">
+<p><span id="exm:aktien" class="example"><strong>Beispiel 3.1  (Aktienanteile) </strong></span><strong>Beispiel (Aktienanteile)</strong></p>
+<p>“Ein Mutter-Konzern besitzt <span class="math inline">\(\frac14\)</span> der Aktien von seiner Tochter-Aktiengesellschaft. <span class="math inline">\(\frac13\)</span> der Aktien ist in staatlicher Hand. Welcher Anteil der Aktien bleibt für Privataktionäre?”</p>
+<p>Der Ergebnis wird mithilfe der Bruchrechnung bestimmt.</p>
+<details>
+<summary>
+Antwort
+</summary>
+Zunächst müssen zwei Brüche addiert werden, um festzustellen, welcher Anteil der Aktien der Mutter-Konzern und der Staat halten:
+<span class="math display">\[\frac 14 + \frac 13 = \frac{1\cdot 3}{4\cdot 3} + \frac{1\cdot 4}{3\cdot 4} = \frac 3{12} + \frac 4{12} = \frac7{12}.\]</span>
+Hier erkennt man schon die beiden wichtigsten Schritte: zunächst müssen die beiden Brüche durch Erweitern auf den sogenannten <strong>Hauptnenner</strong> (gemeinsamen Nenner) gebracht werden. Wenn die Brüche dann denselben Nenner besitzen, können sie addiert werden, indem ihre Zähler addiert und der gemeinsame Nenner übernommen wird. Mit dem Ergebnis, dass der Mutter-Konzern und der Staat zusammen <span class="math inline">\(\frac7{12}\)</span> der Aktien besitzen, kann durch Subtraktion berechnet werden, wie viel für Privataktionäre übrig bleibt:
+<span class="math display">\[1 - \frac 7{12} = \frac{12}{12} - \frac 7{12} = \frac 5{12}.\]</span>
+Auch hier werden die Brüche wieder auf den Hauptnenner gebracht und anschließend die Zähler subtrahiert.
+</details>
+</div>
+<p>Auch wenn man Unbekannte in Brüchen hat, behandelt man sie genauso wie Zahlen. Z.B.</p>
+<p><span class="math display">\[\frac x2 + \frac {3y}4 = \frac {x\cdot 2}{2\cdot 2} + \frac {3y}4 = \frac{2x+3y}4.\]</span></p>
+<div id="qbr1" class="quiz">
+<p><strong>Quiz Bruchrechnung I</strong></p>
+<script>
+  // Generate a random question
+    const questionObj21 = {
+      question: "Was ist der kleinste gemeinsame Nenner von \\(\\frac 56\\) und \\(\\frac 34\\)?",
+      options: [4,6,12,24,48],
+      answer: '3',
+      id: 21
+    };
+</script>
+<p class="question">
+<span id="question-text21"></span>
+</p>
+<div class="options">
+<label>
+<input type="radio" name="option21" value=1> \(4\)
+</label>
+<label>
+<input type="radio" name="option21" value=2> \(6\)
+</label>
+<label>
+<input type="radio" name="option21" value=3> \(12\)
+</label>
+<label>
+<input type="radio" name="option21" value=4> \(24\)
+</label>
+<label>
+<input type="radio" name="option21" value=5> \(48\)
+</label>
+</div>
+<button onclick="checkAnswer_match(questionObj21)">Check</button>
+<p id="result21">
+</p>
+<script>
+  // Display the question
+    document.getElementById('question-text21').textContent = questionObj21.question;
+</script>
+<hr />
+<script>
+
+
+// Generate a random question
+  const questionObj22 = {
+      question: "Was ist das Ergebnis von \\(\\frac 58 + \\frac 39\\)?",
+      options: ["\\(\\frac{69}{72}\\)","\\(1\\frac{3}{72}\\)","\\(\\frac{23}{24}\\)","\\(\\frac{27}{36}\\)"],
+      answer: ['1','3'],
+      id: 22
+    };
+</script>
+<p class="question">
+Frage: <span id="question-text22"></span>
+</p>
+<div class="options">
+<p><label>
+<input type="checkbox" name="option22" value=1> \(\frac{69}{72}\)
+</label>
+<label>
+<input type="checkbox" name="option22" value=2> \(1\frac{3}{72}\)
+</label>
+<label>
+<input type="checkbox" name="option22" value=3> \(\frac{23}{24}\)
+</label>
+<label>
+<input type="checkbox" name="option22" value=4> \(\frac{27}{36}\)
+</label></p>
+</div>
+<button onclick="checkAnswer_mmc(questionObj22)">
+Check
+</button>
+<p id="result22">
+</p>
+<script>
+    // Display the question
+    document.getElementById('question-text22').textContent = questionObj22.question;
+
+</script>
+<hr />
+<script>
+
+
+// Generate a random question
+  const questionObj23 = {
+      question: "Was ist das Ergebnis von \\(\\frac {18}{19} - \\frac {45}{57}\\)?",
+      options: ["\\(-\\frac{9}{57}\\)","\\(\\frac{9}{57}\\)","\\(\\frac{3}{19}\\)","\\(\\frac{37}{57}\\)"],
+      answer: ['2','3'],
+      id: 23
+    };
+</script>
+<p class="question">
+Frage: <span id="question-text23"></span>
+</p>
+<div class="options">
+<p><label>
+<input type="checkbox" name="option23" value=1> \(-\frac{9}{57}\)
+</label>
+<label>
+<input type="checkbox" name="option23" value=2> \(\frac{9}{57}\)
+</label>
+<label>
+<input type="checkbox" name="option23" value=3> \(\frac{3}{19}\)
+</label>
+<label>
+<input type="checkbox" name="option23" value=4> \(\frac{37}{57}\)
+</label></p>
+</div>
+<button onclick="checkAnswer_mmc(questionObj23)">
+Check
+</button>
+<p id="result23">
+</p>
+<script>
+    // Display the question
+    document.getElementById('question-text23').textContent = questionObj23.question;
+
+</script>
+<hr />
+<script>
+
+
+// Generate a random question
+  const questionObj24 = {
+      question: "Was ist das Ergebnis von \\(\\frac {5x}6 + \\frac {3y}4\\)?",
+      options: ["\\(\\frac{9x+10y}{12}\\)","\\(\\frac{15x+6y}{12}\\)","\\(\\frac{10x+9y}{12}\\)","\\(\\frac{20x+18y}{24}\\)"],
+      answer: ['4','3'],
+      id: 24
+    };
+</script>
+<p class="question">
+Frage: <span id="question-text24"></span>
+</p>
+<div class="options">
+<p><label>
+<input type="checkbox" name="option24" value=1> \(\frac{9x+10y}{12}\)
+</label>
+<label>
+<input type="checkbox" name="option24" value=2> \(\frac{15x+6y}{12}\)
+</label>
+<label>
+<input type="checkbox" name="option24" value=3> \(\frac{10x+9y}{12}\)
+</label>
+<label>
+<input type="checkbox" name="option24" value=4> \(\frac{20x+18y}{24}\)
+</label></p>
+</div>
+<button onclick="checkAnswer_mmc(questionObj24)">
+Check
+</button>
+<p id="result24">
+</p>
+<script>
+    // Display the question
+    document.getElementById('question-text24').textContent = questionObj24.question;
+
+</script>
+</div>
+<div class="definition">
+<p><span id="def:defbrmult" class="definition"><strong>Definition 3.2  (Multiplikation von Brüchen) </strong></span><strong>Definition (Multiplikation/Division von Brüchen)</strong></p>
+<ul>
+<li><p>Brüche werden <strong>multipliziert</strong>, indem Zähler mit Zähler und Nenner mit Nenner multipliziert werden, d. h.
+<span class="math display">\[\frac ab \cdot \frac cd = \frac{a\cdot c}{b\cdot d}, ~~b,d\not=0\]</span></p></li>
+<li><p>Brüche werden <strong>dividiert</strong>, indem der erste Bruch mit dem Kehrwert des zweiten Bruchs multipliziert wird, d.h.</p></li>
+</ul>
+<p><span class="math display">\[\frac ab : \frac cd = \frac ab \cdot \frac dc=\frac{a\cdot d}{b\cdot c}, ~~b,c,d\not=0\]</span></p>
+</div>
+<p>Die Division zweier Brüche kann auch als Doppelbruch geschrieben werden:
+<span class="math display">\[\frac ab : \frac cd = \frac{\frac ab} {\frac cd}.\]</span></p>
+<div class="example">
+<p><span id="exm:brdiv" class="example"><strong>Beispiel 3.2  (Multiplikation/Division von Brüchen) </strong></span><strong>Beispiel (Multiplikation/Division von Brüchen)</strong></p>
+<p>Die Multiplikation bzw. Division zweier Brüche sieht unter Berücksichtigung von eventuellem Kürzen folgendermaßen aus:
+<span class="math display">\[\frac 23\cdot \frac 45 = \frac{2\cdot 4}{3\cdot 5}=\frac 8{15}; ~~\frac 23: \frac 45=\frac 23\cdot \frac 54 = \frac{2\cdot 5}{3\cdot 4}=\frac {10}{12} = \frac 56.\]</span></p>
+<p>Wird ein Bruch ausdividiert, so erhält man einen Dezimalbruch bzw. eine Dezimalzahl, zum Beispiel
+<span class="math display">\[\frac 12 = 0,5; ~~\frac 13 = 0,3333\ldots;~~\frac 18=0,125.\]</span></p>
+</div>
+<div id="qbr2" class="quiz">
+<p><strong>Quiz Bruchrechnung II</strong></p>
+<script>
+
+
+// Generate a random question
+  const questionObj25 = {
+      question: "Was ist das Ergebnis von \\(\\frac 56 \\cdot \\frac 34\\)?",
+      options: ["\\(\\frac{5}{8}\\)","\\(\\frac{2}{8}\\)","\\(\\frac{8}{24}\\)","\\(\\frac{15}{24}\\)"],
+      answer: ['1','4'],
+      id: 25
+    };
+</script>
+<p class="question">
+Frage: <span id="question-text25"></span>
+</p>
+<div class="options">
+<p><label>
+<input type="checkbox" name="option25" value=1> \(\frac{5}{8}\)
+</label>
+<label>
+<input type="checkbox" name="option25" value=2> \(\frac{2}{8}\)
+</label>
+<label>
+<input type="checkbox" name="option25" value=3> \(\frac{8}{24}\)
+</label>
+<label>
+<input type="checkbox" name="option25" value=4> \(\frac{15}{24}\)
+</label></p>
+</div>
+<button onclick="checkAnswer_mmc(questionObj25)">
+Check
+</button>
+<p id="result25">
+</p>
+<script>
+    // Display the question
+    document.getElementById('question-text25').textContent = questionObj25.question;
+
+</script>
+<hr />
+<script>
+
+
+// Generate a random question
+  const questionObj26 = {
+      question: "Was ist das Ergebnis von \\(\\frac 3{32} \\cdot 4\\)?",
+      options: ["\\(\\frac{12}{8}\\)","\\(\\frac{48}{128}\\)","\\(\\frac{24}{64}\\)","\\(\\frac{8}{24}\\)"],
+      answer: ['2','3'],
+      id: 26
+    };
+</script>
+<p class="question">
+Frage: <span id="question-text26"></span>
+</p>
+<div class="options">
+<p><label>
+<input type="checkbox" name="option26" value=1> \(\frac{12}{8}\)
+</label>
+<label>
+<input type="checkbox" name="option26" value=2> \(\frac{48}{128}\)
+</label>
+<label>
+<input type="checkbox" name="option26" value=3> \(\frac{24}{64}\)
+</label>
+<label>
+<input type="checkbox" name="option26" value=4> \(\frac{8}{24}\)
+</label></p>
+</div>
+<button onclick="checkAnswer_mmc(questionObj26)">
+Submit
+</button>
+<p id="result26">
+</p>
+<script>
+    // Display the question
+    document.getElementById('question-text26').textContent = questionObj26.question;
+
+</script>
+<hr />
+<script>
+
+
+// Generate a random question
+  const questionObj27 = {
+      question: "Was ist das Ergebnis von \\(\\frac 24 : \\frac 78\\)?",
+      options: ["\\(\\frac{14}{32}\\)","\\(\\frac{7}{16}\\)","\\(\\frac{4}{7}\\)","\\(\\frac{16}{28}\\)"],
+      answer: ['4','3'],
+      id: 27
+    };
+</script>
+<p class="question">
+Frage: <span id="question-text27"></span>
+</p>
+<div class="options">
+<p><label>
+<input type="checkbox" name="option27" value=1> \(\frac{14}{32}\)
+</label>
+<label>
+<input type="checkbox" name="option27" value=2> \(\frac{7}{16}\)
+</label>
+<label>
+<input type="checkbox" name="option27" value=3> \(\frac{4}{7}\)
+</label>
+<label>
+<input type="checkbox" name="option27" value=4> \(\frac{16}{28}\)
+</label></p>
+</div>
+<button onclick="checkAnswer_mmc(questionObj27)">
+Submit
+</button>
+<p id="result27">
+</p>
+<script>
+    // Display the question
+    document.getElementById('question-text27').textContent = questionObj27.question;
+
+</script>
+<hr />
+<script>
+
+
+// Generate a random question
+  const questionObj28 = {
+      question: "Was ist das Ergebnis von \\(\\frac {5x}6 : \\frac {3y}4\\)?",
+      options: ["\\(\\frac{10x}{9y}\\)","\\(\\frac{20x}{18y}\\)","\\(\\frac{5x}{9y}\\)","\\(\\frac{10x}{18y}\\)"],
+      answer: ['1','2'],
+      id: 28
+    };
+</script>
+<p class="question">
+Frage: <span id="question-text28"></span>
+</p>
+<div class="options">
+<p><label>
+<input type="checkbox" name="option28" value=1> \(\frac{10x}{9y}\)
+</label>
+<label>
+<input type="checkbox" name="option28" value=2> \(\frac{20x}{18y}\)
+</label>
+<label>
+<input type="checkbox" name="option28" value=3> \(\frac{5x}{9y}\)
+</label>
+<label>
+<input type="checkbox" name="option28" value=4> \(\frac{10x}{18y}\)
+</label></p>
+</div>
+<button onclick="checkAnswer_mmc(questionObj28)">
+Submit
+</button>
+<p id="result28">
+</p>
+<script>
+    // Display the question
+    document.getElementById('question-text28').textContent = questionObj28.question;
+
+</script>
+<hr />
+<script>
+
+
+// Generate a random question
+  const questionObj29 = {
+      question: "Was ist das Ergebnis von \\(\\frac {x}{2x^2} + \\frac {1}{6}\\)?",
+      options: ["\\(\\frac{3+x}{6x}\\)","\\(\\frac{3+x}{12x}\\)","\\(\\frac{3x+12}{6x}\\)","\\(\\frac{3x+x^2}{6x^2}\\)"],
+      answer: ['1','4'],
+      id: 29
+    };
+</script>
+<p class="question">
+Frage: <span id="question-text29"></span>
+</p>
+<div class="options">
+<p><label>
+<input type="checkbox" name="option29" value=1> \(\frac{3+x}{6x}\)
+</label>
+<label>
+<input type="checkbox" name="option29" value=2> \(\frac{3+x}{12x}\)
+</label>
+<label>
+<input type="checkbox" name="option29" value=3> \(\frac{3x+12}{6x}\)
+</label>
+<label>
+<input type="checkbox" name="option29" value=4> \(\frac{x^2 +3x}{6x^{2}}\)
+</label></p>
+</div>
+<button onclick="checkAnswer_mmc(questionObj29)">
+Check
+</button>
+<p id="result29">
+</p>
+<script>
+    // Display the question
+    document.getElementById('question-text29').textContent = questionObj29.question;
+
+</script>
+<hr />
+<script>
+
+
+// Generate a random question
+  const questionObj230 = {
+      question: "Was ist das Ergebnis von \\(\\frac {4}{3y} + \\frac {3}x\\)?",
+      options: ["\\(\\frac{3xy}{4x+9y}\\)","\\(\\frac{4x+9y}{3xy}\\)","\\(\\frac{\\frac 43 x+3y}{xy}\\)","\\(\\frac{9x+4y}{3xy}\\)"],
+      answer: ['2','3'],
+      id: 230
+    };
+</script>
+<p class="question">
+Frage: <span id="question-text230"></span>
+</p>
+<div class="options">
+<p><label>
+<input type="checkbox" name="option230" value=1> \(\frac{3xy}{4x+9y}\)
+</label>
+<label>
+<input type="checkbox" name="option230" value=2> \(\frac{4x+9y}{3xy}\)
+</label>
+<label>
+<input type="checkbox" name="option230" value=3> \(\frac{\frac 43 x+3y}{xy}\)
+</label>
+<label>
+<input type="checkbox" name="option230" value=4> \(\frac{9x+4y}{3xy}\)
+</label></p>
+</div>
+<button onclick="checkAnswer_mmc(questionObj230)">
+Check
+</button>
+<p id="result230">
+</p>
+<script>
+    // Display the question
+    document.getElementById('question-text230').textContent = questionObj230.question;
+
+</script>
+<hr />
+<script>
+
+
+// Generate a random question
+  const questionObj231 = {
+      question: "Welche Ausdrücke sind equivalent zu \\(\\frac {3-x}2\\)?",
+      options: ["\\(1,5 - 0,5x\\)","\\(2-0,5x\\)","\\(0,5-1,5x\\)","\\(1,5-x\\)","\\(3 - \\frac 12x\\)","\\(1,5 - \\frac 12x\\)"],
+      answer: ['1','6'],
+      id: 231
+    };
+</script>
+<p class="question">
+Frage: <span id="question-text231"></span>
+</p>
+<div class="options">
+<p><label>
+<input type="checkbox" name="option231" value=1> \(1,5 - 0,5x\)
+</label>
+<label>
+<input type="checkbox" name="option231" value=2> \(2-0,5x\)
+</label>
+<label>
+<input type="checkbox" name="option231" value=3> \(0,5-1,5x\)
+</label>
+<label>
+<input type="checkbox" name="option231" value=4> \(1,5-x\)
+</label>
+<label>
+<input type="checkbox" name="option231" value=5> \(3 - \frac 12x\)
+</label>
+<label>
+<input type="checkbox" name="option231" value=6> \(1,5 - \frac 12x\)
+</label></p>
+</div>
+<button onclick="checkAnswer_mmc(questionObj231)">
+Submit
+</button>
+<p id="result231">
+</p>
+<script>
+    // Display the question
+    document.getElementById('question-text231').textContent = questionObj231.question;
+
+</script>
+<hr />
+<script>
+
+
+// Generate a random question
+  const questionObj232 = {
+      question: "Welche Ausdrücke sind equivalent zu \\(\\frac {6x-9x^2}{3x}\\)?",
+      options: ["\\(2 - 3x\\)", "\\(2x - 3x^2\\)","\\(6-9x\\)","\\(3-2x\\)","\\(2-9\\cdot\\fracx3\\)"],
+      answer: ['1','5'],
+      id: 232
+    };
+</script>
+<p class="question">
+Frage: <span id="question-text232"></span>
+</p>
+<div class="options">
+<p><label>
+<input type="checkbox" name="option232" value=1> \(2 - 3x\)
+</label>
+<label>
+<input type="checkbox" name="option232" value=2> \(2x - 3x^2\)
+</label>
+<label>
+<input type="checkbox" name="option232" value=3> \(6-9x\)
+</label>
+<label>
+<input type="checkbox" name="option232" value=4> \(3-2x\)
+</label>
+<label>
+<input type="checkbox" name="option232" value=5> \(2-9\cdot\frac x3\)
+</label></p>
+</div>
+<button onclick="checkAnswer_mmc(questionObj232)">
+Submit
+</button>
+<p id="result232">
+</p>
+<script>
+    // Display the question
+    document.getElementById('question-text232').textContent = questionObj232.question;
+
+</script>
+</div>
+<div id="loopbruch" class="loop">
+<div id="übung-bruchrechnung" class="section level3 hasAnchor" number="3.0.1">
+<h3><span class="header-section-number">3.0.1</span> Übung: Bruchrechnung<a href="bruchrechnung.html#übung-bruchrechnung" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Übe die Bruchrechnungg in dieser Endlosschleife. Wenn du richtig antwortest und sicher bei deinen Antworten bist, werden die Aufgaben zunehmend herausfordernder.</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="bruchrechnung.html#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co">#withMathJax(uiOutput(&quot;dyn_exer_frac&quot;))</span></span></code></pre></div>
+</div>
+</div>
+
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="mengen-und-zahlen.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="potenzen-und-wurzel.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"whatsapp": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": "https://github.com/USERNAME/REPO/edit/BRANCH/02-Bruchrechnung.Rmd",
+"text": "Edit"
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": ["_main.pdf", "_main.epub"],
+"search": {
+"engine": "fuse",
+"options": null
+},
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/latest.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>

@@ -1,0 +1,749 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Kapitel 8 Ungleichungen | Vor- und Brückenkurs: Wirtschaftsmathematik</title>
+  <meta name="description" content="Das ist der Skript für den Kurs Vor- und Brückenkurs: Wirtschaftsmathematik." />
+  <meta name="generator" content="bookdown 0.34 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Kapitel 8 Ungleichungen | Vor- und Brückenkurs: Wirtschaftsmathematik" />
+  <meta property="og:type" content="book" />
+  
+  <meta property="og:description" content="Das ist der Skript für den Kurs Vor- und Brückenkurs: Wirtschaftsmathematik." />
+  <meta name="github-repo" content="rstudio/bookdown-demo" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Kapitel 8 Ungleichungen | Vor- und Brückenkurs: Wirtschaftsmathematik" />
+  
+  <meta name="twitter:description" content="Das ist der Skript für den Kurs Vor- und Brückenkurs: Wirtschaftsmathematik." />
+  
+
+<meta name="author" content="Maria Osipenko" />
+
+
+<meta name="date" content="2024-02-12" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="gleichungen.html"/>
+<link rel="next" href="lineare-gleichungssysteme.html"/>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+<script src="libs/htmlwidgets-1.6.2/htmlwidgets.js"></script>
+<script src="libs/plotly-binding-4.10.2/plotly.js"></script>
+<script src="libs/typedarray-0.1/typedarray.min.js"></script>
+<link href="libs/crosstalk-1.2.0/css/crosstalk.min.css" rel="stylesheet" />
+<script src="libs/crosstalk-1.2.0/js/crosstalk.min.js"></script>
+<link href="libs/plotly-htmlwidgets-css-2.11.1/plotly-htmlwidgets.css" rel="stylesheet" />
+<script src="libs/plotly-main-2.11.1/plotly-latest.min.js"></script>
+
+
+<style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { color: #008000; } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { color: #008000; font-weight: bold; } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+<style type="text/css">
+  
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">A Minimal Book Example</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Grundlagen</a>
+<ul>
+<li class="chapter" data-level="1.1" data-path="index.html"><a href="index.html#rechenregeln"><i class="fa fa-check"></i><b>1.1</b> Rechenregeln</a>
+<ul>
+<li class="chapter" data-level="1.1.1" data-path="index.html"><a href="index.html#umwandlung-von-brüchen"><i class="fa fa-check"></i><b>1.1.1</b> Umwandlung von Brüchen</a></li>
+<li class="chapter" data-level="1.1.2" data-path="index.html"><a href="index.html#rehenfolge-der-rechenoperationen"><i class="fa fa-check"></i><b>1.1.2</b> Rehenfolge der Rechenoperationen</a></li>
+<li class="chapter" data-level="1.1.3" data-path="index.html"><a href="index.html#punkt--von-strich-rechnung"><i class="fa fa-check"></i><b>1.1.3</b> “Punkt- von Strich-”Rechnung</a></li>
+<li class="chapter" data-level="1.1.4" data-path="index.html"><a href="index.html#aufmachen-von-klammern-ausmultiplizieren"><i class="fa fa-check"></i><b>1.1.4</b> Aufmachen von Klammern, Ausmultiplizieren</a></li>
+</ul></li>
+<li class="chapter" data-level="1.2" data-path="index.html"><a href="index.html#notation"><i class="fa fa-check"></i><b>1.2</b> Notation</a>
+<ul>
+<li class="chapter" data-level="1.2.1" data-path="index.html"><a href="index.html#auslassen-von-punkt-bei-multiplikation-mit-variablen"><i class="fa fa-check"></i><b>1.2.1</b> Auslassen von Punkt bei Multiplikation mit Variablen</a></li>
+<li class="chapter" data-level="1.2.2" data-path="index.html"><a href="index.html#summen--und-produktzeichen"><i class="fa fa-check"></i><b>1.2.2</b> Summen- und Produktzeichen</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="mengen-und-zahlen.html"><a href="mengen-und-zahlen.html"><i class="fa fa-check"></i><b>2</b> Mengen und Zahlen</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="mengen-und-zahlen.html"><a href="mengen-und-zahlen.html#mengen"><i class="fa fa-check"></i><b>2.1</b> Mengen</a>
+<ul>
+<li class="chapter" data-level="2.1.1" data-path="mengen-und-zahlen.html"><a href="mengen-und-zahlen.html#mengenoperationen"><i class="fa fa-check"></i><b>2.1.1</b> Mengenoperationen</a></li>
+<li class="chapter" data-level="2.1.2" data-path="mengen-und-zahlen.html"><a href="mengen-und-zahlen.html#spezielle-mengen"><i class="fa fa-check"></i><b>2.1.2</b> Spezielle Mengen</a></li>
+<li class="chapter" data-level="2.1.3" data-path="mengen-und-zahlen.html"><a href="mengen-und-zahlen.html#mengen-zur-wahrscheinlichkeitsrechnung"><i class="fa fa-check"></i><b>2.1.3</b> Mengen zur Wahrscheinlichkeitsrechnung</a></li>
+</ul></li>
+<li class="chapter" data-level="2.2" data-path="mengen-und-zahlen.html"><a href="mengen-und-zahlen.html#zahlenmengen"><i class="fa fa-check"></i><b>2.2</b> Zahlenmengen</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="bruchrechnung.html"><a href="bruchrechnung.html"><i class="fa fa-check"></i><b>3</b> Bruchrechnung</a></li>
+<li class="chapter" data-level="4" data-path="potenzen-und-wurzel.html"><a href="potenzen-und-wurzel.html"><i class="fa fa-check"></i><b>4</b> Potenzen und Wurzel</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="potenzen-und-wurzel.html"><a href="potenzen-und-wurzel.html#potenzen"><i class="fa fa-check"></i><b>4.1</b> Potenzen</a></li>
+<li class="chapter" data-level="4.2" data-path="potenzen-und-wurzel.html"><a href="potenzen-und-wurzel.html#wurzel"><i class="fa fa-check"></i><b>4.2</b> Wurzel</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="prozent--und-zinsrechnung.html"><a href="prozent--und-zinsrechnung.html"><i class="fa fa-check"></i><b>5</b> Prozent- und Zinsrechnung</a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="prozent--und-zinsrechnung.html"><a href="prozent--und-zinsrechnung.html#prozentrechnung"><i class="fa fa-check"></i><b>5.1</b> Prozentrechnung</a></li>
+<li class="chapter" data-level="5.2" data-path="prozent--und-zinsrechnung.html"><a href="prozent--und-zinsrechnung.html#zinsrechnung"><i class="fa fa-check"></i><b>5.2</b> Zinsrechnung</a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="variablen-und-terme.html"><a href="variablen-und-terme.html"><i class="fa fa-check"></i><b>6</b> Variablen und Terme</a>
+<ul>
+<li class="chapter" data-level="6.1" data-path="variablen-und-terme.html"><a href="variablen-und-terme.html#umformung-von-termen"><i class="fa fa-check"></i><b>6.1</b> Umformung von Termen</a></li>
+<li class="chapter" data-level="6.2" data-path="variablen-und-terme.html"><a href="variablen-und-terme.html#binomische-formeln-1-3"><i class="fa fa-check"></i><b>6.2</b> Binomische Formeln 1-3</a></li>
+<li class="chapter" data-level="6.3" data-path="variablen-und-terme.html"><a href="variablen-und-terme.html#variablen-in-brüchen"><i class="fa fa-check"></i><b>6.3</b> Variablen in Brüchen</a></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="gleichungen.html"><a href="gleichungen.html"><i class="fa fa-check"></i><b>7</b> Gleichungen</a>
+<ul>
+<li class="chapter" data-level="7.1" data-path="gleichungen.html"><a href="gleichungen.html#definition-einer-gleichung"><i class="fa fa-check"></i><b>7.1</b> Definition einer Gleichung</a></li>
+<li class="chapter" data-level="7.2" data-path="gleichungen.html"><a href="gleichungen.html#lösen-von-gleichungen"><i class="fa fa-check"></i><b>7.2</b> Lösen von Gleichungen</a></li>
+<li class="chapter" data-level="7.3" data-path="gleichungen.html"><a href="gleichungen.html#spezielle-gleichungen"><i class="fa fa-check"></i><b>7.3</b> Spezielle Gleichungen</a>
+<ul>
+<li class="chapter" data-level="7.3.1" data-path="gleichungen.html"><a href="gleichungen.html#faktorisierte-gleichungen"><i class="fa fa-check"></i><b>7.3.1</b> Faktorisierte Gleichungen</a></li>
+<li class="chapter" data-level="7.3.2" data-path="gleichungen.html"><a href="gleichungen.html#betragsgleichungen"><i class="fa fa-check"></i><b>7.3.2</b> Betragsgleichungen</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="8" data-path="ungleichungen.html"><a href="ungleichungen.html"><i class="fa fa-check"></i><b>8</b> Ungleichungen</a>
+<ul>
+<li class="chapter" data-level="8.1" data-path="ungleichungen.html"><a href="ungleichungen.html#definition-von-ungleichungen"><i class="fa fa-check"></i><b>8.1</b> Definition von Ungleichungen</a></li>
+<li class="chapter" data-level="8.2" data-path="ungleichungen.html"><a href="ungleichungen.html#umformung-von-ungleichungen"><i class="fa fa-check"></i><b>8.2</b> Umformung von Ungleichungen</a></li>
+<li class="chapter" data-level="8.3" data-path="ungleichungen.html"><a href="ungleichungen.html#spezielle-ungleichungen"><i class="fa fa-check"></i><b>8.3</b> Spezielle Ungleichungen</a>
+<ul>
+<li class="chapter" data-level="8.3.1" data-path="ungleichungen.html"><a href="ungleichungen.html#faktorisierte-ungleichungen"><i class="fa fa-check"></i><b>8.3.1</b> Faktorisierte Ungleichungen</a></li>
+<li class="chapter" data-level="8.3.2" data-path="ungleichungen.html"><a href="ungleichungen.html#betragsungleichungen"><i class="fa fa-check"></i><b>8.3.2</b> Betragsungleichungen</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="9" data-path="lineare-gleichungssysteme.html"><a href="lineare-gleichungssysteme.html"><i class="fa fa-check"></i><b>9</b> Lineare Gleichungssysteme</a>
+<ul>
+<li class="chapter" data-level="9.1" data-path="lineare-gleichungssysteme.html"><a href="lineare-gleichungssysteme.html#lösung-von-lgs"><i class="fa fa-check"></i><b>9.1</b> Lösung von LGS</a></li>
+</ul></li>
+<li class="chapter" data-level="10" data-path="funktionen-und-optimierung.html"><a href="funktionen-und-optimierung.html"><i class="fa fa-check"></i><b>10</b> Funktionen und Optimierung</a>
+<ul>
+<li class="chapter" data-level="10.1" data-path="funktionen-und-optimierung.html"><a href="funktionen-und-optimierung.html#funktionen"><i class="fa fa-check"></i><b>10.1</b> Funktionen</a></li>
+<li class="chapter" data-level="10.2" data-path="funktionen-und-optimierung.html"><a href="funktionen-und-optimierung.html#lineare-und-quadratische-funktionen-polynome"><i class="fa fa-check"></i><b>10.2</b> Lineare und quadratische Funktionen, Polynome</a></li>
+<li class="chapter" data-level="10.3" data-path="funktionen-und-optimierung.html"><a href="funktionen-und-optimierung.html#ableitung"><i class="fa fa-check"></i><b>10.3</b> Ableitung</a>
+<ul>
+<li class="chapter" data-level="10.3.1" data-path="funktionen-und-optimierung.html"><a href="funktionen-und-optimierung.html#einige-ableitungsregeln"><i class="fa fa-check"></i><b>10.3.1</b> Einige Ableitungsregeln</a></li>
+</ul></li>
+<li class="chapter" data-level="10.4" data-path="funktionen-und-optimierung.html"><a href="funktionen-und-optimierung.html#einfache-optimierungsprobleme"><i class="fa fa-check"></i><b>10.4</b> Einfache Optimierungsprobleme</a></li>
+</ul></li>
+<li class="chapter" data-level="11" data-path="weitere-funktionen-für-ökonomische-modellierung.html"><a href="weitere-funktionen-für-ökonomische-modellierung.html"><i class="fa fa-check"></i><b>11</b> Weitere Funktionen für ökonomische Modellierung</a>
+<ul>
+<li class="chapter" data-level="11.1" data-path="weitere-funktionen-für-ökonomische-modellierung.html"><a href="weitere-funktionen-für-ökonomische-modellierung.html#exponentialfunktion"><i class="fa fa-check"></i><b>11.1</b> Exponentialfunktion</a></li>
+<li class="chapter" data-level="11.2" data-path="weitere-funktionen-für-ökonomische-modellierung.html"><a href="weitere-funktionen-für-ökonomische-modellierung.html#logarithmusfunktion"><i class="fa fa-check"></i><b>11.2</b> Logarithmusfunktion</a></li>
+</ul></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Vor- und Brückenkurs: Wirtschaftsmathematik</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="ungleichungen" class="section level1 hasAnchor" number="8">
+<h1><span class="header-section-number">Kapitel 8</span> Ungleichungen<a href="ungleichungen.html#ungleichungen" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<script>
+function checkAnswer_mmc(q) {
+      const selectedOptions = document.querySelectorAll('input[name="option'+q.id+'"]:checked');
+      if (selectedOptions.length === 2) {
+        const userAnswers = Array.from(selectedOptions).map(option => option.value);
+        const correctAnswers = q.answer;
+        const isCorrect = userAnswers.every(answer => correctAnswers.includes(answer));
+
+if (isCorrect) {
+          document.getElementById('result'+q.id).textContent = 'Glückwunsch! Deine Antwort ist richtig.';
+        } else {
+          document.getElementById('result'+q.id).textContent = `Leider falsch. Versuch es nochmal!`;
+        }
+      } else {
+        document.getElementById('result'+q.id).textContent = 'Bitte zwei Optionen auswählen.';
+      }
+    }
+// numeric
+function generateQuestion_num(id) {
+      // Generate two random numbers between 2 and 10
+      const num1 = Math.floor(Math.random() * 10) + 2;
+      const num2 = Math.floor(Math.random() * 10) + 2;
+      const x1 = Math.floor(Math.random() * 100) + 2;
+      const x2 = Math.floor(Math.random() * 100) + 2;
+      const x3 = Math.floor(Math.random() * 100) + 2;
+      const x4 = Math.floor(Math.random() * 100) + 2;
+      const x5 = Math.floor(Math.random() * 100) + 2;
+      const x6 = Math.floor(Math.random() * 100) + 2;
+
+       // Calculate the correct answer
+      let answer = num1*Math.sqrt(x1) + num2*Math.sqrt(x2);
+
+      // Return the question and answer as an object
+      return {
+       // question: num1 + "\\(\\sqrt{x}+\\)"+ num2 + "\\(\\sqrt{y}\\)" + " for \\(x=\\)" + x1 + " and \\(y=\\)" + x2,
+        question: [num1,num2,x1,x2,x3,x4,x5,x6],
+        answer: answer,
+        id: id
+      };
+    }
+
+function checkAnswer_num(q) {
+      const userAnswer = document.getElementById('answer'+q.id).value;
+      const isCorrect = Math.round(parseFloat(userAnswer)*100)/100 === Math.round(q.answer*100)/100;
+
+      if (isCorrect) {
+        document.getElementById('result'+q.id).textContent = 'Glückwunsch! Deine Antwort ist richtig.';
+      } else {
+        document.getElementById('result'+q.id).textContent = `Sorry, incorrect.`;
+      }
+  }
+
+// plain multiple choice
+  function checkAnswer_match(q) {
+      const selectedOption = document.querySelector('input[name="option'+q.id+'"]:checked');
+      if (selectedOption) {
+        const userAnswer = selectedOption.value;
+        const isCorrect = userAnswer === q.answer;
+
+        if (isCorrect) {
+          document.getElementById('result'+q.id).textContent = 'Glückwunsch! Deine Antwort ist richtig.';
+        } else {
+          document.getElementById('result'+q.id).textContent = `Leider falsch. Versuch es nochmal!`;
+        }
+      } else {
+        document.getElementById('result'+q.id).textContent = 'Bitte eine Option wählen.';
+      }
+    }
+</script>
+<div id="definition-von-ungleichungen" class="section level2 hasAnchor" number="8.1">
+<h2><span class="header-section-number">8.1</span> Definition von Ungleichungen<a href="ungleichungen.html#definition-von-ungleichungen" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div class="definition">
+<p><span id="def:defungl" class="definition"><strong>Definition 8.1  (Ungleichungen) </strong></span><strong>Definition (Ungleichungen)</strong></p>
+<p>Verbindet man zwei Zahlen/ Ausdrücke durch eines der Vergleichssymbole <span class="math inline">\(&lt;,\leq,&gt;\)</span> oder <span class="math inline">\(\geq\)</span> so entsteht eine Aussage, die in Abhängigkeit von den Zahlen/ Auswertung der Ausdrücke entweder wahr oder falsch ist:</p>
+<ul>
+<li><p><span class="math inline">\(a\text{ &lt; }b\)</span> (gesprochen: <span class="math inline">\(a\)</span> kleiner <span class="math inline">\(b\)</span>) ist wahr, wenn die Zahl <span class="math inline">\(a\)</span> kleiner und nicht gleich <span class="math inline">\(b\)</span> ist.</p></li>
+<li><p><span class="math inline">\(a\leq b\)</span> (gesprochen: <span class="math inline">\(a\)</span> kleiner gleich <span class="math inline">\(b\)</span>) ist wahr, wenn die Zahl <span class="math inline">\(a\)</span> kleiner oder gleich <span class="math inline">\(b\)</span> ist.</p></li>
+<li><p><span class="math inline">\(a&gt; b\)</span> (gesprochen: <span class="math inline">\(a\)</span> größer <span class="math inline">\(b\)</span>) ist wahr, wenn die Zahl <span class="math inline">\(a\)</span> größer und nicht gleich <span class="math inline">\(b\)</span> ist.</p></li>
+<li><p><span class="math inline">\(a\geq b\)</span> (gesprochen: <span class="math inline">\(a\)</span> größer gleich <span class="math inline">\(b\)</span>) ist wahr, wenn die Zahl <span class="math inline">\(a\)</span> größer oder gleich <span class="math inline">\(b\)</span> ist.</p></li>
+</ul>
+</div>
+<p>Die Vergleichszeichen drücken auf dem Zahlenstrahl aus, wie die gegebenen Werte zueinander liegen: <span class="math inline">\(a\text{ &lt; }b\)</span> bedeutet, dass <span class="math inline">\(a\)</span> links von <span class="math inline">\(b\)</span> auf dem Zahlenstrahl liegt. Dabei ist <span class="math inline">\(a\text{ &lt; }b\)</span> gleichbedeutend mit <span class="math inline">\(b&gt;a\)</span>, sowie <span class="math inline">\(a\leq b\)</span> gleichbedeutend mit <span class="math inline">\(b\geq a\)</span> ist.</p>
+<p>Treten Terme mit Unbestimmten in einer Ungleichung auf, so besteht die Aufgabe darin, den Zahlenbereich für die Unbestimmte zu ermitteln, so dass die Ungleichung wahr ist.</p>
+<div class="example">
+<p><span id="exm:eungl" class="example"><strong>Beispiel 8.1  (Ungleichungen) </strong></span><strong>Beispiel (Ungleichungen)</strong></p>
+<p>Die Ungleichung <span class="math inline">\(2x-1&gt;0\)</span> ist wahr für <span class="math inline">\(x&gt;\frac 12\)</span>.</p>
+</div>
+</div>
+<div id="umformung-von-ungleichungen" class="section level2 hasAnchor" number="8.2">
+<h2><span class="header-section-number">8.2</span> Umformung von Ungleichungen<a href="ungleichungen.html#umformung-von-ungleichungen" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Die einfachen linearen Umformungen aus dem Abschnitt Gleichungen sind auch für Ungleichungen zulässig. Sie verändern die Lösungsmenge der betrachteten Ungleichung nicht. Zu beachten ist, dass Multiplikation einer Ungleichung mit negativer Zahl <strong>die Richtung der Ungleichung verändert.</strong></p>
+<div class="definition">
+<p><span id="def:defunglumf" class="definition"><strong>Definition 8.2  (Umformen von Ungleichungen) </strong></span><strong>Regeln (Umformen von Ungleichungen)</strong></p>
+<p>Multipliziert man eine Ungleichung mit einem Term, der eine Variable <span class="math inline">\(x\)</span> enthält, so muss man eine Fallunterscheidung führen:</p>
+<ul>
+<li><p>Für diejenigen <span class="math inline">\(x\)</span>, für die der multiplizierte Term positiv ist, bleibt die Richtung der Ungleichung erhalten.</p></li>
+<li><p>Für diejenigen <span class="math inline">\(x\)</span>, für die der multiplizierte Term negativ ist, wird das Vergleichssymbol umgedreht.</p></li>
+<li><p>Der Fall, dass der multiplizierte Term den Wert Null annimmt, muss bei der Umformung ausgeschlossen und ggf. separat betrachtet werden.</p></li>
+</ul>
+</div>
+<p>Die Addition von Termen, welche die Variable enthalten, erfordert dagegen keine Fallunterscheidung. Umformungen mit Fallunterscheidungen sind meist notwendig, wenn die Unbestimmte im Nenner oder in zusammengesetzten Termen auftritt:</p>
+<div class="example">
+<p><span id="exm:eungl2" class="example"><strong>Beispiel 8.2  (Ungleichungen) </strong></span><strong>Beispiel (Ungleichungen)</strong></p>
+<p>Die Ungleichung <span class="math inline">\(\frac 1{2x}\leq 1\)</span> kann vereinfacht werden, indem beide Seiten der Ungleichung mit dem Term <span class="math inline">\(2x\)</span> multipliziert werden:</p>
+<ul>
+<li><p>Unter Bedingung <span class="math inline">\(2x&gt;0\)</span> <span class="math inline">\((x&gt;0)\)</span> erhält man die neue Ungleichung <span class="math inline">\(1\leq 2x\)</span> mit der Lösungsmenge <span class="math inline">\(x\geq \frac 12\)</span> oder anders geschrieben <span class="math inline">\(L_1=[\frac 12; \infty)\)</span>.</p></li>
+<li><p>Unter Bedingung <span class="math inline">\(2x&lt; 0\)</span> <span class="math inline">\((x&lt; 0)\)</span> erhält man die neue Ungleichung <span class="math inline">\(1\geq 2x\)</span>, die gilt, wenn <span class="math inline">\(x\leq \frac 12\)</span>. Wegen der zusätzlichen Bedingung <span class="math inline">\(x&lt; 0\)</span> ist die Lösungsmenge <span class="math inline">\(x&lt; 0\)</span> oder anders geschrieben <span class="math inline">\(L_2=(-\infty; 0)\)</span>.</p></li>
+<li><p>Im Fall <span class="math inline">\(x=0\)</span> darf die Multiplikation mit <span class="math inline">\(2x\)</span> nicht durchgeführt werden. Dieser Wert ist keine Lösung.</p></li>
+</ul>
+<p>Insgesamt erhält man also die Vereinigungsmenge <span class="math inline">\(L = L_1 \cup L_2 = (-\infty; 0) \cup [\frac 12; \infty)\)</span> oder anders audgedrückt: <span class="math inline">\(L=\{x\in \mathbb R: x\text{ &lt; } 0 \text{ oder } x\geq \frac 12\}\)</span>.</p>
+</div>
+<p>In jedem Fall prüft man und ggfs. <strong>reduziert</strong> man die erhaltene Lösungsmenge auf die Teilmenge, die der Fallbedingung genügt. <strong>Die Vereinigung</strong> der angepassten Lösungsmengen der einzelnen Fälle bildet die Lösungsmenge der ursprünglichen Ungleichung.</p>
+<div id="qungl" class="quiz">
+<p><strong>Quiz Ungleichungen</strong></p>
+<script>
+  // Generate a random question
+    const questionObj7 = {
+      question: "Löse die Ungleichung \\(10 - (x + 3x +1)\\cdot 5 \\leq 25\\)",
+      options: ["\\(x\\geq -1\\)", "\\(x\\leq 1\\)", "\\(x\\geq-0,5\\)", "\\(x\\leq 0,5\\)"],
+      answer: '1',
+      id: 7
+    };
+</script>
+<p class="question">
+<span id="question-text7"></span>
+</p>
+<div class="options">
+<label>
+<input type="radio" name="option7" value=1> \(x\geq -1\)
+</label>
+<label>
+<input type="radio" name="option7" value=2> \(x\leq 1\)
+</label>
+<label>
+<input type="radio" name="option7" value=3> \(x\geq-0,5\)
+</label>
+<label>
+<input type="radio" name="option7" value=4> \(x\leq 0,5\)
+</label>
+</div>
+<button onclick="checkAnswer_match(questionObj7)">Check</button>
+<p id="result7">
+</p>
+<script>
+  // Display the question
+    document.getElementById('question-text7').textContent = questionObj7.question;
+</script>
+<hr />
+<script>
+  // Generate a random question
+    const questionObj71 = {
+      question: "Löse die Ungleichung \\(2x^2 > 2(x-1)^2\\)",
+      options: ["\\(x\\text{ < }-1\\)", "\\(x>1\\)", "\\(x\\text{ < }-0,5\\)", "\\(x>0,5\\)"],
+      answer: '4',
+      id: 71
+    };
+</script>
+<p class="question">
+<span id="question-text71"></span>
+</p>
+<div class="options">
+<label>
+<input type="radio" name="option71" value=1> \(x\text{ &lt; }-1\)
+</label>
+<label>
+<input type="radio" name="option71" value=2> \(x&gt;1\)
+</label>
+<label>
+<input type="radio" name="option71" value=3> \(x\text{ &lt; }-0,5\)
+</label>
+<label>
+<input type="radio" name="option71" value=4> \(x&gt;0,5\)
+</label>
+<label>
+<input type="radio" name="option71" value=5> \(x&gt;-0,5\)
+</label>
+</div>
+<button onclick="checkAnswer_match(questionObj71)">Check</button>
+<p id="result71">
+</p>
+<script>
+  // Display the question
+    document.getElementById('question-text71').textContent = questionObj71.question;
+</script>
+<hr />
+<script>
+  // Generate a random question
+    const questionObj72 = {
+      question: "Löse die Ungleichung nach \\(x\\) (\\(a\\) ist ein Parameter) \\(\\frac 15 x - \\frac 13 x + 2 \\geq a\\)",
+      options: [ "\\(x\\leq 30 - 15a\\)", "\\(x\\geq 15 a - 30\\)", "\\(x\\leq 15 - 7,5a\\)", "\\(x\\geq 15 - 7,5a\\)"],
+      answer: '3',
+      id: 72
+    };
+</script>
+<p class="question">
+<span id="question-text72"></span>
+</p>
+<div class="options">
+<label>
+<input type="radio" name="option72" value=1> \(x\leq 30 - 15a\)
+</label>
+<label>
+<input type="radio" name="option72" value=2> \(x\geq 15 a - 30\)
+</label>
+<label>
+<input type="radio" name="option72" value=3> \(x\leq 15 - 7,5a\)
+</label>
+<label>
+<input type="radio" name="option72" value=4> \(x\geq 15 - 7,5a\)
+</label>
+<label>
+<input type="radio" name="option72" value=5> \(x\geq 15 - 30a\)
+</label>
+</div>
+<button onclick="checkAnswer_match(questionObj72)">Check</button>
+<p id="result72">
+</p>
+<script>
+  // Display the question
+    document.getElementById('question-text72').textContent = questionObj72.question;
+</script>
+<hr />
+<p id="question">
+<span id="question-text73"></span>
+<input type="number" id="answer73" style: display="inline" placeholder="Antwort eingeben">
+</p>
+<button onclick="checkAnswer_num(questionObj73)">
+Check
+</button>
+<p id="result73">
+</p>
+<script>
+
+ // Generate a random question
+    const questionObj73 = generateQuestion_num(73);
+// Display the question
+    document.getElementById('question-text73').textContent = "Löse die angegebene Ungleichung nach  \\(x:~~"+ questionObj73.question[0]+ "x+" + questionObj73.question[1]+ "< -" + questionObj73.question[2] + "\\). Runde auf vier Nachkommastellen. Die Lösung ist \\(x<\\)";
+    questionObj73.answer = (-questionObj73.question[2]-questionObj73.question[1])/(questionObj73.question[0])
+</script>
+<hr />
+<p id="question">
+<span id="question-text74"></span>
+<input type="number" id="answer74" style: display="inline" placeholder="Antwort eingeben">
+</p>
+<button onclick="checkAnswer_num(questionObj74)">
+Check
+</button>
+<p id="result74">
+</p>
+<script>
+
+ // Generate a random question
+    const questionObj74 = generateQuestion_num(74);
+// Display the question
+    document.getElementById('question-text74').textContent = "Löse die angegebene Ungleichung nach  \\(x:~~ - "+ questionObj74.question[0]+ "x - " + questionObj74.question[1]+ "\\leq -" + questionObj74.question[2] + "\\). Runde auf vier Nachkommastellen. Die Lösung ist \\(x\\geq\\)";
+    questionObj74.answer = (questionObj74.question[2]-questionObj74.question[1])/(questionObj74.question[0])
+</script>
+<hr />
+<p id="question">
+<span id="question-text75"></span>
+<input type="number" id="answer75" placeholder="Antwort eingeben">
+</p>
+<button onclick="checkAnswer_num(questionObj75)">
+Check
+</button>
+<p id="result75">
+</p>
+<script>
+
+ // Generate a random question
+    const questionObj75 = generateQuestion_num(75);
+// Display the question
+    document.getElementById('question-text75').textContent = "Die leidenschaftliche Wertpapierhändlerin Tina hat nun zwei Wertpapierdepots in zwei veschiedenen Banken, die ihr unteschiedliche Konditionen anbieten. Bei der Bank A kostet jede Transaktion 1 Euro und man zahlt noch die variablen Gebühren von 10% auf das Transaktionsvolumen. Bei der Bank B beträgt die Gebühr für die Tätigung einer Transaktion  5 Euro dafür zahlt man nur 5% zusätzlich auf das Transaktionsvolumen. Für welche Transaktionensvolumen ( \\(x\\) ) ist die Bank A günstiger als die Bank B? Gib den Bereich als eine einfache Ungleichung für \\(x\\) ein: \\(x<\\)";
+    questionObj75.answer = 80
+</script>
+</div>
+</div>
+<div id="spezielle-ungleichungen" class="section level2 hasAnchor" number="8.3">
+<h2><span class="header-section-number">8.3</span> Spezielle Ungleichungen<a href="ungleichungen.html#spezielle-ungleichungen" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="faktorisierte-ungleichungen" class="section level3 hasAnchor" number="8.3.1">
+<h3><span class="header-section-number">8.3.1</span> Faktorisierte Ungleichungen<a href="ungleichungen.html#faktorisierte-ungleichungen" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div class="definition">
+<p><span id="def:defunglumffak" class="definition"><strong>Definition 8.3  (Faktorisierte Ungleichungen) </strong></span><strong>Definition (Faktorisierte Ungleichungen)</strong></p>
+<p>Hat man eine Ungleichung, in der auf einer Seite <span class="math inline">\(&gt;0\)</span> bzw. <span class="math inline">\(\text{ &lt; }0\)</span> steht und die andere Seite in faktorisierter Form (mit höchstens zwei Faktoren) gebenen ist, so kann man sie lösen, in dem folgende Fallunterscheidungen vornimmt.</p>
+<p>Ungleichung mit <span class="math inline">\(&gt;0\)</span> bzw. <span class="math inline">\(\geq 0\)</span> gilt:</p>
+<ul>
+<li>wenn beide Faktoren einzeln <span class="math inline">\(&gt;0\)</span> bzw. <span class="math inline">\(\geq 0\)</span> sind,</li>
+<li>wenn beide Faktoren einzeln <span class="math inline">\(\text{ &lt; }0\)</span> bzw. <span class="math inline">\(\leq 0\)</span> sind.</li>
+</ul>
+<p>Ungleichung mit <span class="math inline">\(\text{ &lt; }0\)</span> bzw. <span class="math inline">\(\leq 0\)</span> gilt:
+- wenn einer der Faktoren <span class="math inline">\(&gt;0\)</span> bzw. <span class="math inline">\(\geq 0\)</span> ist und der andere <span class="math inline">\(\text{ &lt; }0\)</span> bzw. <span class="math inline">\(\leq 0\)</span> ist.</p>
+</div>
+<div class="example">
+<p><span id="exm:eungl3" class="example"><strong>Beispiel 8.3  (Faktorisierte Ungleichungen) </strong></span><strong>Beispiel (Faktorisierte Ungleichungen)</strong></p>
+<p>Die Ungleichung <span class="math inline">\((x-1)(2x+1)&gt;0\)</span> gilt:</p>
+<ul>
+<li>Unter Bedingung <span class="math inline">\(x-1&gt;0\)</span> und <span class="math inline">\(2x+1&gt;0\)</span>, also für Werte <span class="math inline">\(x&gt;1\)</span> und</li>
+<li>unter Bedingung <span class="math inline">\(x-1\text{ &lt; }0\)</span> und <span class="math inline">\(2x+1 \text{ &lt; }0\)</span>, also für Werte <span class="math inline">\(x\text{ &lt; }-\frac 12\)</span>.</li>
+</ul>
+<p>Insgesamt erhält man also die Lösungsmenge <span class="math inline">\(L=\{x\in \mathbb R: x\text{ &lt; }-\frac 12 \text{ oder } x&gt; 1\}\)</span>.</p>
+</div>
+</div>
+<div id="betragsungleichungen" class="section level3 hasAnchor" number="8.3.2">
+<h3><span class="header-section-number">8.3.2</span> Betragsungleichungen<a href="ungleichungen.html#betragsungleichungen" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Analog zum Vorgehen in Gleichungen löst man Beträge in Ungleichungen durch eine Fallunterscheidung auf.</p>
+<div class="definition">
+<p><span id="def:defunglumfbetr" class="definition"><strong>Definition 8.4  (Betragsungleichungen) </strong></span><strong>Rechenregel (Betragsungleichungen)</strong></p>
+<p>Eine Ungleichung mit einem Betragsausdruck wird in zwei Fälle unterteilt:</p>
+<ul>
+<li>Für diejenigen <span class="math inline">\(x\)</span>, für die der Term im Betrag <strong>nicht negativ</strong> ist, kann der Betrag weggelassen bzw. durch einfache Klammern ersetzt werden.
+</li></li>
+<li>Für diejenigen <span class="math inline">\(x\)</span>, für die der Term im Betrag <strong>negativ</strong> ist, wird der Term in Klammern gesetzt und mit einem Minus davor versehen (negiert).
+</li></li>
+</ul>
+<p>Die Lösungsmengen aus den Fällen werden wie im Fall der Multiplikation mit <span class="math inline">\(x\)</span>-Term eingeschränkt und zur Lösungsmenge für die ursprüngliche Ungleichung vereinigt.</p>
+</div>
+<div class="example">
+<p><span id="exm:eungl3" class="example"><strong>Beispiel 8.3  (Betragsungleichungen) </strong></span><strong>Beispiel (Betragsungleichungen)</strong></p>
+<p>Die Ungleichung <span class="math inline">\(|4x-2|&lt; 1\)</span> teilt man in zwei Fälle auf:</p>
+<ul>
+<li><p>Für <span class="math inline">\(4x-2\geq0\)</span> ( <span class="math inline">\(x\geq\frac 12\)</span> ) erhält man <span class="math inline">\((4x-2)\text{ &lt; }1\)</span> bzw. <span class="math inline">\(x\text{ &lt; }\frac 34\)</span>. Wegen der Fallbedingung <span class="math inline">\(x\geq\frac 12\)</span> ist die Lösungsmenge <span class="math inline">\(\{x\in\mathbb R: \frac 12\leq x\text{ &lt; }\frac 34\}\)</span> oder anders geschrieben <span class="math inline">\(L_1=[\frac 12; \frac 34)\)</span>.</p></li>
+<li><p>Für <span class="math inline">\(4x-2\text{ &lt; }0\)</span> ( <span class="math inline">\(x\text{ &lt; }\frac 12\)</span> ) erhält man die <span class="math inline">\(-(4x-2)\text{ &lt; }1\)</span> bzw. <span class="math inline">\(x&gt;\frac 14\)</span>. Wegen der Fallbedingung <span class="math inline">\(x\text{ &lt; }\frac 12\)</span> ist die Lösungsmenge <span class="math inline">\(\{x\in\mathbb R: \frac 14\text{ &lt; } x\text{ &lt; }\frac 12\}\)</span> oder anders geschrieben <span class="math inline">\(L_2=(\frac 14; \frac 12)\)</span>.</p></li>
+</ul>
+<p>Insgesamt erhält man also die Vereinigungsmenge <span class="math inline">\(L = L_2\cup L_1 =(\frac 14; \frac 12) \cup [\frac 12; \frac 34) = (\frac 14; \frac 34)\)</span> oder anders audgedrückt: <span class="math inline">\(L=\{x\in \mathbb R:\frac 14\text{ &lt; } x\text{ &lt; } \frac 34\}\)</span>.</p>
+</div>
+<div id="qspungl" class="quiz">
+<p><strong>Quiz spezielle Ungleichungen</strong></p>
+<script>
+  // Generate a random question
+    const questionObj76 = {
+      question: "Löse \\[(2x-10)\\cdot(x-10)\\text{ < } 0\\] nach \\(x.\\) \\[ \\] Hinweis: Betrachte die zwei Fälle: 1) \\(2x-10\\text{ < }0\\) und \\(x-10\\text{ > }0\\) sowie 2) \\(2x-10\\text{ > }0\\) und \\(x-10\\text{ < }0\\). Welche Werte von \\(x\\) erfüllen die Bedingungen für den Fall 1)? Welche Werte von \\(x\\) erfüllen die Bedingungen für den Fall 2)? Vereinige die beiden Wertemengen zu der Lösungsmenge.\\[ \\] Die Lösungsmenge ist",
+      options: [ "\\(L=(5;+\\infty)\\)", "\\(L=(5;10)\\)","\\(L=[5;10]\\)", "\\(L=(10;\\infty)\\)", "\\(L=(-\\infty;5]\\cup [10; +\\infty)\\)"],
+      answer: '2',
+      id: 76
+    };
+</script>
+<p class="question">
+<span id="question-text76"></span>
+</p>
+<div class="options">
+<label>
+<input type="radio" name="option76" value=1> \(L=(5;+\infty)\)
+</label>
+<label>
+<input type="radio" name="option76" value=2> \(L=(5;10)\)
+</label>
+<label>
+<input type="radio" name="option76" value=3> \(L=[5;10]\)
+</label>
+<label>
+<input type="radio" name="option76" value=4> \(L=(10;\infty)\)
+</label>
+<label>
+<input type="radio" name="option76" value=5> \(L=(-\infty;5]\cup [10; +\infty)\)
+</label>
+</div>
+<button onclick="checkAnswer_match(questionObj76)">Check</button>
+<p id="result76">
+</p>
+<script>
+  // Display the question
+    document.getElementById('question-text76').textContent = questionObj76.question;
+</script>
+<hr />
+<script>
+  // Generate a random question
+    const questionObj77 = {
+      question: "Löse \\[|2x-6|\\leq 10\\] nach \\(x.\\) \\[ \\] Hinweis: Betrachte die zwei Fälle 1) \\(2x-6>0 (x>3)\\), die Ungleichung ist dann \\(2x-6\\leq 10\\) und 2) \\(2x-6\\leq 0 (x\\leq 3)\\), die Ungleichung ist dann \\(6-2x\\leq 10\\). Für die beiden Fälle stelle nach \\(x\\) um und schaue, wo sich die Fallösung und die entsprechende Fallbedingung überschneiden. Vereinige dann die Lösungsmengen der beiden Fälle.\\[ \\] Die resultierende Lösungsmenge ist",
+      options: ["\\(L=[-2;8]\\)", "\\(L=[-2;+\\infty)\\)", "\\(L=[8;+\\infty)\\)", "\\(L=(-\\infty;-2]\\cup [8; +\\infty)\\)"],
+      answer: '1',
+      id: 77
+    };
+</script>
+<p class="question">
+<span id="question-text77"></span>
+</p>
+<div class="options">
+<label>
+<input type="radio" name="option77" value=1> \(L=[-2;8]\)
+</label>
+<label>
+<input type="radio" name="option77" value=2> \(L=[-2;+\infty)\)
+</label>
+<label>
+<input type="radio" name="option77" value=3> \(L=[8;+\infty)\)
+</label>
+<label>
+<input type="radio" name="option77" value=4> \(L=(-\infty;-2]\cup [8; +\infty)\)
+</label>
+</div>
+<button onclick="checkAnswer_match(questionObj77)">Check</button>
+<p id="result77">
+</p>
+<script>
+  // Display the question
+    document.getElementById('question-text77').textContent = questionObj77.question;
+</script>
+<hr />
+<p id="question">
+<span id="question-text78"></span>
+<input type="number" id="answer78" placeholder="Antwort eingeben">
+</p>
+<button onclick="checkAnswer_num(questionObj78)">
+Check
+</button>
+<p id="result78">
+</p>
+<script>
+
+ // Generate a random question
+    const questionObj78 = generateQuestion_num(78);
+// Display the question
+    document.getElementById('question-text78').textContent = "Löse die angegebene Ungleichung nach  \\(x:~~~\\)\\[|3x-6| \\leq x+2.\\] Die Lösung ist \\(1\\leq x\\leq\\)";
+    questionObj78.answer = 4
+</script>
+</div>
+
+</div>
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="gleichungen.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="lineare-gleichungssysteme.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"whatsapp": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": "https://github.com/USERNAME/REPO/edit/BRANCH/07-Ungleichungen.Rmd",
+"text": "Edit"
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": ["_main.pdf", "_main.epub"],
+"search": {
+"engine": "fuse",
+"options": null
+},
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/latest.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>
