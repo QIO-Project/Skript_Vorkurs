@@ -61,70 +61,6 @@
 <script src="libs/plotly-main-2.11.1/plotly-latest.min.js"></script>
 
 
-<style type="text/css">
-pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
-pre > code.sourceCode > span:empty { height: 1.2em; }
-.sourceCode { overflow: visible; }
-code.sourceCode > span { color: inherit; text-decoration: inherit; }
-pre.sourceCode { margin: 0; }
-@media screen {
-div.sourceCode { overflow: auto; }
-}
-@media print {
-pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
-}
-pre.numberSource code
-  { counter-reset: source-line 0; }
-pre.numberSource code > span
-  { position: relative; left: -4em; counter-increment: source-line; }
-pre.numberSource code > span > a:first-child::before
-  { content: counter(source-line);
-    position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; display: inline-block;
-    -webkit-touch-callout: none; -webkit-user-select: none;
-    -khtml-user-select: none; -moz-user-select: none;
-    -ms-user-select: none; user-select: none;
-    padding: 0 4px; width: 4em;
-    color: #aaaaaa;
-  }
-pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
-div.sourceCode
-  {   }
-@media screen {
-pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
-}
-code span.al { color: #ff0000; font-weight: bold; } /* Alert */
-code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
-code span.at { color: #7d9029; } /* Attribute */
-code span.bn { color: #40a070; } /* BaseN */
-code span.bu { color: #008000; } /* BuiltIn */
-code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
-code span.ch { color: #4070a0; } /* Char */
-code span.cn { color: #880000; } /* Constant */
-code span.co { color: #60a0b0; font-style: italic; } /* Comment */
-code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
-code span.do { color: #ba2121; font-style: italic; } /* Documentation */
-code span.dt { color: #902000; } /* DataType */
-code span.dv { color: #40a070; } /* DecVal */
-code span.er { color: #ff0000; font-weight: bold; } /* Error */
-code span.ex { } /* Extension */
-code span.fl { color: #40a070; } /* Float */
-code span.fu { color: #06287e; } /* Function */
-code span.im { color: #008000; font-weight: bold; } /* Import */
-code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
-code span.kw { color: #007020; font-weight: bold; } /* Keyword */
-code span.op { color: #666666; } /* Operator */
-code span.ot { color: #007020; } /* Other */
-code span.pp { color: #bc7a00; } /* Preprocessor */
-code span.sc { color: #4070a0; } /* SpecialChar */
-code span.ss { color: #bb6688; } /* SpecialString */
-code span.st { color: #4070a0; } /* String */
-code span.va { color: #19177c; } /* Variable */
-code span.vs { color: #4070a0; } /* VerbatimString */
-code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
-</style>
 
 <style type="text/css">
   
@@ -343,20 +279,6 @@ Meist sind <span class="math inline">\(D_f\)</span> und <span class="math inline
 <li>graphisch:</li>
 </ul>
 <p><img src="www/fx.png" /></p>
-<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="funktionen-und-optimierung.html#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co">#img(src=&quot;fx.png&quot;, height=&quot;30%&quot;, width=&quot;30%&quot;, align=&quot;center&quot;)</span></span>
-<span id="cb5-2"><a href="funktionen-und-optimierung.html#cb5-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-3"><a href="funktionen-und-optimierung.html#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="co">#renderPlot({</span></span>
-<span id="cb5-4"><a href="funktionen-und-optimierung.html#cb5-4" aria-hidden="true" tabindex="-1"></a><span class="co">#   x&lt;-seq(-1,6,1)</span></span>
-<span id="cb5-5"><a href="funktionen-und-optimierung.html#cb5-5" aria-hidden="true" tabindex="-1"></a><span class="co"># par(xpd=T)</span></span>
-<span id="cb5-6"><a href="funktionen-und-optimierung.html#cb5-6" aria-hidden="true" tabindex="-1"></a><span class="co"># plot(x,10-2*x,type=&quot;l&quot;,axes=F, xlab=&quot; &quot;,ylab=&quot; &quot;,ylim=c(-1,12),col=2,lwd=2)</span></span>
-<span id="cb5-7"><a href="funktionen-und-optimierung.html#cb5-7" aria-hidden="true" tabindex="-1"></a><span class="co"># arrows(0,-3,0,12)</span></span>
-<span id="cb5-8"><a href="funktionen-und-optimierung.html#cb5-8" aria-hidden="true" tabindex="-1"></a><span class="co"># points(x,rep(0,length(x)),pch=&quot;|&quot;,cex=0.5)</span></span>
-<span id="cb5-9"><a href="funktionen-und-optimierung.html#cb5-9" aria-hidden="true" tabindex="-1"></a><span class="co"># text(0.2,-0.5,&quot;0&quot;)</span></span>
-<span id="cb5-10"><a href="funktionen-und-optimierung.html#cb5-10" aria-hidden="true" tabindex="-1"></a><span class="co"># text(-0.5,12,&quot;f(x)&quot;)</span></span>
-<span id="cb5-11"><a href="funktionen-und-optimierung.html#cb5-11" aria-hidden="true" tabindex="-1"></a><span class="co"># arrows(-2,0,7,0)</span></span>
-<span id="cb5-12"><a href="funktionen-und-optimierung.html#cb5-12" aria-hidden="true" tabindex="-1"></a><span class="co"># points(rep(0,length(x)),10-2*x,pch=&quot;-&quot;,cex=1.2)</span></span>
-<span id="cb5-13"><a href="funktionen-und-optimierung.html#cb5-13" aria-hidden="true" tabindex="-1"></a><span class="co"># text(7,-0.5,&quot;x&quot;)</span></span>
-<span id="cb5-14"><a href="funktionen-und-optimierung.html#cb5-14" aria-hidden="true" tabindex="-1"></a><span class="co">#}, height=10)</span></span></code></pre></div>
 <ul>
 <li>tabellarisch
 <span class="math display">\[\begin{array}{c|c}
@@ -391,7 +313,6 @@ wobei <span class="math inline">\(a,b\)</span> sind konstante reele Zahlen, Para
 <p>Die Steigung eine Gerade ist das Verhältnis zwischen der Änderung in <span class="math inline">\(y=f(x)\)</span> ( <span class="math inline">\(\Delta y\)</span> ) zu der Änderung in <span class="math inline">\(x\)</span> ( <span class="math inline">\(\Delta x\)</span> ). Also <span class="math inline">\(a=\frac{\Delta y}{\Delta x}\)</span>.</p>
 <p>Der Graph einer linearen Funktion ist eine <strong>Gerade</strong>.</p>
 <p><img src="www/fx1.png" /></p>
-<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb6-1"><a href="funktionen-und-optimierung.html#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co">#img(src=&quot;fx1.png&quot;, height=&quot;70%&quot;, width=&quot;70%&quot;, align=&quot;center&quot;)</span></span></code></pre></div>
 <p>positives <span class="math inline">\(a\)</span> in a) und c); negatives <span class="math inline">\(a\)</span> in b); <span class="math inline">\(b\)</span> = 0 in a) und b), positives <span class="math inline">\(b\)</span> in c).</p>
 </div>
 <p>In dem obigen Beispiel mit der Kostenfunktion <span class="math inline">\(a=3,20\)</span> (also die variablen Kosten pro Stück) und <span class="math inline">\(b=6400\)</span> (also die Fixkosten, die unabhängig von der Produktion, anfallen). Die Produktionskosten sind in dem Fall durch die entsprechende lineare Funktion beschrieben.</p>
@@ -420,7 +341,6 @@ ist auch eine quadratische Funktion in der produzierten Menge <span class="math 
 wobei <span class="math inline">\(a,b, c\)</span> sind konstante reele Zahlen, Parameter der quadratischen Funktion.</p>
 <p>Der Graph einer quadratischen Funktion ist eine <strong>Parabel</strong>.</p>
 <p><img src="www/fx2.png" /></p>
-<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="funktionen-und-optimierung.html#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co">#img(src=&quot;fx2.png&quot;, height=&quot;50%&quot;, width=&quot;50%&quot;, align=&quot;center&quot;)</span></span></code></pre></div>
 <p>positives <span class="math inline">\(a\)</span> in (a); negatives <span class="math inline">\(a\)</span> in (b).</p>
 </div>
 <p>Im obigen Beispiel die Gewinnfunktion <span class="math inline">\(\pi(x)\)</span> ist eine quadratische Funktion mit den Parametern <span class="math inline">\(a=-12\)</span>, <span class="math inline">\(b=1500\)</span> und <span class="math inline">\(c=-747.\)</span></p>
@@ -447,21 +367,6 @@ Die Nullstellen können mit Hilfe der so genannten <span class="math inline">\(a
 </ul>
 <p>Also liegt der Break-even-Point bei <span class="math inline">\(x=0,5\)</span>. Produziert der Monopolist mehr als 0.5, wird sein Gewinn positiv. Ab der Produktionsmenge 124,5 fällt der Gewinn wieder ins Negative:</p>
 <p><img src="www/pix.png" /></p>
-<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb8-1"><a href="funktionen-und-optimierung.html#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="co"># x&lt;-seq(-10,150,by=0.5)</span></span>
-<span id="cb8-2"><a href="funktionen-und-optimierung.html#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="co"># y&lt;-function(x){-12*x^2 + 1500*x - 747}</span></span>
-<span id="cb8-3"><a href="funktionen-und-optimierung.html#cb8-3" aria-hidden="true" tabindex="-1"></a><span class="co"># ymax&lt;-50000</span></span>
-<span id="cb8-4"><a href="funktionen-und-optimierung.html#cb8-4" aria-hidden="true" tabindex="-1"></a><span class="co"># par(xpd=T)</span></span>
-<span id="cb8-5"><a href="funktionen-und-optimierung.html#cb8-5" aria-hidden="true" tabindex="-1"></a><span class="co"># plot(x,y(x),type=&quot;l&quot;, axes=F, xlab=&quot; &quot;,ylab=&quot; &quot;,ylim=c(-ymax,ymax),col=2,lwd=2)</span></span>
-<span id="cb8-6"><a href="funktionen-und-optimierung.html#cb8-6" aria-hidden="true" tabindex="-1"></a><span class="co"># arrows(-1,-ymax,-1,ymax)</span></span>
-<span id="cb8-7"><a href="funktionen-und-optimierung.html#cb8-7" aria-hidden="true" tabindex="-1"></a><span class="co"># arrows(-10,0,150,0)</span></span>
-<span id="cb8-8"><a href="funktionen-und-optimierung.html#cb8-8" aria-hidden="true" tabindex="-1"></a><span class="co"># text(-15,ymax,bquote(pi(x)))</span></span>
-<span id="cb8-9"><a href="funktionen-und-optimierung.html#cb8-9" aria-hidden="true" tabindex="-1"></a><span class="co"># text(150,-10000,&quot;x&quot;)</span></span>
-<span id="cb8-10"><a href="funktionen-und-optimierung.html#cb8-10" aria-hidden="true" tabindex="-1"></a><span class="co"># points(0.5,0,pch=&quot;|&quot;,col=4,cex=2)</span></span>
-<span id="cb8-11"><a href="funktionen-und-optimierung.html#cb8-11" aria-hidden="true" tabindex="-1"></a><span class="co"># text(15,-20000,bquote(x[1]==&quot;0,5&quot;),col=4)</span></span>
-<span id="cb8-12"><a href="funktionen-und-optimierung.html#cb8-12" aria-hidden="true" tabindex="-1"></a><span class="co"># points(124.5,0,pch=&quot;|&quot;,col=5,cex=2)</span></span>
-<span id="cb8-13"><a href="funktionen-und-optimierung.html#cb8-13" aria-hidden="true" tabindex="-1"></a><span class="co"># text(105,-20000,bquote(x[2]==&quot;124,5&quot;),col=5)</span></span>
-<span id="cb8-14"><a href="funktionen-und-optimierung.html#cb8-14" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb8-15"><a href="funktionen-und-optimierung.html#cb8-15" aria-hidden="true" tabindex="-1"></a><span class="co">#img(src=&quot;pix.png&quot;, height=&quot;50%&quot;, width=&quot;50%&quot;, align=&quot;center&quot;)</span></span></code></pre></div>
 </div>
 <p>Manchmal sind sogar höhere Potenzen von <span class="math inline">\(x\)</span> notwendig um ökonomische Zusammenhänge zu modellieren.
 Im Allgemeinem spricht man dann von <strong>Polynomen</strong> in <span class="math inline">\(x\)</span>.</p>
@@ -477,17 +382,7 @@ Dabei sind die Parameter <span class="math inline">\(a_0\)</span> bis <span clas
 <p>In der Landwirtschaft führt eine Erhöhung des Düngers bei gleicher
 Bodenfläche zunächst zu einer starken Zunahme und später zu einer geringeren Zunahme des Gesamtertrags. Dies führt zu einer s.g. ertragsgesetzlichen Produktionsfunktion, die mittels eines Polynoms dritten Grades in der Inputmenge <span class="math inline">\(s\)</span> modelliert wird. Bspw. folgende Produktionsfunktion:
 <span class="math display">\[x(s)=0,001\cdot (-0,05s^3 +8 s^2 + 20s), ~~0\leq s \leq 110.\]</span></p>
-<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb9-1"><a href="funktionen-und-optimierung.html#cb9-1" aria-hidden="true" tabindex="-1"></a>    x<span class="ot">&lt;-</span><span class="fu">seq</span>(<span class="dv">0</span>,<span class="dv">163</span>,<span class="at">by=</span><span class="fl">0.5</span>)</span>
-<span id="cb9-2"><a href="funktionen-und-optimierung.html#cb9-2" aria-hidden="true" tabindex="-1"></a>    y<span class="ot">&lt;-</span><span class="cf">function</span>(x){<span class="fl">0.001</span><span class="sc">*</span>(<span class="sc">-</span><span class="fl">0.05</span><span class="sc">*</span>x<span class="sc">^</span><span class="dv">3</span><span class="sc">+</span><span class="dv">8</span><span class="sc">*</span>x<span class="sc">^</span><span class="dv">2</span> <span class="sc">+</span> <span class="dv">20</span><span class="sc">*</span>x)}</span>
-<span id="cb9-3"><a href="funktionen-und-optimierung.html#cb9-3" aria-hidden="true" tabindex="-1"></a>    ymax<span class="ot">&lt;-</span><span class="dv">35</span></span>
-<span id="cb9-4"><a href="funktionen-und-optimierung.html#cb9-4" aria-hidden="true" tabindex="-1"></a>    <span class="fu">par</span>(<span class="at">xpd=</span>T)</span>
-<span id="cb9-5"><a href="funktionen-und-optimierung.html#cb9-5" aria-hidden="true" tabindex="-1"></a>    <span class="fu">plot</span>(x,<span class="fu">y</span>(x),<span class="at">type=</span><span class="st">&quot;l&quot;</span>, <span class="at">axes=</span>F, <span class="at">xlab=</span><span class="st">&quot; &quot;</span>,<span class="at">ylab=</span><span class="st">&quot; &quot;</span>,<span class="at">ylim=</span><span class="fu">c</span>(<span class="dv">0</span>,ymax<span class="sc">+</span><span class="dv">1</span>),<span class="at">col=</span><span class="dv">2</span>,<span class="at">lwd=</span><span class="dv">2</span>)</span>
-<span id="cb9-6"><a href="funktionen-und-optimierung.html#cb9-6" aria-hidden="true" tabindex="-1"></a>    <span class="fu">arrows</span>(<span class="dv">0</span>,<span class="sc">-</span><span class="dv">10</span>,<span class="dv">0</span>,ymax)</span>
-<span id="cb9-7"><a href="funktionen-und-optimierung.html#cb9-7" aria-hidden="true" tabindex="-1"></a>    <span class="fu">arrows</span>(<span class="sc">-</span><span class="dv">20</span>,<span class="dv">0</span>,<span class="dv">170</span>,<span class="dv">0</span>)</span>
-<span id="cb9-8"><a href="funktionen-und-optimierung.html#cb9-8" aria-hidden="true" tabindex="-1"></a>    <span class="fu">text</span>(<span class="sc">-</span><span class="dv">15</span>,ymax<span class="dv">-1</span>,<span class="fu">bquote</span>(<span class="fu">x</span>(s)))</span>
-<span id="cb9-9"><a href="funktionen-und-optimierung.html#cb9-9" aria-hidden="true" tabindex="-1"></a>    <span class="fu">text</span>(<span class="dv">170</span>,<span class="sc">-</span><span class="dv">5</span>,<span class="st">&quot;s&quot;</span>)</span></code></pre></div>
 <p><img src="_main_files/figure-html/unnamed-chunk-192-1.png" width="672" /></p>
-<div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb10-1"><a href="funktionen-und-optimierung.html#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="co">#uiOutput(&quot;prodfun&quot;)</span></span></code></pre></div>
 </div>
 <!--::: {#apppoly .app }
 **Graphische Darstellung von Polynomen**
@@ -793,7 +688,6 @@ Ableitung
 <div id="übung-ableiten-von-polynomen" class="section level3 hasAnchor" number="10.3.2">
 <h3><span class="header-section-number">10.3.2</span> Übung: Ableiten von Polynomen<a href="funktionen-und-optimierung.html#übung-ableiten-von-polynomen" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Übe das Ableiten von polynomischen Funktionen mit Parametern in dieser Endlosschleife. Wenn du richtig antwortest und sicher die Ableitungsregeln anwenden kannst, werden die Aufgaben zunehmend herausfordernder.</p>
-<div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb11-1"><a href="funktionen-und-optimierung.html#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="co">#uiOutput(&quot;dyn_exer&quot;)</span></span></code></pre></div>
 </div>
 </div>
 </div>
@@ -807,7 +701,6 @@ Ableitung
 <p><span id="def:defablstat" class="definition"><strong>Definition 10.8  (Stationäre Punkte) </strong></span><strong>Definition (Nullstellen der Ableitung und stationäre Punkte)</strong></p>
 <p><strong>Nullstellen der Ableitung</strong> entsprechen den sogennanten <strong>stationären Punkten</strong> der Funktion (bezeichnet als <span class="math inline">\(x^*\)</span>). Diese stationären Punkte beinhalten Maxima a), Minima b) und Wendepunkte c):</p>
 <p><img src="www/opt.png" /></p>
-<div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb12-1"><a href="funktionen-und-optimierung.html#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="co">#img(src=&quot;opt.png&quot;, height=&quot;60%&quot;, width=&quot;60%&quot;, align=&quot;center&quot;)</span></span></code></pre></div>
 </div>
 <p>Um zu bestimmen, ob es sich um ein Maximum, Minimum oder einen Wendepunkt handelt, kann man z.B. auf die graphische Darstellung der Funktion zurückgreifen oder man zieht formale Kriterien hinzu. Hierfür wird die zweite Ableitung ( <span class="math inline">\(f&#39;&#39;(x)\)</span>, also die Ableitung der Ableitung) in allen stationären Punkten <span class="math inline">\(x^*\)</span> berechnet. Ist <span class="math inline">\(f&#39;&#39;(x^*)&lt;0\)</span> (wie in d) handelt es sich um eine Maximumstelle, Ist <span class="math inline">\(f&#39;&#39;(x^*)&gt;0\)</span> (wie in e) handelt es sich um eine Mimnimumstelle.</p>
 <div class="example">
