@@ -129,6 +129,6 @@ ableitung
 einige-ableitungsregeln
 übung-ableiten-von-polynomen
 einfache-optimierungsprobleme
-weitere-funktionen-für-ökonomische-modellierung
+weitere-funktionen-zur-ökonomischen-modellierung
 exponentialfunktion
 logarithmusfunktion
