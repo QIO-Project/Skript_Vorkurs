@@ -93,3 +93,13 @@ div.theorem {
   margin-left:10px;
   border:1px solid black;
 }
+
+div.rule {
+  background-color:rgb(230, 231, 232);
+  padding:20px 20px;
+  margin-top:10px;
+  margin-bottom:10px;
+  margin-right:10px;
+  margin-left:10px;
+  border:1px solid black;
+}

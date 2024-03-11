@@ -1,3 +1,6 @@
+exm:prlesen
+exm:gesetze
+exm:exmklammern
 def:defmenge
 exm:menge
 def:defmengenop
@@ -33,6 +36,7 @@ exm:evarte3r
 exm:evarter4
 def:defumf
 exm:umformterm
+def:defbinf
 exm:varbr
 def:defgleich
 exm:egleich
@@ -79,21 +83,13 @@ exm:corona
 def:deflog
 exm:elog
 exm:kapital2
-grundlagen
-rechenregeln
-umwandlung-von-brüchen
-rehenfolge-der-rechenoperationen
-punkt--von-strich-rechnung
-aufmachen-von-klammern-ausmultiplizieren
-notation
-auslassen-von-punkt-bei-multiplikation-mit-variablen
-summen--und-produktzeichen
 mengen-und-zahlen
 mengen
 mengenoperationen
 spezielle-mengen
 mengen-zur-wahrscheinlichkeitsrechnung
 zahlenmengen
+übung-mengenoperationen-und-wahrscheinlichkeit
 bruchrechnung
 übung-bruchrechnung
 potenzen-und-wurzel
