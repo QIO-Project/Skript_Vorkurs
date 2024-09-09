@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>Kapitel 3 Potenzen und Wurzel | Vor- und Brückenkurs: Wirtschaftsmathematik</title>
   <meta name="description" content="Das ist der Skript für den Kurs Vor- und Brückenkurs: Wirtschaftsmathematik." />
-  <meta name="generator" content="bookdown 0.34 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.39 and GitBook 2.6.7" />
 
   <meta property="og:title" content="Kapitel 3 Potenzen und Wurzel | Vor- und Brückenkurs: Wirtschaftsmathematik" />
   <meta property="og:type" content="book" />
@@ -23,7 +23,7 @@
 <meta name="author" content="Maria Osipenko" />
 
 
-<meta name="date" content="2024-03-11" />
+<meta name="date" content="2024-09-09" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -52,11 +52,11 @@
 <link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
 <link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
 <script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
-<script src="libs/htmlwidgets-1.6.2/htmlwidgets.js"></script>
-<script src="libs/plotly-binding-4.10.2/plotly.js"></script>
+<script src="libs/htmlwidgets-1.6.4/htmlwidgets.js"></script>
+<script src="libs/plotly-binding-4.10.4/plotly.js"></script>
 <script src="libs/typedarray-0.1/typedarray.min.js"></script>
-<link href="libs/crosstalk-1.2.0/css/crosstalk.min.css" rel="stylesheet" />
-<script src="libs/crosstalk-1.2.0/js/crosstalk.min.js"></script>
+<link href="libs/crosstalk-1.2.1/css/crosstalk.min.css" rel="stylesheet" />
+<script src="libs/crosstalk-1.2.1/js/crosstalk.min.js"></script>
 <link href="libs/plotly-htmlwidgets-css-2.11.1/plotly-htmlwidgets.css" rel="stylesheet" />
 <script src="libs/plotly-main-2.11.1/plotly-latest.min.js"></script>
 
@@ -150,6 +150,7 @@
 <li class="chapter" data-level="10.1" data-path="weitere-funktionen-zur-ökonomischen-modellierung.html"><a href="weitere-funktionen-zur-ökonomischen-modellierung.html#exponentialfunktion"><i class="fa fa-check"></i><b>10.1</b> Exponentialfunktion</a></li>
 <li class="chapter" data-level="10.2" data-path="weitere-funktionen-zur-ökonomischen-modellierung.html"><a href="weitere-funktionen-zur-ökonomischen-modellierung.html#logarithmusfunktion"><i class="fa fa-check"></i><b>10.2</b> Logarithmusfunktion</a></li>
 </ul></li>
+<li class="chapter" data-level="11" data-path="case-studies-und-das-mathe-spiel.html"><a href="case-studies-und-das-mathe-spiel.html"><i class="fa fa-check"></i><b>11</b> Case Studies und das Mathe-Spiel</a></li>
 <li class="divider"></li>
 <li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
 
@@ -172,6 +173,75 @@
             <section class="normal" id="section-">
 <div id="potenzen-und-wurzel" class="section level1 hasAnchor" number="3">
 <h1><span class="header-section-number">Kapitel 3</span> Potenzen und Wurzel<a href="potenzen-und-wurzel.html#potenzen-und-wurzel" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<script>
+function checkAnswer_mmc(q) {
+      const selectedOptions = document.querySelectorAll('input[name="option'+q.id+'"]:checked');
+      if (selectedOptions.length === 2) {
+        const userAnswers = Array.from(selectedOptions).map(option => option.value);
+        const correctAnswers = q.answer;
+        const isCorrect = userAnswers.every(answer => correctAnswers.includes(answer));
+
+if (isCorrect) {
+          document.getElementById('result'+q.id).textContent = 'Glückwunsch! Deine Antwort ist richtig.';
+        } else {
+          document.getElementById('result'+q.id).textContent = `Leider falsch. Versuch es nochmal!`;
+        }
+      } else {
+        document.getElementById('result'+q.id).textContent = 'Bitte zwei Optionen auswählen.';
+      }
+    }
+// numeric
+function generateQuestion_num(id) {
+      // Generate two random numbers between 2 and 10
+      const num1 = Math.floor(Math.random() * 10) + 2;
+      const num2 = Math.floor(Math.random() * 10) + 2;
+      const x1 = Math.floor(Math.random() * 100) + 2;
+      const x2 = Math.floor(Math.random() * 100) + 2;
+      const x3 = Math.floor(Math.random() * 100) + 2;
+      const x4 = Math.floor(Math.random() * 100) + 2;
+      const x5 = Math.floor(Math.random() * 100) + 2;
+      const x6 = Math.floor(Math.random() * 100) + 2;
+
+       // Calculate the correct answer
+      let answer = num1*Math.sqrt(x1) + num2*Math.sqrt(x2);
+
+      // Return the question and answer as an object
+      return {
+       // question: num1 + "\\(\\sqrt{x}+\\)"+ num2 + "\\(\\sqrt{y}\\)" + " for \\(x=\\)" + x1 + " and \\(y=\\)" + x2,
+        question: [num1,num2,x1,x2,x3,x4,x5,x6],
+        answer: answer,
+        id: id
+      };
+    }
+
+function checkAnswer_num(q) {
+      const userAnswer = document.getElementById('answer'+q.id).value;
+      const isCorrect = Math.round(parseFloat(userAnswer)*100)/100 === Math.round(q.answer*100)/100;
+
+      if (isCorrect) {
+        document.getElementById('result'+q.id).textContent = 'Glückwunsch! Deine Antwort ist richtig.';
+      } else {
+        document.getElementById('result'+q.id).textContent = `Sorry, incorrect.`;
+      }
+  }
+
+// plain multiple choice
+  function checkAnswer_match(q) {
+      const selectedOption = document.querySelector('input[name="option'+q.id+'"]:checked');
+      if (selectedOption) {
+        const userAnswer = selectedOption.value;
+        const isCorrect = userAnswer === q.answer;
+
+        if (isCorrect) {
+          document.getElementById('result'+q.id).textContent = 'Glückwunsch! Deine Antwort ist richtig.';
+        } else {
+          document.getElementById('result'+q.id).textContent = `Leider falsch. Versuch es nochmal!`;
+        }
+      } else {
+        document.getElementById('result'+q.id).textContent = 'Bitte eine Option wählen.';
+      }
+    }
+</script>
 <div id="potenzen" class="section level2 hasAnchor" number="3.1">
 <h2><span class="header-section-number">3.1</span> Potenzen<a href="potenzen-und-wurzel.html#potenzen" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Potenzen mit natürlichem Exponenten werden folgendermaßen definiert:</p>

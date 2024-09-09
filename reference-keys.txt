@@ -128,3 +128,8 @@ einfache-optimierungsprobleme
 weitere-funktionen-zur-ökonomischen-modellierung
 exponentialfunktion
 logarithmusfunktion
+case-studies-und-das-mathe-spiel
+case-study-i-budget-und-konsum
+case-study-ii-nachfrage-und-kosten
+case-study-iii-bevölkerungswachstum
+mathe-spiel-schatzsuche
