@@ -23,7 +23,7 @@
 <meta name="author" content="Maria Osipenko" />
 
 
-<meta name="date" content="2024-09-09" />
+<meta name="date" content="2024-09-10" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -436,7 +436,7 @@ Frage: <span id="question-text53"></span>
 <input type="checkbox" name="option53" value=4> \((a−2b)(7a+3b)\)
 </label>
 <label>
-<input type="checkbox" name="option53" value=4> \((a−2b)(7a−b)\)
+<input type="checkbox" name="option53" value=5> \((a−2b)(7a−b)\)
 </label></p>
 </div>
 <button onclick="checkAnswer_mmc(questionObj53)">
@@ -746,6 +746,90 @@ Sind <span class="math inline">\(x\)</span> und <span class="math inline">\(y\)<
 <div id="qvarbr" class="quiz">
 <p><strong>Quiz Variablen in Brüchen</strong></p>
 <script>
+  // Generate a random question
+    const questionObj512 = {
+      question: "Der Definitionsbereich von \\(\\frac{3x}{5+x}\\) entspricht ",
+      options: ["\\(\\mathbb R\\setminus\\{-2; 0\\}\\)", "\\(\\mathbb R\\setminus\\{0\\}\\)",
+             "\\(\\mathbb R\\setminus\\{0;5\\}\\)", "\\(\\mathbb R\\setminus\\{-5\\}\\)",
+             "\\(\\mathbb R\\setminus\\{0;2\\}\\)", "\\(\\mathbb R\\setminus\\{2\\}\\)"],
+      answer: '4',
+      id: 512
+    };
+</script>
+<p class="question">
+<span id="question-text512"></span>
+</p>
+<div class="options">
+<label>
+<input type="radio" name="option512" value=1> \(\mathbb R\setminus\{-2; 0\}\)
+</label>
+<label>
+<input type="radio" name="option512" value=2> \(\mathbb R\setminus\{0\}\)
+</label>
+<label>
+<input type="radio" name="option512" value=3> \(\mathbb R\setminus\{0;5\}\)
+</label>
+<label>
+<input type="radio" name="option512" value=4> \(\mathbb R\setminus\{-5\}\)
+</label>
+<label>
+<input type="radio" name="option512" value=5> \(\mathbb R\setminus\{0;2\}\)
+</label>
+<label>
+<input type="radio" name="option512" value=6> \(\mathbb R\setminus\{2\}\)
+</label>
+</div>
+<button onclick="checkAnswer_match(questionObj512)">Check</button>
+<p id="result512">
+</p>
+<script>
+  // Display the question
+    document.getElementById('question-text512').textContent = questionObj512.question;
+</script>
+<hr />
+<script>
+  // Generate a random question
+    const questionObj513 = {
+      question: "Der Definitionsbereich von \\(\\frac{5}{x(2+x)}\\) entspricht ",
+      options: [ "\\(\\mathbb R\\setminus\\{0\\}\\)",
+             "\\(\\mathbb R\\setminus\\{0;5\\}\\)", "\\(\\mathbb R\\setminus\\{-5\\}\\)",
+             "\\(\\mathbb R\\setminus\\{0;2\\}\\)", "\\(\\mathbb R\\setminus\\{-2; 0\\}\\)","\\(\\mathbb R\\setminus\\{2\\}\\)"],
+      answer: '5',
+      id: 513
+    };
+</script>
+<p class="question">
+<span id="question-text513"></span>
+</p>
+<div class="options">
+<label>
+<input type="radio" name="option513" value=1> \(\mathbb R\setminus\{0\}\)
+</label>
+<label>
+<input type="radio" name="option513" value=2> \(\mathbb R\setminus\{0;5\}\)
+</label>
+<label>
+<input type="radio" name="option513" value=3> \(\mathbb R\setminus\{-5\}\)
+</label>
+<label>
+<input type="radio" name="option513" value=4> \(\mathbb R\setminus\{0;2\}\)
+</label>
+<label>
+<input type="radio" name="option513" value=5> \(\mathbb R\setminus\{-2; 0\}\)
+</label>
+<label>
+<input type="radio" name="option513" value=6> \(\mathbb R\setminus\{2\}\)
+</label>
+</div>
+<button onclick="checkAnswer_match(questionObj513)">Check</button>
+<p id="result513">
+</p>
+<script>
+  // Display the question
+    document.getElementById('question-text513').textContent = questionObj513.question;
+</script>
+<hr />
+<script>
 
 
 // Generate a random question
@@ -834,89 +918,6 @@ Check
     document.getElementById('question-text511').textContent = questionObj511.question;
 </script>
 <hr />
-<script>
-  // Generate a random question
-    const questionObj512 = {
-      question: "Der Definitionsbereich von \\(\\frac{3x}{5+x}\\) entspricht ",
-      options: ["\\(\\mathbb R\\setminus\\{-2; 0\\}\\)", "\\(\\mathbb R\\setminus\\{0\\}\\)",
-             "\\(\\mathbb R\\setminus\\{0;5\\}\\)", "\\(\\mathbb R\\setminus\\{-5\\}\\)",
-             "\\(\\mathbb R\\setminus\\{0;2\\}\\)", "\\(\\mathbb R\\setminus\\{2\\}\\)"],
-      answer: '4',
-      id: 512
-    };
-</script>
-<p class="question">
-<span id="question-text512"></span>
-</p>
-<div class="options">
-<label>
-<input type="radio" name="option512" value=1> \(\mathbb R\setminus\{-2; 0\}\)
-</label>
-<label>
-<input type="radio" name="option512" value=2> \(\mathbb R\setminus\{0\}\)
-</label>
-<label>
-<input type="radio" name="option512" value=3> \(\mathbb R\setminus\{0;5\}\)
-</label>
-<label>
-<input type="radio" name="option512" value=4> \(\mathbb R\setminus\{-5\}\)
-</label>
-<label>
-<input type="radio" name="option512" value=5> \(\mathbb R\setminus\{0;2\}\)
-</label>
-<label>
-<input type="radio" name="option512" value=6> \(\mathbb R\setminus\{2\}\)
-</label>
-</div>
-<button onclick="checkAnswer_match(questionObj512)">Check</button>
-<p id="result512">
-</p>
-<script>
-  // Display the question
-    document.getElementById('question-text512').textContent = questionObj512.question;
-</script>
-<hr />
-<script>
-  // Generate a random question
-    const questionObj513 = {
-      question: "Der Definitionsbereich von \\(\\frac{5}{x(2+x)}\\) entspricht ",
-      options: [ "\\(\\mathbb R\\setminus\\{0\\}\\)",
-             "\\(\\mathbb R\\setminus\\{0;5\\}\\)", "\\(\\mathbb R\\setminus\\{-5\\}\\)",
-             "\\(\\mathbb R\\setminus\\{0;2\\}\\)", "\\(\\mathbb R\\setminus\\{-2; 0\\}\\)","\\(\\mathbb R\\setminus\\{2\\}\\)"],
-      answer: '5',
-      id: 513
-    };
-</script>
-<p class="question">
-<span id="question-text513"></span>
-</p>
-<div class="options">
-<label>
-<input type="radio" name="option513" value=1> \(\mathbb R\setminus\{0\}\)
-</label>
-<label>
-<input type="radio" name="option513" value=2> \(\mathbb R\setminus\{0;5\}\)
-</label>
-<label>
-<input type="radio" name="option513" value=3> \(\mathbb R\setminus\{-5\}\)
-</label>
-<label>
-<input type="radio" name="option513" value=4> \(\mathbb R\setminus\{0;2\}\)
-</label>
-<label>
-<input type="radio" name="option513" value=5> \(\mathbb R\setminus\{-2; 0\}\)
-</label>
-<label>
-<input type="radio" name="option513" value=6> \(\mathbb R\setminus\{2\}\)
-</label>
-</div>
-<button onclick="checkAnswer_match(questionObj513)">Check</button>
-<p id="result513">
-</p>
-<script>
-  // Display the question
-    document.getElementById('question-text513').textContent = questionObj513.question;
-</script>
 </div>
 
 </div>

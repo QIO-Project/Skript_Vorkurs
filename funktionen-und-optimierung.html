@@ -23,7 +23,7 @@
 <meta name="author" content="Maria Osipenko" />
 
 
-<meta name="date" content="2024-09-09" />
+<meta name="date" content="2024-09-10" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -369,7 +369,7 @@ Dabei sind die Parameter <span class="math inline">\(a_0\)</span> bis <span clas
 <p>In der Landwirtschaft führt eine Erhöhung des Düngers bei gleicher
 Bodenfläche zunächst zu einer starken Zunahme und später zu einer geringeren Zunahme des Gesamtertrags. Dies führt zu einer s.g. ertragsgesetzlichen Produktionsfunktion, die mittels eines Polynoms dritten Grades in der Inputmenge <span class="math inline">\(s\)</span> modelliert wird. Bspw. folgende Produktionsfunktion:
 <span class="math display">\[x(s)=0,001\cdot (-0,05s^3 +8 s^2 + 20s), ~~0\leq s \leq 110.\]</span></p>
-<p><img src="_main_files/figure-html/unnamed-chunk-191-1.png" width="672" /></p>
+<p><img src="_main_files/figure-html/unnamed-chunk-204-1.png" width="672" /></p>
 </div>
 <!--::: {#apppoly .app }
 **Graphische Darstellung von Polynomen**
@@ -535,8 +535,9 @@ Check
  // Generate a random question
     const questionObj9 = generateQuestion_num(9);
 // Display the question
-    document.getElementById('question-text9').textContent = "Die Gewinnfunktion eines Monopolisten lautet \\(\\pi(x) = -" + questionObj9.question[0] + "x^2 + " + questionObj9.question[1] + "x - " + (questionObj9.question[1]*2) + "\\), dabei ist \\(x\\) die Produktionsmenge. Wie lautet der Break-Even-Point, also die niedrigste Produktionsmenge \\(x_1\\), ab der der Gewinn positiv wird? Wie lautet die kritische Produktionsmenge \\(x_2\\), deren Überschreitung wieder zu einem negativen Gewinn führt? (Hinweis: Löse die quadratische Gleichung. Die Nullstellen entsprechen dann den gesuchten Produktionsmengen. Runde auf vier Nachkommastellen.)";
-    questionObj9.answer = - questionObj9.question[1] + Math.pow((Math.pow(questionObj9.question[1],2) - 4*questionObj9.question[0]*questionObj9.question[1]*2), 0.5)/(2*questionObj9.question[0])
+    document.getElementById('question-text9').textContent = "Die Gewinnfunktion eines Monopolisten lautet \\(\\pi(x) = -" + -6 + "x^2 + " + 23 + "x - " + -20 + "\\), dabei ist \\(x\\) die Produktionsmenge. Wie lautet der Break-Even-Point, also die niedrigste Produktionsmenge \\(x_1\\), ab der der Gewinn positiv wird? Wie lautet die kritische Produktionsmenge \\(x_2\\), deren Überschreitung wieder zu einem negativen Gewinn führt? (Hinweis: Löse die quadratische Gleichung. Die Nullstellen entsprechen dann den gesuchten Produktionsmengen. Runde auf vier Nachkommastellen.)";
+
+    questionObj9.answer =1.33333
 </script>
 </div>
 </div>
@@ -717,7 +718,7 @@ Da <span class="math inline">\(\pi&#39;&#39;(x) = -24\)</span> und somit immer <
     const questionObj99 = generateQuestion_num(99);
 // Display the question
     document.getElementById('question-text99').textContent = "Finde die Produktionsmenge \\(x^*\\), bei der die Gewinnfunktion \\(\\pi(x) = -" + questionObj99.question[0] + "x^2 + " + questionObj99.question[1] + "x - " + (2*questionObj99.question[1]) + "\\) ihren Maximum annimmt. Runde auf vier Nachkommastellen.";
-    questionObj99.answer = -questionObj99.question[1]/(2*questionObj99.question[0])
+    questionObj99.answer = questionObj99.question[1]/(2*questionObj99.question[0])
 </script>
 <hr />
 <script>
