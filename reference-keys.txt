@@ -29,6 +29,8 @@ def:defzins2
 exm:ezins2
 def:defzinsn
 exm:ezins3
+exm:ezinsE
+exm:ezinsE1
 def:defterm
 exm:evarter
 exm:evarter2
@@ -102,7 +104,12 @@ potenzen
 wurzel
 prozent--und-zinsrechnung
 prozentrechnung
+quiz-prozentrechnung
 zinsrechnung
+zinsrechnung-für-eine-periode-ein-jahr
+zinsrechnung-für-mehrere-perioden
+kapitalentwicklung-mit-regelmäßigen-einzahlungen
+quiz-zinsrechnung
 variablen-und-terme
 umformung-von-termen
 binomische-formeln-1-3
@@ -126,6 +133,8 @@ lösung-von-lgs
 funktionen-und-optimierung
 funktionen
 lineare-und-quadratische-funktionen-polynome
+stückweise-definierte-funktionen
+quiz-funktionen
 ableitung
 einige-ableitungsregeln
 übung-ableiten-von-polynomen
