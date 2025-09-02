@@ -6,13 +6,13 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>Kapitel 8 Lineare Gleichungssysteme | Vor- und Brückenkurs: Wirtschaftsmathematik</title>
   <meta name="description" content="Das ist der Skript für den Kurs Vor- und Brückenkurs: Wirtschaftsmathematik." />
-  <meta name="generator" content="bookdown 0.39 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.43 and GitBook 2.6.7" />
 
   <meta property="og:title" content="Kapitel 8 Lineare Gleichungssysteme | Vor- und Brückenkurs: Wirtschaftsmathematik" />
   <meta property="og:type" content="book" />
   
   <meta property="og:description" content="Das ist der Skript für den Kurs Vor- und Brückenkurs: Wirtschaftsmathematik." />
-  <meta name="github-repo" content="rstudio/bookdown-demo" />
+  
 
   <meta name="twitter:card" content="summary" />
   <meta name="twitter:title" content="Kapitel 8 Lineare Gleichungssysteme | Vor- und Brückenkurs: Wirtschaftsmathematik" />
@@ -23,7 +23,7 @@
 <meta name="author" content="Maria Osipenko" />
 
 
-<meta name="date" content="2024-09-11" />
+<meta name="date" content="2025-09-02" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -53,10 +53,10 @@
 <link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
 <script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
 <script src="libs/htmlwidgets-1.6.4/htmlwidgets.js"></script>
-<script src="libs/plotly-binding-4.10.4/plotly.js"></script>
+<script src="libs/plotly-binding-4.11.0/plotly.js"></script>
 <script src="libs/typedarray-0.1/typedarray.min.js"></script>
-<link href="libs/crosstalk-1.2.1/css/crosstalk.min.css" rel="stylesheet" />
-<script src="libs/crosstalk-1.2.1/js/crosstalk.min.js"></script>
+<link href="libs/crosstalk-1.2.2/css/crosstalk.min.css" rel="stylesheet" />
+<script src="libs/crosstalk-1.2.2/js/crosstalk.min.js"></script>
 <link href="libs/plotly-htmlwidgets-css-2.11.1/plotly-htmlwidgets.css" rel="stylesheet" />
 <script src="libs/plotly-main-2.11.1/plotly-latest.min.js"></script>
 
@@ -83,7 +83,7 @@
 <li><a href="./">Vor- und Brückenkurs Mathematik</a></li>
 
 <li class="divider"></li>
-<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Wichtige Notation und Rechenregeln</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Intro</a></li>
 <li class="chapter" data-level="1" data-path="mengen-und-zahlen.html"><a href="mengen-und-zahlen.html"><i class="fa fa-check"></i><b>1</b> Mengen und Zahlen</a>
 <ul>
 <li class="chapter" data-level="1.1" data-path="mengen-und-zahlen.html"><a href="mengen-und-zahlen.html#mengen"><i class="fa fa-check"></i><b>1.1</b> Mengen</a>
@@ -93,8 +93,19 @@
 <li class="chapter" data-level="1.1.3" data-path="mengen-und-zahlen.html"><a href="mengen-und-zahlen.html#mengen-zur-wahrscheinlichkeitsrechnung"><i class="fa fa-check"></i><b>1.1.3</b> Mengen zur Wahrscheinlichkeitsrechnung</a></li>
 </ul></li>
 <li class="chapter" data-level="1.2" data-path="mengen-und-zahlen.html"><a href="mengen-und-zahlen.html#zahlenmengen"><i class="fa fa-check"></i><b>1.2</b> Zahlenmengen</a></li>
+<li class="chapter" data-level="1.3" data-path="mengen-und-zahlen.html"><a href="mengen-und-zahlen.html#wichtige-rechenregeln"><i class="fa fa-check"></i><b>1.3</b> Wichtige Rechenregeln</a></li>
+<li class="chapter" data-level="1.4" data-path="mengen-und-zahlen.html"><a href="mengen-und-zahlen.html#quiz-mengen-und-zahlenmengen"><i class="fa fa-check"></i><b>1.4</b> Quiz: Mengen und Zahlenmengen</a></li>
+<li class="chapter" data-level="1.5" data-path="mengen-und-zahlen.html"><a href="mengen-und-zahlen.html#übung-mengenoperationen-und-wahrscheinlichkeit"><i class="fa fa-check"></i><b>1.5</b> Übung: Mengenoperationen und Wahrscheinlichkeit</a></li>
 </ul></li>
-<li class="chapter" data-level="2" data-path="bruchrechnung.html"><a href="bruchrechnung.html"><i class="fa fa-check"></i><b>2</b> Bruchrechnung</a></li>
+<li class="chapter" data-level="2" data-path="bruchrechnung.html"><a href="bruchrechnung.html"><i class="fa fa-check"></i><b>2</b> Bruchrechnung</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="bruchrechnung.html"><a href="bruchrechnung.html#rechnen-mit-brüchen"><i class="fa fa-check"></i><b>2.1</b> Rechnen mit Brüchen</a>
+<ul>
+<li class="chapter" data-level="2.1.1" data-path="bruchrechnung.html"><a href="bruchrechnung.html#quiz-bruchrechnung-i"><i class="fa fa-check"></i><b>2.1.1</b> Quiz Bruchrechnung I</a></li>
+<li class="chapter" data-level="2.1.2" data-path="bruchrechnung.html"><a href="bruchrechnung.html#quiz-bruchrechnung-ii"><i class="fa fa-check"></i><b>2.1.2</b> Quiz Bruchrechnung II</a></li>
+</ul></li>
+<li class="chapter" data-level="2.2" data-path="bruchrechnung.html"><a href="bruchrechnung.html#übung-bruchrechnung"><i class="fa fa-check"></i><b>2.2</b> Übung: Bruchrechnung</a></li>
+</ul></li>
 <li class="chapter" data-level="3" data-path="potenzen-und-wurzel.html"><a href="potenzen-und-wurzel.html"><i class="fa fa-check"></i><b>3</b> Potenzen und Wurzel</a>
 <ul>
 <li class="chapter" data-level="3.1" data-path="potenzen-und-wurzel.html"><a href="potenzen-und-wurzel.html#potenzen"><i class="fa fa-check"></i><b>3.1</b> Potenzen</a></li>
@@ -108,7 +119,10 @@
 <li class="chapter" data-level="5" data-path="variablen-und-terme.html"><a href="variablen-und-terme.html"><i class="fa fa-check"></i><b>5</b> Variablen und Terme</a>
 <ul>
 <li class="chapter" data-level="5.1" data-path="variablen-und-terme.html"><a href="variablen-und-terme.html#umformung-von-termen"><i class="fa fa-check"></i><b>5.1</b> Umformung von Termen</a></li>
-<li class="chapter" data-level="5.2" data-path="variablen-und-terme.html"><a href="variablen-und-terme.html#binomische-formeln-1-3"><i class="fa fa-check"></i><b>5.2</b> Binomische Formeln 1-3</a></li>
+<li class="chapter" data-level="5.2" data-path="variablen-und-terme.html"><a href="variablen-und-terme.html#binomische-formeln-1-3"><i class="fa fa-check"></i><b>5.2</b> Binomische Formeln 1-3</a>
+<ul>
+<li class="chapter" data-level="5.2.1" data-path="variablen-und-terme.html"><a href="variablen-und-terme.html#übung-umformen-von-termen"><i class="fa fa-check"></i><b>5.2.1</b> Übung: Umformen von Termen</a></li>
+</ul></li>
 <li class="chapter" data-level="5.3" data-path="variablen-und-terme.html"><a href="variablen-und-terme.html#variablen-in-brüchen"><i class="fa fa-check"></i><b>5.3</b> Variablen in Brüchen</a></li>
 </ul></li>
 <li class="chapter" data-level="6" data-path="gleichungen.html"><a href="gleichungen.html"><i class="fa fa-check"></i><b>6</b> Gleichungen</a>
@@ -119,6 +133,7 @@
 <ul>
 <li class="chapter" data-level="6.3.1" data-path="gleichungen.html"><a href="gleichungen.html#faktorisierte-gleichungen"><i class="fa fa-check"></i><b>6.3.1</b> Faktorisierte Gleichungen</a></li>
 <li class="chapter" data-level="6.3.2" data-path="gleichungen.html"><a href="gleichungen.html#betragsgleichungen"><i class="fa fa-check"></i><b>6.3.2</b> Betragsgleichungen</a></li>
+<li class="chapter" data-level="6.3.3" data-path="gleichungen.html"><a href="gleichungen.html#übung-gleichungen"><i class="fa fa-check"></i><b>6.3.3</b> Übung: Gleichungen</a></li>
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="7" data-path="ungleichungen.html"><a href="ungleichungen.html"><i class="fa fa-check"></i><b>7</b> Ungleichungen</a>
@@ -142,6 +157,7 @@
 <li class="chapter" data-level="9.3" data-path="funktionen-und-optimierung.html"><a href="funktionen-und-optimierung.html#ableitung"><i class="fa fa-check"></i><b>9.3</b> Ableitung</a>
 <ul>
 <li class="chapter" data-level="9.3.1" data-path="funktionen-und-optimierung.html"><a href="funktionen-und-optimierung.html#einige-ableitungsregeln"><i class="fa fa-check"></i><b>9.3.1</b> Einige Ableitungsregeln</a></li>
+<li class="chapter" data-level="9.3.2" data-path="funktionen-und-optimierung.html"><a href="funktionen-und-optimierung.html#übung-ableiten-von-polynomen"><i class="fa fa-check"></i><b>9.3.2</b> Übung: Ableiten von Polynomen</a></li>
 </ul></li>
 <li class="chapter" data-level="9.4" data-path="funktionen-und-optimierung.html"><a href="funktionen-und-optimierung.html#einfache-optimierungsprobleme"><i class="fa fa-check"></i><b>9.4</b> Einfache Optimierungsprobleme</a></li>
 </ul></li>
@@ -150,7 +166,13 @@
 <li class="chapter" data-level="10.1" data-path="weitere-funktionen-zur-ökonomischen-modellierung.html"><a href="weitere-funktionen-zur-ökonomischen-modellierung.html#exponentialfunktion"><i class="fa fa-check"></i><b>10.1</b> Exponentialfunktion</a></li>
 <li class="chapter" data-level="10.2" data-path="weitere-funktionen-zur-ökonomischen-modellierung.html"><a href="weitere-funktionen-zur-ökonomischen-modellierung.html#logarithmusfunktion"><i class="fa fa-check"></i><b>10.2</b> Logarithmusfunktion</a></li>
 </ul></li>
-<li class="chapter" data-level="11" data-path="case-studies-und-das-mathe-spiel.html"><a href="case-studies-und-das-mathe-spiel.html"><i class="fa fa-check"></i><b>11</b> Case Studies und das Mathe-Spiel</a></li>
+<li class="chapter" data-level="11" data-path="case-studies-und-das-mathe-spiel.html"><a href="case-studies-und-das-mathe-spiel.html"><i class="fa fa-check"></i><b>11</b> Case Studies und das Mathe-Spiel</a>
+<ul>
+<li class="chapter" data-level="11.1" data-path="case-studies-und-das-mathe-spiel.html"><a href="case-studies-und-das-mathe-spiel.html#case-study-i-budget-und-konsum"><i class="fa fa-check"></i><b>11.1</b> Case Study I: Budget und Konsum</a></li>
+<li class="chapter" data-level="11.2" data-path="case-studies-und-das-mathe-spiel.html"><a href="case-studies-und-das-mathe-spiel.html#case-study-ii-nachfrage-und-kosten"><i class="fa fa-check"></i><b>11.2</b> Case Study II: Nachfrage und Kosten</a></li>
+<li class="chapter" data-level="11.3" data-path="case-studies-und-das-mathe-spiel.html"><a href="case-studies-und-das-mathe-spiel.html#case-study-iii-bevölkerungswachstum"><i class="fa fa-check"></i><b>11.3</b> Case Study III: Bevölkerungswachstum</a></li>
+<li class="chapter" data-level="11.4" data-path="case-studies-und-das-mathe-spiel.html"><a href="case-studies-und-das-mathe-spiel.html#mathe-spiel-schatzsuche"><i class="fa fa-check"></i><b>11.4</b> Mathe-Spiel: Schatzsuche</a></li>
+</ul></li>
 <li class="divider"></li>
 <li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
 
@@ -575,42 +597,42 @@ Check
 <script>
 gitbook.require(["gitbook"], function(gitbook) {
 gitbook.start({
-"sharing": {
-"github": false,
-"facebook": true,
-"twitter": true,
-"linkedin": false,
-"weibo": false,
-"instapaper": false,
-"vk": false,
-"whatsapp": false,
-"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
-},
-"fontsettings": {
-"theme": "white",
-"family": "sans",
-"size": 2
-},
-"edit": {
-"link": "https://github.com/USERNAME/REPO/edit/BRANCH/08-LGS.Rmd",
-"text": "Edit"
-},
-"history": {
-"link": null,
-"text": null
-},
-"view": {
-"link": null,
-"text": null
-},
-"download": ["_main.pdf", "_main.epub"],
-"search": {
-"engine": "fuse",
-"options": null
-},
-"toc": {
-"collapse": "subsection"
-}
+  "sharing": {
+    "github": false,
+    "facebook": true,
+    "twitter": true,
+    "linkedin": false,
+    "weibo": false,
+    "instapaper": false,
+    "vk": false,
+    "whatsapp": false,
+    "all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+  },
+  "fontsettings": {
+    "theme": "white",
+    "family": "sans",
+    "size": 2
+  },
+  "edit": {
+    "link": "https://github.com/USERNAME/REPO/edit/BRANCH/08-LGS.Rmd",
+    "text": "Edit"
+  },
+  "history": {
+    "link": null,
+    "text": null
+  },
+  "view": {
+    "link": null,
+    "text": null
+  },
+  "download": ["_main.pdf", "_main.epub"],
+  "search": {
+    "engine": "fuse",
+    "options": null
+  },
+  "toc": {
+    "collapse": "subsection"
+  }
 });
 });
 </script>

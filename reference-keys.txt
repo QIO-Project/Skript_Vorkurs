@@ -1,6 +1,3 @@
-exm:prlesen
-exm:gesetze
-exm:exmklammern
 def:defmenge
 exm:menge
 def:defmengenop
@@ -10,6 +7,9 @@ def:defzahlenmengen
 def:defratz
 def:defrez
 def:definter
+exm:prlesen
+exm:gesetze
+exm:exmklammern
 def:defbr
 exm:aktien
 def:defbrmult
@@ -89,8 +89,13 @@ mengenoperationen
 spezielle-mengen
 mengen-zur-wahrscheinlichkeitsrechnung
 zahlenmengen
+wichtige-rechenregeln
+quiz-mengen-und-zahlenmengen
 übung-mengenoperationen-und-wahrscheinlichkeit
 bruchrechnung
+rechnen-mit-brüchen
+quiz-bruchrechnung-i
+quiz-bruchrechnung-ii
 übung-bruchrechnung
 potenzen-und-wurzel
 potenzen
