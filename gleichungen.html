@@ -328,14 +328,28 @@ Die Lösung ist <span class="math inline">\(x=90\)</span>, Tina hat also eine In
 <p>Solche Umformungen verändern nicht die Lösungsmenge einer Gleichung, man spricht von <strong>äquivalenten</strong>
 Gleichungen in dem Fall und drückt dies durch das Symbol “<span class="math inline">\(\Leftrightarrow\)</span>” aus.</p>
 <div class="example">
-<p><span id="exm:eumfgl" class="example"><strong>Beispiel 6.3  (Umformen von Gleichungen) </strong></span><strong>Beispiel (Umformen von Gleichungen)</strong></p>
-<p>Umformen von <span class="math inline">\(12+t=\frac{2t}{2t^2}+t\)</span>.</p>
+<p><span id="exm:eumfgl" class="example"><strong>Beispiel 6.3  (Umformen von Gleichungen) </strong></span></p>
+<ul>
+<li>Umformen von <span class="math inline">\(12+t=\frac{2t}{2t^2}+t.\)</span></li>
+</ul>
 <p><span class="math display">\[\begin{align}
 &amp;12+t=\frac{2t}{2t^2}+t, ~~| -t,\\
 &amp;\Leftrightarrow 12=\frac{2t}{2t^2}, ~~|\text{Gleichung umgedreht},\\
 &amp;\Leftrightarrow \frac{2t}{2t^2}=12, ~~|: 2t,\\
 &amp;\Leftrightarrow \frac 1t = 12, ~~| \text{Kehrwerte genommen},\\
 &amp;\Leftrightarrow t = \frac 1{12}.
+\end{align}\]</span></p>
+<ul>
+<li>Umformen von <span class="math inline">\(\frac{-18 -2(2y-3)}{3-(4y-3)}=4.\)</span></li>
+</ul>
+<p><span class="math display">\[\begin{align}
+&amp;\frac{-18 -2(2y-3)}{3-(4y-3)}=4,\\
+&amp;\Leftrightarrow \frac{-18 -4y+6}{3-4y+3}=4, ~~|\text{Klammer aufgemacht},\\
+&amp;\Leftrightarrow \frac{-12 -4y}{6-4y}=4, ~~|\text{Terme zusammengefasst},\\
+&amp;\Leftrightarrow \frac{-12 -4y}{6-4y}\cdot (6-4y)=4\cdot (6-4y), ~~|\cdot (6-4y),\text{ beachte }y\not=-\frac32,\\
+&amp;\Leftrightarrow -12 -4y=24-16y, ~~| +4y-24,\\
+&amp;\Leftrightarrow -36 = -12y~~| :(-12),\\
+&amp;\Leftrightarrow 3 = y.
 \end{align}\]</span></p>
 </div>
 </div>
@@ -583,6 +597,22 @@ Gleichungen in dem Fall und drückt dies durch das Symbol “<span class="math i
 </script>
 <hr />
 <p id="question">
+<span id="question-text681"></span>
+</p>
+<input type="number" id="answer681" placeholder="Antwort eingeben">
+<button onclick="checkAnswer_num(questionObj681)">Check</button>
+<p id="result681">
+</p>
+<script>
+
+ // Generate a random question
+    const questionObj681 = generateQuestion_num(681);
+// Display the question
+    document.getElementById('question-text681').textContent = "Gib die Lösung der Gleichung \\(\\frac{-7-5(2y- 5)} {2-(3y-3)}=2\\) an.";
+    questionObj681.answer = 2.0
+</script>
+<hr />
+<p id="question">
 <span id="question-text611"></span>
 </p>
 <input type="number" id="answer611" placeholder="Antwort eingeben">
@@ -624,34 +654,8 @@ Gleichungen in dem Fall und drückt dies durch das Symbol “<span class="math i
 <p><span id="exm:efaktgl2" class="example"><strong>Beispiel 6.5  (Faktorisieren von Gleichungen) </strong></span><strong>Beispiel (Lösung einer faktorisieren Gleichung mit Bruchtermen)</strong></p>
 <p>Der Zähler der Gleichung <span class="math inline">\(\frac{(x-1)(x-2)}{x^2 -4} = 0\)</span> ist gleich Null für <span class="math inline">\(x\in\{1;~2\}\)</span>. Als Definitionsmenge ermittelt man <span class="math inline">\(x^2 -4\not=0\)</span> <span class="math inline">\(\rightarrow x\not\in\{-2;~2\}\)</span> oder <span class="math inline">\(\mathbb D=\mathbb R\setminus\{-2;~2\}\)</span>. Also ist die Lösungsmenge <span class="math inline">\(L=\mathbb D\cap\{1;~2\} =\{1\}\)</span>.</p>
 </div>
-</div>
-<div id="betragsgleichungenast" class="section level3 hasAnchor" number="6.4.2">
-<h3><span class="header-section-number">6.4.2</span> Betragsgleichungen<span class="math inline">\(^\ast\)</span><a href="gleichungen.html#betragsgleichungenast" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<div class="definition">
-<p><span id="def:defgleichbetr" class="definition"><strong>Definition 6.4  (Gleichungen mit Betrag) </strong></span><strong>Definition (Betragsgleichungen)</strong></p>
-<p>Die Betragsfunktion <span class="math inline">\(|x|\)</span> ordnet jedem reelen <span class="math inline">\(x\)</span> seinen Wert ohne das Vorzeichen zu:</p>
-<ul>
-<li>ist <span class="math inline">\(x\geq 0\)</span>, so ist <span class="math inline">\(|x|=x,\)</span></li>
-<li>ist <span class="math inline">\(x&lt; 0\)</span>, so ist <span class="math inline">\(|x|=-x ,\)</span> als Ergebnis hat man dann eine positive Zahl, da sich hinter <span class="math inline">\(x\)</span> eine negative Zahl verbirgt.</li>
-</ul>
-<p><strong>Betragsgleichungen</strong> sind Gleichungen, in denen ein oder mehrere Beträge vorkommen. Diese sind problematisch, da der Betrag eines Terms letztlich über eine Fallunterscheidung:</p>
-<p><span class="math display">\[\begin{align}
-|\text{Term}| = \begin{cases}\text{Term, falls Term}\geq 0,\\
-                            -\text{Term, falls Term}&lt; 0.
-                \end{cases}
-\end{align}\]</span></p>
-</div>
-<div class="example">
-<p><span id="exm:ebetrgl" class="example"><strong>Beispiel 6.6  (Lösen von Betragsgleichungen) </strong></span><strong>Beispiel (Lösen von Betragsgleichungen)</strong></p>
-<p>Die Betragsgleichung <span class="math inline">\(|x|=2\)</span> hat die Lösungsmenge <span class="math inline">\(L=\{2;-2\}\)</span>.</p>
-<p>Die Betragsgleichung <span class="math inline">\(|2x-1|=5\)</span> hat die Lösungsmenge <span class="math inline">\(L=\{3;-2\}\)</span> resultierend aus:</p>
-<ul>
-<li><span class="math inline">\(2x-1=5,\)</span> falls <span class="math inline">\(2x-1\geq 0\)</span> ( <span class="math inline">\(x\geq\frac 12\)</span> ),</li>
-<li><span class="math inline">\(1-2x=5,\)</span> falls <span class="math inline">\(2x-1\text{ &lt; }0\)</span> ( <span class="math inline">\(x\text{ &lt; }\frac 12\)</span> ).</li>
-</ul>
-</div>
 <div id="qspezgl" class="quiz">
-<p><strong>Quiz spezielle Gleichungen</strong></p>
+<p><strong>Quiz faktorisierte Gleichungen</strong></p>
 <script>
   // Generate a random question
     const questionObj612 = {
@@ -725,7 +729,35 @@ Gleichungen in dem Fall und drückt dies durch das Symbol “<span class="math i
   // Display the question
     document.getElementById('question-text613').textContent = questionObj613.question;
 </script>
-<hr />
+</div>
+</div>
+<div id="betragsgleichungenast" class="section level3 hasAnchor" number="6.4.2">
+<h3><span class="header-section-number">6.4.2</span> Betragsgleichungen<span class="math inline">\(^\ast\)</span><a href="gleichungen.html#betragsgleichungenast" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div class="definition">
+<p><span id="def:defgleichbetr" class="definition"><strong>Definition 6.4  (Gleichungen mit Betrag) </strong></span><strong>Definition (Betragsgleichungen)</strong></p>
+<p>Die Betragsfunktion <span class="math inline">\(|x|\)</span> ordnet jedem reelen <span class="math inline">\(x\)</span> seinen Wert ohne das Vorzeichen zu:</p>
+<ul>
+<li>ist <span class="math inline">\(x\geq 0\)</span>, so ist <span class="math inline">\(|x|=x,\)</span></li>
+<li>ist <span class="math inline">\(x&lt; 0\)</span>, so ist <span class="math inline">\(|x|=-x ,\)</span> als Ergebnis hat man dann eine positive Zahl, da sich hinter <span class="math inline">\(x\)</span> eine negative Zahl verbirgt.</li>
+</ul>
+<p><strong>Betragsgleichungen</strong> sind Gleichungen, in denen ein oder mehrere Beträge vorkommen. Diese sind problematisch, da der Betrag eines Terms letztlich über eine Fallunterscheidung:</p>
+<p><span class="math display">\[\begin{align}
+|\text{Term}| = \begin{cases}\text{Term, falls Term}\geq 0,\\
+                            -\text{Term, falls Term}&lt; 0.
+                \end{cases}
+\end{align}\]</span></p>
+</div>
+<div class="example">
+<p><span id="exm:ebetrgl" class="example"><strong>Beispiel 6.6  (Lösen von Betragsgleichungen) </strong></span><strong>Beispiel (Lösen von Betragsgleichungen)</strong></p>
+<p>Die Betragsgleichung <span class="math inline">\(|x|=2\)</span> hat die Lösungsmenge <span class="math inline">\(L=\{2;-2\}\)</span>.</p>
+<p>Die Betragsgleichung <span class="math inline">\(|2x-1|=5\)</span> hat die Lösungsmenge <span class="math inline">\(L=\{3;-2\}\)</span> resultierend aus:</p>
+<ul>
+<li><span class="math inline">\(2x-1=5,\)</span> falls <span class="math inline">\(2x-1\geq 0\)</span> ( <span class="math inline">\(x\geq\frac 12\)</span> ),</li>
+<li><span class="math inline">\(1-2x=5,\)</span> falls <span class="math inline">\(2x-1\text{ &lt; }0\)</span> ( <span class="math inline">\(x\text{ &lt; }\frac 12\)</span> ).</li>
+</ul>
+</div>
+<div id="qspezgl" class="quiz">
+<p><strong>Quiz Betragsgleichungen</strong></p>
 <script>
   // Generate a random question
     const questionObj614 = {
