@@ -613,6 +613,22 @@ Gleichungen in dem Fall und drückt dies durch das Symbol “<span class="math i
 </script>
 <hr />
 <p id="question">
+<span id="question-text682"></span>
+</p>
+<input type="number" id="answer682" placeholder="Antwort eingeben">
+<button onclick="checkAnswer_num(questionObj682)">Check</button>
+<p id="result682">
+</p>
+<script>
+
+ // Generate a random question
+    const questionObj682 = generateQuestion_num(682);
+// Display the question
+    document.getElementById('question-text682').textContent = "Gib die Lösung der Gleichung \\(\\frac{34-2(2y- 2)} {5-(3y-1)}=3\\) an.";
+    questionObj682.answer = -4.0
+</script>
+<hr />
+<p id="question">
 <span id="question-text611"></span>
 </p>
 <input type="number" id="answer611" placeholder="Antwort eingeben">
