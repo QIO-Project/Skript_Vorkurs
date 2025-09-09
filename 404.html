@@ -52,6 +52,13 @@
 <link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
 <link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
 <script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+<script src="libs/htmlwidgets-1.6.4/htmlwidgets.js"></script>
+<script src="libs/plotly-binding-4.11.0/plotly.js"></script>
+<script src="libs/typedarray-0.1/typedarray.min.js"></script>
+<link href="libs/crosstalk-1.2.2/css/crosstalk.min.css" rel="stylesheet" />
+<script src="libs/crosstalk-1.2.2/js/crosstalk.min.js"></script>
+<link href="libs/plotly-htmlwidgets-css-2.11.1/plotly-htmlwidgets.css" rel="stylesheet" />
+<script src="libs/plotly-main-2.11.1/plotly-latest.min.js"></script>
 
 
 
@@ -76,117 +83,107 @@
 <li><a href="./">Vor- und Brückenkurs Mathematik</a></li>
 
 <li class="divider"></li>
-<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> url: your book url like https://bookdown.org/yihui/bookdown</a></li>
-<li class="chapter" data-level="2" data-path="mengen-und-zahlen.html"><a href="mengen-und-zahlen.html"><i class="fa fa-check"></i><b>2</b> Mengen und Zahlen</a>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Intro</a></li>
+<li class="chapter" data-level="1" data-path="mengen-und-zahlen.html"><a href="mengen-und-zahlen.html"><i class="fa fa-check"></i><b>1</b> Mengen und Zahlen</a>
 <ul>
-<li class="chapter" data-level="2.1" data-path="mengen-und-zahlen.html"><a href="mengen-und-zahlen.html#mengen"><i class="fa fa-check"></i><b>2.1</b> Mengen</a>
+<li class="chapter" data-level="1.1" data-path="mengen-und-zahlen.html"><a href="mengen-und-zahlen.html#mengen"><i class="fa fa-check"></i><b>1.1</b> Mengen</a>
 <ul>
-<li class="chapter" data-level="2.1.1" data-path="mengen-und-zahlen.html"><a href="mengen-und-zahlen.html#mengenoperationen"><i class="fa fa-check"></i><b>2.1.1</b> Mengenoperationen</a></li>
-<li class="chapter" data-level="2.1.2" data-path="mengen-und-zahlen.html"><a href="mengen-und-zahlen.html#spezielle-mengen"><i class="fa fa-check"></i><b>2.1.2</b> Spezielle Mengen</a></li>
-<li class="chapter" data-level="2.1.3" data-path="mengen-und-zahlen.html"><a href="mengen-und-zahlen.html#mengen-zur-wahrscheinlichkeitsrechnung"><i class="fa fa-check"></i><b>2.1.3</b> Mengen zur Wahrscheinlichkeitsrechnung</a></li>
+<li class="chapter" data-level="1.1.1" data-path="mengen-und-zahlen.html"><a href="mengen-und-zahlen.html#mengenoperationen"><i class="fa fa-check"></i><b>1.1.1</b> Mengenoperationen</a></li>
+<li class="chapter" data-level="1.1.2" data-path="mengen-und-zahlen.html"><a href="mengen-und-zahlen.html#spezielle-mengen"><i class="fa fa-check"></i><b>1.1.2</b> Spezielle Mengen</a></li>
+<li class="chapter" data-level="1.1.3" data-path="mengen-und-zahlen.html"><a href="mengen-und-zahlen.html#mengen-zur-wahrscheinlichkeitsrechnung"><i class="fa fa-check"></i><b>1.1.3</b> Mengen zur Wahrscheinlichkeitsrechnung</a></li>
 </ul></li>
-<li class="chapter" data-level="2.2" data-path="mengen-und-zahlen.html"><a href="mengen-und-zahlen.html#zahlenmengen"><i class="fa fa-check"></i><b>2.2</b> Zahlenmengen</a></li>
-<li class="chapter" data-level="2.3" data-path="mengen-und-zahlen.html"><a href="mengen-und-zahlen.html#wichtige-rechenregeln"><i class="fa fa-check"></i><b>2.3</b> Wichtige Rechenregeln</a>
-<ul>
-<li class="chapter" data-level="2.3.1" data-path="mengen-und-zahlen.html"><a href="mengen-und-zahlen.html#umwandlung-von-brüchen"><i class="fa fa-check"></i><b>2.3.1</b> Umwandlung von Brüchen</a></li>
-<li class="chapter" data-level="2.3.2" data-path="mengen-und-zahlen.html"><a href="mengen-und-zahlen.html#rehenfolge-der-rechenoperationen"><i class="fa fa-check"></i><b>2.3.2</b> Rehenfolge der Rechenoperationen</a></li>
-<li class="chapter" data-level="2.3.3" data-path="mengen-und-zahlen.html"><a href="mengen-und-zahlen.html#punkt--von-strich-rechnung"><i class="fa fa-check"></i><b>2.3.3</b> “Punkt- von Strich-”Rechnung</a></li>
+<li class="chapter" data-level="1.2" data-path="mengen-und-zahlen.html"><a href="mengen-und-zahlen.html#zahlenmengen"><i class="fa fa-check"></i><b>1.2</b> Zahlenmengen</a></li>
+<li class="chapter" data-level="1.3" data-path="mengen-und-zahlen.html"><a href="mengen-und-zahlen.html#wichtige-rechenregeln"><i class="fa fa-check"></i><b>1.3</b> Wichtige Rechenregeln</a></li>
+<li class="chapter" data-level="1.4" data-path="mengen-und-zahlen.html"><a href="mengen-und-zahlen.html#quiz-mengen-und-zahlenmengen"><i class="fa fa-check"></i><b>1.4</b> Quiz: Mengen und Zahlenmengen</a></li>
+<li class="chapter" data-level="1.5" data-path="mengen-und-zahlen.html"><a href="mengen-und-zahlen.html#übung-mengenoperationen-und-wahrscheinlichkeit"><i class="fa fa-check"></i><b>1.5</b> Übung: Mengenoperationen und Wahrscheinlichkeit</a></li>
 </ul></li>
-<li class="chapter" data-level="2.4" data-path="mengen-und-zahlen.html"><a href="mengen-und-zahlen.html#notation"><i class="fa fa-check"></i><b>2.4</b> Notation</a>
+<li class="chapter" data-level="2" data-path="bruchrechnung.html"><a href="bruchrechnung.html"><i class="fa fa-check"></i><b>2</b> Bruchrechnung</a>
 <ul>
-<li class="chapter" data-level="2.4.1" data-path="mengen-und-zahlen.html"><a href="mengen-und-zahlen.html#auslassen-von-punkt-bei-multiplikation-mit-variablen"><i class="fa fa-check"></i><b>2.4.1</b> Auslassen von Punkt bei Multiplikation mit Variablen</a></li>
-<li class="chapter" data-level="2.4.2" data-path="mengen-und-zahlen.html"><a href="mengen-und-zahlen.html#summen--und-produktzeichen"><i class="fa fa-check"></i><b>2.4.2</b> Summen- und Produktzeichen</a></li>
+<li class="chapter" data-level="2.1" data-path="bruchrechnung.html"><a href="bruchrechnung.html#rechnen-mit-brüchen"><i class="fa fa-check"></i><b>2.1</b> Rechnen mit Brüchen</a></li>
+<li class="chapter" data-level="2.2" data-path="bruchrechnung.html"><a href="bruchrechnung.html#quiz-bruchrechnung-i"><i class="fa fa-check"></i><b>2.2</b> Quiz Bruchrechnung I</a></li>
+<li class="chapter" data-level="2.3" data-path="bruchrechnung.html"><a href="bruchrechnung.html#quiz-bruchrechnung-ii"><i class="fa fa-check"></i><b>2.3</b> Quiz Bruchrechnung II</a></li>
+<li class="chapter" data-level="2.4" data-path="bruchrechnung.html"><a href="bruchrechnung.html#übung-bruchrechnung"><i class="fa fa-check"></i><b>2.4</b> Übung: Bruchrechnung</a></li>
 </ul></li>
-<li class="chapter" data-level="2.5" data-path="mengen-und-zahlen.html"><a href="mengen-und-zahlen.html#quiz-mengen-und-zahlenmengen"><i class="fa fa-check"></i><b>2.5</b> Quiz: Mengen und Zahlenmengen</a></li>
-<li class="chapter" data-level="2.6" data-path="mengen-und-zahlen.html"><a href="mengen-und-zahlen.html#übung-mengenoperationen-und-wahrscheinlichkeit"><i class="fa fa-check"></i><b>2.6</b> Übung: Mengenoperationen und Wahrscheinlichkeit</a></li>
+<li class="chapter" data-level="3" data-path="potenzen-und-wurzel.html"><a href="potenzen-und-wurzel.html"><i class="fa fa-check"></i><b>3</b> Potenzen und Wurzel</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="potenzen-und-wurzel.html"><a href="potenzen-und-wurzel.html#potenzen"><i class="fa fa-check"></i><b>3.1</b> Potenzen</a></li>
+<li class="chapter" data-level="3.2" data-path="potenzen-und-wurzel.html"><a href="potenzen-und-wurzel.html#quiz-potenzen"><i class="fa fa-check"></i><b>3.2</b> Quiz Potenzen</a></li>
+<li class="chapter" data-level="3.3" data-path="potenzen-und-wurzel.html"><a href="potenzen-und-wurzel.html#wurzel"><i class="fa fa-check"></i><b>3.3</b> Wurzel</a></li>
+<li class="chapter" data-level="3.4" data-path="potenzen-und-wurzel.html"><a href="potenzen-und-wurzel.html#quiz-wurzel"><i class="fa fa-check"></i><b>3.4</b> Quiz Wurzel</a></li>
 </ul></li>
-<li class="chapter" data-level="3" data-path="bruchrechnung.html"><a href="bruchrechnung.html"><i class="fa fa-check"></i><b>3</b> Bruchrechnung</a>
+<li class="chapter" data-level="4" data-path="prozent--und-zinsrechnung.html"><a href="prozent--und-zinsrechnung.html"><i class="fa fa-check"></i><b>4</b> Prozent- und Zinsrechnung</a>
 <ul>
-<li class="chapter" data-level="3.1" data-path="bruchrechnung.html"><a href="bruchrechnung.html#rechnen-mit-brüchen"><i class="fa fa-check"></i><b>3.1</b> Rechnen mit Brüchen</a></li>
-<li class="chapter" data-level="3.2" data-path="bruchrechnung.html"><a href="bruchrechnung.html#quiz-bruchrechnung-i"><i class="fa fa-check"></i><b>3.2</b> Quiz Bruchrechnung I</a></li>
-<li class="chapter" data-level="3.3" data-path="bruchrechnung.html"><a href="bruchrechnung.html#quiz-bruchrechnung-ii"><i class="fa fa-check"></i><b>3.3</b> Quiz Bruchrechnung II</a></li>
-<li class="chapter" data-level="3.4" data-path="bruchrechnung.html"><a href="bruchrechnung.html#übung-bruchrechnung"><i class="fa fa-check"></i><b>3.4</b> Übung: Bruchrechnung</a></li>
+<li class="chapter" data-level="4.1" data-path="prozent--und-zinsrechnung.html"><a href="prozent--und-zinsrechnung.html#prozentrechnung"><i class="fa fa-check"></i><b>4.1</b> Prozentrechnung</a></li>
+<li class="chapter" data-level="4.2" data-path="prozent--und-zinsrechnung.html"><a href="prozent--und-zinsrechnung.html#quiz-prozentrechnung"><i class="fa fa-check"></i><b>4.2</b> Quiz Prozentrechnung</a></li>
+<li class="chapter" data-level="4.3" data-path="prozent--und-zinsrechnung.html"><a href="prozent--und-zinsrechnung.html#zinsrechnung"><i class="fa fa-check"></i><b>4.3</b> Zinsrechnung</a>
+<ul>
+<li class="chapter" data-level="4.3.1" data-path="prozent--und-zinsrechnung.html"><a href="prozent--und-zinsrechnung.html#zinsrechnung-für-eine-periode-ein-jahr"><i class="fa fa-check"></i><b>4.3.1</b> Zinsrechnung für eine Periode (ein Jahr)</a></li>
+<li class="chapter" data-level="4.3.2" data-path="prozent--und-zinsrechnung.html"><a href="prozent--und-zinsrechnung.html#zinsrechnung-für-mehrere-perioden"><i class="fa fa-check"></i><b>4.3.2</b> Zinsrechnung für mehrere Perioden</a></li>
+<li class="chapter" data-level="4.3.3" data-path="prozent--und-zinsrechnung.html"><a href="prozent--und-zinsrechnung.html#kapitalentwicklung-mit-regelmäßigen-einzahlungen"><i class="fa fa-check"></i><b>4.3.3</b> Kapitalentwicklung mit regelmäßigen Einzahlungen</a></li>
 </ul></li>
-<li class="chapter" data-level="4" data-path="potenzen-und-wurzel.html"><a href="potenzen-und-wurzel.html"><i class="fa fa-check"></i><b>4</b> Potenzen und Wurzel</a>
-<ul>
-<li class="chapter" data-level="4.1" data-path="potenzen-und-wurzel.html"><a href="potenzen-und-wurzel.html#potenzen"><i class="fa fa-check"></i><b>4.1</b> Potenzen</a></li>
-<li class="chapter" data-level="4.2" data-path="potenzen-und-wurzel.html"><a href="potenzen-und-wurzel.html#quiz-potenzen"><i class="fa fa-check"></i><b>4.2</b> Quiz Potenzen</a></li>
-<li class="chapter" data-level="4.3" data-path="potenzen-und-wurzel.html"><a href="potenzen-und-wurzel.html#wurzel"><i class="fa fa-check"></i><b>4.3</b> Wurzel</a></li>
-<li class="chapter" data-level="4.4" data-path="potenzen-und-wurzel.html"><a href="potenzen-und-wurzel.html#quiz-wurzel"><i class="fa fa-check"></i><b>4.4</b> Quiz Wurzel</a></li>
+<li class="chapter" data-level="4.4" data-path="prozent--und-zinsrechnung.html"><a href="prozent--und-zinsrechnung.html#quiz-zinsrechnung"><i class="fa fa-check"></i><b>4.4</b> Quiz Zinsrechnung</a></li>
 </ul></li>
-<li class="chapter" data-level="5" data-path="prozent--und-zinsrechnung.html"><a href="prozent--und-zinsrechnung.html"><i class="fa fa-check"></i><b>5</b> Prozent- und Zinsrechnung</a>
+<li class="chapter" data-level="5" data-path="variablen-und-terme.html"><a href="variablen-und-terme.html"><i class="fa fa-check"></i><b>5</b> Variablen und Terme</a>
 <ul>
-<li class="chapter" data-level="5.1" data-path="prozent--und-zinsrechnung.html"><a href="prozent--und-zinsrechnung.html#prozentrechnung"><i class="fa fa-check"></i><b>5.1</b> Prozentrechnung</a></li>
-<li class="chapter" data-level="5.2" data-path="prozent--und-zinsrechnung.html"><a href="prozent--und-zinsrechnung.html#quiz-prozentrechnung"><i class="fa fa-check"></i><b>5.2</b> Quiz Prozentrechnung</a></li>
-<li class="chapter" data-level="5.3" data-path="prozent--und-zinsrechnung.html"><a href="prozent--und-zinsrechnung.html#zinsrechnung"><i class="fa fa-check"></i><b>5.3</b> Zinsrechnung</a>
-<ul>
-<li class="chapter" data-level="5.3.1" data-path="prozent--und-zinsrechnung.html"><a href="prozent--und-zinsrechnung.html#zinsrechnung-für-eine-periode-ein-jahr"><i class="fa fa-check"></i><b>5.3.1</b> Zinsrechnung für eine Periode (ein Jahr)</a></li>
-<li class="chapter" data-level="5.3.2" data-path="prozent--und-zinsrechnung.html"><a href="prozent--und-zinsrechnung.html#zinsrechnung-für-mehrere-perioden"><i class="fa fa-check"></i><b>5.3.2</b> Zinsrechnung für mehrere Perioden</a></li>
-<li class="chapter" data-level="5.3.3" data-path="prozent--und-zinsrechnung.html"><a href="prozent--und-zinsrechnung.html#kapitalentwicklung-mit-regelmäßigen-einzahlungen"><i class="fa fa-check"></i><b>5.3.3</b> Kapitalentwicklung mit regelmäßigen Einzahlungen</a></li>
+<li class="chapter" data-level="5.1" data-path="variablen-und-terme.html"><a href="variablen-und-terme.html#umformung-von-termen"><i class="fa fa-check"></i><b>5.1</b> Umformung von Termen</a></li>
+<li class="chapter" data-level="5.2" data-path="variablen-und-terme.html"><a href="variablen-und-terme.html#quiz-umformung-von-termen"><i class="fa fa-check"></i><b>5.2</b> Quiz: Umformung von Termen</a></li>
+<li class="chapter" data-level="5.3" data-path="variablen-und-terme.html"><a href="variablen-und-terme.html#binomische-formeln-1-3"><i class="fa fa-check"></i><b>5.3</b> Binomische Formeln 1-3</a></li>
+<li class="chapter" data-level="5.4" data-path="variablen-und-terme.html"><a href="variablen-und-terme.html#übung-umformen-und-binomische-formeln"><i class="fa fa-check"></i><b>5.4</b> Übung: Umformen und Binomische Formeln</a></li>
+<li class="chapter" data-level="5.5" data-path="variablen-und-terme.html"><a href="variablen-und-terme.html#variablen-in-brüchen"><i class="fa fa-check"></i><b>5.5</b> Variablen in Brüchen</a></li>
 </ul></li>
-<li class="chapter" data-level="5.4" data-path="prozent--und-zinsrechnung.html"><a href="prozent--und-zinsrechnung.html#quiz-zinsrechnung"><i class="fa fa-check"></i><b>5.4</b> Quiz Zinsrechnung</a></li>
+<li class="chapter" data-level="6" data-path="gleichungen.html"><a href="gleichungen.html"><i class="fa fa-check"></i><b>6</b> Gleichungen</a>
+<ul>
+<li class="chapter" data-level="6.1" data-path="gleichungen.html"><a href="gleichungen.html#definition-einer-gleichung"><i class="fa fa-check"></i><b>6.1</b> Definition einer Gleichung</a></li>
+<li class="chapter" data-level="6.2" data-path="gleichungen.html"><a href="gleichungen.html#lösen-von-gleichungen"><i class="fa fa-check"></i><b>6.2</b> Lösen von Gleichungen</a></li>
+<li class="chapter" data-level="6.3" data-path="gleichungen.html"><a href="gleichungen.html#quiz-lösen-von-gleichungen"><i class="fa fa-check"></i><b>6.3</b> Quiz Lösen von Gleichungen</a></li>
+<li class="chapter" data-level="6.4" data-path="gleichungen.html"><a href="gleichungen.html#spezielle-gleichungen"><i class="fa fa-check"></i><b>6.4</b> Spezielle Gleichungen</a>
+<ul>
+<li class="chapter" data-level="6.4.1" data-path="gleichungen.html"><a href="gleichungen.html#faktorisierte-gleichungen"><i class="fa fa-check"></i><b>6.4.1</b> Faktorisierte Gleichungen</a></li>
+<li class="chapter" data-level="6.4.2" data-path="gleichungen.html"><a href="gleichungen.html#betragsgleichungenast"><i class="fa fa-check"></i><b>6.4.2</b> Betragsgleichungen<span class="math inline">\(^\ast\)</span></a></li>
 </ul></li>
-<li class="chapter" data-level="6" data-path="variablen-und-terme.html"><a href="variablen-und-terme.html"><i class="fa fa-check"></i><b>6</b> Variablen und Terme</a>
-<ul>
-<li class="chapter" data-level="6.1" data-path="variablen-und-terme.html"><a href="variablen-und-terme.html#umformung-von-termen"><i class="fa fa-check"></i><b>6.1</b> Umformung von Termen</a></li>
-<li class="chapter" data-level="6.2" data-path="variablen-und-terme.html"><a href="variablen-und-terme.html#quiz-umformung-von-termen"><i class="fa fa-check"></i><b>6.2</b> Quiz: Umformung von Termen</a></li>
-<li class="chapter" data-level="6.3" data-path="variablen-und-terme.html"><a href="variablen-und-terme.html#binomische-formeln-1-3"><i class="fa fa-check"></i><b>6.3</b> Binomische Formeln 1-3</a></li>
-<li class="chapter" data-level="6.4" data-path="variablen-und-terme.html"><a href="variablen-und-terme.html#übung-umformen-und-binomische-formeln"><i class="fa fa-check"></i><b>6.4</b> Übung: Umformen und Binomische Formeln</a></li>
-<li class="chapter" data-level="6.5" data-path="variablen-und-terme.html"><a href="variablen-und-terme.html#variablen-in-brüchen"><i class="fa fa-check"></i><b>6.5</b> Variablen in Brüchen</a></li>
+<li class="chapter" data-level="6.5" data-path="gleichungen.html"><a href="gleichungen.html#übung-gleichungen"><i class="fa fa-check"></i><b>6.5</b> Übung: Gleichungen</a></li>
 </ul></li>
-<li class="chapter" data-level="7" data-path="gleichungen.html"><a href="gleichungen.html"><i class="fa fa-check"></i><b>7</b> Gleichungen</a>
+<li class="chapter" data-level="7" data-path="ungleichungen.html"><a href="ungleichungen.html"><i class="fa fa-check"></i><b>7</b> Ungleichungen</a>
 <ul>
-<li class="chapter" data-level="7.1" data-path="gleichungen.html"><a href="gleichungen.html#definition-einer-gleichung"><i class="fa fa-check"></i><b>7.1</b> Definition einer Gleichung</a></li>
-<li class="chapter" data-level="7.2" data-path="gleichungen.html"><a href="gleichungen.html#lösen-von-gleichungen"><i class="fa fa-check"></i><b>7.2</b> Lösen von Gleichungen</a></li>
-<li class="chapter" data-level="7.3" data-path="gleichungen.html"><a href="gleichungen.html#quiz-lösen-von-gleichungen"><i class="fa fa-check"></i><b>7.3</b> Quiz Lösen von Gleichungen</a></li>
-<li class="chapter" data-level="7.4" data-path="gleichungen.html"><a href="gleichungen.html#spezielle-gleichungen"><i class="fa fa-check"></i><b>7.4</b> Spezielle Gleichungen</a>
+<li class="chapter" data-level="7.1" data-path="ungleichungen.html"><a href="ungleichungen.html#definition-von-ungleichungen"><i class="fa fa-check"></i><b>7.1</b> Definition von Ungleichungen</a></li>
+<li class="chapter" data-level="7.2" data-path="ungleichungen.html"><a href="ungleichungen.html#umformung-von-ungleichungen"><i class="fa fa-check"></i><b>7.2</b> Umformung von Ungleichungen</a></li>
+<li class="chapter" data-level="7.3" data-path="ungleichungen.html"><a href="ungleichungen.html#quiz-ungleichungen"><i class="fa fa-check"></i><b>7.3</b> Quiz Ungleichungen</a></li>
+<li class="chapter" data-level="7.4" data-path="ungleichungen.html"><a href="ungleichungen.html#spezielle-ungleichungenast"><i class="fa fa-check"></i><b>7.4</b> Spezielle Ungleichungen<span class="math inline">\(^\ast\)</span></a>
 <ul>
-<li class="chapter" data-level="7.4.1" data-path="gleichungen.html"><a href="gleichungen.html#faktorisierte-gleichungen"><i class="fa fa-check"></i><b>7.4.1</b> Faktorisierte Gleichungen</a></li>
-<li class="chapter" data-level="7.4.2" data-path="gleichungen.html"><a href="gleichungen.html#betragsgleichungenast"><i class="fa fa-check"></i><b>7.4.2</b> Betragsgleichungen<span class="math inline">\(^\ast\)</span></a></li>
-</ul></li>
-<li class="chapter" data-level="7.5" data-path="gleichungen.html"><a href="gleichungen.html#übung-gleichungen"><i class="fa fa-check"></i><b>7.5</b> Übung: Gleichungen</a></li>
-</ul></li>
-<li class="chapter" data-level="8" data-path="ungleichungen.html"><a href="ungleichungen.html"><i class="fa fa-check"></i><b>8</b> Ungleichungen</a>
-<ul>
-<li class="chapter" data-level="8.1" data-path="ungleichungen.html"><a href="ungleichungen.html#definition-von-ungleichungen"><i class="fa fa-check"></i><b>8.1</b> Definition von Ungleichungen</a></li>
-<li class="chapter" data-level="8.2" data-path="ungleichungen.html"><a href="ungleichungen.html#umformung-von-ungleichungen"><i class="fa fa-check"></i><b>8.2</b> Umformung von Ungleichungen</a></li>
-<li class="chapter" data-level="8.3" data-path="ungleichungen.html"><a href="ungleichungen.html#quiz-ungleichungen"><i class="fa fa-check"></i><b>8.3</b> Quiz Ungleichungen</a></li>
-<li class="chapter" data-level="8.4" data-path="ungleichungen.html"><a href="ungleichungen.html#spezielle-ungleichungenast"><i class="fa fa-check"></i><b>8.4</b> Spezielle Ungleichungen<span class="math inline">\(^\ast\)</span></a>
-<ul>
-<li class="chapter" data-level="8.4.1" data-path="ungleichungen.html"><a href="ungleichungen.html#faktorisierte-ungleichungen"><i class="fa fa-check"></i><b>8.4.1</b> Faktorisierte Ungleichungen</a></li>
-<li class="chapter" data-level="8.4.2" data-path="ungleichungen.html"><a href="ungleichungen.html#betragsungleichungen"><i class="fa fa-check"></i><b>8.4.2</b> Betragsungleichungen</a></li>
+<li class="chapter" data-level="7.4.1" data-path="ungleichungen.html"><a href="ungleichungen.html#faktorisierte-ungleichungen"><i class="fa fa-check"></i><b>7.4.1</b> Faktorisierte Ungleichungen</a></li>
+<li class="chapter" data-level="7.4.2" data-path="ungleichungen.html"><a href="ungleichungen.html#betragsungleichungen"><i class="fa fa-check"></i><b>7.4.2</b> Betragsungleichungen</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="9" data-path="lineare-gleichungssysteme.html"><a href="lineare-gleichungssysteme.html"><i class="fa fa-check"></i><b>9</b> Lineare Gleichungssysteme</a>
+<li class="chapter" data-level="8" data-path="lineare-gleichungssysteme.html"><a href="lineare-gleichungssysteme.html"><i class="fa fa-check"></i><b>8</b> Lineare Gleichungssysteme</a>
 <ul>
-<li class="chapter" data-level="9.1" data-path="lineare-gleichungssysteme.html"><a href="lineare-gleichungssysteme.html#lösung-von-linearen-gleichungssystemen"><i class="fa fa-check"></i><b>9.1</b> Lösung von Linearen Gleichungssystemen</a></li>
-<li class="chapter" data-level="9.2" data-path="lineare-gleichungssysteme.html"><a href="lineare-gleichungssysteme.html#quiz-lineare-gleichungssysteme"><i class="fa fa-check"></i><b>9.2</b> Quiz: Lineare Gleichungssysteme</a></li>
+<li class="chapter" data-level="8.1" data-path="lineare-gleichungssysteme.html"><a href="lineare-gleichungssysteme.html#lösung-von-linearen-gleichungssystemen"><i class="fa fa-check"></i><b>8.1</b> Lösung von Linearen Gleichungssystemen</a></li>
+<li class="chapter" data-level="8.2" data-path="lineare-gleichungssysteme.html"><a href="lineare-gleichungssysteme.html#quiz-lineare-gleichungssysteme"><i class="fa fa-check"></i><b>8.2</b> Quiz: Lineare Gleichungssysteme</a></li>
 </ul></li>
-<li class="chapter" data-level="10" data-path="funktionen-und-optimierung.html"><a href="funktionen-und-optimierung.html"><i class="fa fa-check"></i><b>10</b> Funktionen und Optimierung</a>
+<li class="chapter" data-level="9" data-path="funktionen-und-optimierung.html"><a href="funktionen-und-optimierung.html"><i class="fa fa-check"></i><b>9</b> Funktionen und Optimierung</a>
 <ul>
-<li class="chapter" data-level="10.1" data-path="funktionen-und-optimierung.html"><a href="funktionen-und-optimierung.html#funktionen"><i class="fa fa-check"></i><b>10.1</b> Funktionen</a></li>
-<li class="chapter" data-level="10.2" data-path="funktionen-und-optimierung.html"><a href="funktionen-und-optimierung.html#lineare-und-quadratische-funktionen-polynome"><i class="fa fa-check"></i><b>10.2</b> Lineare und quadratische Funktionen, Polynome</a></li>
-<li class="chapter" data-level="10.3" data-path="funktionen-und-optimierung.html"><a href="funktionen-und-optimierung.html#stückweise-definierte-funktionen"><i class="fa fa-check"></i><b>10.3</b> Stückweise definierte Funktionen</a></li>
-<li class="chapter" data-level="10.4" data-path="funktionen-und-optimierung.html"><a href="funktionen-und-optimierung.html#quiz-funktionen"><i class="fa fa-check"></i><b>10.4</b> Quiz Funktionen</a></li>
-<li class="chapter" data-level="10.5" data-path="funktionen-und-optimierung.html"><a href="funktionen-und-optimierung.html#ableitung"><i class="fa fa-check"></i><b>10.5</b> Ableitung</a>
+<li class="chapter" data-level="9.1" data-path="funktionen-und-optimierung.html"><a href="funktionen-und-optimierung.html#funktionen"><i class="fa fa-check"></i><b>9.1</b> Funktionen</a></li>
+<li class="chapter" data-level="9.2" data-path="funktionen-und-optimierung.html"><a href="funktionen-und-optimierung.html#lineare-und-quadratische-funktionen-polynome"><i class="fa fa-check"></i><b>9.2</b> Lineare und quadratische Funktionen, Polynome</a></li>
+<li class="chapter" data-level="9.3" data-path="funktionen-und-optimierung.html"><a href="funktionen-und-optimierung.html#stückweise-definierte-funktionen"><i class="fa fa-check"></i><b>9.3</b> Stückweise definierte Funktionen</a></li>
+<li class="chapter" data-level="9.4" data-path="funktionen-und-optimierung.html"><a href="funktionen-und-optimierung.html#quiz-funktionen"><i class="fa fa-check"></i><b>9.4</b> Quiz Funktionen</a></li>
+<li class="chapter" data-level="9.5" data-path="funktionen-und-optimierung.html"><a href="funktionen-und-optimierung.html#ableitung"><i class="fa fa-check"></i><b>9.5</b> Ableitung</a>
 <ul>
-<li class="chapter" data-level="10.5.1" data-path="funktionen-und-optimierung.html"><a href="funktionen-und-optimierung.html#einige-ableitungsregeln"><i class="fa fa-check"></i><b>10.5.1</b> Einige Ableitungsregeln</a></li>
-<li class="chapter" data-level="10.5.2" data-path="funktionen-und-optimierung.html"><a href="funktionen-und-optimierung.html#übung-ableiten-von-polynomen"><i class="fa fa-check"></i><b>10.5.2</b> Übung: Ableiten von Polynomen</a></li>
+<li class="chapter" data-level="9.5.1" data-path="funktionen-und-optimierung.html"><a href="funktionen-und-optimierung.html#einige-ableitungsregeln"><i class="fa fa-check"></i><b>9.5.1</b> Einige Ableitungsregeln</a></li>
+<li class="chapter" data-level="9.5.2" data-path="funktionen-und-optimierung.html"><a href="funktionen-und-optimierung.html#übung-ableiten-von-polynomen"><i class="fa fa-check"></i><b>9.5.2</b> Übung: Ableiten von Polynomen</a></li>
 </ul></li>
-<li class="chapter" data-level="10.6" data-path="funktionen-und-optimierung.html"><a href="funktionen-und-optimierung.html#einfache-optimierungsprobleme"><i class="fa fa-check"></i><b>10.6</b> Einfache Optimierungsprobleme</a></li>
+<li class="chapter" data-level="9.6" data-path="funktionen-und-optimierung.html"><a href="funktionen-und-optimierung.html#einfache-optimierungsprobleme"><i class="fa fa-check"></i><b>9.6</b> Einfache Optimierungsprobleme</a></li>
 </ul></li>
-<li class="chapter" data-level="11" data-path="weitere-funktionen-zur-ökonomischen-modellierung.html"><a href="weitere-funktionen-zur-ökonomischen-modellierung.html"><i class="fa fa-check"></i><b>11</b> Weitere Funktionen zur ökonomischen Modellierung</a>
+<li class="chapter" data-level="10" data-path="weitere-funktionen-zur-ökonomischen-modellierung.html"><a href="weitere-funktionen-zur-ökonomischen-modellierung.html"><i class="fa fa-check"></i><b>10</b> Weitere Funktionen zur ökonomischen Modellierung</a>
 <ul>
-<li class="chapter" data-level="11.1" data-path="weitere-funktionen-zur-ökonomischen-modellierung.html"><a href="weitere-funktionen-zur-ökonomischen-modellierung.html#exponentialfunktion"><i class="fa fa-check"></i><b>11.1</b> Exponentialfunktion</a></li>
-<li class="chapter" data-level="11.2" data-path="weitere-funktionen-zur-ökonomischen-modellierung.html"><a href="weitere-funktionen-zur-ökonomischen-modellierung.html#logarithmusfunktion"><i class="fa fa-check"></i><b>11.2</b> Logarithmusfunktion</a></li>
-<li class="chapter" data-level="11.3" data-path="weitere-funktionen-zur-ökonomischen-modellierung.html"><a href="weitere-funktionen-zur-ökonomischen-modellierung.html#quiz-exponential--und-logarithmusfunktionen"><i class="fa fa-check"></i><b>11.3</b> Quiz: Exponential- und Logarithmusfunktionen</a></li>
+<li class="chapter" data-level="10.1" data-path="weitere-funktionen-zur-ökonomischen-modellierung.html"><a href="weitere-funktionen-zur-ökonomischen-modellierung.html#exponentialfunktion"><i class="fa fa-check"></i><b>10.1</b> Exponentialfunktion</a></li>
+<li class="chapter" data-level="10.2" data-path="weitere-funktionen-zur-ökonomischen-modellierung.html"><a href="weitere-funktionen-zur-ökonomischen-modellierung.html#logarithmusfunktion"><i class="fa fa-check"></i><b>10.2</b> Logarithmusfunktion</a></li>
+<li class="chapter" data-level="10.3" data-path="weitere-funktionen-zur-ökonomischen-modellierung.html"><a href="weitere-funktionen-zur-ökonomischen-modellierung.html#quiz-exponential--und-logarithmusfunktionen"><i class="fa fa-check"></i><b>10.3</b> Quiz: Exponential- und Logarithmusfunktionen</a></li>
 </ul></li>
-<li class="chapter" data-level="12" data-path="case-studies-und-das-mathe-spiel.html"><a href="case-studies-und-das-mathe-spiel.html"><i class="fa fa-check"></i><b>12</b> Case Studies und das Mathe-Spiel</a>
+<li class="chapter" data-level="11" data-path="case-studies-und-das-mathe-spiel.html"><a href="case-studies-und-das-mathe-spiel.html"><i class="fa fa-check"></i><b>11</b> Case Studies und das Mathe-Spiel</a>
 <ul>
-<li class="chapter" data-level="12.1" data-path="case-studies-und-das-mathe-spiel.html"><a href="case-studies-und-das-mathe-spiel.html#case-study-i-budget-und-konsum"><i class="fa fa-check"></i><b>12.1</b> Case Study I: Budget und Konsum</a></li>
-<li class="chapter" data-level="12.2" data-path="case-studies-und-das-mathe-spiel.html"><a href="case-studies-und-das-mathe-spiel.html#case-study-ii-nachfrage-und-kosten"><i class="fa fa-check"></i><b>12.2</b> Case Study II: Nachfrage und Kosten</a></li>
-<li class="chapter" data-level="12.3" data-path="case-studies-und-das-mathe-spiel.html"><a href="case-studies-und-das-mathe-spiel.html#case-study-iii-bevölkerungswachstum"><i class="fa fa-check"></i><b>12.3</b> Case Study III: Bevölkerungswachstum</a></li>
-<li class="chapter" data-level="12.4" data-path="case-studies-und-das-mathe-spiel.html"><a href="case-studies-und-das-mathe-spiel.html#mathe-spiel-schatzsuche"><i class="fa fa-check"></i><b>12.4</b> Mathe-Spiel: Schatzsuche</a></li>
+<li class="chapter" data-level="11.1" data-path="case-studies-und-das-mathe-spiel.html"><a href="case-studies-und-das-mathe-spiel.html#case-study-i-budget-und-konsum"><i class="fa fa-check"></i><b>11.1</b> Case Study I: Budget und Konsum</a></li>
+<li class="chapter" data-level="11.2" data-path="case-studies-und-das-mathe-spiel.html"><a href="case-studies-und-das-mathe-spiel.html#case-study-ii-nachfrage-und-kosten"><i class="fa fa-check"></i><b>11.2</b> Case Study II: Nachfrage und Kosten</a></li>
+<li class="chapter" data-level="11.3" data-path="case-studies-und-das-mathe-spiel.html"><a href="case-studies-und-das-mathe-spiel.html#case-study-iii-bevölkerungswachstum"><i class="fa fa-check"></i><b>11.3</b> Case Study III: Bevölkerungswachstum</a></li>
+<li class="chapter" data-level="11.4" data-path="case-studies-und-das-mathe-spiel.html"><a href="case-studies-und-das-mathe-spiel.html#mathe-spiel-schatzsuche"><i class="fa fa-check"></i><b>11.4</b> Mathe-Spiel: Schatzsuche</a></li>
 </ul></li>
 <li class="divider"></li>
 <li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
