@@ -155,3 +155,10 @@ case-study-i-budget-und-konsum
 case-study-ii-nachfrage-und-kosten
 case-study-iii-bevölkerungswachstum
 mathe-spiel-schatzsuche
+url-your-book-url-like-httpsbookdown.orgyihuibookdown
+umwandlung-von-brüchen
+rehenfolge-der-rechenoperationen
+punkt--von-strich-rechnung
+notation
+auslassen-von-punkt-bei-multiplikation-mit-variablen
+summen--und-produktzeichen
