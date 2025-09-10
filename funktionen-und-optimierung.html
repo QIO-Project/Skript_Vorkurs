@@ -23,7 +23,7 @@
 <meta name="author" content="Maria Osipenko" />
 
 
-<meta name="date" content="2025-09-09" />
+<meta name="date" content="2025-09-10" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -276,6 +276,68 @@ function checkAnswer_num(q) {
       }
     }
 </script>
+<script>
+function generateQuestion_num2(id,n=10,p=0.4,min=10,max=40,dec=2) {
+      // Generate 
+      let out = generateSample(n=n,p=p,min=min,max=max,dec=dec);
+      let mean2 = out.mean2;
+      let sig2 = Math.round(out.sig2*100)/100;
+      let mean1 = out.mean1;
+      //alpha
+      const singn = [0.01,0.05,0.1];
+      const which = Math.floor((Math.random()*(2-0) + 0));
+      let al = singn[which];
+      // quant
+      const qn = [2.575829, 1.959964, 1.644854];
+      const qt = [4.604095, 2.776445, 2.131847];
+       const qch1 = [0.2069891, 0.4844186, 0.7107230];
+       const qch2 = [14.860259, 11.143287,  9.487729];
+      let qnn = qn[which];
+      let qtt = qt[which];
+      let qchh1 = qch1[which];
+      let qchh2 = qch2[which];
+
+       // Calculate the correct answer
+      let answer1 = 1;
+      let answer2 = 1;
+
+      // Return the question and answer as an object
+      return {
+       // question: num1 + "\\(\\sqrt{x}+\\)"+ num2 + "\\(\\sqrt{y}\\)" + " for \\(x=\\)" + x1 + " and \\(y=\\)" + x2,
+        sample: out.sample2,
+        sample01: out.sample1,
+        question: [mean2,sig2,al,qnn,qtt,qchh1,qchh2, mean1],
+        answer1: answer1,
+        answer2: answer2,
+        id: id
+      };
+    }
+    
+function checkAnswer_num2(q) {
+      const userAnswer1 = document.getElementById('answer1_'+q.id).value;
+      const userAnswer2 = document.getElementById('answer2_'+q.id).value;
+      const isBothCorrect = Math.round(parseFloat(userAnswer1)*1000)/1000 === Math.round(q.answer1*1000)/1000 && Math.round(parseFloat(userAnswer2)*1000)/1000 === Math.round(q.answer2*1000)/1000;
+      const isCorrect1 = Math.round(parseFloat(userAnswer1)*1000)/1000 === Math.round(q.answer1*1000)/1000;
+      const isCorrect2 = Math.round(parseFloat(userAnswer2)*1000)/1000 === Math.round(q.answer2*1000)/1000;
+
+      if (isBothCorrect) {
+        document.getElementById('result'+q.id).textContent = 'Congratulations! Your answer is correct.';
+        document.getElementById('result'+q.id).style.color = "green";
+      }  else if (isCorrect1) {
+        document.getElementById('result'+q.id).textContent = 'Your first entry is correct. Your second entry is incorrect.';
+        document.getElementById('result'+q.id).style.color = "orange";
+        
+      }  else if (isCorrect2) {
+        document.getElementById('result'+q.id).textContent = 'Your first entry is incorrect. Your second entry is correct.';
+        document.getElementById('result'+q.id).style.color = "orange";
+        
+      } else {
+        document.getElementById('result'+q.id).textContent = `Sorry, incorrect. The correct answer is [` + Math.round(q.answer1*1000)/1000 + ',' + Math.round(q.answer2*1000)/1000 + '].';
+        document.getElementById('result'+q.id).style.color = "red";
+      }
+  }
+
+</script>
 <div id="funktionen" class="section level2 hasAnchor" number="9.1">
 <h2><span class="header-section-number">9.1</span> Funktionen<a href="funktionen-und-optimierung.html#funktionen" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Mathematische Funktionen beschreiben Zusammenhänge zwischen ökonomischen Größen:</p>
@@ -403,7 +465,7 @@ Dabei sind die Parameter <span class="math inline">\(a_0\)</span> bis <span clas
 <p>In der Landwirtschaft führt eine Erhöhung des Düngers bei gleicher
 Bodenfläche zunächst zu einer starken Zunahme und später zu einer geringeren Zunahme des Gesamtertrags. Dies führt zu einer s.g. ertragsgesetzlichen Produktionsfunktion, die mittels eines Polynoms dritten Grades in der Inputmenge <span class="math inline">\(s\)</span> modelliert wird. Bspw. folgende Produktionsfunktion:
 <span class="math display">\[x(s)=0,001\cdot (-0,05s^3 +8 s^2 + 20s), ~~0\leq s \leq 110.\]</span></p>
-<p><img src="_main_files/figure-html/unnamed-chunk-194-1.png" width="672" /></p>
+<p><img src="_main_files/figure-html/unnamed-chunk-195-1.png" width="672" /></p>
 </div>
 <!--::: {#apppoly .app }
 **Graphische Darstellung von Polynomen**
@@ -423,7 +485,7 @@ a_2x^2 + b_2x+c, &amp;x&gt;d.\end{cases}\]</span></p>
 <p><span id="exm:kostfunz" class="example"><strong>Beispiel 9.5  (Zusammengesetzte Kostenfunktion) </strong></span>Ein Betrieb hat folgende zusammengesetzte Kostenfunktion:</p>
 <p><span class="math display">\[K(x) = \begin{cases}6400+3,2x, &amp;x\leq 5000\\
 6400 + 2,7x + 0,0001x^2, &amp;x&gt;5000.\end{cases}\]</span></p>
-<p><img src="_main_files/figure-html/unnamed-chunk-196-1.png" width="672" /></p>
+<p><img src="_main_files/figure-html/unnamed-chunk-197-1.png" width="672" /></p>
 <p>Die Produktionskosten von <span class="math inline">\(5000\)</span> Stück betragen also <span class="math inline">\(22.400\)</span>. Für <span class="math inline">\(5010\)</span> Stück liegen die Kosten dagegen bereits bei <span class="math inline">\(22.437,01\)</span>. Der zusätzliche Kostenanstieg von <span class="math inline">\(37,01\)</span> ist nicht mehr linear (<span class="math inline">\(37,01&gt;10\cdot 3,2\)</span>), sondern wird durch den quadratischen Term in der zweiten Funktionsvorschrift verursacht.</p>
 </div>
 </div>
@@ -586,9 +648,25 @@ Check
  // Generate a random question
     const questionObj9 = generateQuestion_num(9);
 // Display the question
-    document.getElementById('question-text9').textContent = "Die Gewinnfunktion eines Monopolisten lautet \\(\\pi(x) = -" + -6 + "x^2 + " + 23 + "x - " + -20 + "\\), dabei ist \\(x\\) die Produktionsmenge. Wie lautet der Break-Even-Point, also die niedrigste Produktionsmenge \\(x_1\\), ab der der Gewinn positiv wird? Wie lautet die kritische Produktionsmenge \\(x_2\\), deren Überschreitung wieder zu einem negativen Gewinn führt? (Hinweis: Löse die quadratische Gleichung. Die Nullstellen entsprechen dann den gesuchten Produktionsmengen. Runde auf vier Nachkommastellen.)";
+    document.getElementById('question-text9').textContent = "Die Gewinnfunktion eines Monopolisten lautet \\(\\pi(x) = " + -6 + "x^2 + " + 23 + "x " + -20 + "\\), dabei ist \\(x\\) die Produktionsmenge. Wie lautet der Break-Even-Point, also die niedrigste Produktionsmenge \\(x_1\\), ab der der Gewinn positiv wird? Wie lautet die kritische Produktionsmenge \\(x_2\\), deren Überschreitung wieder zu einem negativen Gewinn führt? (Hinweis: Löse die quadratische Gleichung. Die Nullstellen entsprechen dann den gesuchten Produktionsmengen. Runde auf vier Nachkommastellen. Gebe zuerst die kleinste Menge ein.)";
 
     questionObj9.answer =1.33333
+</script>
+<p id="question">
+<span id="question-text922"></span>
+</p>
+<input type="number" id="answer922" placeholder="Antwort eingeben">
+<button onclick="checkAnswer_num(questionObj922)">Check</button>
+<p id="result922">
+</p>
+<script>
+
+ // Generate a random question
+    const questionObj922 = generateQuestion_num(922);
+// Display the question
+    document.getElementById('question-text922').textContent = "";
+
+    questionObj922.answer =2.4999999
 </script>
 <hr />
 <p id="question">
@@ -831,19 +909,19 @@ Da <span class="math inline">\(\pi&#39;&#39;(x) = -24\)</span> und somit immer <
 </script>
 <hr />
 <p id="question">
-<span id="question-text911"></span>
+<span id="question-text9112"></span>
 </p>
-<input type="number" id="answer911" placeholder="Antwort eingeben">
-<button onclick="checkAnswer_num(questionObj911)">Check</button>
-<p id="result911">
+<input type="number" id="answer9112" placeholder="Antwort eingeben">
+<button onclick="checkAnswer_num(questionObj9112)">Check</button>
+<p id="result9112">
 </p>
 <script>
 
  // Generate a random question
-    const questionObj911 = generateQuestion_num(911);
+    const questionObj9112 = generateQuestion_num(9112);
 // Display the question
-    document.getElementById('question-text911').textContent = "Ein Landwirtschaftsbetrieb hat folgende Produktionsfunktion: \\(0,001\\cdot (−0,05s^3+8s^2+20s)\\). Welche optimale Menge \\(s_{opt}\\) von dem Inputfaktor \\(s>0\\) maximiert den Ertrag? Runde auf vier Nachkommastellen.";
-    questionObj911.answer = 107.9024
+    document.getElementById('question-text9112').textContent = "Ein Landwirtschaftsbetrieb hat folgende Produktionsfunktion: \\(0,001\\cdot (−0,05s^3+8s^2+20s)\\). Welche optimale Menge \\(s_{opt}\\) von dem Inputfaktor \\(s>0\\) maximiert den Ertrag? Runde auf vier Nachkommastellen.";
+    questionObj9112.answer = 107.9024
 </script>
 <hr />
 <script>
